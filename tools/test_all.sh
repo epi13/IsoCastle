@@ -14,8 +14,26 @@ else
 fi
 
 python3 tools/generate_content.py --check
+python3 tools/art_pipeline/generate_art.py --check
+python3 tools/audio_pipeline/generate_audio.py --check
 python3 tools/content_validation/validate_content.py
-"$godot_bin" --headless --path . --import
-"$godot_bin" --headless --path . --script res://game/tests/test_runner.gd
-"$godot_bin" --headless --path . --script res://game/tests/smoke_test.gd
+python3 tools/art_pipeline/validate_art.py
+python3 tools/audio_pipeline/validate_audio.py
+
+test_log="$(mktemp)"
+trap 'rm -f "$test_log"' EXIT
+
+run_godot_checked() {
+  : > "$test_log"
+  "$godot_bin" "$@" 2>&1 | tee "$test_log"
+  if rg -q 'SCRIPT ERROR|Parse Error|ERROR:' "$test_log"; then
+    echo "Godot reported an engine or script error." >&2
+    return 1
+  fi
+}
+
+run_godot_checked --headless --path . --import
+run_godot_checked --headless --path . --script res://game/tests/test_runner.gd
+run_godot_checked --headless --path . --script res://game/tests/smoke_test.gd
+run_godot_checked --headless --path . --script res://game/tests/campaign_test.gd
 echo "ALL ISOCASTLE TESTS PASSED"

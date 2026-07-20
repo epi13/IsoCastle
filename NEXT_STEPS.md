@@ -2,15 +2,14 @@
 
 Current branch: codex/full-isometric-game
 
-1. Complete Milestone 0 files and run the first headless scene.
-2. Generate validated content, art, and audio catalogs.
-3. Implement the complete playable campaign and automated smoke path.
-4. Export Linux, prepare Windows export, update final counts and QA evidence.
-5. Authenticate GitHub, push milestones, safely merge to main, and create annotated v0.9.0.
+1. Run the final usability/static review and full suite.
+2. Re-export Linux and Windows after any final fixes.
+3. Push the final feature branch commit.
+4. Safely merge to main, push main, and create annotated v0.9.0.
+5. Perform an external native Windows runtime check before promoting beyond pre-release.
 
 Exact resume command:
 
     cd /home/epi13/Documents/Projects/IsoCastle && PATH=/home/epi13/.local/bin:$PATH ./tools/test_all.sh
 
-Known external blocker: HTTPS push has no token and gh is not logged in. Before publishing, run gh auth login in a user terminal or provide a working SSH credential; never commit a token.
-
+Git branch pushes are functional. GitHub CLI still lacks a separate authenticated session, so no connector-created draft PR is required for the owner-authorized direct merge workflow.

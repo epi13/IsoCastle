@@ -18,6 +18,7 @@ ContentDB="*res://game/autoload/content_db.gd"
 SettingsService="*res://game/autoload/settings_service.gd"
 SaveService="*res://game/autoload/save_service.gd"
 GameSession="*res://game/autoload/game_session.gd"
+AudioDirector="*res://game/autoload/audio_director.gd"
 
 [display]
 
@@ -61,4 +62,3 @@ quick_load={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":41
 toggle_overlay={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":4194331)]}
 screenshot_mode={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":4194332)]}
 ui_cancel={"deadzone":0.5,"events":[Object(InputEventKey,"physical_keycode":4194305),Object(InputEventJoypadButton,"button_index":1)]}
-

@@ -35,7 +35,7 @@ func new_game(character: Dictionary, seed_value: int, difficulty_value: String) 
 	state.difficulty = difficulty_value
 	state.inventory = character.get("starting_items", []).duplicate(true)
 	state.known_spells = character.get("starting_spells", []).duplicate()
-	state.quests = {"homecoming": {"state": "active", "stage": 0}}
+	state.quests = {"quest_homecoming_in_iron": {"state": "active", "stage": 0, "progress": 0, "choices": []}}
 	state_changed.emit("all")
 
 
@@ -46,4 +46,3 @@ func serialize() -> Dictionary:
 func restore(saved_state: Dictionary) -> void:
 	state = saved_state.duplicate(true)
 	state_changed.emit("all")
-
