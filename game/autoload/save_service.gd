@@ -1,6 +1,6 @@
 extends Node
 
-const SAVE_VERSION := 3
+const SAVE_VERSION := 4
 const SLOT_COUNT := 5
 const SAVE_DIR := "user://saves"
 
@@ -80,7 +80,43 @@ func _read_and_migrate(path: String) -> Dictionary:
 			data.erase("reputation")
 		elif version == 2:
 			data["journal"] = data.get("journal", {"lore": [], "bestiary": []})
+		elif version == 3:
+			_migrate_equipment_ownership(data)
 		version += 1
 		data["save_version"] = version
 	return {"ok": true, "data": data}
 
+
+func _migrate_equipment_ownership(data: Dictionary) -> void:
+	var inventory: Array = data.get("inventory", []).duplicate(true)
+	var legacy_equipment: Dictionary = data.get("equipment", {}).duplicate(true)
+	var migrated_equipment: Dictionary = {}
+	for slot: String in legacy_equipment:
+		var stored: Variant = legacy_equipment[slot]
+		if stored is Dictionary:
+			var owned_stack: Dictionary = stored.duplicate(true)
+			if not owned_stack.is_empty():
+				owned_stack["count"] = 1
+				migrated_equipment[slot] = owned_stack
+			continue
+		var item_id := String(stored)
+		if item_id.is_empty():
+			continue
+		var equipped_stack := {"id": item_id, "count": 1, "identified": true, "state": "ordinary"}
+		for index in range(inventory.size()):
+			var candidate: Dictionary = inventory[index]
+			if candidate.get("id") != item_id or int(candidate.get("count", 0)) <= 0:
+				continue
+			equipped_stack = candidate.duplicate(true)
+			equipped_stack["count"] = 1
+			candidate["count"] = int(candidate.get("count", 1)) - 1
+			if int(candidate.get("count", 0)) <= 0:
+				inventory.remove_at(index)
+			break
+		migrated_equipment[slot] = equipped_stack
+	var sanitized_inventory: Array = []
+	for stack: Variant in inventory:
+		if stack is Dictionary and int(stack.get("count", 0)) > 0 and not String(stack.get("id", "")).is_empty():
+			sanitized_inventory.append(stack.duplicate(true))
+	data["inventory"] = sanitized_inventory
+	data["equipment"] = migrated_equipment

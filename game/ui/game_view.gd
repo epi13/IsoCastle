@@ -20,6 +20,7 @@ var spell_catalog: Dictionary = {}
 var enemy_catalog: Array = []
 var hud_label: RichTextLabel
 var log_label: RichTextLabel
+var help_label: Label
 var modal: PanelContainer
 var modal_title: Label
 var modal_body: RichTextLabel
@@ -33,6 +34,9 @@ var wall_texture: Texture2D
 var effect_state: Dictionary = {}
 var npc: Dictionary = {}
 var debug_enabled := false
+var inventory_drag_active := false
+var inventory_slot_controls: Array[InventorySlot] = []
+var inventory_focus_source: Dictionary = {}
 
 
 func _ready() -> void:
@@ -60,6 +64,19 @@ func _process(_delta: float) -> void:
 			queue_redraw()
 
 
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_DRAG_END and inventory_drag_active:
+		inventory_drag_active = false
+		for slot_control: InventorySlot in inventory_slot_controls:
+			if is_instance_valid(slot_control):
+				slot_control.self_modulate = Color.WHITE
+		if not inventory_focus_source.is_empty():
+			for slot_control: InventorySlot in inventory_slot_controls:
+				if slot_control.source == inventory_focus_source:
+					slot_control.grab_focus.call_deferred()
+					break
+
+
 func _build_hud() -> void:
 	var top_bar := ColorRect.new()
 	top_bar.color = Color("#101925e8")
@@ -76,14 +93,14 @@ func _build_hud() -> void:
 	place.add_theme_color_override("font_color", Color("#e0bd76"))
 	add_child(place)
 
-	var help := Label.new()
-	help.text = "QWE/ASD/ZXC move  •  F interact  •  V search  •  1 cast  •  2 ranged  •  3 quick item  •  I/B/J/M  •  Esc"
-	help.position = Vector2(480, 12)
-	help.size = Vector2(775, 24)
-	help.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	help.add_theme_font_size_override("font_size", 13)
-	help.add_theme_color_override("font_color", Color("#9bb0b7"))
-	add_child(help)
+	help_label = Label.new()
+	help_label.text = "QWE/ASD/ZXC move  •  F interact  •  V search  •  1 cast  •  2 ranged  •  3 quick item  •  I/B/J/M  •  Esc"
+	help_label.position = Vector2(480, 12)
+	help_label.size = Vector2(775, 24)
+	help_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	help_label.add_theme_font_size_override("font_size", 13)
+	help_label.add_theme_color_override("font_color", Color("#9bb0b7"))
+	add_child(help_label)
 
 	var side := ColorRect.new()
 	side.color = Color("#0c141eea")
@@ -135,7 +152,7 @@ func _build_hud() -> void:
 	modal_box.add_child(modal_actions)
 	var close := Button.new()
 	close.text = "Close"
-	close.pressed.connect(func() -> void: modal.visible = false)
+	close.pressed.connect(_close_modal)
 	modal_box.add_child(close)
 
 
@@ -150,6 +167,7 @@ func _restore_or_start() -> void:
 			"silver": 40, "statuses": [], "alive": true,
 		}
 	player = stored.duplicate(true)
+	player["base_armor"] = int(player.get("base_armor", player.get("armor", 1)))
 	player["position"] = Vector2i.ZERO
 	player["alive"] = int(player.get("health", 1)) > 0
 	if GameSession.state.inventory.is_empty():
@@ -159,6 +177,7 @@ func _restore_or_start() -> void:
 		]
 	if GameSession.state.known_spells.is_empty():
 		GameSession.state.known_spells = ["spell_coal_spark"]
+	_apply_equipment_stats()
 
 
 func _enter_depth(new_depth: int) -> void:
@@ -219,6 +238,8 @@ func _enter_depth(new_depth: int) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if inventory_drag_active:
+		return
 	if event is InputEventMouseMotion:
 		hover_tile = screen_to_grid(event.position)
 		queue_redraw()
@@ -267,13 +288,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		debug_enabled = not debug_enabled
 		_update_hud()
 		return
-	if event is InputEventKey and event.physical_keycode == KEY_1:
+	if event.is_action_pressed("cast_prepared"):
 		_cast_first_spell()
 		return
-	if event is InputEventKey and event.physical_keycode == KEY_2:
+	if event.is_action_pressed("ranged_attack"):
 		_ranged_attack()
 		return
-	if event is InputEventKey and event.physical_keycode == KEY_3:
+	if event.is_action_pressed("quick_item"):
 		_use_first_consumable()
 		return
 	var direction := Vector2i.ZERO
@@ -371,7 +392,7 @@ func _cast_first_spell() -> void:
 
 
 func _ranged_attack() -> void:
-	var weapon: Dictionary = item_catalog.get(_equipped_weapon_id(), {})
+	var weapon: Dictionary = item_catalog.get(_equipped_item_id("ranged"), {})
 	if int(weapon.get("range", 1)) <= 1:
 		_log("Equip a ranged weapon before making a ranged attack.")
 		return
@@ -529,7 +550,23 @@ func _serializable_player() -> Dictionary:
 
 
 func _equipped_weapon_id() -> String:
-	return String(GameSession.state.equipment.get("main_hand", "weapon_club"))
+	return _equipped_item_id("main_hand", "weapon_club")
+
+
+func _equipped_item_id(slot: String, fallback: String = "") -> String:
+	var equipped: Variant = GameSession.state.equipment.get(slot, {})
+	if equipped is Dictionary:
+		return String(equipped.get("id", fallback))
+	return String(equipped) if not String(equipped).is_empty() else fallback
+
+
+func _apply_equipment_stats() -> void:
+	var armor := int(player.get("base_armor", 1))
+	for slot: String in GameSession.state.equipment:
+		var equipped: Variant = GameSession.state.equipment[slot]
+		var item_id := String(equipped.get("id", "")) if equipped is Dictionary else String(equipped)
+		armor += int(item_catalog.get(item_id, {}).get("armor", 0))
+	player["armor"] = maxi(0, armor)
 
 
 func _gain_xp(amount: int) -> void:
@@ -614,21 +651,172 @@ func _update_hud() -> void:
 
 
 func _show_inventory() -> void:
-	var lines := PackedStringArray()
-	var index := 1
-	for stack: Dictionary in GameSession.state.inventory:
-		var item: Dictionary = item_catalog.get(stack.id, {"name": stack.id, "weight": 0.0, "description": ""})
-		lines.append("[img=48x48]%s[/img] %d. [color=#e0bd76]%s[/color] ×%d  (%.2f weight)\n   %s" % [item.icon, index, item.name, int(stack.count), float(item.weight) * int(stack.count), item.description])
-		index += 1
-	var weight := InventoryRules.total_weight(GameSession.state.inventory, item_catalog)
-	_show_modal("Inventory & Equipment", "Carried weight: %.2f / %d\nMain hand: %s\n\n%s" % [weight, 22 + int(player.might) * 4, item_catalog.get(_equipped_weapon_id(), {"name": "Hands"}).name, "\n\n".join(lines)])
-	for stack_index in range(GameSession.state.inventory.size()):
-		var stack: Dictionary = GameSession.state.inventory[stack_index]
-		var definition: Dictionary = item_catalog.get(stack.id, {})
-		if definition.get("slot", "") != "":
-			_add_modal_action("Equip %s" % definition.name, func() -> void: _equip_item(stack_index))
-		elif definition.get("category") == "consumable":
-			_add_modal_action("Use %s" % definition.name, func() -> void: _use_item(stack_index))
+	var weight := InventoryRules.total_carried_weight(GameSession.state.inventory, GameSession.state.equipment, item_catalog)
+	_show_modal("Inventory & Equipment", "Carried weight: %.2f / %d  •  Drag items to move, merge, swap, equip, or unequip. Right-click a stack to split it." % [weight, 22 + int(player.might) * 4])
+	modal_body.custom_minimum_size = Vector2(700, 52)
+	modal_body.fit_content = true
+	inventory_slot_controls.clear()
+	inventory_focus_source.clear()
+	var columns := HBoxContainer.new()
+	columns.name = "InventoryDragSurface"
+	columns.add_theme_constant_override("separation", 14)
+	modal_actions.add_child(columns)
+	var carried_box := VBoxContainer.new()
+	carried_box.custom_minimum_size.x = 445
+	columns.add_child(carried_box)
+	var carried_title := Label.new()
+	carried_title.text = "CARRIED — %d/%d SLOTS" % [GameSession.state.inventory.size(), InventoryRules.MAX_SLOTS]
+	carried_title.add_theme_color_override("font_color", Color("#e0bd76"))
+	carried_box.add_child(carried_title)
+	var grid := GridContainer.new()
+	grid.columns = 6
+	grid.add_theme_constant_override("h_separation", 4)
+	grid.add_theme_constant_override("v_separation", 4)
+	carried_box.add_child(grid)
+	for slot_index in range(InventoryRules.MAX_SLOTS):
+		var stack: Dictionary = GameSession.state.inventory[slot_index] if slot_index < GameSession.state.inventory.size() else {}
+		var item: Dictionary = item_catalog.get(stack.get("id", ""), {})
+		var source := {"kind": "inventory", "index": slot_index} if not stack.is_empty() else {}
+		var destination := {"kind": "inventory", "index": slot_index, "label": "Empty %d" % (slot_index + 1)}
+		var slot_control := _create_inventory_slot("InventorySlot_%02d" % slot_index, source, destination, stack, item)
+		grid.add_child(slot_control)
+	var equipment_box := VBoxContainer.new()
+	equipment_box.custom_minimum_size.x = 232
+	columns.add_child(equipment_box)
+	var equipment_title := Label.new()
+	equipment_title.text = "EQUIPPED"
+	equipment_title.add_theme_color_override("font_color", Color("#e0bd76"))
+	equipment_box.add_child(equipment_title)
+	var equipment_grid := GridContainer.new()
+	equipment_grid.columns = 2
+	equipment_grid.add_theme_constant_override("h_separation", 4)
+	equipment_grid.add_theme_constant_override("v_separation", 4)
+	equipment_box.add_child(equipment_grid)
+	for equipment_slot: String in InventoryRules.EQUIPMENT_SLOTS:
+		var equipped_stack: Dictionary = GameSession.state.equipment.get(equipment_slot, {})
+		var equipped_item: Dictionary = item_catalog.get(equipped_stack.get("id", ""), {})
+		var source := {"kind": "equipment", "slot": equipment_slot} if not equipped_stack.is_empty() else {}
+		var destination := {"kind": "equipment", "slot": equipment_slot, "label": equipment_slot.replace("_", " ").capitalize()}
+		var slot_control := _create_inventory_slot("EquipmentSlot_%s" % equipment_slot, source, destination, equipped_stack, equipped_item)
+		equipment_grid.add_child(slot_control)
+	var keyboard_help := Label.new()
+	keyboard_help.text = "Keyboard/controller: focus a slot and press Accept to equip, use, or unequip. Escape closes without changing items."
+	keyboard_help.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	keyboard_help.add_theme_font_size_override("font_size", 13)
+	modal_actions.add_child(keyboard_help)
+	if not inventory_slot_controls.is_empty():
+		inventory_slot_controls[0].grab_focus()
+
+
+func _create_inventory_slot(node_name: String, source: Dictionary, destination: Dictionary, stack: Dictionary, item: Dictionary) -> InventorySlot:
+	var slot_control := InventorySlot.new()
+	slot_control.name = node_name
+	slot_control.configure(source, destination, stack, item, _validate_inventory_destination)
+	slot_control.drop_requested.connect(_on_inventory_drop)
+	slot_control.split_requested.connect(_show_split_selector)
+	slot_control.activated.connect(_on_inventory_slot_activated)
+	slot_control.drag_started.connect(_on_inventory_drag_started)
+	slot_control.focus_entered.connect(func() -> void: inventory_focus_source = source.duplicate(true))
+	inventory_slot_controls.append(slot_control)
+	return slot_control
+
+
+func _validate_inventory_destination(source: Dictionary, destination: Dictionary) -> Dictionary:
+	return InventoryRules.validate_destination(
+		GameSession.state.inventory, GameSession.state.equipment, source, destination,
+		player, item_catalog, InventoryRules.MAX_SLOTS
+	)
+
+
+func _on_inventory_drag_started(source: Dictionary) -> void:
+	inventory_drag_active = true
+	for slot_control: InventorySlot in inventory_slot_controls:
+		var validation := _validate_inventory_destination(source, slot_control.destination)
+		slot_control.self_modulate = Color(0.62, 1.0, 0.68, 0.9) if bool(validation.ok) else Color(1.0, 0.48, 0.48, 0.75)
+
+
+func _on_inventory_drop(source: Dictionary, destination: Dictionary) -> void:
+	var result := _perform_inventory_operation(source, destination)
+	if result.ok:
+		GameSession.state.inventory = result.inventory
+		GameSession.state.equipment = result.equipment
+		_apply_equipment_stats()
+		AudioDirector.play_sfx("res://assets/sounds/ui/equip.wav" if String(result.operation).contains("equip") else "res://assets/sounds/ui/drop.wav")
+		_log("[color=#a8d49d]%s.[/color]" % String(result.operation).replace("_", " ").capitalize())
+	else:
+		_log("[color=#e88768]%s[/color]" % result.reason)
+	inventory_drag_active = false
+	call_deferred("_show_inventory")
+
+
+func _perform_inventory_operation(source: Dictionary, destination: Dictionary) -> Dictionary:
+	var source_kind: String = source.get("kind", "")
+	var destination_kind: String = destination.get("kind", "")
+	if source_kind == "inventory" and destination_kind == "inventory":
+		var moved := InventoryRules.move(GameSession.state.inventory, int(source.get("index", -1)), int(destination.get("index", -1)), item_catalog)
+		return {"ok": moved.ok, "inventory": moved.inventory, "equipment": GameSession.state.equipment.duplicate(true), "reason": moved.reason, "operation": moved.operation}
+	if source_kind == "inventory" and destination_kind == "equipment":
+		return InventoryRules.equip(GameSession.state.inventory, GameSession.state.equipment, int(source.get("index", -1)), String(destination.get("slot", "")), player, item_catalog)
+	if source_kind == "equipment" and destination_kind == "inventory":
+		return InventoryRules.unequip(GameSession.state.inventory, GameSession.state.equipment, String(source.get("slot", "")), int(destination.get("index", -1)), player, item_catalog)
+	if source_kind == "equipment" and destination_kind == "equipment":
+		var equipped := InventoryRules.move_equipped(GameSession.state.equipment, String(source.get("slot", "")), String(destination.get("slot", "")), player, item_catalog)
+		return {"ok": equipped.ok, "inventory": GameSession.state.inventory.duplicate(true), "equipment": equipped.equipment, "reason": equipped.reason, "operation": equipped.operation}
+	return {"ok": false, "inventory": GameSession.state.inventory.duplicate(true), "equipment": GameSession.state.equipment.duplicate(true), "reason": "Unsupported destination.", "operation": ""}
+
+
+func _on_inventory_slot_activated(source: Dictionary) -> void:
+	if source.get("kind") == "equipment":
+		var result := InventoryRules.unequip(GameSession.state.inventory, GameSession.state.equipment, String(source.get("slot", "")), -1, player, item_catalog)
+		if result.ok:
+			GameSession.state.inventory = result.inventory
+			GameSession.state.equipment = result.equipment
+			_apply_equipment_stats()
+			_show_inventory()
+		else:
+			_log(result.reason)
+		return
+	var index := int(source.get("index", -1))
+	if index < 0 or index >= GameSession.state.inventory.size():
+		return
+	var definition: Dictionary = item_catalog.get(GameSession.state.inventory[index].get("id", ""), {})
+	if not String(definition.get("slot", "")).is_empty():
+		_equip_item(index)
+	elif definition.get("category") == "consumable":
+		_use_item(index)
+
+
+func _show_split_selector(stack_index: int) -> void:
+	if stack_index < 0 or stack_index >= GameSession.state.inventory.size():
+		return
+	var stack: Dictionary = GameSession.state.inventory[stack_index]
+	var definition: Dictionary = item_catalog.get(stack.get("id", ""), {})
+	if int(definition.get("stack_limit", 1)) <= 1 or int(stack.get("count", 1)) <= 1:
+		_log("That item cannot be split.")
+		return
+	var dialog := ConfirmationDialog.new()
+	dialog.title = "Split %s" % definition.get("name", stack.get("id", "Stack"))
+	dialog.dialog_text = "Choose how many items to move into a new stack."
+	var amount := SpinBox.new()
+	amount.name = "SplitAmount"
+	amount.min_value = 1
+	amount.max_value = int(stack.get("count", 1)) - 1
+	amount.step = 1
+	amount.value = maxi(1, int(stack.get("count", 1)) / 2)
+	dialog.add_child(amount)
+	dialog.confirmed.connect(func() -> void:
+		var result := InventoryRules.split(GameSession.state.inventory, stack_index, int(amount.value), item_catalog)
+		if result.ok:
+			GameSession.state.inventory = result.inventory
+			_log("Split %s into a stack of %d." % [definition.get("name", "stack"), int(amount.value)])
+		else:
+			_log(result.reason)
+		_show_inventory()
+		dialog.queue_free()
+	)
+	dialog.canceled.connect(func() -> void: dialog.queue_free())
+	add_child(dialog)
+	dialog.popup_centered(Vector2i(430, 210))
 
 
 func _show_spellbook() -> void:
@@ -672,7 +860,16 @@ func _show_modal(title_text: String, body_text: String) -> void:
 		child.queue_free()
 	modal_title.text = title_text
 	modal_body.text = body_text
+	modal_body.custom_minimum_size = Vector2(700, 430)
+	modal_body.fit_content = false
 	modal.visible = true
+
+
+func _close_modal() -> void:
+	inventory_drag_active = false
+	inventory_slot_controls.clear()
+	inventory_focus_source.clear()
+	modal.visible = false
 
 
 func _add_modal_action(text_value: String, callback: Callable) -> void:
@@ -688,13 +885,13 @@ func _equip_item(stack_index: int) -> void:
 		return
 	var stack: Dictionary = GameSession.state.inventory[stack_index]
 	var definition: Dictionary = item_catalog.get(stack.id, {})
-	var check := InventoryRules.can_equip(player, definition)
-	if not check.ok:
-		_log(check.reason)
+	var result := InventoryRules.equip(GameSession.state.inventory, GameSession.state.equipment, stack_index, String(definition.get("slot", "")), player, item_catalog)
+	if not result.ok:
+		_log(result.reason)
 		return
-	GameSession.state.equipment[definition.slot] = definition.id
-	if definition.has("armor"):
-		player.armor = maxi(0, int(definition.armor))
+	GameSession.state.inventory = result.inventory
+	GameSession.state.equipment = result.equipment
+	_apply_equipment_stats()
 	AudioDirector.play_sfx("res://assets/sounds/ui/equip.wav")
 	_log("[color=#a8d49d]Equipped %s.[/color]" % definition.name)
 	_show_inventory()

@@ -23,4 +23,4 @@ See BUILDING.md and TESTING.md for full instructions.
 
 ## Status
 
-Active development takes place on codex/full-isometric-game. WORKLOG.md records verified progress and NEXT_STEPS.md is the exact continuation point.
+The v0.9.0 milestone is merged to `main`. Post-v0.9 inventory, input-remapping, and WebAssembly work takes place on `codex/post-v0.9-inventory-input-wasm`. WORKLOG.md records verified progress and NEXT_STEPS.md is the exact continuation point.

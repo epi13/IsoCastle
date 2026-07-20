@@ -2,6 +2,28 @@
 
 ## 2026-07-19
 
+### Post-v0.9 recovery and baseline
+
+- Recovered the clean checkout on `codex/full-isometric-game` at `52bfc323949a762703a7057ef38cc044fbf38e1b`; no modified, staged, or untracked files and no interrupted Git operation were present.
+- Verified local `main`, `origin/main`, `origin/codex/full-isometric-game`, and annotated `v0.9.0` all resolve to the release-record commit after `git fetch origin --prune --tags`; the tag was not changed.
+- Verified GitHub access with `gh auth status`, `gh repo view epi13/IsoCastle`, `git ls-remote origin`, and the authenticated fetch.
+- Confirmed Godot `4.7.1.stable.official.a13da4feb`, Python `3.14.6`, Git `2.55.0`, and GitHub CLI `2.94.0` on Fedora 44.
+- Ran the untouched baseline with `PATH=/home/epi13/.local/bin:$PATH ./tools/test_all.sh`: content generation/schema validation, 364-art validation, 310-audio validation, Godot import, 573 assertions, interaction smoke, and campaign playthrough all passed and reported `ALL ISOCASTLE TESTS PASSED`.
+- Ran the additional startup check `PATH=/home/epi13/.local/bin:$PATH godot --headless --path . --quit-after 3`; it exited successfully without script or engine errors.
+- Inspected native-Windows options. No Windows host, VM, configured Windows runner, or owner-approved remote execution path is available; native execution remains externally blocked and Wine is not being represented as native testing.
+- Found the installed Godot 4.7.1 export templates contain Linux and Windows templates but no Web templates. Matching official Web templates are required for this milestone.
+- Created `codex/post-v0.9-inventory-input-wasm` directly from verified `origin/main` for the inventory, input-remapping, and browser-support work.
+
+### Transactional inventory drag-and-drop milestone
+
+- Added transactional domain operations for bounded add, move, reorder, swap, compatible merge, metadata-safe split, equip, equipment replacement, unequip, equipment-slot movement, destination validation, and cancellation. Failed operations return explicit reasons without partially mutating state.
+- Changed equipment ownership from duplicate item-ID references to metadata-preserving stack records and advanced save schema 3 to 4 with migration that extracts previously equipped items from legacy inventory exactly once.
+- Added a literal Godot drag-and-drop inventory surface using `_get_drag_data`, `_can_drop_data`, `_drop_data`, and `set_drag_preview`, with valid/invalid destination tinting, a drag ghost, tooltip details, right-click split amount selection, keyboard/controller activation, and focus restoration.
+- Added player-facing InputMap actions for prepared casting, ranged attack, and quick item use, replacing their direct physical-key checks.
+- Extended tests from 573 to 599 assertions for inventory operations, requirement and slot rejection, capacity, cancellation, metadata, weight, save/load, schema migration, duplication, and loss. Extended the interaction smoke path to invoke UI drag, equipment replacement, and cancellation through the slot controls.
+- Ran `PATH=/home/epi13/.local/bin:$PATH godot --headless --path . --import`, the unit runner, and the smoke runner successfully during implementation.
+- Ran `PATH=/home/epi13/.local/bin:$PATH ./tools/test_all.sh`; all content/art/audio validation, Godot import, 599 assertions, inventory interaction smoke, and campaign playthrough passed with `ALL ISOCASTLE TESTS PASSED`.
+
 ### Completed
 
 - Confirmed Fedora 44 host and exact workspace path.

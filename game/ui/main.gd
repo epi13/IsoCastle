@@ -393,7 +393,19 @@ func _create_character_and_start() -> void:
 		seed_value = 130713
 	var difficulty := difficulty_input.get_item_text(difficulty_input.selected).to_lower()
 	GameSession.new_game(character, seed_value, difficulty)
-	GameSession.state.equipment.main_hand = kit_items[kit][0]
+	var item_catalog: Dictionary = {}
+	for item: Dictionary in ContentDB.all("items"):
+		item_catalog[item.id] = item
+	for item_index in range(GameSession.state.inventory.size() - 1, -1, -1):
+		var starting_stack: Dictionary = GameSession.state.inventory[item_index]
+		var definition: Dictionary = item_catalog.get(starting_stack.get("id", ""), {})
+		var equipment_slot := String(definition.get("slot", ""))
+		if equipment_slot.is_empty() or GameSession.state.equipment.has(equipment_slot):
+			continue
+		var equip_result := InventoryRules.equip(GameSession.state.inventory, GameSession.state.equipment, item_index, equipment_slot, character, item_catalog)
+		if equip_result.ok:
+			GameSession.state.inventory = equip_result.inventory
+			GameSession.state.equipment = equip_result.equipment
 	_launch_game()
 
 

@@ -48,6 +48,69 @@ func _initialize() -> void:
 		push_error("Smoke player could not move")
 		quit(1)
 		return
+	var item_catalog: Dictionary = {}
+	for item: Dictionary in root.get_node("ContentDB").all("items"):
+		item_catalog[item.id] = item
+	session.state.inventory = InventoryRules.add_item(session.state.inventory, "consumable_bluecap_tonic", 1, item_catalog)
+	session.state.inventory = InventoryRules.add_item(session.state.inventory, "weapon_dagger", 1, item_catalog)
+	var drag_units_before := _owned_units(session.state.inventory, session.state.equipment)
+	var first_id: String = session.state.inventory[0].id
+	var second_id: String = session.state.inventory[1].id
+	game._show_inventory()
+	await process_frame
+	var first_slot := game.find_child("InventorySlot_00", true, false) as InventorySlot
+	var second_slot := game.find_child("InventorySlot_01", true, false) as InventorySlot
+	if first_slot == null or second_slot == null:
+		push_error("Inventory drag slots did not render")
+		quit(1)
+		return
+	var drag_data: Variant = first_slot._get_drag_data(Vector2(10, 10))
+	if drag_data == null or not second_slot._can_drop_data(Vector2(10, 10), drag_data):
+		push_error("Inventory UI rejected a valid swap drag")
+		quit(1)
+		return
+	second_slot._drop_data(Vector2(10, 10), drag_data)
+	if session.state.inventory[0].id != second_id or session.state.inventory[1].id != first_id:
+		push_error("Inventory UI drag did not swap logical slots")
+		quit(1)
+		return
+	await process_frame
+	var dagger_index := -1
+	for index in range(session.state.inventory.size()):
+		if session.state.inventory[index].id == "weapon_dagger":
+			dagger_index = index
+			break
+	var dagger_slot := game.find_child("InventorySlot_%02d" % dagger_index, true, false) as InventorySlot
+	var hand_slot := game.find_child("EquipmentSlot_main_hand", true, false) as InventorySlot
+	if dagger_slot == null or hand_slot == null:
+		push_error("Inventory equipment drag targets did not render")
+		quit(1)
+		return
+	var equip_drag: Variant = dagger_slot._get_drag_data(Vector2(10, 10))
+	if not hand_slot._can_drop_data(Vector2(10, 10), equip_drag):
+		push_error("Inventory UI rejected valid main-hand equipment")
+		quit(1)
+		return
+	hand_slot._drop_data(Vector2(10, 10), equip_drag)
+	if session.state.equipment.main_hand.id != "weapon_dagger":
+		push_error("Inventory UI equipment drop did not replace main hand")
+		quit(1)
+		return
+	if _owned_units(session.state.inventory, session.state.equipment) != drag_units_before:
+		push_error("Inventory UI drag duplicated or lost an item")
+		quit(1)
+		return
+	var cancel_snapshot: Array = session.state.inventory.duplicate(true)
+	await process_frame
+	var cancel_slot := game.find_child("InventorySlot_00", true, false) as InventorySlot
+	if cancel_slot != null:
+		cancel_slot._get_drag_data(Vector2(10, 10))
+		game._notification(Control.NOTIFICATION_DRAG_END)
+	if session.state.inventory != cancel_snapshot:
+		push_error("Cancelled inventory drag changed state")
+		quit(1)
+		return
+	game._close_modal()
 	var before_inventory: int = session.state.inventory.size()
 	var chest: Dictionary = {}
 	for object: Dictionary in game.level.objects:
@@ -91,7 +154,7 @@ func _initialize() -> void:
 		push_error("Quest smoke did not complete")
 		quit(1)
 		return
-	print("SMOKE PASS: menu, character, world, move, pickup, combat, spell, save/load, level, quest")
+	print("SMOKE PASS: menu, character, world, move, inventory UI drag/equip/cancel, pickup, combat, spell, save/load, level, quest")
 	root.get_node("AudioDirector").stop_all()
 	await create_timer(0.15).timeout
 	game.texture_cache.clear()
@@ -108,3 +171,12 @@ func _initialize() -> void:
 	await process_frame
 	await process_frame
 	quit(0)
+
+
+func _owned_units(inventory: Array, equipment: Dictionary) -> int:
+	var units := 0
+	for stack: Dictionary in inventory:
+		units += int(stack.get("count", 0))
+	for slot: String in equipment:
+		units += int(equipment[slot].get("count", 0))
+	return units
