@@ -1,0 +1,1236 @@
+[
+  {
+    "act": 1,
+    "dialogue_root": "dialogue_npc_edda_varn_00",
+    "failure_allowed": false,
+    "giver": "npc_edda_varn",
+    "id": "quest_homecoming_in_iron",
+    "name": "Homecoming in Iron",
+    "name_key": "quest.quest_homecoming_in_iron.name",
+    "next_quest": "quest_the_northless_compass",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 15,
+      "xp": 60
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Return to Maelin's workshop after the aurora rings.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Return to Maelin's workshop after the aurora rings.",
+    "type": "main",
+    "world_flags": [
+      "completed_quest_homecoming_in_iron"
+    ]
+  },
+  {
+    "act": 1,
+    "dialogue_root": "dialogue_npc_senn_marr_00",
+    "failure_allowed": false,
+    "giver": "npc_senn_marr",
+    "id": "quest_the_northless_compass",
+    "name": "The Northless Compass",
+    "name_key": "quest.quest_the_northless_compass.name",
+    "next_quest": "quest_orrenfast_below",
+    "prerequisites": [
+      "quest_homecoming_in_iron"
+    ],
+    "rewards": {
+      "item": "",
+      "silver": 23,
+      "xp": 75
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Follow Maelin's altered compass into the Bracken March.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Follow Maelin's altered compass into the Bracken March.",
+    "type": "main",
+    "world_flags": [
+      "completed_quest_the_northless_compass"
+    ]
+  },
+  {
+    "act": 1,
+    "dialogue_root": "dialogue_npc_tovi_reed_00",
+    "failure_allowed": false,
+    "giver": "npc_tovi_reed",
+    "id": "quest_orrenfast_below",
+    "name": "Orrenfast Below",
+    "name_key": "quest.quest_orrenfast_below.name",
+    "next_quest": "quest_names_in_the_ledger",
+    "prerequisites": [
+      "quest_the_northless_compass"
+    ],
+    "rewards": {
+      "item": "",
+      "silver": 31,
+      "xp": 90
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Open the drowned monastery without harming its refugees.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Open the drowned monastery without harming its refugees.",
+    "type": "main",
+    "world_flags": [
+      "completed_quest_orrenfast_below"
+    ]
+  },
+  {
+    "act": 1,
+    "dialogue_root": "dialogue_npc_bran_oc_00",
+    "failure_allowed": false,
+    "giver": "npc_bran_oc",
+    "id": "quest_names_in_the_ledger",
+    "name": "Names in the Ledger",
+    "name_key": "quest.quest_names_in_the_ledger.name",
+    "next_quest": "quest_three_tuning_names",
+    "prerequisites": [
+      "quest_orrenfast_below"
+    ],
+    "rewards": {
+      "item": "",
+      "silver": 39,
+      "xp": 105
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Learn why the Quiet Ledger built the Bell Below.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Learn why the Quiet Ledger built the Bell Below.",
+    "type": "main",
+    "world_flags": [
+      "completed_quest_names_in_the_ledger"
+    ]
+  },
+  {
+    "act": 2,
+    "dialogue_root": "dialogue_npc_ylsa_fen_00",
+    "failure_allowed": false,
+    "giver": "npc_ylsa_fen",
+    "id": "quest_three_tuning_names",
+    "name": "Three Tuning Names",
+    "name_key": "quest.quest_three_tuning_names.name",
+    "next_quest": "quest_winter_owes_a_debt",
+    "prerequisites": [
+      "quest_names_in_the_ledger"
+    ],
+    "rewards": {
+      "item": "",
+      "silver": 47,
+      "xp": 120
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Recover the resonator names from the Underbell tiers.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Recover the resonator names from the Underbell tiers.",
+    "type": "main",
+    "world_flags": [
+      "completed_quest_three_tuning_names"
+    ]
+  },
+  {
+    "act": 2,
+    "dialogue_root": "dialogue_npc_kerrit_bale_00",
+    "failure_allowed": false,
+    "giver": "npc_kerrit_bale",
+    "id": "quest_winter_owes_a_debt",
+    "name": "Winter Owes a Debt",
+    "name_key": "quest.quest_winter_owes_a_debt.name",
+    "next_quest": "quest_a_voice_called_ash",
+    "prerequisites": [
+      "quest_three_tuning_names"
+    ],
+    "rewards": {
+      "item": "",
+      "silver": 55,
+      "xp": 135
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Cross the Lorn Shelf and find Maelin's expedition.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Cross the Lorn Shelf and find Maelin's expedition.",
+    "type": "main",
+    "world_flags": [
+      "completed_quest_winter_owes_a_debt"
+    ]
+  },
+  {
+    "act": 2,
+    "dialogue_root": "dialogue_npc_maelin_vey_00",
+    "failure_allowed": false,
+    "giver": "npc_maelin_vey",
+    "id": "quest_a_voice_called_ash",
+    "name": "A Voice Called Ash",
+    "name_key": "quest.quest_a_voice_called_ash.name",
+    "next_quest": "quest_counterweight_road",
+    "prerequisites": [
+      "quest_winter_owes_a_debt"
+    ],
+    "rewards": {
+      "item": "",
+      "silver": 63,
+      "xp": 150
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Decide whether Little Ash can be trusted with a body.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Decide whether Little Ash can be trusted with a body.",
+    "type": "main",
+    "world_flags": [
+      "completed_quest_a_voice_called_ash"
+    ]
+  },
+  {
+    "act": 2,
+    "dialogue_root": "dialogue_npc_orra_pike_00",
+    "failure_allowed": false,
+    "giver": "npc_orra_pike",
+    "id": "quest_counterweight_road",
+    "name": "Counterweight Road",
+    "name_key": "quest.quest_counterweight_road.name",
+    "next_quest": "quest_the_bell_s_intention",
+    "prerequisites": [
+      "quest_a_voice_called_ash"
+    ],
+    "rewards": {
+      "item": "",
+      "silver": 15,
+      "xp": 165
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Reach the wind-carved Rime-Crown.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Reach the wind-carved Rime-Crown.",
+    "type": "main",
+    "world_flags": [
+      "completed_quest_counterweight_road"
+    ]
+  },
+  {
+    "act": 3,
+    "dialogue_root": "dialogue_npc_hollan_grey_00",
+    "failure_allowed": false,
+    "giver": "npc_hollan_grey",
+    "id": "quest_the_bell_s_intention",
+    "name": "The Bell's Intention",
+    "name_key": "quest.quest_the_bell_s_intention.name",
+    "next_quest": "quest_answer_the_bell",
+    "prerequisites": [
+      "quest_counterweight_road"
+    ],
+    "rewards": {
+      "item": "",
+      "silver": 23,
+      "xp": 180
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Confront the custodian and understand the machine.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Confront the custodian and understand the machine.",
+    "type": "main",
+    "world_flags": [
+      "completed_quest_the_bell_s_intention"
+    ]
+  },
+  {
+    "act": 3,
+    "dialogue_root": "dialogue_npc_nim_aster_00",
+    "failure_allowed": false,
+    "giver": "npc_nim_aster",
+    "id": "quest_answer_the_bell",
+    "name": "Answer the Bell",
+    "name_key": "quest.quest_answer_the_bell.name",
+    "next_quest": "",
+    "prerequisites": [
+      "quest_the_bell_s_intention"
+    ],
+    "rewards": {
+      "item": "",
+      "silver": 31,
+      "xp": 195
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Choose silence, stewardship, or freedom for the Choir.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Choose silence, stewardship, or freedom for the Choir.",
+    "type": "main",
+    "world_flags": [
+      "completed_quest_answer_the_bell"
+    ]
+  },
+  {
+    "act": 2,
+    "dialogue_root": "dialogue_npc_jori_tern_00",
+    "failure_allowed": true,
+    "giver": "npc_jori_tern",
+    "id": "quest_warding_iron",
+    "name": "Warding Iron",
+    "name_key": "quest.quest_warding_iron.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 39,
+      "xp": 210
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Choose who receives Greywake's limited warding nails.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Choose who receives Greywake's limited warding nails.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_warding_iron"
+    ]
+  },
+  {
+    "act": 3,
+    "dialogue_root": "dialogue_npc_pell_under_00",
+    "failure_allowed": true,
+    "giver": "npc_pell_under",
+    "id": "quest_a_boat_for_no_water",
+    "name": "A Boat for No Water",
+    "name_key": "quest.quest_a_boat_for_no_water.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 47,
+      "xp": 225
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Help Old Kest repair a boat intended for a buried river.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Help Old Kest repair a boat intended for a buried river.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_a_boat_for_no_water"
+    ]
+  },
+  {
+    "act": 1,
+    "dialogue_root": "dialogue_npc_ada_clasp_00",
+    "failure_allowed": true,
+    "giver": "npc_ada_clasp",
+    "id": "quest_tovi_s_very_legal_post",
+    "name": "Tovi's Very Legal Post",
+    "name_key": "quest.quest_tovi_s_very_legal_post.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 55,
+      "xp": 240
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Recover letters that Tovi absolutely had permission to carry.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Recover letters that Tovi absolutely had permission to carry.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_tovi_s_very_legal_post"
+    ]
+  },
+  {
+    "act": 2,
+    "dialogue_root": "dialogue_npc_venn_soot_00",
+    "failure_allowed": true,
+    "giver": "npc_venn_soot",
+    "id": "quest_root_and_rafter",
+    "name": "Root and Rafter",
+    "name_key": "quest.quest_root_and_rafter.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 63,
+      "xp": 255
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Settle a boundary dispute between Orra and Pell.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Settle a boundary dispute between Orra and Pell.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_root_and_rafter"
+    ]
+  },
+  {
+    "act": 3,
+    "dialogue_root": "dialogue_npc_rusk_candle_00",
+    "failure_allowed": true,
+    "giver": "npc_rusk_candle",
+    "id": "quest_the_smith_s_last_joke",
+    "name": "The Smith's Last Joke",
+    "name_key": "quest.quest_the_smith_s_last_joke.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 15,
+      "xp": 270
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Find the punch line Bran left in an abandoned forge.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Find the punch line Bran left in an abandoned forge.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_the_smith_s_last_joke"
+    ]
+  },
+  {
+    "act": 1,
+    "dialogue_root": "dialogue_npc_iven_snow_00",
+    "failure_allowed": true,
+    "giver": "npc_iven_snow",
+    "id": "quest_bluecap_supper",
+    "name": "Bluecap Supper",
+    "name_key": "quest.quest_bluecap_supper.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 23,
+      "xp": 285
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Collect safe mushrooms while avoiding the shepherd.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Collect safe mushrooms while avoiding the shepherd.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_bluecap_supper"
+    ]
+  },
+  {
+    "act": 2,
+    "dialogue_root": "dialogue_npc_sister_calve_00",
+    "failure_allowed": true,
+    "giver": "npc_sister_calve",
+    "id": "quest_a_quiet_grave",
+    "name": "A Quiet Grave",
+    "name_key": "quest.quest_a_quiet_grave.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 31,
+      "xp": 300
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Return a revenant's name to Rusk Candle.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Return a revenant's name to Rusk Candle.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_a_quiet_grave"
+    ]
+  },
+  {
+    "act": 3,
+    "dialogue_root": "dialogue_npc_daro_flint_00",
+    "failure_allowed": true,
+    "giver": "npc_daro_flint",
+    "id": "quest_maps_that_move",
+    "name": "Maps That Move",
+    "name_key": "quest.quest_maps_that_move.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 39,
+      "xp": 315
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Verify Mara Quill's impossible new corridors.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Verify Mara Quill's impossible new corridors.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_maps_that_move"
+    ]
+  },
+  {
+    "act": 1,
+    "dialogue_root": "dialogue_npc_mara_quill_00",
+    "failure_allowed": true,
+    "giver": "npc_mara_quill",
+    "id": "quest_lock_without_a_door",
+    "name": "Lock Without a Door",
+    "name_key": "quest.quest_lock_without_a_door.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 47,
+      "xp": 330
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Discover what Ada's inherited lock once protected.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Discover what Ada's inherited lock once protected.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_lock_without_a_door"
+    ]
+  },
+  {
+    "act": 2,
+    "dialogue_root": "dialogue_npc_old_kest_00",
+    "failure_allowed": true,
+    "giver": "npc_old_kest",
+    "id": "quest_lanterns_for_the_lost",
+    "name": "Lanterns for the Lost",
+    "name_key": "quest.quest_lanterns_for_the_lost.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 55,
+      "xp": 345
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Place lights along the winter road.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Place lights along the winter road.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_lanterns_for_the_lost"
+    ]
+  },
+  {
+    "act": 3,
+    "dialogue_root": "dialogue_npc_little_ash_00",
+    "failure_allowed": true,
+    "giver": "npc_little_ash",
+    "id": "quest_rain_in_a_bottle",
+    "name": "Rain in a Bottle",
+    "name_key": "quest.quest_rain_in_a_bottle.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 63,
+      "xp": 360
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Repair Ylsa's communal healing vessel.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Repair Ylsa's communal healing vessel.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_rain_in_a_bottle"
+    ]
+  },
+  {
+    "act": 1,
+    "dialogue_root": "dialogue_npc_torren_vale_00",
+    "failure_allowed": true,
+    "giver": "npc_torren_vale",
+    "id": "quest_the_rival_s_rope",
+    "name": "The Rival's Rope",
+    "name_key": "quest.quest_the_rival_s_rope.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 15,
+      "xp": 375
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Rescue or abandon Siva's stranded expedition.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Rescue or abandon Siva's stranded expedition.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_the_rival_s_rope"
+    ]
+  },
+  {
+    "act": 2,
+    "dialogue_root": "dialogue_npc_siva_rime_00",
+    "failure_allowed": true,
+    "giver": "npc_siva_rime",
+    "id": "quest_goat_on_the_roof",
+    "name": "Goat on the Roof",
+    "name_key": "quest.quest_goat_on_the_roof.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 23,
+      "xp": 390
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Resolve a livestock emergency with dignity optional.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Resolve a livestock emergency with dignity optional.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_goat_on_the_roof"
+    ]
+  },
+  {
+    "act": 3,
+    "dialogue_root": "dialogue_npc_brother_olt_00",
+    "failure_allowed": true,
+    "giver": "npc_brother_olt",
+    "id": "quest_a_proper_haunting",
+    "name": "A Proper Haunting",
+    "name_key": "quest.quest_a_proper_haunting.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 31,
+      "xp": 405
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Teach an inept ghost how to be noticed.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Teach an inept ghost how to be noticed.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_a_proper_haunting"
+    ]
+  },
+  {
+    "act": 1,
+    "dialogue_root": "dialogue_npc_cera_wind_00",
+    "failure_allowed": true,
+    "giver": "npc_cera_wind",
+    "id": "quest_letters_never_sent",
+    "name": "Letters Never Sent",
+    "name_key": "quest.quest_letters_never_sent.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 39,
+      "xp": 420
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Deliver Maelin's unsent apologies.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Deliver Maelin's unsent apologies.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_letters_never_sent"
+    ]
+  },
+  {
+    "act": 2,
+    "dialogue_root": "dialogue_npc_the_tallyman_00",
+    "failure_allowed": true,
+    "giver": "npc_the_tallyman",
+    "id": "quest_the_ninth_meal",
+    "name": "The Ninth Meal",
+    "name_key": "quest.quest_the_ninth_meal.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 47,
+      "xp": 435
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Cook a feast from ingredients found in eight themes.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Cook a feast from ingredients found in eight themes.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_the_ninth_meal"
+    ]
+  },
+  {
+    "act": 3,
+    "dialogue_root": "dialogue_npc_edda_varn_00",
+    "failure_allowed": true,
+    "giver": "npc_edda_varn",
+    "id": "quest_crown_exile",
+    "name": "Crown Exile",
+    "name_key": "quest.quest_crown_exile.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 55,
+      "xp": 450
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Help Cera confront the custom that expelled her.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Help Cera confront the custom that expelled her.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_crown_exile"
+    ]
+  },
+  {
+    "act": 1,
+    "dialogue_root": "dialogue_npc_senn_marr_00",
+    "failure_allowed": true,
+    "giver": "npc_senn_marr",
+    "id": "quest_tallyman_s_exception",
+    "name": "Tallyman's Exception",
+    "name_key": "quest.quest_tallyman_s_exception.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 63,
+      "xp": 465
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Find a memory the custodian cannot categorize.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Find a memory the custodian cannot categorize.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_tallyman_s_exception"
+    ]
+  },
+  {
+    "act": 2,
+    "dialogue_root": "dialogue_npc_tovi_reed_00",
+    "failure_allowed": true,
+    "giver": "npc_tovi_reed",
+    "id": "quest_the_free_choir",
+    "name": "The Free Choir",
+    "name_key": "quest.quest_the_free_choir.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 15,
+      "xp": 480
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Build vessels for willing memories.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Build vessels for willing memories.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_the_free_choir"
+    ]
+  },
+  {
+    "act": 3,
+    "dialogue_root": "dialogue_npc_bran_oc_00",
+    "failure_allowed": true,
+    "giver": "npc_bran_oc",
+    "id": "quest_olt_s_footnotes",
+    "name": "Olt's Footnotes",
+    "name_key": "quest.quest_olt_s_footnotes.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 23,
+      "xp": 495
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Correct a historian without destroying his confidence.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Correct a historian without destroying his confidence.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_olt_s_footnotes"
+    ]
+  },
+  {
+    "act": 1,
+    "dialogue_root": "dialogue_npc_ylsa_fen_00",
+    "failure_allowed": true,
+    "giver": "npc_ylsa_fen",
+    "id": "quest_hearth_reader_s_price",
+    "name": "Hearth-Reader's Price",
+    "name_key": "quest.quest_hearth_reader_s_price.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 31,
+      "xp": 510
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Gather materials for a character respec.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Gather materials for a character respec.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_hearth_reader_s_price"
+    ]
+  },
+  {
+    "act": 2,
+    "dialogue_root": "dialogue_npc_kerrit_bale_00",
+    "failure_allowed": true,
+    "giver": "npc_kerrit_bale",
+    "id": "quest_after_the_answer",
+    "name": "After the Answer",
+    "name_key": "quest.quest_after_the_answer.name",
+    "next_quest": "",
+    "prerequisites": [],
+    "rewards": {
+      "item": "",
+      "silver": 39,
+      "xp": 525
+    },
+    "stages": [
+      {
+        "id": "start",
+        "objective": "Return to Greywake and hear what changed.",
+        "target": 1
+      },
+      {
+        "id": "resolve",
+        "objective": "Choose an approach and live with its consequence.",
+        "target": 1
+      },
+      {
+        "id": "complete",
+        "objective": "Report the outcome.",
+        "target": 1
+      }
+    ],
+    "summary": "Return to Greywake and hear what changed.",
+    "type": "side",
+    "world_flags": [
+      "completed_quest_after_the_answer"
+    ]
+  }
+]

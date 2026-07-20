@@ -1,0 +1,16 @@
+{
+  "content_version": 1,
+  "save_version": 3,
+  "generator_seed": 130713,
+  "minimum_counts": {
+    "items": 140,
+    "affixes": 30,
+    "spells": 48,
+    "enemies": 50,
+    "npcs": 25,
+    "quests": 30,
+    "dialogue": 100,
+    "lore": 30,
+    "themes": 12
+  }
+}

@@ -1,0 +1,662 @@
+[
+  {
+    "entries": [
+      {
+        "item": "weapon_club",
+        "max": 1,
+        "min": 1,
+        "weight": 12
+      },
+      {
+        "item": "weapon_mace",
+        "max": 2,
+        "min": 1,
+        "weight": 11
+      },
+      {
+        "item": "weapon_maul",
+        "max": 1,
+        "min": 1,
+        "weight": 10
+      },
+      {
+        "item": "weapon_longbow",
+        "max": 2,
+        "min": 1,
+        "weight": 9
+      },
+      {
+        "item": "armor_wool_undertunic",
+        "max": 1,
+        "min": 1,
+        "weight": 8
+      },
+      {
+        "item": "armor_boiled_leather_jack",
+        "max": 2,
+        "min": 1,
+        "weight": 7
+      },
+      {
+        "item": "armor_saltblack_hauberk",
+        "max": 1,
+        "min": 1,
+        "weight": 6
+      },
+      {
+        "item": "armor_blue_ice_lamellar",
+        "max": 2,
+        "min": 1,
+        "weight": 5
+      }
+    ],
+    "id": "loot_theme_00",
+    "nothing_weight": 8,
+    "rolls": 1
+  },
+  {
+    "entries": [
+      {
+        "item": "weapon_war_pick",
+        "max": 1,
+        "min": 1,
+        "weight": 12
+      },
+      {
+        "item": "weapon_polearm",
+        "max": 2,
+        "min": 1,
+        "weight": 11
+      },
+      {
+        "item": "weapon_sling",
+        "max": 1,
+        "min": 1,
+        "weight": 10
+      },
+      {
+        "item": "armor_ember_scribe_vestment",
+        "max": 2,
+        "min": 1,
+        "weight": 9
+      },
+      {
+        "item": "armor_nightglass_leathers",
+        "max": 1,
+        "min": 1,
+        "weight": 8
+      },
+      {
+        "item": "armor_bronze_scale_vest",
+        "max": 2,
+        "min": 1,
+        "weight": 7
+      },
+      {
+        "item": "armor_bellfounder_s_plate",
+        "max": 1,
+        "min": 1,
+        "weight": 6
+      },
+      {
+        "item": "armor_rootbound_harness",
+        "max": 2,
+        "min": 1,
+        "weight": 5
+      }
+    ],
+    "id": "loot_theme_01",
+    "nothing_weight": 8,
+    "rolls": 1
+  },
+  {
+    "entries": [
+      {
+        "item": "weapon_hornbow",
+        "max": 1,
+        "min": 1,
+        "weight": 12
+      },
+      {
+        "item": "armor_tarred_workcoat",
+        "max": 2,
+        "min": 1,
+        "weight": 11
+      },
+      {
+        "item": "armor_moss_stitched_coat",
+        "max": 1,
+        "min": 1,
+        "weight": 10
+      },
+      {
+        "item": "armor_ledger_chain",
+        "max": 2,
+        "min": 1,
+        "weight": 9
+      },
+      {
+        "item": "armor_choirscale_harness",
+        "max": 1,
+        "min": 1,
+        "weight": 8
+      },
+      {
+        "item": "armor_last_gate_harness",
+        "max": 2,
+        "min": 1,
+        "weight": 7
+      },
+      {
+        "item": "gear_hide_roundshield",
+        "max": 1,
+        "min": 1,
+        "weight": 6
+      },
+      {
+        "item": "gear_dockhand_gloves",
+        "max": 2,
+        "min": 1,
+        "weight": 5
+      }
+    ],
+    "id": "loot_theme_02",
+    "nothing_weight": 7,
+    "rolls": 1
+  },
+  {
+    "entries": [
+      {
+        "item": "armor_rimekeeper_mantle",
+        "max": 1,
+        "min": 1,
+        "weight": 12
+      },
+      {
+        "item": "armor_iron_ring_hauberk",
+        "max": 2,
+        "min": 1,
+        "weight": 11
+      },
+      {
+        "item": "armor_bog_iron_lamellar",
+        "max": 1,
+        "min": 1,
+        "weight": 10
+      },
+      {
+        "item": "armor_rime_plate",
+        "max": 2,
+        "min": 1,
+        "weight": 9
+      },
+      {
+        "item": "armor_storm_pilgrim_shell",
+        "max": 1,
+        "min": 1,
+        "weight": 8
+      },
+      {
+        "item": "gear_iron_rim_helm",
+        "max": 2,
+        "min": 1,
+        "weight": 7
+      },
+      {
+        "item": "gear_mudfast_boots",
+        "max": 1,
+        "min": 1,
+        "weight": 6
+      },
+      {
+        "item": "gear_aurora_cloak",
+        "max": 2,
+        "min": 1,
+        "weight": 5
+      }
+    ],
+    "id": "loot_theme_03",
+    "nothing_weight": 7,
+    "rolls": 1
+  },
+  {
+    "entries": [
+      {
+        "item": "armor_frost_riveted_mail",
+        "max": 1,
+        "min": 1,
+        "weight": 12
+      },
+      {
+        "item": "armor_crown_scale",
+        "max": 2,
+        "min": 1,
+        "weight": 11
+      },
+      {
+        "item": "armor_dawnwarden_surcoat",
+        "max": 1,
+        "min": 1,
+        "weight": 10
+      },
+      {
+        "item": "gear_iron_kite_shield",
+        "max": 2,
+        "min": 1,
+        "weight": 9
+      },
+      {
+        "item": "gear_lockwright_gloves",
+        "max": 1,
+        "min": 1,
+        "weight": 8
+      },
+      {
+        "item": "gear_ropework_belt",
+        "max": 2,
+        "min": 1,
+        "weight": 7
+      },
+      {
+        "item": "jewel_deepstone_signet",
+        "max": 1,
+        "min": 1,
+        "weight": 6
+      },
+      {
+        "item": "jewel_hearth_locket",
+        "max": 2,
+        "min": 1,
+        "weight": 5
+      }
+    ],
+    "id": "loot_theme_04",
+    "nothing_weight": 6,
+    "rolls": 1
+  },
+  {
+    "entries": [
+      {
+        "item": "armor_citadel_half_plate",
+        "max": 1,
+        "min": 1,
+        "weight": 12
+      },
+      {
+        "item": "armor_maelin_s_field_coat",
+        "max": 2,
+        "min": 1,
+        "weight": 11
+      },
+      {
+        "item": "gear_antlered_warcap",
+        "max": 1,
+        "min": 1,
+        "weight": 10
+      },
+      {
+        "item": "gear_snowshoe_boots",
+        "max": 2,
+        "min": 1,
+        "weight": 9
+      },
+      {
+        "item": "jewel_ring_of_banked_coals",
+        "max": 1,
+        "min": 1,
+        "weight": 8
+      },
+      {
+        "item": "jewel_knot_of_fortunate_rain",
+        "max": 2,
+        "min": 1,
+        "weight": 7
+      },
+      {
+        "item": "jewel_unstruck_bell",
+        "max": 1,
+        "min": 1,
+        "weight": 6
+      },
+      {
+        "item": "consumable_sunleaf_infusion",
+        "max": 2,
+        "min": 1,
+        "weight": 5
+      }
+    ],
+    "id": "loot_theme_05",
+    "nothing_weight": 6,
+    "rolls": 2
+  },
+  {
+    "entries": [
+      {
+        "item": "gear_bellmetal_pavise",
+        "max": 1,
+        "min": 1,
+        "weight": 12
+      },
+      {
+        "item": "gear_stonegrip_gauntlets",
+        "max": 2,
+        "min": 1,
+        "weight": 11
+      },
+      {
+        "item": "gear_potioner_s_belt",
+        "max": 1,
+        "min": 1,
+        "weight": 10
+      },
+      {
+        "item": "jewel_dawnthread_loop",
+        "max": 2,
+        "min": 1,
+        "weight": 9
+      },
+      {
+        "item": "jewel_whisperbone_torc",
+        "max": 1,
+        "min": 1,
+        "weight": 8
+      },
+      {
+        "item": "consumable_stillwater_flask",
+        "max": 2,
+        "min": 1,
+        "weight": 7
+      },
+      {
+        "item": "consumable_black_bread",
+        "max": 1,
+        "min": 1,
+        "weight": 6
+      },
+      {
+        "item": "consumable_lockoil",
+        "max": 2,
+        "min": 1,
+        "weight": 5
+      }
+    ],
+    "id": "loot_theme_06",
+    "nothing_weight": 5,
+    "rolls": 2
+  },
+  {
+    "entries": [
+      {
+        "item": "gear_gale_step_boots",
+        "max": 1,
+        "min": 1,
+        "weight": 12
+      },
+      {
+        "item": "jewel_rime_marked_band",
+        "max": 2,
+        "min": 1,
+        "weight": 11
+      },
+      {
+        "item": "jewel_saltglass_amulet",
+        "max": 1,
+        "min": 1,
+        "weight": 10
+      },
+      {
+        "item": "consumable_redroot_draught",
+        "max": 2,
+        "min": 1,
+        "weight": 9
+      },
+      {
+        "item": "consumable_mothmilk",
+        "max": 1,
+        "min": 1,
+        "weight": 8
+      },
+      {
+        "item": "consumable_juniper_stew",
+        "max": 2,
+        "min": 1,
+        "weight": 7
+      },
+      {
+        "item": "utility_brass_lockpicks",
+        "max": 1,
+        "min": 1,
+        "weight": 6
+      },
+      {
+        "item": "utility_winter_road_journal",
+        "max": 2,
+        "min": 1,
+        "weight": 5
+      }
+    ],
+    "id": "loot_theme_07",
+    "nothing_weight": 5,
+    "rolls": 2
+  },
+  {
+    "entries": [
+      {
+        "item": "jewel_veiled_copper_ring",
+        "max": 1,
+        "min": 1,
+        "weight": 12
+      },
+      {
+        "item": "jewel_compass_rose_amulet",
+        "max": 2,
+        "min": 1,
+        "weight": 11
+      },
+      {
+        "item": "consumable_stormmint_tea",
+        "max": 1,
+        "min": 1,
+        "weight": 10
+      },
+      {
+        "item": "consumable_smoked_char",
+        "max": 2,
+        "min": 1,
+        "weight": 9
+      },
+      {
+        "item": "consumable_ember_vial",
+        "max": 1,
+        "min": 1,
+        "weight": 8
+      },
+      {
+        "item": "utility_surveyor_s_compass",
+        "max": 2,
+        "min": 1,
+        "weight": 7
+      },
+      {
+        "item": "utility_repair_tongs",
+        "max": 1,
+        "min": 1,
+        "weight": 6
+      },
+      {
+        "item": "artifact_the_patient_shield",
+        "max": 2,
+        "min": 1,
+        "weight": 5
+      }
+    ],
+    "id": "loot_theme_08",
+    "nothing_weight": 4,
+    "rolls": 2
+  },
+  {
+    "entries": [
+      {
+        "item": "consumable_bluecap_tonic",
+        "max": 1,
+        "min": 1,
+        "weight": 12
+      },
+      {
+        "item": "consumable_ghostsalt_phial",
+        "max": 2,
+        "min": 1,
+        "weight": 11
+      },
+      {
+        "item": "consumable_antidote_mash",
+        "max": 1,
+        "min": 1,
+        "weight": 10
+      },
+      {
+        "item": "utility_trap_chalk",
+        "max": 2,
+        "min": 1,
+        "weight": 9
+      },
+      {
+        "item": "utility_bone_flute_manual",
+        "max": 1,
+        "min": 1,
+        "weight": 8
+      },
+      {
+        "item": "artifact_brand_of_the_first_hearth",
+        "max": 2,
+        "min": 1,
+        "weight": 7
+      },
+      {
+        "item": "artifact_ring_of_the_ninth_answer",
+        "max": 1,
+        "min": 1,
+        "weight": 6
+      },
+      {
+        "item": "weapon_seax",
+        "max": 2,
+        "min": 1,
+        "weight": 5
+      }
+    ],
+    "id": "loot_theme_09",
+    "nothing_weight": 4,
+    "rolls": 2
+  },
+  {
+    "entries": [
+      {
+        "item": "consumable_cloudberry_cake",
+        "max": 1,
+        "min": 1,
+        "weight": 12
+      },
+      {
+        "item": "consumable_rime_jar",
+        "max": 2,
+        "min": 1,
+        "weight": 11
+      },
+      {
+        "item": "utility_maelin_s_sealed_letter",
+        "max": 1,
+        "min": 1,
+        "weight": 10
+      },
+      {
+        "item": "utility_appraiser_s_lens",
+        "max": 2,
+        "min": 1,
+        "weight": 9
+      },
+      {
+        "item": "artifact_coat_of_borrowed_footsteps",
+        "max": 1,
+        "min": 1,
+        "weight": 8
+      },
+      {
+        "item": "weapon_club",
+        "max": 2,
+        "min": 1,
+        "weight": 7
+      },
+      {
+        "item": "weapon_mace",
+        "max": 1,
+        "min": 1,
+        "weight": 6
+      },
+      {
+        "item": "weapon_maul",
+        "max": 2,
+        "min": 1,
+        "weight": 5
+      }
+    ],
+    "id": "loot_theme_10",
+    "nothing_weight": 3,
+    "rolls": 3
+  },
+  {
+    "entries": [
+      {
+        "item": "utility_hooded_lantern",
+        "max": 1,
+        "min": 1,
+        "weight": 12
+      },
+      {
+        "item": "utility_blank_spellleaf",
+        "max": 2,
+        "min": 1,
+        "weight": 11
+      },
+      {
+        "item": "artifact_axe_that_remembers_trees",
+        "max": 1,
+        "min": 1,
+        "weight": 10
+      },
+      {
+        "item": "artifact_cup_of_returning_rain",
+        "max": 2,
+        "min": 1,
+        "weight": 9
+      },
+      {
+        "item": "weapon_spear",
+        "max": 1,
+        "min": 1,
+        "weight": 8
+      },
+      {
+        "item": "weapon_war_pick",
+        "max": 2,
+        "min": 1,
+        "weight": 7
+      },
+      {
+        "item": "weapon_polearm",
+        "max": 1,
+        "min": 1,
+        "weight": 6
+      },
+      {
+        "item": "weapon_sling",
+        "max": 2,
+        "min": 1,
+        "weight": 5
+      }
+    ],
+    "id": "loot_theme_11",
+    "nothing_weight": 3,
+    "rolls": 3
+  }
+]

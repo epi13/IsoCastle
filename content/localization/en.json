@@ -1,0 +1,2018 @@
+[
+  {
+    "id": "item.weapon_club.name",
+    "text": "Ashwood Cudgel"
+  },
+  {
+    "id": "item.weapon_dagger.name",
+    "text": "Fisher's Dirk"
+  },
+  {
+    "id": "item.weapon_knife.name",
+    "text": "Peat Knife"
+  },
+  {
+    "id": "item.weapon_seax.name",
+    "text": "Greywake Seax"
+  },
+  {
+    "id": "item.weapon_spear.name",
+    "text": "Bracken Spear"
+  },
+  {
+    "id": "item.weapon_axe.name",
+    "text": "Ironleaf Axe"
+  },
+  {
+    "id": "item.weapon_hammer.name",
+    "text": "Hearth Hammer"
+  },
+  {
+    "id": "item.weapon_mace.name",
+    "text": "Oath Mace"
+  },
+  {
+    "id": "item.weapon_glaive.name",
+    "text": "Reed Glaive"
+  },
+  {
+    "id": "item.weapon_sword.name",
+    "text": "Longshore Sword"
+  },
+  {
+    "id": "item.weapon_falchion.name",
+    "text": "Tarn Falchion"
+  },
+  {
+    "id": "item.weapon_war_pick.name",
+    "text": "Ledger Pick"
+  },
+  {
+    "id": "item.weapon_flail.name",
+    "text": "Mourning Flail"
+  },
+  {
+    "id": "item.weapon_halberd.name",
+    "text": "Gate Halberd"
+  },
+  {
+    "id": "item.weapon_maul.name",
+    "text": "Rime Maul"
+  },
+  {
+    "id": "item.weapon_greatsword.name",
+    "text": "Bellsteel Brand"
+  },
+  {
+    "id": "item.weapon_scythe.name",
+    "text": "Root Scythe"
+  },
+  {
+    "id": "item.weapon_staff.name",
+    "text": "Quiet Staff"
+  },
+  {
+    "id": "item.weapon_polearm.name",
+    "text": "Windhook"
+  },
+  {
+    "id": "item.weapon_warhammer.name",
+    "text": "Crownbreaker"
+  },
+  {
+    "id": "item.weapon_shortbow.name",
+    "text": "Yew Shortbow"
+  },
+  {
+    "id": "item.weapon_longbow.name",
+    "text": "March Longbow"
+  },
+  {
+    "id": "item.weapon_hornbow.name",
+    "text": "Goat-Horn Bow"
+  },
+  {
+    "id": "item.weapon_crossbow.name",
+    "text": "Windlass Crossbow"
+  },
+  {
+    "id": "item.weapon_arbalest.name",
+    "text": "Cranequin Arbalest"
+  },
+  {
+    "id": "item.weapon_sling.name",
+    "text": "Slingstaff"
+  },
+  {
+    "id": "item.weapon_dart.name",
+    "text": "Iron Dart Fan"
+  },
+  {
+    "id": "item.weapon_harpoon.name",
+    "text": "Whaler's Harpoon"
+  },
+  {
+    "id": "item.armor_wool_undertunic.name",
+    "text": "Wool Undertunic"
+  },
+  {
+    "id": "item.armor_tarred_workcoat.name",
+    "text": "Tarred Workcoat"
+  },
+  {
+    "id": "item.armor_reedweave_jerkin.name",
+    "text": "Reedweave Jerkin"
+  },
+  {
+    "id": "item.armor_pilgrim_robe.name",
+    "text": "Pilgrim Robe"
+  },
+  {
+    "id": "item.armor_ember_scribe_vestment.name",
+    "text": "Ember-Scribe Vestment"
+  },
+  {
+    "id": "item.armor_rimekeeper_mantle.name",
+    "text": "Rimekeeper Mantle"
+  },
+  {
+    "id": "item.armor_weathered_hide.name",
+    "text": "Weathered Hide"
+  },
+  {
+    "id": "item.armor_boiled_leather_jack.name",
+    "text": "Boiled Leather Jack"
+  },
+  {
+    "id": "item.armor_moss_stitched_coat.name",
+    "text": "Moss-Stitched Coat"
+  },
+  {
+    "id": "item.armor_marshwarden_cuirass.name",
+    "text": "Marshwarden Cuirass"
+  },
+  {
+    "id": "item.armor_foxfur_brigandine.name",
+    "text": "Foxfur Brigandine"
+  },
+  {
+    "id": "item.armor_nightglass_leathers.name",
+    "text": "Nightglass Leathers"
+  },
+  {
+    "id": "item.armor_iron_ring_hauberk.name",
+    "text": "Iron-Ring Hauberk"
+  },
+  {
+    "id": "item.armor_short_mail_byrnie.name",
+    "text": "Short Mail Byrnie"
+  },
+  {
+    "id": "item.armor_saltblack_hauberk.name",
+    "text": "Saltblack Hauberk"
+  },
+  {
+    "id": "item.armor_ledger_chain.name",
+    "text": "Ledger Chain"
+  },
+  {
+    "id": "item.armor_frost_riveted_mail.name",
+    "text": "Frost-Riveted Mail"
+  },
+  {
+    "id": "item.armor_gale_link_hauberk.name",
+    "text": "Gale-Link Hauberk"
+  },
+  {
+    "id": "item.armor_bronze_scale_vest.name",
+    "text": "Bronze Scale Vest"
+  },
+  {
+    "id": "item.armor_bog_iron_lamellar.name",
+    "text": "Bog-Iron Lamellar"
+  },
+  {
+    "id": "item.armor_stoneward_scale.name",
+    "text": "Stoneward Scale"
+  },
+  {
+    "id": "item.armor_blue_ice_lamellar.name",
+    "text": "Blue-Ice Lamellar"
+  },
+  {
+    "id": "item.armor_choirscale_harness.name",
+    "text": "Choirscale Harness"
+  },
+  {
+    "id": "item.armor_crown_scale.name",
+    "text": "Crown Scale"
+  },
+  {
+    "id": "item.armor_grey_plate_cuirass.name",
+    "text": "Grey Plate Cuirass"
+  },
+  {
+    "id": "item.armor_bellfounder_s_plate.name",
+    "text": "Bellfounder's Plate"
+  },
+  {
+    "id": "item.armor_rime_plate.name",
+    "text": "Rime Plate"
+  },
+  {
+    "id": "item.armor_citadel_half_plate.name",
+    "text": "Citadel Half-Plate"
+  },
+  {
+    "id": "item.armor_orrenfast_plate.name",
+    "text": "Orrenfast Plate"
+  },
+  {
+    "id": "item.armor_last_gate_harness.name",
+    "text": "Last Gate Harness"
+  },
+  {
+    "id": "item.armor_dawnwarden_surcoat.name",
+    "text": "Dawnwarden Surcoat"
+  },
+  {
+    "id": "item.armor_quiet_sentinel_coat.name",
+    "text": "Quiet Sentinel Coat"
+  },
+  {
+    "id": "item.armor_rootbound_harness.name",
+    "text": "Rootbound Harness"
+  },
+  {
+    "id": "item.armor_storm_pilgrim_shell.name",
+    "text": "Storm Pilgrim Shell"
+  },
+  {
+    "id": "item.armor_maelin_s_field_coat.name",
+    "text": "Maelin's Field Coat"
+  },
+  {
+    "id": "item.gear_driftwood_buckler.name",
+    "text": "Driftwood Buckler"
+  },
+  {
+    "id": "item.gear_hide_roundshield.name",
+    "text": "Hide Roundshield"
+  },
+  {
+    "id": "item.gear_iron_kite_shield.name",
+    "text": "Iron Kite Shield"
+  },
+  {
+    "id": "item.gear_bellmetal_pavise.name",
+    "text": "Bellmetal Pavise"
+  },
+  {
+    "id": "item.gear_reedwalker_hood.name",
+    "text": "Reedwalker Hood"
+  },
+  {
+    "id": "item.gear_iron_rim_helm.name",
+    "text": "Iron-Rim Helm"
+  },
+  {
+    "id": "item.gear_antlered_warcap.name",
+    "text": "Antlered Warcap"
+  },
+  {
+    "id": "item.gear_rimeglass_visor.name",
+    "text": "Rimeglass Visor"
+  },
+  {
+    "id": "item.gear_dockhand_gloves.name",
+    "text": "Dockhand Gloves"
+  },
+  {
+    "id": "item.gear_lockwright_gloves.name",
+    "text": "Lockwright Gloves"
+  },
+  {
+    "id": "item.gear_stonegrip_gauntlets.name",
+    "text": "Stonegrip Gauntlets"
+  },
+  {
+    "id": "item.gear_embermitts.name",
+    "text": "Embermitts"
+  },
+  {
+    "id": "item.gear_mudfast_boots.name",
+    "text": "Mudfast Boots"
+  },
+  {
+    "id": "item.gear_snowshoe_boots.name",
+    "text": "Snowshoe Boots"
+  },
+  {
+    "id": "item.gear_gale_step_boots.name",
+    "text": "Gale-Step Boots"
+  },
+  {
+    "id": "item.gear_quiet_slippers.name",
+    "text": "Quiet Slippers"
+  },
+  {
+    "id": "item.gear_ropework_belt.name",
+    "text": "Ropework Belt"
+  },
+  {
+    "id": "item.gear_potioner_s_belt.name",
+    "text": "Potioner's Belt"
+  },
+  {
+    "id": "item.gear_mourner_s_cloak.name",
+    "text": "Mourner's Cloak"
+  },
+  {
+    "id": "item.gear_aurora_cloak.name",
+    "text": "Aurora Cloak"
+  },
+  {
+    "id": "item.jewel_ring_of_banked_coals.name",
+    "text": "Ring of Banked Coals"
+  },
+  {
+    "id": "item.jewel_rime_marked_band.name",
+    "text": "Rime-Marked Band"
+  },
+  {
+    "id": "item.jewel_stormcoil_ring.name",
+    "text": "Stormcoil Ring"
+  },
+  {
+    "id": "item.jewel_deepstone_signet.name",
+    "text": "Deepstone Signet"
+  },
+  {
+    "id": "item.jewel_dawnthread_loop.name",
+    "text": "Dawnthread Loop"
+  },
+  {
+    "id": "item.jewel_veiled_copper_ring.name",
+    "text": "Veiled Copper Ring"
+  },
+  {
+    "id": "item.jewel_echo_speaker_band.name",
+    "text": "Echo-Speaker Band"
+  },
+  {
+    "id": "item.jewel_knot_of_fortunate_rain.name",
+    "text": "Knot of Fortunate Rain"
+  },
+  {
+    "id": "item.jewel_saltglass_amulet.name",
+    "text": "Saltglass Amulet"
+  },
+  {
+    "id": "item.jewel_moth_eye_pendant.name",
+    "text": "Moth-Eye Pendant"
+  },
+  {
+    "id": "item.jewel_hearth_locket.name",
+    "text": "Hearth-Locket"
+  },
+  {
+    "id": "item.jewel_whisperbone_torc.name",
+    "text": "Whisperbone Torc"
+  },
+  {
+    "id": "item.jewel_compass_rose_amulet.name",
+    "text": "Compass Rose Amulet"
+  },
+  {
+    "id": "item.jewel_little_ash_s_token.name",
+    "text": "Little Ash's Token"
+  },
+  {
+    "id": "item.jewel_unstruck_bell.name",
+    "text": "Unstruck Bell"
+  },
+  {
+    "id": "item.consumable_redroot_draught.name",
+    "text": "Redroot Draught"
+  },
+  {
+    "id": "item.consumable_bluecap_tonic.name",
+    "text": "Bluecap Tonic"
+  },
+  {
+    "id": "item.consumable_warming_cordial.name",
+    "text": "Warming Cordial"
+  },
+  {
+    "id": "item.consumable_stillwater_flask.name",
+    "text": "Stillwater Flask"
+  },
+  {
+    "id": "item.consumable_stormmint_tea.name",
+    "text": "Stormmint Tea"
+  },
+  {
+    "id": "item.consumable_stonebroth.name",
+    "text": "Stonebroth"
+  },
+  {
+    "id": "item.consumable_sunleaf_infusion.name",
+    "text": "Sunleaf Infusion"
+  },
+  {
+    "id": "item.consumable_mothmilk.name",
+    "text": "Mothmilk"
+  },
+  {
+    "id": "item.consumable_ghostsalt_phial.name",
+    "text": "Ghostsalt Phial"
+  },
+  {
+    "id": "item.consumable_fateberry_preserve.name",
+    "text": "Fateberry Preserve"
+  },
+  {
+    "id": "item.consumable_black_bread.name",
+    "text": "Black Bread"
+  },
+  {
+    "id": "item.consumable_smoked_char.name",
+    "text": "Smoked Char"
+  },
+  {
+    "id": "item.consumable_cloudberry_cake.name",
+    "text": "Cloudberry Cake"
+  },
+  {
+    "id": "item.consumable_goat_cheese.name",
+    "text": "Goat Cheese"
+  },
+  {
+    "id": "item.consumable_juniper_stew.name",
+    "text": "Juniper Stew"
+  },
+  {
+    "id": "item.consumable_antidote_mash.name",
+    "text": "Antidote Mash"
+  },
+  {
+    "id": "item.consumable_bright_eye_drops.name",
+    "text": "Bright-Eye Drops"
+  },
+  {
+    "id": "item.consumable_lockoil.name",
+    "text": "Lockoil"
+  },
+  {
+    "id": "item.consumable_ember_vial.name",
+    "text": "Ember Vial"
+  },
+  {
+    "id": "item.consumable_rime_jar.name",
+    "text": "Rime Jar"
+  },
+  {
+    "id": "item.utility_orrenfast_map.name",
+    "text": "Orrenfast Map"
+  },
+  {
+    "id": "item.utility_brass_lockpicks.name",
+    "text": "Brass Lockpicks"
+  },
+  {
+    "id": "item.utility_trap_chalk.name",
+    "text": "Trap Chalk"
+  },
+  {
+    "id": "item.utility_hooded_lantern.name",
+    "text": "Hooded Lantern"
+  },
+  {
+    "id": "item.utility_climbing_line.name",
+    "text": "Climbing Line"
+  },
+  {
+    "id": "item.utility_surveyor_s_compass.name",
+    "text": "Surveyor's Compass"
+  },
+  {
+    "id": "item.utility_maelin_s_sealed_letter.name",
+    "text": "Maelin's Sealed Letter"
+  },
+  {
+    "id": "item.utility_ledger_of_names.name",
+    "text": "Ledger of Names"
+  },
+  {
+    "id": "item.utility_winter_road_journal.name",
+    "text": "Winter Road Journal"
+  },
+  {
+    "id": "item.utility_bone_flute_manual.name",
+    "text": "Bone-Flute Manual"
+  },
+  {
+    "id": "item.utility_greywake_warding_key.name",
+    "text": "Greywake Warding Key"
+  },
+  {
+    "id": "item.utility_floodgate_key.name",
+    "text": "Floodgate Key"
+  },
+  {
+    "id": "item.utility_rime_crown_sigil.name",
+    "text": "Rime-Crown Sigil"
+  },
+  {
+    "id": "item.utility_blank_spellleaf.name",
+    "text": "Blank Spellleaf"
+  },
+  {
+    "id": "item.utility_camp_kit.name",
+    "text": "Camp Kit"
+  },
+  {
+    "id": "item.utility_repair_tongs.name",
+    "text": "Repair Tongs"
+  },
+  {
+    "id": "item.utility_appraiser_s_lens.name",
+    "text": "Appraiser's Lens"
+  },
+  {
+    "id": "item.utility_quiet_bell_scroll.name",
+    "text": "Quiet Bell Scroll"
+  },
+  {
+    "id": "item.utility_waystone_shard.name",
+    "text": "Waystone Shard"
+  },
+  {
+    "id": "item.utility_choir_tuning_fork.name",
+    "text": "Choir Tuning Fork"
+  },
+  {
+    "id": "item.artifact_brand_of_the_first_hearth.name",
+    "text": "Brand of the First Hearth"
+  },
+  {
+    "id": "item.artifact_axe_that_remembers_trees.name",
+    "text": "Axe That Remembers Trees"
+  },
+  {
+    "id": "item.artifact_mirrorbow_of_lorn.name",
+    "text": "Mirrorbow of Lorn"
+  },
+  {
+    "id": "item.artifact_the_patient_shield.name",
+    "text": "The Patient Shield"
+  },
+  {
+    "id": "item.artifact_coat_of_borrowed_footsteps.name",
+    "text": "Coat of Borrowed Footsteps"
+  },
+  {
+    "id": "item.artifact_crownless_helm.name",
+    "text": "Crownless Helm"
+  },
+  {
+    "id": "item.artifact_maelin_s_northless_compass.name",
+    "text": "Maelin's Northless Compass"
+  },
+  {
+    "id": "item.artifact_ring_of_the_ninth_answer.name",
+    "text": "Ring of the Ninth Answer"
+  },
+  {
+    "id": "item.artifact_cup_of_returning_rain.name",
+    "text": "Cup of Returning Rain"
+  },
+  {
+    "id": "item.artifact_the_hush_lantern.name",
+    "text": "The Hush Lantern"
+  },
+  {
+    "id": "item.artifact_little_ash_s_bellbone.name",
+    "text": "Little Ash's Bellbone"
+  },
+  {
+    "id": "item.artifact_rime_crown_counterweight.name",
+    "text": "Rime-Crown Counterweight"
+  },
+  {
+    "id": "spell.spell_coal_spark.name",
+    "text": "Coal Spark"
+  },
+  {
+    "id": "spell.spell_hearth_ring.name",
+    "text": "Hearth Ring"
+  },
+  {
+    "id": "spell.spell_ashen_shape.name",
+    "text": "Ashen Shape"
+  },
+  {
+    "id": "spell.spell_cinder_road.name",
+    "text": "Cinder Road"
+  },
+  {
+    "id": "spell.spell_kindle_iron.name",
+    "text": "Kindle Iron"
+  },
+  {
+    "id": "spell.spell_phoenix_debt.name",
+    "text": "Phoenix Debt"
+  },
+  {
+    "id": "spell.spell_rime_needle.name",
+    "text": "Rime Needle"
+  },
+  {
+    "id": "spell.spell_stillwater.name",
+    "text": "Stillwater"
+  },
+  {
+    "id": "spell.spell_white_wall.name",
+    "text": "White Wall"
+  },
+  {
+    "id": "spell.spell_winter_s_hand.name",
+    "text": "Winter's Hand"
+  },
+  {
+    "id": "spell.spell_preserve_breath.name",
+    "text": "Preserve Breath"
+  },
+  {
+    "id": "spell.spell_lake_without_ripples.name",
+    "text": "Lake Without Ripples"
+  },
+  {
+    "id": "spell.spell_crosswind.name",
+    "text": "Crosswind"
+  },
+  {
+    "id": "spell.spell_thunder_knot.name",
+    "text": "Thunder Knot"
+  },
+  {
+    "id": "spell.spell_borrowed_step.name",
+    "text": "Borrowed Step"
+  },
+  {
+    "id": "spell.spell_gale_mantle.name",
+    "text": "Gale Mantle"
+  },
+  {
+    "id": "spell.spell_skyhook.name",
+    "text": "Skyhook"
+  },
+  {
+    "id": "spell.spell_tempest_answer.name",
+    "text": "Tempest Answer"
+  },
+  {
+    "id": "spell.spell_pebble_oath.name",
+    "text": "Pebble Oath"
+  },
+  {
+    "id": "spell.spell_rooted_stance.name",
+    "text": "Rooted Stance"
+  },
+  {
+    "id": "spell.spell_stone_door.name",
+    "text": "Stone Door"
+  },
+  {
+    "id": "spell.spell_fault_line.name",
+    "text": "Fault Line"
+  },
+  {
+    "id": "spell.spell_burden_of_hills.name",
+    "text": "Burden of Hills"
+  },
+  {
+    "id": "spell.spell_walking_cairn.name",
+    "text": "Walking Cairn"
+  },
+  {
+    "id": "spell.spell_warm_palm.name",
+    "text": "Warm Palm"
+  },
+  {
+    "id": "spell.spell_lantern_ray.name",
+    "text": "Lantern Ray"
+  },
+  {
+    "id": "spell.spell_second_morning.name",
+    "text": "Second Morning"
+  },
+  {
+    "id": "spell.spell_dawn_ward.name",
+    "text": "Dawn Ward"
+  },
+  {
+    "id": "spell.spell_shared_breath.name",
+    "text": "Shared Breath"
+  },
+  {
+    "id": "spell.spell_noon_without_shadow.name",
+    "text": "Noon Without Shadow"
+  },
+  {
+    "id": "spell.spell_moth_step.name",
+    "text": "Moth Step"
+  },
+  {
+    "id": "spell.spell_dim_the_name.name",
+    "text": "Dim the Name"
+  },
+  {
+    "id": "spell.spell_night_thread.name",
+    "text": "Night Thread"
+  },
+  {
+    "id": "spell.spell_borrowed_face.name",
+    "text": "Borrowed Face"
+  },
+  {
+    "id": "spell.spell_unseen_door.name",
+    "text": "Unseen Door"
+  },
+  {
+    "id": "spell.spell_moonless_room.name",
+    "text": "Moonless Room"
+  },
+  {
+    "id": "spell.spell_ancestor_s_tap.name",
+    "text": "Ancestor's Tap"
+  },
+  {
+    "id": "spell.spell_call_reed_wisp.name",
+    "text": "Call Reed-Wisp"
+  },
+  {
+    "id": "spell.spell_speak_with_ash.name",
+    "text": "Speak With Ash"
+  },
+  {
+    "id": "spell.spell_choir_guard.name",
+    "text": "Choir Guard"
+  },
+  {
+    "id": "spell.spell_return_the_cry.name",
+    "text": "Return the Cry"
+  },
+  {
+    "id": "spell.spell_many_voiced_guest.name",
+    "text": "Many-Voiced Guest"
+  },
+  {
+    "id": "spell.spell_find_the_seam.name",
+    "text": "Find the Seam"
+  },
+  {
+    "id": "spell.spell_foretold_miss.name",
+    "text": "Foretold Miss"
+  },
+  {
+    "id": "spell.spell_crossed_chances.name",
+    "text": "Crossed Chances"
+  },
+  {
+    "id": "spell.spell_walk_the_near_road.name",
+    "text": "Walk the Near Road"
+  },
+  {
+    "id": "spell.spell_unmake_accident.name",
+    "text": "Unmake Accident"
+  },
+  {
+    "id": "spell.spell_ninth_answer.name",
+    "text": "Ninth Answer"
+  },
+  {
+    "id": "enemy.enemy_mire_wolf.name",
+    "text": "Mire Wolf"
+  },
+  {
+    "id": "enemy.enemy_tallow_wight.name",
+    "text": "Tallow Wight"
+  },
+  {
+    "id": "enemy.enemy_bog_skulker.name",
+    "text": "Bog Skulker"
+  },
+  {
+    "id": "enemy.enemy_iron_beetle.name",
+    "text": "Iron Beetle"
+  },
+  {
+    "id": "enemy.enemy_drowned_novice.name",
+    "text": "Drowned Novice"
+  },
+  {
+    "id": "enemy.enemy_rubble_goat.name",
+    "text": "Rubble Goat"
+  },
+  {
+    "id": "enemy.enemy_rime_crow.name",
+    "text": "Rime Crow"
+  },
+  {
+    "id": "enemy.enemy_root_hound.name",
+    "text": "Root Hound"
+  },
+  {
+    "id": "enemy.enemy_ledger_automaton.name",
+    "text": "Ledger Automaton"
+  },
+  {
+    "id": "enemy.enemy_choir_shade.name",
+    "text": "Choir Shade"
+  },
+  {
+    "id": "enemy.enemy_bluecap_bearer.name",
+    "text": "Bluecap Bearer"
+  },
+  {
+    "id": "enemy.enemy_ember_newt.name",
+    "text": "Ember Newt"
+  },
+  {
+    "id": "enemy.enemy_starved_gargoyle.name",
+    "text": "Starved Gargoyle"
+  },
+  {
+    "id": "enemy.enemy_wind_revenant.name",
+    "text": "Wind Revenant"
+  },
+  {
+    "id": "enemy.enemy_memory_moth.name",
+    "text": "Memory Moth"
+  },
+  {
+    "id": "enemy.enemy_salt_skeleton.name",
+    "text": "Salt Skeleton"
+  },
+  {
+    "id": "enemy.enemy_bell_leech.name",
+    "text": "Bell Leech"
+  },
+  {
+    "id": "enemy.enemy_frostbound_miner.name",
+    "text": "Frostbound Miner"
+  },
+  {
+    "id": "enemy.enemy_marsh_hexer.name",
+    "text": "Marsh Hexer"
+  },
+  {
+    "id": "enemy.enemy_cairn_walker.name",
+    "text": "Cairn Walker"
+  },
+  {
+    "id": "enemy.enemy_rain_hag.name",
+    "text": "Rain Hag"
+  },
+  {
+    "id": "enemy.enemy_gale_archer.name",
+    "text": "Gale Archer"
+  },
+  {
+    "id": "enemy.enemy_ash_pilgrim.name",
+    "text": "Ash Pilgrim"
+  },
+  {
+    "id": "enemy.enemy_glass_adder.name",
+    "text": "Glass Adder"
+  },
+  {
+    "id": "enemy.enemy_echo_knight.name",
+    "text": "Echo Knight"
+  },
+  {
+    "id": "enemy.enemy_spore_shepherd.name",
+    "text": "Spore Shepherd"
+  },
+  {
+    "id": "enemy.enemy_cinder_boar.name",
+    "text": "Cinder Boar"
+  },
+  {
+    "id": "enemy.enemy_orrery_eye.name",
+    "text": "Orrery Eye"
+  },
+  {
+    "id": "enemy.enemy_crown_sentinel.name",
+    "text": "Crown Sentinel"
+  },
+  {
+    "id": "enemy.enemy_unhoused_voice.name",
+    "text": "Unhoused Voice"
+  },
+  {
+    "id": "enemy.enemy_peat_lurker.name",
+    "text": "Peat Lurker"
+  },
+  {
+    "id": "enemy.enemy_lantern_thief.name",
+    "text": "Lantern Thief"
+  },
+  {
+    "id": "enemy.enemy_rope_ghost.name",
+    "text": "Rope Ghost"
+  },
+  {
+    "id": "enemy.enemy_ice_mason.name",
+    "text": "Ice Mason"
+  },
+  {
+    "id": "enemy.enemy_root_widow.name",
+    "text": "Root Widow"
+  },
+  {
+    "id": "enemy.enemy_quiet_surgeon.name",
+    "text": "Quiet Surgeon"
+  },
+  {
+    "id": "enemy.enemy_hall_singer.name",
+    "text": "Hall Singer"
+  },
+  {
+    "id": "enemy.enemy_mold_giant.name",
+    "text": "Mold Giant"
+  },
+  {
+    "id": "enemy.enemy_lava_husk.name",
+    "text": "Lava Husk"
+  },
+  {
+    "id": "enemy.enemy_fate_vulture.name",
+    "text": "Fate Vulture"
+  },
+  {
+    "id": "enemy.enemy_sky_maw.name",
+    "text": "Sky Maw"
+  },
+  {
+    "id": "enemy.enemy_grief_double.name",
+    "text": "Grief Double"
+  },
+  {
+    "id": "enemy.enemy_brine_troll.name",
+    "text": "Brine Troll"
+  },
+  {
+    "id": "enemy.enemy_nail_witch.name",
+    "text": "Nail Witch"
+  },
+  {
+    "id": "enemy.enemy_tuning_beast.name",
+    "text": "Tuning Beast"
+  },
+  {
+    "id": "enemy.enemy_gloam_fox.name",
+    "text": "Gloam Fox"
+  },
+  {
+    "id": "enemy.enemy_shard_monk.name",
+    "text": "Shard Monk"
+  },
+  {
+    "id": "enemy.enemy_thunder_warden.name",
+    "text": "Thunder Warden"
+  },
+  {
+    "id": "enemy.enemy_abbot_of_the_drowned_bell.name",
+    "text": "Abbot of the Drowned Bell"
+  },
+  {
+    "id": "enemy.enemy_mother_stillwater.name",
+    "text": "Mother Stillwater"
+  },
+  {
+    "id": "enemy.enemy_the_brass_woodsman.name",
+    "text": "The Brass Woodsman"
+  },
+  {
+    "id": "enemy.enemy_vey_s_unfinished_double.name",
+    "text": "Vey's Unfinished Double"
+  },
+  {
+    "id": "enemy.enemy_warden_of_the_counterweight.name",
+    "text": "Warden of the Counterweight"
+  },
+  {
+    "id": "enemy.enemy_the_choir_s_open_mouth.name",
+    "text": "The Choir's Open Mouth"
+  },
+  {
+    "id": "npc.edda_varn.name",
+    "text": "Edda Varn"
+  },
+  {
+    "id": "npc.senn_marr.name",
+    "text": "Senn Marr"
+  },
+  {
+    "id": "npc.tovi_reed.name",
+    "text": "Tovi Reed"
+  },
+  {
+    "id": "npc.bran_oc.name",
+    "text": "Bran Oc"
+  },
+  {
+    "id": "npc.ylsa_fen.name",
+    "text": "Ylsa Fen"
+  },
+  {
+    "id": "npc.kerrit_bale.name",
+    "text": "Kerrit Bale"
+  },
+  {
+    "id": "npc.maelin_vey.name",
+    "text": "Maelin Vey"
+  },
+  {
+    "id": "npc.orra_pike.name",
+    "text": "Orra Pike"
+  },
+  {
+    "id": "npc.hollan_grey.name",
+    "text": "Hollan Grey"
+  },
+  {
+    "id": "npc.nim_aster.name",
+    "text": "Nim Aster"
+  },
+  {
+    "id": "npc.jori_tern.name",
+    "text": "Jori Tern"
+  },
+  {
+    "id": "npc.pell_under.name",
+    "text": "Pell Under"
+  },
+  {
+    "id": "npc.ada_clasp.name",
+    "text": "Ada Clasp"
+  },
+  {
+    "id": "npc.venn_soot.name",
+    "text": "Venn Soot"
+  },
+  {
+    "id": "npc.rusk_candle.name",
+    "text": "Rusk Candle"
+  },
+  {
+    "id": "npc.iven_snow.name",
+    "text": "Iven Snow"
+  },
+  {
+    "id": "npc.sister_calve.name",
+    "text": "Sister Calve"
+  },
+  {
+    "id": "npc.daro_flint.name",
+    "text": "Daro Flint"
+  },
+  {
+    "id": "npc.mara_quill.name",
+    "text": "Mara Quill"
+  },
+  {
+    "id": "npc.old_kest.name",
+    "text": "Old Kest"
+  },
+  {
+    "id": "npc.little_ash.name",
+    "text": "Little Ash"
+  },
+  {
+    "id": "npc.torren_vale.name",
+    "text": "Torren Vale"
+  },
+  {
+    "id": "npc.siva_rime.name",
+    "text": "Siva Rime"
+  },
+  {
+    "id": "npc.brother_olt.name",
+    "text": "Brother Olt"
+  },
+  {
+    "id": "npc.cera_wind.name",
+    "text": "Cera Wind"
+  },
+  {
+    "id": "npc.the_tallyman.name",
+    "text": "The Tallyman"
+  },
+  {
+    "id": "quest.quest_homecoming_in_iron.name",
+    "text": "Homecoming in Iron"
+  },
+  {
+    "id": "quest.quest_the_northless_compass.name",
+    "text": "The Northless Compass"
+  },
+  {
+    "id": "quest.quest_orrenfast_below.name",
+    "text": "Orrenfast Below"
+  },
+  {
+    "id": "quest.quest_names_in_the_ledger.name",
+    "text": "Names in the Ledger"
+  },
+  {
+    "id": "quest.quest_three_tuning_names.name",
+    "text": "Three Tuning Names"
+  },
+  {
+    "id": "quest.quest_winter_owes_a_debt.name",
+    "text": "Winter Owes a Debt"
+  },
+  {
+    "id": "quest.quest_a_voice_called_ash.name",
+    "text": "A Voice Called Ash"
+  },
+  {
+    "id": "quest.quest_counterweight_road.name",
+    "text": "Counterweight Road"
+  },
+  {
+    "id": "quest.quest_the_bell_s_intention.name",
+    "text": "The Bell's Intention"
+  },
+  {
+    "id": "quest.quest_answer_the_bell.name",
+    "text": "Answer the Bell"
+  },
+  {
+    "id": "quest.quest_warding_iron.name",
+    "text": "Warding Iron"
+  },
+  {
+    "id": "quest.quest_a_boat_for_no_water.name",
+    "text": "A Boat for No Water"
+  },
+  {
+    "id": "quest.quest_tovi_s_very_legal_post.name",
+    "text": "Tovi's Very Legal Post"
+  },
+  {
+    "id": "quest.quest_root_and_rafter.name",
+    "text": "Root and Rafter"
+  },
+  {
+    "id": "quest.quest_the_smith_s_last_joke.name",
+    "text": "The Smith's Last Joke"
+  },
+  {
+    "id": "quest.quest_bluecap_supper.name",
+    "text": "Bluecap Supper"
+  },
+  {
+    "id": "quest.quest_a_quiet_grave.name",
+    "text": "A Quiet Grave"
+  },
+  {
+    "id": "quest.quest_maps_that_move.name",
+    "text": "Maps That Move"
+  },
+  {
+    "id": "quest.quest_lock_without_a_door.name",
+    "text": "Lock Without a Door"
+  },
+  {
+    "id": "quest.quest_lanterns_for_the_lost.name",
+    "text": "Lanterns for the Lost"
+  },
+  {
+    "id": "quest.quest_rain_in_a_bottle.name",
+    "text": "Rain in a Bottle"
+  },
+  {
+    "id": "quest.quest_the_rival_s_rope.name",
+    "text": "The Rival's Rope"
+  },
+  {
+    "id": "quest.quest_goat_on_the_roof.name",
+    "text": "Goat on the Roof"
+  },
+  {
+    "id": "quest.quest_a_proper_haunting.name",
+    "text": "A Proper Haunting"
+  },
+  {
+    "id": "quest.quest_letters_never_sent.name",
+    "text": "Letters Never Sent"
+  },
+  {
+    "id": "quest.quest_the_ninth_meal.name",
+    "text": "The Ninth Meal"
+  },
+  {
+    "id": "quest.quest_crown_exile.name",
+    "text": "Crown Exile"
+  },
+  {
+    "id": "quest.quest_tallyman_s_exception.name",
+    "text": "Tallyman's Exception"
+  },
+  {
+    "id": "quest.quest_the_free_choir.name",
+    "text": "The Free Choir"
+  },
+  {
+    "id": "quest.quest_olt_s_footnotes.name",
+    "text": "Olt's Footnotes"
+  },
+  {
+    "id": "quest.quest_hearth_reader_s_price.name",
+    "text": "Hearth-Reader's Price"
+  },
+  {
+    "id": "quest.quest_after_the_answer.name",
+    "text": "After the Answer"
+  },
+  {
+    "id": "dialogue.dialogue_npc_edda_varn_00.text",
+    "text": "Edda Varn: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_edda_varn_01.text",
+    "text": "Edda Varn: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_edda_varn_02.text",
+    "text": "Edda Varn: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_edda_varn_03.text",
+    "text": "Edda Varn: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_edda_varn_04.text",
+    "text": "Edda Varn: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_senn_marr_00.text",
+    "text": "Senn Marr: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_senn_marr_01.text",
+    "text": "Senn Marr: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_senn_marr_02.text",
+    "text": "Senn Marr: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_senn_marr_03.text",
+    "text": "Senn Marr: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_senn_marr_04.text",
+    "text": "Senn Marr: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_tovi_reed_00.text",
+    "text": "Tovi Reed: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_tovi_reed_01.text",
+    "text": "Tovi Reed: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_tovi_reed_02.text",
+    "text": "Tovi Reed: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_tovi_reed_03.text",
+    "text": "Tovi Reed: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_tovi_reed_04.text",
+    "text": "Tovi Reed: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_bran_oc_00.text",
+    "text": "Bran Oc: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_bran_oc_01.text",
+    "text": "Bran Oc: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_bran_oc_02.text",
+    "text": "Bran Oc: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_bran_oc_03.text",
+    "text": "Bran Oc: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_bran_oc_04.text",
+    "text": "Bran Oc: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_ylsa_fen_00.text",
+    "text": "Ylsa Fen: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_ylsa_fen_01.text",
+    "text": "Ylsa Fen: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_ylsa_fen_02.text",
+    "text": "Ylsa Fen: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_ylsa_fen_03.text",
+    "text": "Ylsa Fen: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_ylsa_fen_04.text",
+    "text": "Ylsa Fen: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_kerrit_bale_00.text",
+    "text": "Kerrit Bale: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_kerrit_bale_01.text",
+    "text": "Kerrit Bale: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_kerrit_bale_02.text",
+    "text": "Kerrit Bale: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_kerrit_bale_03.text",
+    "text": "Kerrit Bale: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_kerrit_bale_04.text",
+    "text": "Kerrit Bale: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_maelin_vey_00.text",
+    "text": "Maelin Vey: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_maelin_vey_01.text",
+    "text": "Maelin Vey: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_maelin_vey_02.text",
+    "text": "Maelin Vey: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_maelin_vey_03.text",
+    "text": "Maelin Vey: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_maelin_vey_04.text",
+    "text": "Maelin Vey: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_orra_pike_00.text",
+    "text": "Orra Pike: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_orra_pike_01.text",
+    "text": "Orra Pike: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_orra_pike_02.text",
+    "text": "Orra Pike: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_orra_pike_03.text",
+    "text": "Orra Pike: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_orra_pike_04.text",
+    "text": "Orra Pike: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_hollan_grey_00.text",
+    "text": "Hollan Grey: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_hollan_grey_01.text",
+    "text": "Hollan Grey: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_hollan_grey_02.text",
+    "text": "Hollan Grey: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_hollan_grey_03.text",
+    "text": "Hollan Grey: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_hollan_grey_04.text",
+    "text": "Hollan Grey: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_nim_aster_00.text",
+    "text": "Nim Aster: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_nim_aster_01.text",
+    "text": "Nim Aster: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_nim_aster_02.text",
+    "text": "Nim Aster: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_nim_aster_03.text",
+    "text": "Nim Aster: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_nim_aster_04.text",
+    "text": "Nim Aster: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_jori_tern_00.text",
+    "text": "Jori Tern: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_jori_tern_01.text",
+    "text": "Jori Tern: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_jori_tern_02.text",
+    "text": "Jori Tern: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_jori_tern_03.text",
+    "text": "Jori Tern: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_jori_tern_04.text",
+    "text": "Jori Tern: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_pell_under_00.text",
+    "text": "Pell Under: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_pell_under_01.text",
+    "text": "Pell Under: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_pell_under_02.text",
+    "text": "Pell Under: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_pell_under_03.text",
+    "text": "Pell Under: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_pell_under_04.text",
+    "text": "Pell Under: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_ada_clasp_00.text",
+    "text": "Ada Clasp: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_ada_clasp_01.text",
+    "text": "Ada Clasp: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_ada_clasp_02.text",
+    "text": "Ada Clasp: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_ada_clasp_03.text",
+    "text": "Ada Clasp: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_ada_clasp_04.text",
+    "text": "Ada Clasp: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_venn_soot_00.text",
+    "text": "Venn Soot: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_venn_soot_01.text",
+    "text": "Venn Soot: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_venn_soot_02.text",
+    "text": "Venn Soot: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_venn_soot_03.text",
+    "text": "Venn Soot: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_venn_soot_04.text",
+    "text": "Venn Soot: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_rusk_candle_00.text",
+    "text": "Rusk Candle: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_rusk_candle_01.text",
+    "text": "Rusk Candle: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_rusk_candle_02.text",
+    "text": "Rusk Candle: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_rusk_candle_03.text",
+    "text": "Rusk Candle: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_rusk_candle_04.text",
+    "text": "Rusk Candle: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_iven_snow_00.text",
+    "text": "Iven Snow: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_iven_snow_01.text",
+    "text": "Iven Snow: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_iven_snow_02.text",
+    "text": "Iven Snow: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_iven_snow_03.text",
+    "text": "Iven Snow: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_iven_snow_04.text",
+    "text": "Iven Snow: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_sister_calve_00.text",
+    "text": "Sister Calve: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_sister_calve_01.text",
+    "text": "Sister Calve: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_sister_calve_02.text",
+    "text": "Sister Calve: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_sister_calve_03.text",
+    "text": "Sister Calve: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_sister_calve_04.text",
+    "text": "Sister Calve: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_daro_flint_00.text",
+    "text": "Daro Flint: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_daro_flint_01.text",
+    "text": "Daro Flint: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_daro_flint_02.text",
+    "text": "Daro Flint: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_daro_flint_03.text",
+    "text": "Daro Flint: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_daro_flint_04.text",
+    "text": "Daro Flint: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_mara_quill_00.text",
+    "text": "Mara Quill: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_mara_quill_01.text",
+    "text": "Mara Quill: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_mara_quill_02.text",
+    "text": "Mara Quill: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_mara_quill_03.text",
+    "text": "Mara Quill: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_mara_quill_04.text",
+    "text": "Mara Quill: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_old_kest_00.text",
+    "text": "Old Kest: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_old_kest_01.text",
+    "text": "Old Kest: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_old_kest_02.text",
+    "text": "Old Kest: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_old_kest_03.text",
+    "text": "Old Kest: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_old_kest_04.text",
+    "text": "Old Kest: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_little_ash_00.text",
+    "text": "Little Ash: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_little_ash_01.text",
+    "text": "Little Ash: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_little_ash_02.text",
+    "text": "Little Ash: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_little_ash_03.text",
+    "text": "Little Ash: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_little_ash_04.text",
+    "text": "Little Ash: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_torren_vale_00.text",
+    "text": "Torren Vale: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_torren_vale_01.text",
+    "text": "Torren Vale: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_torren_vale_02.text",
+    "text": "Torren Vale: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_torren_vale_03.text",
+    "text": "Torren Vale: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_torren_vale_04.text",
+    "text": "Torren Vale: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_siva_rime_00.text",
+    "text": "Siva Rime: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_siva_rime_01.text",
+    "text": "Siva Rime: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_siva_rime_02.text",
+    "text": "Siva Rime: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_siva_rime_03.text",
+    "text": "Siva Rime: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_siva_rime_04.text",
+    "text": "Siva Rime: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_brother_olt_00.text",
+    "text": "Brother Olt: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_brother_olt_01.text",
+    "text": "Brother Olt: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_brother_olt_02.text",
+    "text": "Brother Olt: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_brother_olt_03.text",
+    "text": "Brother Olt: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_brother_olt_04.text",
+    "text": "Brother Olt: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_cera_wind_00.text",
+    "text": "Cera Wind: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "dialogue.dialogue_npc_cera_wind_01.text",
+    "text": "Cera Wind: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_cera_wind_02.text",
+    "text": "Cera Wind: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_cera_wind_03.text",
+    "text": "Cera Wind: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_cera_wind_04.text",
+    "text": "Cera Wind: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_the_tallyman_00.text",
+    "text": "The Tallyman: You came back on the one night the iron learned to sing. Efficient."
+  },
+  {
+    "id": "dialogue.dialogue_npc_the_tallyman_01.text",
+    "text": "The Tallyman: I know that look. It means a sensible plan has just lost an argument."
+  },
+  {
+    "id": "dialogue.dialogue_npc_the_tallyman_02.text",
+    "text": "The Tallyman: The road is open, if by open you mean cold and disapproving."
+  },
+  {
+    "id": "dialogue.dialogue_npc_the_tallyman_03.text",
+    "text": "The Tallyman: Keep your questions short. The dark has excellent hearing."
+  },
+  {
+    "id": "dialogue.dialogue_npc_the_tallyman_04.text",
+    "text": "The Tallyman: Nobody here agrees about the Bell. That is our strongest qualification."
+  },
+  {
+    "id": "lore.the_first_warding.title",
+    "text": "The First Warding"
+  },
+  {
+    "id": "lore.the_first_warding.body",
+    "text": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain."
+  },
+  {
+    "id": "lore.a_recipe_for_peat_ink.title",
+    "text": "A Recipe for Peat Ink"
+  },
+  {
+    "id": "lore.a_recipe_for_peat_ink.body",
+    "text": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words."
+  },
+  {
+    "id": "lore.orrenfast_guest_book.title",
+    "text": "Orrenfast Guest Book"
+  },
+  {
+    "id": "lore.orrenfast_guest_book.body",
+    "text": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding."
+  },
+  {
+    "id": "lore.miner_s_margin_notes.title",
+    "text": "Miner's Margin Notes"
+  },
+  {
+    "id": "lore.miner_s_margin_notes.body",
+    "text": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined."
+  },
+  {
+    "id": "lore.the_bellfounder_s_refusal.title",
+    "text": "The Bellfounder's Refusal"
+  },
+  {
+    "id": "lore.the_bellfounder_s_refusal.body",
+    "text": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain."
+  },
+  {
+    "id": "lore.weather_of_the_lorn_shelf.title",
+    "text": "Weather of the Lorn Shelf"
+  },
+  {
+    "id": "lore.weather_of_the_lorn_shelf.body",
+    "text": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words."
+  },
+  {
+    "id": "lore.on_grief_as_material.title",
+    "text": "On Grief as Material"
+  },
+  {
+    "id": "lore.on_grief_as_material.body",
+    "text": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding."
+  },
+  {
+    "id": "lore.children_s_counting_rhyme.title",
+    "text": "Children's Counting Rhyme"
+  },
+  {
+    "id": "lore.children_s_counting_rhyme.body",
+    "text": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined."
+  },
+  {
+    "id": "lore.maelin_s_workshop_ledger.title",
+    "text": "Maelin's Workshop Ledger"
+  },
+  {
+    "id": "lore.maelin_s_workshop_ledger.body",
+    "text": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain."
+  },
+  {
+    "id": "lore.letter_beneath_a_floorboard.title",
+    "text": "Letter Beneath a Floorboard"
+  },
+  {
+    "id": "lore.letter_beneath_a_floorboard.body",
+    "text": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words."
+  },
+  {
+    "id": "lore.the_quiet_ledger_s_charter.title",
+    "text": "The Quiet Ledger's Charter"
+  },
+  {
+    "id": "lore.the_quiet_ledger_s_charter.body",
+    "text": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding."
+  },
+  {
+    "id": "lore.a_marsh_keeper_s_map.title",
+    "text": "A Marsh Keeper's Map"
+  },
+  {
+    "id": "lore.a_marsh_keeper_s_map.body",
+    "text": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined."
+  },
+  {
+    "id": "lore.bluecap_field_guide.title",
+    "text": "Bluecap Field Guide"
+  },
+  {
+    "id": "lore.bluecap_field_guide.body",
+    "text": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain."
+  },
+  {
+    "id": "lore.the_unfinished_hymn.title",
+    "text": "The Unfinished Hymn"
+  },
+  {
+    "id": "lore.the_unfinished_hymn.body",
+    "text": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words."
+  },
+  {
+    "id": "lore.counterweight_maintenance.title",
+    "text": "Counterweight Maintenance"
+  },
+  {
+    "id": "lore.counterweight_maintenance.body",
+    "text": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding."
+  },
+  {
+    "id": "lore.an_apology_to_a_ghost.title",
+    "text": "An Apology to a Ghost"
+  },
+  {
+    "id": "lore.an_apology_to_a_ghost.body",
+    "text": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined."
+  },
+  {
+    "id": "lore.rime_crown_table_customs.title",
+    "text": "Rime-Crown Table Customs"
+  },
+  {
+    "id": "lore.rime_crown_table_customs.body",
+    "text": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain."
+  },
+  {
+    "id": "lore.a_ferryman_s_receipts.title",
+    "text": "A Ferryman's Receipts"
+  },
+  {
+    "id": "lore.a_ferryman_s_receipts.body",
+    "text": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words."
+  },
+  {
+    "id": "lore.the_ninth_answer.title",
+    "text": "The Ninth Answer"
+  },
+  {
+    "id": "lore.the_ninth_answer.body",
+    "text": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding."
+  },
+  {
+    "id": "lore.notes_on_memory_moths.title",
+    "text": "Notes on Memory Moths"
+  },
+  {
+    "id": "lore.notes_on_memory_moths.body",
+    "text": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined."
+  },
+  {
+    "id": "lore.siva_s_expedition_log.title",
+    "text": "Siva's Expedition Log"
+  },
+  {
+    "id": "lore.siva_s_expedition_log.body",
+    "text": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain."
+  },
+  {
+    "id": "lore.ada_s_impossible_lock.title",
+    "text": "Ada's Impossible Lock"
+  },
+  {
+    "id": "lore.ada_s_impossible_lock.body",
+    "text": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words."
+  },
+  {
+    "id": "lore.bran_s_joke_book.title",
+    "text": "Bran's Joke Book"
+  },
+  {
+    "id": "lore.bran_s_joke_book.body",
+    "text": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding."
+  },
+  {
+    "id": "lore.hearth_reader_s_prices.title",
+    "text": "Hearth-Reader's Prices"
+  },
+  {
+    "id": "lore.hearth_reader_s_prices.body",
+    "text": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined."
+  },
+  {
+    "id": "lore.the_tallyman_s_categories.title",
+    "text": "The Tallyman's Categories"
+  },
+  {
+    "id": "lore.the_tallyman_s_categories.body",
+    "text": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain."
+  },
+  {
+    "id": "lore.a_choir_voice_interview.title",
+    "text": "A Choir Voice Interview"
+  },
+  {
+    "id": "lore.a_choir_voice_interview.body",
+    "text": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words."
+  },
+  {
+    "id": "lore.storm_burial_practice.title",
+    "text": "Storm Burial Practice"
+  },
+  {
+    "id": "lore.storm_burial_practice.body",
+    "text": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding."
+  },
+  {
+    "id": "lore.orrery_calibration.title",
+    "text": "Orrery Calibration"
+  },
+  {
+    "id": "lore.orrery_calibration.body",
+    "text": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined."
+  },
+  {
+    "id": "lore.free_vessel_sketches.title",
+    "text": "Free Vessel Sketches"
+  },
+  {
+    "id": "lore.free_vessel_sketches.body",
+    "text": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain."
+  },
+  {
+    "id": "lore.greywake_after_the_ring.title",
+    "text": "Greywake After the Ring"
+  },
+  {
+    "id": "lore.greywake_after_the_ring.body",
+    "text": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words."
+  },
+  {
+    "id": "lore.maelin_s_last_unsent_letter.title",
+    "text": "Maelin's Last Unsent Letter"
+  },
+  {
+    "id": "lore.maelin_s_last_unsent_letter.body",
+    "text": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding."
+  },
+  {
+    "id": "lore.postscript_in_little_ash_s_hand.title",
+    "text": "Postscript in Little Ash's Hand"
+  },
+  {
+    "id": "lore.postscript_in_little_ash_s_hand.body",
+    "text": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined."
+  }
+]

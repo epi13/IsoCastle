@@ -1,0 +1,792 @@
+[
+  {
+    "faction": "greywake",
+    "home": "greywake",
+    "id": "npc_edda_varn",
+    "name": "Edda Varn",
+    "name_key": "npc.edda_varn.name",
+    "portrait": "res://assets/portraits/npc_edda_varn.png",
+    "role": "innkeeper",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_edda_varn.png",
+    "voice": "dry, observant, allergic to melodrama"
+  },
+  {
+    "faction": "marsh_keepers",
+    "home": "bracken_march",
+    "id": "npc_senn_marr",
+    "name": "Senn Marr",
+    "name_key": "npc.senn_marr.name",
+    "portrait": "res://assets/portraits/npc_senn_marr.png",
+    "role": "lore keeper",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_senn_marr.png",
+    "voice": "precise, skeptical, unexpectedly kind"
+  },
+  {
+    "faction": "quiet_ledger",
+    "home": "orrenfast",
+    "id": "npc_tovi_reed",
+    "name": "Tovi Reed",
+    "name_key": "npc.tovi_reed.name",
+    "portrait": "res://assets/portraits/npc_tovi_reed.png",
+    "role": "child messenger",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_tovi_reed.png",
+    "voice": "fearless, literal, entrepreneurial"
+  },
+  {
+    "faction": "greywake",
+    "home": "lorn_shelf",
+    "id": "npc_bran_oc",
+    "name": "Bran Oc",
+    "name_key": "npc.bran_oc.name",
+    "portrait": "res://assets/portraits/npc_bran_oc.png",
+    "role": "smith",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [
+      "smith"
+    ],
+    "sprite": "res://assets/sprites/npcs/npc_bran_oc.png",
+    "voice": "patient, economical, fond of bad puns"
+  },
+  {
+    "faction": "marsh_keepers",
+    "home": "rime_crown",
+    "id": "npc_ylsa_fen",
+    "name": "Ylsa Fen",
+    "name_key": "npc.ylsa_fen.name",
+    "portrait": "res://assets/portraits/npc_ylsa_fen.png",
+    "role": "healer",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [
+      "healer"
+    ],
+    "sprite": "res://assets/sprites/npcs/npc_ylsa_fen.png",
+    "voice": "warm, unsentimental, attentive"
+  },
+  {
+    "faction": "quiet_ledger",
+    "home": "greywake",
+    "id": "npc_kerrit_bale",
+    "name": "Kerrit Bale",
+    "name_key": "npc.kerrit_bale.name",
+    "portrait": "res://assets/portraits/npc_kerrit_bale.png",
+    "role": "merchant",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [
+      "merchant"
+    ],
+    "sprite": "res://assets/sprites/npcs/npc_kerrit_bale.png",
+    "voice": "charming, anxious, scrupulously fair"
+  },
+  {
+    "faction": "greywake",
+    "home": "bracken_march",
+    "id": "npc_maelin_vey",
+    "name": "Maelin Vey",
+    "name_key": "npc.maelin_vey.name",
+    "portrait": "res://assets/portraits/npc_maelin_vey.png",
+    "role": "missing artificer",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_maelin_vey.png",
+    "voice": "restless, loving, dangerously curious"
+  },
+  {
+    "faction": "marsh_keepers",
+    "home": "orrenfast",
+    "id": "npc_orra_pike",
+    "name": "Orra Pike",
+    "name_key": "npc.orra_pike.name",
+    "portrait": "res://assets/portraits/npc_orra_pike.png",
+    "role": "marsh keeper",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_orra_pike.png",
+    "voice": "blunt, ecological, distrustful of easy answers"
+  },
+  {
+    "faction": "quiet_ledger",
+    "home": "lorn_shelf",
+    "id": "npc_hollan_grey",
+    "name": "Hollan Grey",
+    "name_key": "npc.hollan_grey.name",
+    "portrait": "res://assets/portraits/npc_hollan_grey.png",
+    "role": "harbormaster",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_hollan_grey.png",
+    "voice": "formal, superstitious, civic-minded"
+  },
+  {
+    "faction": "greywake",
+    "home": "rime_crown",
+    "id": "npc_nim_aster",
+    "name": "Nim Aster",
+    "name_key": "npc.nim_aster.name",
+    "portrait": "res://assets/portraits/npc_nim_aster.png",
+    "role": "spell teacher",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [
+      "spell teacher"
+    ],
+    "sprite": "res://assets/sprites/npcs/npc_nim_aster.png",
+    "voice": "playful, oblique, disciplined"
+  },
+  {
+    "faction": "marsh_keepers",
+    "home": "greywake",
+    "id": "npc_jori_tern",
+    "name": "Jori Tern",
+    "name_key": "npc.jori_tern.name",
+    "portrait": "res://assets/portraits/npc_jori_tern.png",
+    "role": "hunter",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_jori_tern.png",
+    "voice": "quiet, competitive, loyal"
+  },
+  {
+    "faction": "quiet_ledger",
+    "home": "bracken_march",
+    "id": "npc_pell_under",
+    "name": "Pell Under",
+    "name_key": "npc.pell_under.name",
+    "portrait": "res://assets/portraits/npc_pell_under.png",
+    "role": "miner representative",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_pell_under.png",
+    "voice": "booming, political, generous"
+  },
+  {
+    "faction": "greywake",
+    "home": "orrenfast",
+    "id": "npc_ada_clasp",
+    "name": "Ada Clasp",
+    "name_key": "npc.ada_clasp.name",
+    "portrait": "res://assets/portraits/npc_ada_clasp.png",
+    "role": "lockwright",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [
+      "lockwright"
+    ],
+    "sprite": "res://assets/sprites/npcs/npc_ada_clasp.png",
+    "voice": "fussy, brilliant, secretly sentimental"
+  },
+  {
+    "faction": "marsh_keepers",
+    "home": "lorn_shelf",
+    "id": "npc_venn_soot",
+    "name": "Venn Soot",
+    "name_key": "npc.venn_soot.name",
+    "portrait": "res://assets/portraits/npc_venn_soot.png",
+    "role": "cook",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_venn_soot.png",
+    "voice": "gossipy, philosophical, perpetually busy"
+  },
+  {
+    "faction": "quiet_ledger",
+    "home": "rime_crown",
+    "id": "npc_rusk_candle",
+    "name": "Rusk Candle",
+    "name_key": "npc.rusk_candle.name",
+    "portrait": "res://assets/portraits/npc_rusk_candle.png",
+    "role": "undertaker",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_rusk_candle.png",
+    "voice": "gentle, funny, impossible to shock"
+  },
+  {
+    "faction": "greywake",
+    "home": "greywake",
+    "id": "npc_iven_snow",
+    "name": "Iven Snow",
+    "name_key": "npc.iven_snow.name",
+    "portrait": "res://assets/portraits/npc_iven_snow.png",
+    "role": "traveler",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_iven_snow.png",
+    "voice": "romantic, unreliable, well-read"
+  },
+  {
+    "faction": "marsh_keepers",
+    "home": "bracken_march",
+    "id": "npc_sister_calve",
+    "name": "Sister Calve",
+    "name_key": "npc.sister_calve.name",
+    "portrait": "res://assets/portraits/npc_sister_calve.png",
+    "role": "Orrenfast pilgrim",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_sister_calve.png",
+    "voice": "penitent, practical, guarded"
+  },
+  {
+    "faction": "quiet_ledger",
+    "home": "orrenfast",
+    "id": "npc_daro_flint",
+    "name": "Daro Flint",
+    "name_key": "npc.daro_flint.name",
+    "portrait": "res://assets/portraits/npc_daro_flint.png",
+    "role": "faction envoy",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_daro_flint.png",
+    "voice": "charismatic, ruthless, candid"
+  },
+  {
+    "faction": "greywake",
+    "home": "lorn_shelf",
+    "id": "npc_mara_quill",
+    "name": "Mara Quill",
+    "name_key": "npc.mara_quill.name",
+    "portrait": "res://assets/portraits/npc_mara_quill.png",
+    "role": "cartographer",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_mara_quill.png",
+    "voice": "curious, absent-minded, brave"
+  },
+  {
+    "faction": "marsh_keepers",
+    "home": "rime_crown",
+    "id": "npc_old_kest",
+    "name": "Old Kest",
+    "name_key": "npc.old_kest.name",
+    "portrait": "res://assets/portraits/npc_old_kest.png",
+    "role": "ferryman",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_old_kest.png",
+    "voice": "cryptic only because he is hard of hearing"
+  },
+  {
+    "faction": "quiet_ledger",
+    "home": "greywake",
+    "id": "npc_little_ash",
+    "name": "Little Ash",
+    "name_key": "npc.little_ash.name",
+    "portrait": "res://assets/portraits/npc_little_ash.png",
+    "role": "coherent choir voice",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_little_ash.png",
+    "voice": "young-seeming, ancient, direct"
+  },
+  {
+    "faction": "greywake",
+    "home": "bracken_march",
+    "id": "npc_torren_vale",
+    "name": "Torren Vale",
+    "name_key": "npc.torren_vale.name",
+    "portrait": "res://assets/portraits/npc_torren_vale.png",
+    "role": "ice guide",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_torren_vale.png",
+    "voice": "methodical, mournful, dependable"
+  },
+  {
+    "faction": "marsh_keepers",
+    "home": "orrenfast",
+    "id": "npc_siva_rime",
+    "name": "Siva Rime",
+    "name_key": "npc.siva_rime.name",
+    "portrait": "res://assets/portraits/npc_siva_rime.png",
+    "role": "rival delver",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_siva_rime.png",
+    "voice": "ambitious, ethical under pressure"
+  },
+  {
+    "faction": "quiet_ledger",
+    "home": "lorn_shelf",
+    "id": "npc_brother_olt",
+    "name": "Brother Olt",
+    "name_key": "npc.brother_olt.name",
+    "portrait": "res://assets/portraits/npc_brother_olt.png",
+    "role": "bell historian",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_brother_olt.png",
+    "voice": "vain, knowledgeable, redeemable"
+  },
+  {
+    "faction": "greywake",
+    "home": "rime_crown",
+    "id": "npc_cera_wind",
+    "name": "Cera Wind",
+    "name_key": "npc.cera_wind.name",
+    "portrait": "res://assets/portraits/npc_cera_wind.png",
+    "role": "citadel exile",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_cera_wind.png",
+    "voice": "fierce, ceremonious, lonely"
+  },
+  {
+    "faction": "marsh_keepers",
+    "home": "greywake",
+    "id": "npc_the_tallyman",
+    "name": "The Tallyman",
+    "name_key": "npc.the_tallyman.name",
+    "portrait": "res://assets/portraits/npc_the_tallyman.png",
+    "role": "memory custodian",
+    "schedule": [
+      {
+        "activity": "work",
+        "start": 6
+      },
+      {
+        "activity": "eat",
+        "start": 12
+      },
+      {
+        "activity": "socialize",
+        "start": 14
+      },
+      {
+        "activity": "sleep",
+        "start": 21
+      }
+    ],
+    "services": [],
+    "sprite": "res://assets/sprites/npcs/npc_the_tallyman.png",
+    "voice": "courteous, alien, bound by rules"
+  }
+]

@@ -1,0 +1,2762 @@
+[
+  {
+    "abilities": [
+      "basic_pack",
+      "special_0"
+    ],
+    "ai_archetype": "pack",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_mire_wolf",
+    "level": 1,
+    "loot_table": "loot_theme_00",
+    "name": "Mire Wolf",
+    "name_key": "enemy.enemy_mire_wolf.name",
+    "perception": {
+      "hearing": 4,
+      "vision": 5
+    },
+    "resistances": {
+      "fire": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_mire_wolf_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_mire_wolf_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_mire_wolf_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_mire_wolf.png",
+    "stats": {
+      "accuracy": 63,
+      "evasion": 6,
+      "finesse": 2,
+      "health": 15,
+      "mana": 2,
+      "might": 2,
+      "resolve": 2,
+      "speed": 85
+    },
+    "territory": "theme_mosswake_barrows",
+    "vulnerabilities": {
+      "frost": 15
+    },
+    "xp": 12
+  },
+  {
+    "abilities": [
+      "basic_swarm",
+      "special_1"
+    ],
+    "ai_archetype": "swarm",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_tallow_wight",
+    "level": 1,
+    "loot_table": "loot_theme_01",
+    "name": "Tallow Wight",
+    "name_key": "enemy.enemy_tallow_wight.name",
+    "perception": {
+      "hearing": 5,
+      "vision": 6
+    },
+    "resistances": {
+      "frost": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_tallow_wight_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_tallow_wight_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_tallow_wight_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_tallow_wight.png",
+    "stats": {
+      "accuracy": 63,
+      "evasion": 7,
+      "finesse": 3,
+      "health": 15,
+      "mana": 2,
+      "might": 2,
+      "resolve": 2,
+      "speed": 90
+    },
+    "territory": "theme_sundered_delvings",
+    "vulnerabilities": {
+      "fire": 15
+    },
+    "xp": 12
+  },
+  {
+    "abilities": [
+      "basic_guardian",
+      "special_2"
+    ],
+    "ai_archetype": "guardian",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_bog_skulker",
+    "level": 1,
+    "loot_table": "loot_theme_02",
+    "name": "Bog Skulker",
+    "name_key": "enemy.enemy_bog_skulker.name",
+    "perception": {
+      "hearing": 6,
+      "vision": 7
+    },
+    "resistances": {
+      "shock": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_bog_skulker_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_bog_skulker_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_bog_skulker_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_bog_skulker.png",
+    "stats": {
+      "accuracy": 63,
+      "evasion": 8,
+      "finesse": 4,
+      "health": 15,
+      "mana": 2,
+      "might": 2,
+      "resolve": 2,
+      "speed": 95
+    },
+    "territory": "theme_drowned_footings",
+    "vulnerabilities": {
+      "crush": 15
+    },
+    "xp": 12
+  },
+  {
+    "abilities": [
+      "basic_ambusher",
+      "special_3"
+    ],
+    "ai_archetype": "ambusher",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_iron_beetle",
+    "level": 1,
+    "loot_table": "loot_theme_03",
+    "name": "Iron Beetle",
+    "name_key": "enemy.enemy_iron_beetle.name",
+    "perception": {
+      "hearing": 7,
+      "vision": 8
+    },
+    "resistances": {
+      "spirit": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_iron_beetle_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_iron_beetle_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_iron_beetle_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_iron_beetle.png",
+    "stats": {
+      "accuracy": 63,
+      "evasion": 9,
+      "finesse": 5,
+      "health": 15,
+      "mana": 2,
+      "might": 2,
+      "resolve": 2,
+      "speed": 100
+    },
+    "territory": "theme_lorn_ice_vaults",
+    "vulnerabilities": {
+      "radiant": 15
+    },
+    "xp": 12
+  },
+  {
+    "abilities": [
+      "basic_ranged",
+      "special_4"
+    ],
+    "ai_archetype": "ranged",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 8,
+    "id": "enemy_drowned_novice",
+    "level": 2,
+    "loot_table": "loot_theme_04",
+    "name": "Drowned Novice",
+    "name_key": "enemy.enemy_drowned_novice.name",
+    "perception": {
+      "hearing": 8,
+      "vision": 5
+    },
+    "resistances": {
+      "shadow": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_drowned_novice_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_drowned_novice_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_drowned_novice_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_drowned_novice.png",
+    "stats": {
+      "accuracy": 64,
+      "evasion": 10,
+      "finesse": 6,
+      "health": 18,
+      "mana": 4,
+      "might": 2,
+      "resolve": 2,
+      "speed": 105
+    },
+    "territory": "theme_root_caught_cloister",
+    "vulnerabilities": {
+      "spirit": 15
+    },
+    "xp": 16
+  },
+  {
+    "abilities": [
+      "basic_caster",
+      "special_5"
+    ],
+    "ai_archetype": "caster",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 8,
+    "id": "enemy_rubble_goat",
+    "level": 2,
+    "loot_table": "loot_theme_05",
+    "name": "Rubble Goat",
+    "name_key": "enemy.enemy_rubble_goat.name",
+    "perception": {
+      "hearing": 4,
+      "vision": 6
+    },
+    "resistances": {
+      "fire": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_rubble_goat_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_rubble_goat_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_rubble_goat_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_rubble_goat.png",
+    "stats": {
+      "accuracy": 64,
+      "evasion": 11,
+      "finesse": 2,
+      "health": 18,
+      "mana": 4,
+      "might": 2,
+      "resolve": 2,
+      "speed": 110
+    },
+    "territory": "theme_quiet_workshops",
+    "vulnerabilities": {
+      "frost": 15
+    },
+    "xp": 16
+  },
+  {
+    "abilities": [
+      "basic_healer",
+      "special_6"
+    ],
+    "ai_archetype": "healer",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_rime_crow",
+    "level": 2,
+    "loot_table": "loot_theme_06",
+    "name": "Rime Crow",
+    "name_key": "enemy.enemy_rime_crow.name",
+    "perception": {
+      "hearing": 5,
+      "vision": 7
+    },
+    "resistances": {
+      "frost": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_rime_crow_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_rime_crow_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_rime_crow_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_rime_crow.png",
+    "stats": {
+      "accuracy": 64,
+      "evasion": 12,
+      "finesse": 3,
+      "health": 18,
+      "mana": 4,
+      "might": 2,
+      "resolve": 2,
+      "speed": 85
+    },
+    "territory": "theme_halls_of_lent_voices",
+    "vulnerabilities": {
+      "fire": 15
+    },
+    "xp": 16
+  },
+  {
+    "abilities": [
+      "basic_summoner",
+      "special_7"
+    ],
+    "ai_archetype": "summoner",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_root_hound",
+    "level": 2,
+    "loot_table": "loot_theme_07",
+    "name": "Root Hound",
+    "name_key": "enemy.enemy_root_hound.name",
+    "perception": {
+      "hearing": 6,
+      "vision": 8
+    },
+    "resistances": {
+      "shock": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_root_hound_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_root_hound_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_root_hound_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_root_hound.png",
+    "stats": {
+      "accuracy": 64,
+      "evasion": 13,
+      "finesse": 4,
+      "health": 18,
+      "mana": 4,
+      "might": 2,
+      "resolve": 2,
+      "speed": 90
+    },
+    "territory": "theme_bluecap_hollows",
+    "vulnerabilities": {
+      "crush": 15
+    },
+    "xp": 16
+  },
+  {
+    "abilities": [
+      "basic_skirmisher",
+      "special_8"
+    ],
+    "ai_archetype": "skirmisher",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_ledger_automaton",
+    "level": 3,
+    "loot_table": "loot_theme_08",
+    "name": "Ledger Automaton",
+    "name_key": "enemy.enemy_ledger_automaton.name",
+    "perception": {
+      "hearing": 7,
+      "vision": 5
+    },
+    "resistances": {
+      "spirit": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_ledger_automaton_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_ledger_automaton_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_ledger_automaton_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_ledger_automaton.png",
+    "stats": {
+      "accuracy": 65,
+      "evasion": 6,
+      "finesse": 5,
+      "health": 21,
+      "mana": 6,
+      "might": 3,
+      "resolve": 2,
+      "speed": 95
+    },
+    "territory": "theme_ember_underdeep",
+    "vulnerabilities": {
+      "radiant": 15
+    },
+    "xp": 20
+  },
+  {
+    "abilities": [
+      "basic_brute",
+      "special_9"
+    ],
+    "ai_archetype": "brute",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_choir_shade",
+    "level": 3,
+    "loot_table": "loot_theme_09",
+    "name": "Choir Shade",
+    "name_key": "enemy.enemy_choir_shade.name",
+    "perception": {
+      "hearing": 8,
+      "vision": 6
+    },
+    "resistances": {
+      "shadow": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_choir_shade_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_choir_shade_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_choir_shade_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_choir_shade.png",
+    "stats": {
+      "accuracy": 65,
+      "evasion": 7,
+      "finesse": 6,
+      "health": 21,
+      "mana": 6,
+      "might": 3,
+      "resolve": 2,
+      "speed": 100
+    },
+    "territory": "theme_star_wheel_rooms",
+    "vulnerabilities": {
+      "spirit": 15
+    },
+    "xp": 20
+  },
+  {
+    "abilities": [
+      "basic_controller",
+      "special_10"
+    ],
+    "ai_archetype": "controller",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_bluecap_bearer",
+    "level": 3,
+    "loot_table": "loot_theme_10",
+    "name": "Bluecap Bearer",
+    "name_key": "enemy.enemy_bluecap_bearer.name",
+    "perception": {
+      "hearing": 4,
+      "vision": 7
+    },
+    "resistances": {
+      "fire": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_bluecap_bearer_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_bluecap_bearer_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_bluecap_bearer_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_bluecap_bearer.png",
+    "stats": {
+      "accuracy": 65,
+      "evasion": 8,
+      "finesse": 2,
+      "health": 21,
+      "mana": 6,
+      "might": 3,
+      "resolve": 2,
+      "speed": 105
+    },
+    "territory": "theme_wind_carved_crown",
+    "vulnerabilities": {
+      "frost": 15
+    },
+    "xp": 20
+  },
+  {
+    "abilities": [
+      "basic_pack",
+      "special_11"
+    ],
+    "ai_archetype": "pack",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_ember_newt",
+    "level": 3,
+    "loot_table": "loot_theme_11",
+    "name": "Ember Newt",
+    "name_key": "enemy.enemy_ember_newt.name",
+    "perception": {
+      "hearing": 5,
+      "vision": 8
+    },
+    "resistances": {
+      "frost": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_ember_newt_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_ember_newt_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_ember_newt_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_ember_newt.png",
+    "stats": {
+      "accuracy": 65,
+      "evasion": 9,
+      "finesse": 3,
+      "health": 21,
+      "mana": 6,
+      "might": 3,
+      "resolve": 2,
+      "speed": 110
+    },
+    "territory": "theme_the_unhoused_choir",
+    "vulnerabilities": {
+      "fire": 15
+    },
+    "xp": 20
+  },
+  {
+    "abilities": [
+      "basic_swarm",
+      "special_0"
+    ],
+    "ai_archetype": "swarm",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_starved_gargoyle",
+    "level": 4,
+    "loot_table": "loot_theme_00",
+    "name": "Starved Gargoyle",
+    "name_key": "enemy.enemy_starved_gargoyle.name",
+    "perception": {
+      "hearing": 6,
+      "vision": 5
+    },
+    "resistances": {
+      "shock": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_starved_gargoyle_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_starved_gargoyle_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_starved_gargoyle_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_starved_gargoyle.png",
+    "stats": {
+      "accuracy": 66,
+      "evasion": 10,
+      "finesse": 4,
+      "health": 24,
+      "mana": 8,
+      "might": 3,
+      "resolve": 3,
+      "speed": 85
+    },
+    "territory": "theme_mosswake_barrows",
+    "vulnerabilities": {
+      "crush": 15
+    },
+    "xp": 24
+  },
+  {
+    "abilities": [
+      "basic_guardian",
+      "special_1"
+    ],
+    "ai_archetype": "guardian",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_wind_revenant",
+    "level": 4,
+    "loot_table": "loot_theme_01",
+    "name": "Wind Revenant",
+    "name_key": "enemy.enemy_wind_revenant.name",
+    "perception": {
+      "hearing": 7,
+      "vision": 6
+    },
+    "resistances": {
+      "spirit": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_wind_revenant_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_wind_revenant_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_wind_revenant_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_wind_revenant.png",
+    "stats": {
+      "accuracy": 66,
+      "evasion": 11,
+      "finesse": 5,
+      "health": 24,
+      "mana": 8,
+      "might": 3,
+      "resolve": 3,
+      "speed": 90
+    },
+    "territory": "theme_sundered_delvings",
+    "vulnerabilities": {
+      "radiant": 15
+    },
+    "xp": 24
+  },
+  {
+    "abilities": [
+      "basic_ambusher",
+      "special_2"
+    ],
+    "ai_archetype": "ambusher",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_memory_moth",
+    "level": 4,
+    "loot_table": "loot_theme_02",
+    "name": "Memory Moth",
+    "name_key": "enemy.enemy_memory_moth.name",
+    "perception": {
+      "hearing": 8,
+      "vision": 7
+    },
+    "resistances": {
+      "shadow": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_memory_moth_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_memory_moth_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_memory_moth_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_memory_moth.png",
+    "stats": {
+      "accuracy": 66,
+      "evasion": 12,
+      "finesse": 6,
+      "health": 24,
+      "mana": 8,
+      "might": 3,
+      "resolve": 3,
+      "speed": 95
+    },
+    "territory": "theme_drowned_footings",
+    "vulnerabilities": {
+      "spirit": 15
+    },
+    "xp": 24
+  },
+  {
+    "abilities": [
+      "basic_ranged",
+      "special_3"
+    ],
+    "ai_archetype": "ranged",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 8,
+    "id": "enemy_salt_skeleton",
+    "level": 4,
+    "loot_table": "loot_theme_03",
+    "name": "Salt Skeleton",
+    "name_key": "enemy.enemy_salt_skeleton.name",
+    "perception": {
+      "hearing": 4,
+      "vision": 8
+    },
+    "resistances": {
+      "fire": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_salt_skeleton_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_salt_skeleton_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_salt_skeleton_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_salt_skeleton.png",
+    "stats": {
+      "accuracy": 66,
+      "evasion": 13,
+      "finesse": 2,
+      "health": 24,
+      "mana": 8,
+      "might": 3,
+      "resolve": 3,
+      "speed": 100
+    },
+    "territory": "theme_lorn_ice_vaults",
+    "vulnerabilities": {
+      "frost": 15
+    },
+    "xp": 24
+  },
+  {
+    "abilities": [
+      "basic_caster",
+      "special_4"
+    ],
+    "ai_archetype": "caster",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 8,
+    "id": "enemy_bell_leech",
+    "level": 5,
+    "loot_table": "loot_theme_04",
+    "name": "Bell Leech",
+    "name_key": "enemy.enemy_bell_leech.name",
+    "perception": {
+      "hearing": 5,
+      "vision": 5
+    },
+    "resistances": {
+      "frost": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_bell_leech_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_bell_leech_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_bell_leech_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_bell_leech.png",
+    "stats": {
+      "accuracy": 67,
+      "evasion": 6,
+      "finesse": 3,
+      "health": 27,
+      "mana": 10,
+      "might": 3,
+      "resolve": 3,
+      "speed": 105
+    },
+    "territory": "theme_root_caught_cloister",
+    "vulnerabilities": {
+      "fire": 15
+    },
+    "xp": 28
+  },
+  {
+    "abilities": [
+      "basic_healer",
+      "special_5"
+    ],
+    "ai_archetype": "healer",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_frostbound_miner",
+    "level": 5,
+    "loot_table": "loot_theme_05",
+    "name": "Frostbound Miner",
+    "name_key": "enemy.enemy_frostbound_miner.name",
+    "perception": {
+      "hearing": 6,
+      "vision": 6
+    },
+    "resistances": {
+      "shock": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_frostbound_miner_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_frostbound_miner_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_frostbound_miner_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_frostbound_miner.png",
+    "stats": {
+      "accuracy": 67,
+      "evasion": 7,
+      "finesse": 4,
+      "health": 27,
+      "mana": 10,
+      "might": 3,
+      "resolve": 3,
+      "speed": 110
+    },
+    "territory": "theme_quiet_workshops",
+    "vulnerabilities": {
+      "crush": 15
+    },
+    "xp": 28
+  },
+  {
+    "abilities": [
+      "basic_summoner",
+      "special_6"
+    ],
+    "ai_archetype": "summoner",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_marsh_hexer",
+    "level": 5,
+    "loot_table": "loot_theme_06",
+    "name": "Marsh Hexer",
+    "name_key": "enemy.enemy_marsh_hexer.name",
+    "perception": {
+      "hearing": 7,
+      "vision": 7
+    },
+    "resistances": {
+      "spirit": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_marsh_hexer_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_marsh_hexer_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_marsh_hexer_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_marsh_hexer.png",
+    "stats": {
+      "accuracy": 67,
+      "evasion": 8,
+      "finesse": 5,
+      "health": 27,
+      "mana": 10,
+      "might": 3,
+      "resolve": 3,
+      "speed": 85
+    },
+    "territory": "theme_halls_of_lent_voices",
+    "vulnerabilities": {
+      "radiant": 15
+    },
+    "xp": 28
+  },
+  {
+    "abilities": [
+      "basic_skirmisher",
+      "special_7"
+    ],
+    "ai_archetype": "skirmisher",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_cairn_walker",
+    "level": 5,
+    "loot_table": "loot_theme_07",
+    "name": "Cairn Walker",
+    "name_key": "enemy.enemy_cairn_walker.name",
+    "perception": {
+      "hearing": 8,
+      "vision": 8
+    },
+    "resistances": {
+      "shadow": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_cairn_walker_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_cairn_walker_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_cairn_walker_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_cairn_walker.png",
+    "stats": {
+      "accuracy": 67,
+      "evasion": 9,
+      "finesse": 6,
+      "health": 27,
+      "mana": 10,
+      "might": 3,
+      "resolve": 3,
+      "speed": 90
+    },
+    "territory": "theme_bluecap_hollows",
+    "vulnerabilities": {
+      "spirit": 15
+    },
+    "xp": 28
+  },
+  {
+    "abilities": [
+      "basic_brute",
+      "special_8"
+    ],
+    "ai_archetype": "brute",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_rain_hag",
+    "level": 6,
+    "loot_table": "loot_theme_08",
+    "name": "Rain Hag",
+    "name_key": "enemy.enemy_rain_hag.name",
+    "perception": {
+      "hearing": 4,
+      "vision": 5
+    },
+    "resistances": {
+      "fire": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_rain_hag_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_rain_hag_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_rain_hag_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_rain_hag.png",
+    "stats": {
+      "accuracy": 68,
+      "evasion": 10,
+      "finesse": 2,
+      "health": 30,
+      "mana": 12,
+      "might": 4,
+      "resolve": 3,
+      "speed": 95
+    },
+    "territory": "theme_ember_underdeep",
+    "vulnerabilities": {
+      "frost": 15
+    },
+    "xp": 32
+  },
+  {
+    "abilities": [
+      "basic_controller",
+      "special_9"
+    ],
+    "ai_archetype": "controller",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_gale_archer",
+    "level": 6,
+    "loot_table": "loot_theme_09",
+    "name": "Gale Archer",
+    "name_key": "enemy.enemy_gale_archer.name",
+    "perception": {
+      "hearing": 5,
+      "vision": 6
+    },
+    "resistances": {
+      "frost": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_gale_archer_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_gale_archer_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_gale_archer_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_gale_archer.png",
+    "stats": {
+      "accuracy": 68,
+      "evasion": 11,
+      "finesse": 3,
+      "health": 30,
+      "mana": 12,
+      "might": 4,
+      "resolve": 3,
+      "speed": 100
+    },
+    "territory": "theme_star_wheel_rooms",
+    "vulnerabilities": {
+      "fire": 15
+    },
+    "xp": 32
+  },
+  {
+    "abilities": [
+      "basic_pack",
+      "special_10"
+    ],
+    "ai_archetype": "pack",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_ash_pilgrim",
+    "level": 6,
+    "loot_table": "loot_theme_10",
+    "name": "Ash Pilgrim",
+    "name_key": "enemy.enemy_ash_pilgrim.name",
+    "perception": {
+      "hearing": 6,
+      "vision": 7
+    },
+    "resistances": {
+      "shock": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_ash_pilgrim_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_ash_pilgrim_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_ash_pilgrim_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_ash_pilgrim.png",
+    "stats": {
+      "accuracy": 68,
+      "evasion": 12,
+      "finesse": 4,
+      "health": 30,
+      "mana": 12,
+      "might": 4,
+      "resolve": 3,
+      "speed": 105
+    },
+    "territory": "theme_wind_carved_crown",
+    "vulnerabilities": {
+      "crush": 15
+    },
+    "xp": 32
+  },
+  {
+    "abilities": [
+      "basic_swarm",
+      "special_11"
+    ],
+    "ai_archetype": "swarm",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_glass_adder",
+    "level": 6,
+    "loot_table": "loot_theme_11",
+    "name": "Glass Adder",
+    "name_key": "enemy.enemy_glass_adder.name",
+    "perception": {
+      "hearing": 7,
+      "vision": 8
+    },
+    "resistances": {
+      "spirit": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_glass_adder_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_glass_adder_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_glass_adder_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_glass_adder.png",
+    "stats": {
+      "accuracy": 68,
+      "evasion": 13,
+      "finesse": 5,
+      "health": 30,
+      "mana": 12,
+      "might": 4,
+      "resolve": 3,
+      "speed": 110
+    },
+    "territory": "theme_the_unhoused_choir",
+    "vulnerabilities": {
+      "radiant": 15
+    },
+    "xp": 32
+  },
+  {
+    "abilities": [
+      "basic_guardian",
+      "special_0"
+    ],
+    "ai_archetype": "guardian",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_echo_knight",
+    "level": 7,
+    "loot_table": "loot_theme_00",
+    "name": "Echo Knight",
+    "name_key": "enemy.enemy_echo_knight.name",
+    "perception": {
+      "hearing": 8,
+      "vision": 5
+    },
+    "resistances": {
+      "shadow": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_echo_knight_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_echo_knight_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_echo_knight_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_echo_knight.png",
+    "stats": {
+      "accuracy": 69,
+      "evasion": 6,
+      "finesse": 6,
+      "health": 33,
+      "mana": 14,
+      "might": 4,
+      "resolve": 3,
+      "speed": 85
+    },
+    "territory": "theme_mosswake_barrows",
+    "vulnerabilities": {
+      "spirit": 15
+    },
+    "xp": 36
+  },
+  {
+    "abilities": [
+      "basic_ambusher",
+      "special_1"
+    ],
+    "ai_archetype": "ambusher",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_spore_shepherd",
+    "level": 7,
+    "loot_table": "loot_theme_01",
+    "name": "Spore Shepherd",
+    "name_key": "enemy.enemy_spore_shepherd.name",
+    "perception": {
+      "hearing": 4,
+      "vision": 6
+    },
+    "resistances": {
+      "fire": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_spore_shepherd_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_spore_shepherd_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_spore_shepherd_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_spore_shepherd.png",
+    "stats": {
+      "accuracy": 69,
+      "evasion": 7,
+      "finesse": 2,
+      "health": 33,
+      "mana": 14,
+      "might": 4,
+      "resolve": 3,
+      "speed": 90
+    },
+    "territory": "theme_sundered_delvings",
+    "vulnerabilities": {
+      "frost": 15
+    },
+    "xp": 36
+  },
+  {
+    "abilities": [
+      "basic_ranged",
+      "special_2"
+    ],
+    "ai_archetype": "ranged",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 8,
+    "id": "enemy_cinder_boar",
+    "level": 7,
+    "loot_table": "loot_theme_02",
+    "name": "Cinder Boar",
+    "name_key": "enemy.enemy_cinder_boar.name",
+    "perception": {
+      "hearing": 5,
+      "vision": 7
+    },
+    "resistances": {
+      "frost": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_cinder_boar_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_cinder_boar_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_cinder_boar_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_cinder_boar.png",
+    "stats": {
+      "accuracy": 69,
+      "evasion": 8,
+      "finesse": 3,
+      "health": 33,
+      "mana": 14,
+      "might": 4,
+      "resolve": 3,
+      "speed": 95
+    },
+    "territory": "theme_drowned_footings",
+    "vulnerabilities": {
+      "fire": 15
+    },
+    "xp": 36
+  },
+  {
+    "abilities": [
+      "basic_caster",
+      "special_3"
+    ],
+    "ai_archetype": "caster",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 8,
+    "id": "enemy_orrery_eye",
+    "level": 7,
+    "loot_table": "loot_theme_03",
+    "name": "Orrery Eye",
+    "name_key": "enemy.enemy_orrery_eye.name",
+    "perception": {
+      "hearing": 6,
+      "vision": 8
+    },
+    "resistances": {
+      "shock": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_orrery_eye_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_orrery_eye_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_orrery_eye_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_orrery_eye.png",
+    "stats": {
+      "accuracy": 69,
+      "evasion": 9,
+      "finesse": 4,
+      "health": 33,
+      "mana": 14,
+      "might": 4,
+      "resolve": 3,
+      "speed": 100
+    },
+    "territory": "theme_lorn_ice_vaults",
+    "vulnerabilities": {
+      "crush": 15
+    },
+    "xp": 36
+  },
+  {
+    "abilities": [
+      "basic_healer",
+      "special_4"
+    ],
+    "ai_archetype": "healer",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_crown_sentinel",
+    "level": 8,
+    "loot_table": "loot_theme_04",
+    "name": "Crown Sentinel",
+    "name_key": "enemy.enemy_crown_sentinel.name",
+    "perception": {
+      "hearing": 7,
+      "vision": 5
+    },
+    "resistances": {
+      "spirit": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_crown_sentinel_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_crown_sentinel_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_crown_sentinel_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_crown_sentinel.png",
+    "stats": {
+      "accuracy": 70,
+      "evasion": 10,
+      "finesse": 5,
+      "health": 36,
+      "mana": 16,
+      "might": 4,
+      "resolve": 4,
+      "speed": 105
+    },
+    "territory": "theme_root_caught_cloister",
+    "vulnerabilities": {
+      "radiant": 15
+    },
+    "xp": 40
+  },
+  {
+    "abilities": [
+      "basic_summoner",
+      "special_5"
+    ],
+    "ai_archetype": "summoner",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_unhoused_voice",
+    "level": 8,
+    "loot_table": "loot_theme_05",
+    "name": "Unhoused Voice",
+    "name_key": "enemy.enemy_unhoused_voice.name",
+    "perception": {
+      "hearing": 8,
+      "vision": 6
+    },
+    "resistances": {
+      "shadow": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_unhoused_voice_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_unhoused_voice_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_unhoused_voice_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_unhoused_voice.png",
+    "stats": {
+      "accuracy": 70,
+      "evasion": 11,
+      "finesse": 6,
+      "health": 36,
+      "mana": 16,
+      "might": 4,
+      "resolve": 4,
+      "speed": 110
+    },
+    "territory": "theme_quiet_workshops",
+    "vulnerabilities": {
+      "spirit": 15
+    },
+    "xp": 40
+  },
+  {
+    "abilities": [
+      "basic_skirmisher",
+      "special_6"
+    ],
+    "ai_archetype": "skirmisher",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_peat_lurker",
+    "level": 8,
+    "loot_table": "loot_theme_06",
+    "name": "Peat Lurker",
+    "name_key": "enemy.enemy_peat_lurker.name",
+    "perception": {
+      "hearing": 4,
+      "vision": 7
+    },
+    "resistances": {
+      "fire": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_peat_lurker_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_peat_lurker_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_peat_lurker_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_peat_lurker.png",
+    "stats": {
+      "accuracy": 70,
+      "evasion": 12,
+      "finesse": 2,
+      "health": 36,
+      "mana": 16,
+      "might": 4,
+      "resolve": 4,
+      "speed": 85
+    },
+    "territory": "theme_halls_of_lent_voices",
+    "vulnerabilities": {
+      "frost": 15
+    },
+    "xp": 40
+  },
+  {
+    "abilities": [
+      "basic_brute",
+      "special_7"
+    ],
+    "ai_archetype": "brute",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_lantern_thief",
+    "level": 8,
+    "loot_table": "loot_theme_07",
+    "name": "Lantern Thief",
+    "name_key": "enemy.enemy_lantern_thief.name",
+    "perception": {
+      "hearing": 5,
+      "vision": 8
+    },
+    "resistances": {
+      "frost": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_lantern_thief_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_lantern_thief_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_lantern_thief_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_lantern_thief.png",
+    "stats": {
+      "accuracy": 70,
+      "evasion": 13,
+      "finesse": 3,
+      "health": 36,
+      "mana": 16,
+      "might": 4,
+      "resolve": 4,
+      "speed": 90
+    },
+    "territory": "theme_bluecap_hollows",
+    "vulnerabilities": {
+      "fire": 15
+    },
+    "xp": 40
+  },
+  {
+    "abilities": [
+      "basic_controller",
+      "special_8"
+    ],
+    "ai_archetype": "controller",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_rope_ghost",
+    "level": 9,
+    "loot_table": "loot_theme_08",
+    "name": "Rope Ghost",
+    "name_key": "enemy.enemy_rope_ghost.name",
+    "perception": {
+      "hearing": 6,
+      "vision": 5
+    },
+    "resistances": {
+      "shock": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_rope_ghost_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_rope_ghost_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_rope_ghost_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_rope_ghost.png",
+    "stats": {
+      "accuracy": 71,
+      "evasion": 6,
+      "finesse": 4,
+      "health": 39,
+      "mana": 18,
+      "might": 5,
+      "resolve": 4,
+      "speed": 95
+    },
+    "territory": "theme_ember_underdeep",
+    "vulnerabilities": {
+      "crush": 15
+    },
+    "xp": 44
+  },
+  {
+    "abilities": [
+      "basic_pack",
+      "special_9"
+    ],
+    "ai_archetype": "pack",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_ice_mason",
+    "level": 9,
+    "loot_table": "loot_theme_09",
+    "name": "Ice Mason",
+    "name_key": "enemy.enemy_ice_mason.name",
+    "perception": {
+      "hearing": 7,
+      "vision": 6
+    },
+    "resistances": {
+      "spirit": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_ice_mason_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_ice_mason_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_ice_mason_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_ice_mason.png",
+    "stats": {
+      "accuracy": 71,
+      "evasion": 7,
+      "finesse": 5,
+      "health": 39,
+      "mana": 18,
+      "might": 5,
+      "resolve": 4,
+      "speed": 100
+    },
+    "territory": "theme_star_wheel_rooms",
+    "vulnerabilities": {
+      "radiant": 15
+    },
+    "xp": 44
+  },
+  {
+    "abilities": [
+      "basic_swarm",
+      "special_10"
+    ],
+    "ai_archetype": "swarm",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_root_widow",
+    "level": 9,
+    "loot_table": "loot_theme_10",
+    "name": "Root Widow",
+    "name_key": "enemy.enemy_root_widow.name",
+    "perception": {
+      "hearing": 8,
+      "vision": 7
+    },
+    "resistances": {
+      "shadow": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_root_widow_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_root_widow_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_root_widow_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_root_widow.png",
+    "stats": {
+      "accuracy": 71,
+      "evasion": 8,
+      "finesse": 6,
+      "health": 39,
+      "mana": 18,
+      "might": 5,
+      "resolve": 4,
+      "speed": 105
+    },
+    "territory": "theme_wind_carved_crown",
+    "vulnerabilities": {
+      "spirit": 15
+    },
+    "xp": 44
+  },
+  {
+    "abilities": [
+      "basic_guardian",
+      "special_11"
+    ],
+    "ai_archetype": "guardian",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_quiet_surgeon",
+    "level": 9,
+    "loot_table": "loot_theme_11",
+    "name": "Quiet Surgeon",
+    "name_key": "enemy.enemy_quiet_surgeon.name",
+    "perception": {
+      "hearing": 4,
+      "vision": 8
+    },
+    "resistances": {
+      "fire": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_quiet_surgeon_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_quiet_surgeon_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_quiet_surgeon_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_quiet_surgeon.png",
+    "stats": {
+      "accuracy": 71,
+      "evasion": 9,
+      "finesse": 2,
+      "health": 39,
+      "mana": 18,
+      "might": 5,
+      "resolve": 4,
+      "speed": 110
+    },
+    "territory": "theme_the_unhoused_choir",
+    "vulnerabilities": {
+      "frost": 15
+    },
+    "xp": 44
+  },
+  {
+    "abilities": [
+      "basic_ambusher",
+      "special_0"
+    ],
+    "ai_archetype": "ambusher",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_hall_singer",
+    "level": 10,
+    "loot_table": "loot_theme_00",
+    "name": "Hall Singer",
+    "name_key": "enemy.enemy_hall_singer.name",
+    "perception": {
+      "hearing": 5,
+      "vision": 5
+    },
+    "resistances": {
+      "frost": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_hall_singer_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_hall_singer_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_hall_singer_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_hall_singer.png",
+    "stats": {
+      "accuracy": 72,
+      "evasion": 10,
+      "finesse": 3,
+      "health": 42,
+      "mana": 20,
+      "might": 5,
+      "resolve": 4,
+      "speed": 85
+    },
+    "territory": "theme_mosswake_barrows",
+    "vulnerabilities": {
+      "fire": 15
+    },
+    "xp": 48
+  },
+  {
+    "abilities": [
+      "basic_ranged",
+      "special_1"
+    ],
+    "ai_archetype": "ranged",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 8,
+    "id": "enemy_mold_giant",
+    "level": 10,
+    "loot_table": "loot_theme_01",
+    "name": "Mold Giant",
+    "name_key": "enemy.enemy_mold_giant.name",
+    "perception": {
+      "hearing": 6,
+      "vision": 6
+    },
+    "resistances": {
+      "shock": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_mold_giant_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_mold_giant_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_mold_giant_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_mold_giant.png",
+    "stats": {
+      "accuracy": 72,
+      "evasion": 11,
+      "finesse": 4,
+      "health": 42,
+      "mana": 20,
+      "might": 5,
+      "resolve": 4,
+      "speed": 90
+    },
+    "territory": "theme_sundered_delvings",
+    "vulnerabilities": {
+      "crush": 15
+    },
+    "xp": 48
+  },
+  {
+    "abilities": [
+      "basic_caster",
+      "special_2"
+    ],
+    "ai_archetype": "caster",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 8,
+    "id": "enemy_lava_husk",
+    "level": 10,
+    "loot_table": "loot_theme_02",
+    "name": "Lava Husk",
+    "name_key": "enemy.enemy_lava_husk.name",
+    "perception": {
+      "hearing": 7,
+      "vision": 7
+    },
+    "resistances": {
+      "spirit": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_lava_husk_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_lava_husk_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_lava_husk_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_lava_husk.png",
+    "stats": {
+      "accuracy": 72,
+      "evasion": 12,
+      "finesse": 5,
+      "health": 42,
+      "mana": 20,
+      "might": 5,
+      "resolve": 4,
+      "speed": 95
+    },
+    "territory": "theme_drowned_footings",
+    "vulnerabilities": {
+      "radiant": 15
+    },
+    "xp": 48
+  },
+  {
+    "abilities": [
+      "basic_healer",
+      "special_3"
+    ],
+    "ai_archetype": "healer",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_fate_vulture",
+    "level": 10,
+    "loot_table": "loot_theme_03",
+    "name": "Fate Vulture",
+    "name_key": "enemy.enemy_fate_vulture.name",
+    "perception": {
+      "hearing": 8,
+      "vision": 8
+    },
+    "resistances": {
+      "shadow": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_fate_vulture_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_fate_vulture_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_fate_vulture_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_fate_vulture.png",
+    "stats": {
+      "accuracy": 72,
+      "evasion": 13,
+      "finesse": 6,
+      "health": 42,
+      "mana": 20,
+      "might": 5,
+      "resolve": 4,
+      "speed": 100
+    },
+    "territory": "theme_lorn_ice_vaults",
+    "vulnerabilities": {
+      "spirit": 15
+    },
+    "xp": 48
+  },
+  {
+    "abilities": [
+      "basic_summoner",
+      "special_4"
+    ],
+    "ai_archetype": "summoner",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_sky_maw",
+    "level": 11,
+    "loot_table": "loot_theme_04",
+    "name": "Sky Maw",
+    "name_key": "enemy.enemy_sky_maw.name",
+    "perception": {
+      "hearing": 4,
+      "vision": 5
+    },
+    "resistances": {
+      "fire": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_sky_maw_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_sky_maw_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_sky_maw_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_sky_maw.png",
+    "stats": {
+      "accuracy": 73,
+      "evasion": 6,
+      "finesse": 2,
+      "health": 45,
+      "mana": 22,
+      "might": 5,
+      "resolve": 4,
+      "speed": 105
+    },
+    "territory": "theme_root_caught_cloister",
+    "vulnerabilities": {
+      "frost": 15
+    },
+    "xp": 52
+  },
+  {
+    "abilities": [
+      "basic_skirmisher",
+      "special_5"
+    ],
+    "ai_archetype": "skirmisher",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_grief_double",
+    "level": 11,
+    "loot_table": "loot_theme_05",
+    "name": "Grief Double",
+    "name_key": "enemy.enemy_grief_double.name",
+    "perception": {
+      "hearing": 5,
+      "vision": 6
+    },
+    "resistances": {
+      "frost": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_grief_double_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_grief_double_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_grief_double_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_grief_double.png",
+    "stats": {
+      "accuracy": 73,
+      "evasion": 7,
+      "finesse": 3,
+      "health": 45,
+      "mana": 22,
+      "might": 5,
+      "resolve": 4,
+      "speed": 110
+    },
+    "territory": "theme_quiet_workshops",
+    "vulnerabilities": {
+      "fire": 15
+    },
+    "xp": 52
+  },
+  {
+    "abilities": [
+      "basic_brute",
+      "special_6"
+    ],
+    "ai_archetype": "brute",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_brine_troll",
+    "level": 11,
+    "loot_table": "loot_theme_06",
+    "name": "Brine Troll",
+    "name_key": "enemy.enemy_brine_troll.name",
+    "perception": {
+      "hearing": 6,
+      "vision": 7
+    },
+    "resistances": {
+      "shock": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_brine_troll_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_brine_troll_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_brine_troll_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_brine_troll.png",
+    "stats": {
+      "accuracy": 73,
+      "evasion": 8,
+      "finesse": 4,
+      "health": 45,
+      "mana": 22,
+      "might": 5,
+      "resolve": 4,
+      "speed": 85
+    },
+    "territory": "theme_halls_of_lent_voices",
+    "vulnerabilities": {
+      "crush": 15
+    },
+    "xp": 52
+  },
+  {
+    "abilities": [
+      "basic_controller",
+      "special_7"
+    ],
+    "ai_archetype": "controller",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_nail_witch",
+    "level": 11,
+    "loot_table": "loot_theme_07",
+    "name": "Nail Witch",
+    "name_key": "enemy.enemy_nail_witch.name",
+    "perception": {
+      "hearing": 7,
+      "vision": 8
+    },
+    "resistances": {
+      "spirit": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_nail_witch_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_nail_witch_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_nail_witch_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_nail_witch.png",
+    "stats": {
+      "accuracy": 73,
+      "evasion": 9,
+      "finesse": 5,
+      "health": 45,
+      "mana": 22,
+      "might": 5,
+      "resolve": 4,
+      "speed": 90
+    },
+    "territory": "theme_bluecap_hollows",
+    "vulnerabilities": {
+      "radiant": 15
+    },
+    "xp": 52
+  },
+  {
+    "abilities": [
+      "basic_pack",
+      "special_8"
+    ],
+    "ai_archetype": "pack",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_tuning_beast",
+    "level": 12,
+    "loot_table": "loot_theme_08",
+    "name": "Tuning Beast",
+    "name_key": "enemy.enemy_tuning_beast.name",
+    "perception": {
+      "hearing": 8,
+      "vision": 5
+    },
+    "resistances": {
+      "shadow": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_tuning_beast_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_tuning_beast_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_tuning_beast_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_tuning_beast.png",
+    "stats": {
+      "accuracy": 74,
+      "evasion": 10,
+      "finesse": 6,
+      "health": 48,
+      "mana": 24,
+      "might": 6,
+      "resolve": 5,
+      "speed": 95
+    },
+    "territory": "theme_ember_underdeep",
+    "vulnerabilities": {
+      "spirit": 15
+    },
+    "xp": 56
+  },
+  {
+    "abilities": [
+      "basic_swarm",
+      "special_9"
+    ],
+    "ai_archetype": "swarm",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_gloam_fox",
+    "level": 12,
+    "loot_table": "loot_theme_09",
+    "name": "Gloam Fox",
+    "name_key": "enemy.enemy_gloam_fox.name",
+    "perception": {
+      "hearing": 4,
+      "vision": 6
+    },
+    "resistances": {
+      "fire": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_gloam_fox_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_gloam_fox_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_gloam_fox_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_gloam_fox.png",
+    "stats": {
+      "accuracy": 74,
+      "evasion": 11,
+      "finesse": 2,
+      "health": 48,
+      "mana": 24,
+      "might": 6,
+      "resolve": 5,
+      "speed": 100
+    },
+    "territory": "theme_star_wheel_rooms",
+    "vulnerabilities": {
+      "frost": 15
+    },
+    "xp": 56
+  },
+  {
+    "abilities": [
+      "basic_guardian",
+      "special_10"
+    ],
+    "ai_archetype": "guardian",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_shard_monk",
+    "level": 12,
+    "loot_table": "loot_theme_10",
+    "name": "Shard Monk",
+    "name_key": "enemy.enemy_shard_monk.name",
+    "perception": {
+      "hearing": 5,
+      "vision": 7
+    },
+    "resistances": {
+      "frost": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_shard_monk_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_shard_monk_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_shard_monk_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_shard_monk.png",
+    "stats": {
+      "accuracy": 74,
+      "evasion": 12,
+      "finesse": 3,
+      "health": 48,
+      "mana": 24,
+      "might": 6,
+      "resolve": 5,
+      "speed": 105
+    },
+    "territory": "theme_wind_carved_crown",
+    "vulnerabilities": {
+      "fire": 15
+    },
+    "xp": 56
+  },
+  {
+    "abilities": [
+      "basic_ambusher",
+      "special_11"
+    ],
+    "ai_archetype": "ambusher",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": false,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 4,
+    "id": "enemy_thunder_warden",
+    "level": 12,
+    "loot_table": "loot_theme_11",
+    "name": "Thunder Warden",
+    "name_key": "enemy.enemy_thunder_warden.name",
+    "perception": {
+      "hearing": 6,
+      "vision": 8
+    },
+    "resistances": {
+      "shock": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_thunder_warden_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_thunder_warden_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_thunder_warden_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_thunder_warden.png",
+    "stats": {
+      "accuracy": 74,
+      "evasion": 13,
+      "finesse": 4,
+      "health": 48,
+      "mana": 24,
+      "might": 6,
+      "resolve": 5,
+      "speed": 110
+    },
+    "territory": "theme_the_unhoused_choir",
+    "vulnerabilities": {
+      "crush": 15
+    },
+    "xp": 56
+  },
+  {
+    "abilities": [
+      "basic_boss",
+      "special_0",
+      "phase_change"
+    ],
+    "ai_archetype": "boss",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": true,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 8,
+    "id": "enemy_abbot_of_the_drowned_bell",
+    "level": 13,
+    "loot_table": "loot_theme_00",
+    "name": "Abbot of the Drowned Bell",
+    "name_key": "enemy.enemy_abbot_of_the_drowned_bell.name",
+    "perception": {
+      "hearing": 7,
+      "vision": 5
+    },
+    "resistances": {
+      "spirit": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_abbot_of_the_drowned_bell_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_abbot_of_the_drowned_bell_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_abbot_of_the_drowned_bell_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_abbot_of_the_drowned_bell.png",
+    "stats": {
+      "accuracy": 75,
+      "evasion": 6,
+      "finesse": 5,
+      "health": 103,
+      "mana": 26,
+      "might": 6,
+      "resolve": 5,
+      "speed": 85
+    },
+    "territory": "theme_mosswake_barrows",
+    "vulnerabilities": {
+      "radiant": 15
+    },
+    "xp": 242
+  },
+  {
+    "abilities": [
+      "basic_boss",
+      "special_1",
+      "phase_change"
+    ],
+    "ai_archetype": "boss",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": true,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 8,
+    "id": "enemy_mother_stillwater",
+    "level": 13,
+    "loot_table": "loot_theme_01",
+    "name": "Mother Stillwater",
+    "name_key": "enemy.enemy_mother_stillwater.name",
+    "perception": {
+      "hearing": 8,
+      "vision": 6
+    },
+    "resistances": {
+      "shadow": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_mother_stillwater_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_mother_stillwater_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_mother_stillwater_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_mother_stillwater.png",
+    "stats": {
+      "accuracy": 75,
+      "evasion": 7,
+      "finesse": 6,
+      "health": 103,
+      "mana": 26,
+      "might": 6,
+      "resolve": 5,
+      "speed": 90
+    },
+    "territory": "theme_sundered_delvings",
+    "vulnerabilities": {
+      "spirit": 15
+    },
+    "xp": 242
+  },
+  {
+    "abilities": [
+      "basic_boss",
+      "special_2",
+      "phase_change"
+    ],
+    "ai_archetype": "boss",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": true,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 8,
+    "id": "enemy_the_brass_woodsman",
+    "level": 13,
+    "loot_table": "loot_theme_02",
+    "name": "The Brass Woodsman",
+    "name_key": "enemy.enemy_the_brass_woodsman.name",
+    "perception": {
+      "hearing": 4,
+      "vision": 7
+    },
+    "resistances": {
+      "fire": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_the_brass_woodsman_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_the_brass_woodsman_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_the_brass_woodsman_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_the_brass_woodsman.png",
+    "stats": {
+      "accuracy": 75,
+      "evasion": 8,
+      "finesse": 2,
+      "health": 103,
+      "mana": 26,
+      "might": 6,
+      "resolve": 5,
+      "speed": 95
+    },
+    "territory": "theme_drowned_footings",
+    "vulnerabilities": {
+      "frost": 15
+    },
+    "xp": 242
+  },
+  {
+    "abilities": [
+      "basic_boss",
+      "special_3",
+      "phase_change"
+    ],
+    "ai_archetype": "boss",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": true,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 8,
+    "id": "enemy_vey_s_unfinished_double",
+    "level": 13,
+    "loot_table": "loot_theme_03",
+    "name": "Vey's Unfinished Double",
+    "name_key": "enemy.enemy_vey_s_unfinished_double.name",
+    "perception": {
+      "hearing": 5,
+      "vision": 8
+    },
+    "resistances": {
+      "frost": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_vey_s_unfinished_double_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_vey_s_unfinished_double_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_vey_s_unfinished_double_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_vey_s_unfinished_double.png",
+    "stats": {
+      "accuracy": 75,
+      "evasion": 9,
+      "finesse": 3,
+      "health": 103,
+      "mana": 26,
+      "might": 6,
+      "resolve": 5,
+      "speed": 100
+    },
+    "territory": "theme_lorn_ice_vaults",
+    "vulnerabilities": {
+      "fire": 15
+    },
+    "xp": 242
+  },
+  {
+    "abilities": [
+      "basic_boss",
+      "special_4",
+      "phase_change"
+    ],
+    "ai_archetype": "boss",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": true,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 8,
+    "id": "enemy_warden_of_the_counterweight",
+    "level": 14,
+    "loot_table": "loot_theme_04",
+    "name": "Warden of the Counterweight",
+    "name_key": "enemy.enemy_warden_of_the_counterweight.name",
+    "perception": {
+      "hearing": 6,
+      "vision": 5
+    },
+    "resistances": {
+      "shock": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_warden_of_the_counterweight_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_warden_of_the_counterweight_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_warden_of_the_counterweight_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_warden_of_the_counterweight.png",
+    "stats": {
+      "accuracy": 76,
+      "evasion": 10,
+      "finesse": 4,
+      "health": 110,
+      "mana": 28,
+      "might": 6,
+      "resolve": 5,
+      "speed": 105
+    },
+    "territory": "theme_root_caught_cloister",
+    "vulnerabilities": {
+      "crush": 15
+    },
+    "xp": 260
+  },
+  {
+    "abilities": [
+      "basic_boss",
+      "special_5",
+      "phase_change"
+    ],
+    "ai_archetype": "boss",
+    "animations": [
+      "idle",
+      "move",
+      "attack",
+      "hit",
+      "special",
+      "death"
+    ],
+    "boss": true,
+    "description": "A distinct northern threat shaped by terrain, memory, and the Bell's waking note.",
+    "directions": 8,
+    "id": "enemy_the_choir_s_open_mouth",
+    "level": 14,
+    "loot_table": "loot_theme_05",
+    "name": "The Choir's Open Mouth",
+    "name_key": "enemy.enemy_the_choir_s_open_mouth.name",
+    "perception": {
+      "hearing": 7,
+      "vision": 6
+    },
+    "resistances": {
+      "spirit": 20
+    },
+    "sounds": {
+      "attack": "res://assets/sounds/creatures/enemy_the_choir_s_open_mouth_attack.wav",
+      "death": "res://assets/sounds/creatures/enemy_the_choir_s_open_mouth_death.wav",
+      "move": "res://assets/sounds/creatures/enemy_the_choir_s_open_mouth_move.wav"
+    },
+    "sprite": "res://assets/sprites/enemies/enemy_the_choir_s_open_mouth.png",
+    "stats": {
+      "accuracy": 76,
+      "evasion": 11,
+      "finesse": 5,
+      "health": 110,
+      "mana": 28,
+      "might": 6,
+      "resolve": 5,
+      "speed": 110
+    },
+    "territory": "theme_quiet_workshops",
+    "vulnerabilities": {
+      "radiant": 15
+    },
+    "xp": 260
+  }
+]

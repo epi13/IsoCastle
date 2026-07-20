@@ -1,0 +1,386 @@
+[
+  {
+    "body": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain.",
+    "body_key": "lore.the_first_warding.body",
+    "id": "lore_the_first_warding",
+    "location": "greywake",
+    "skill_check": {
+      "difficulty": 4,
+      "skill": "lore"
+    },
+    "title": "The First Warding",
+    "title_key": "lore.the_first_warding.title"
+  },
+  {
+    "body": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words.",
+    "body_key": "lore.a_recipe_for_peat_ink.body",
+    "id": "lore_a_recipe_for_peat_ink",
+    "location": "bracken_march",
+    "skill_check": {
+      "difficulty": 4,
+      "skill": "perception"
+    },
+    "title": "A Recipe for Peat Ink",
+    "title_key": "lore.a_recipe_for_peat_ink.title"
+  },
+  {
+    "body": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding.",
+    "body_key": "lore.orrenfast_guest_book.body",
+    "id": "lore_orrenfast_guest_book",
+    "location": "underbell",
+    "skill_check": {
+      "difficulty": 4,
+      "skill": "craft"
+    },
+    "title": "Orrenfast Guest Book",
+    "title_key": "lore.orrenfast_guest_book.title"
+  },
+  {
+    "body": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined.",
+    "body_key": "lore.miner_s_margin_notes.body",
+    "id": "lore_miner_s_margin_notes",
+    "location": "lorn_shelf",
+    "skill_check": {
+      "difficulty": 4,
+      "skill": "spirit"
+    },
+    "title": "Miner's Margin Notes",
+    "title_key": "lore.miner_s_margin_notes.title"
+  },
+  {
+    "body": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain.",
+    "body_key": "lore.the_bellfounder_s_refusal.body",
+    "id": "lore_the_bellfounder_s_refusal",
+    "location": "rime_crown",
+    "skill_check": {
+      "difficulty": 4,
+      "skill": "lore"
+    },
+    "title": "The Bellfounder's Refusal",
+    "title_key": "lore.the_bellfounder_s_refusal.title"
+  },
+  {
+    "body": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words.",
+    "body_key": "lore.weather_of_the_lorn_shelf.body",
+    "id": "lore_weather_of_the_lorn_shelf",
+    "location": "greywake",
+    "skill_check": {
+      "difficulty": 4,
+      "skill": "perception"
+    },
+    "title": "Weather of the Lorn Shelf",
+    "title_key": "lore.weather_of_the_lorn_shelf.title"
+  },
+  {
+    "body": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding.",
+    "body_key": "lore.on_grief_as_material.body",
+    "id": "lore_on_grief_as_material",
+    "location": "bracken_march",
+    "skill_check": {
+      "difficulty": 5,
+      "skill": "craft"
+    },
+    "title": "On Grief as Material",
+    "title_key": "lore.on_grief_as_material.title"
+  },
+  {
+    "body": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined.",
+    "body_key": "lore.children_s_counting_rhyme.body",
+    "id": "lore_children_s_counting_rhyme",
+    "location": "underbell",
+    "skill_check": {
+      "difficulty": 5,
+      "skill": "spirit"
+    },
+    "title": "Children's Counting Rhyme",
+    "title_key": "lore.children_s_counting_rhyme.title"
+  },
+  {
+    "body": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain.",
+    "body_key": "lore.maelin_s_workshop_ledger.body",
+    "id": "lore_maelin_s_workshop_ledger",
+    "location": "lorn_shelf",
+    "skill_check": {
+      "difficulty": 5,
+      "skill": "lore"
+    },
+    "title": "Maelin's Workshop Ledger",
+    "title_key": "lore.maelin_s_workshop_ledger.title"
+  },
+  {
+    "body": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words.",
+    "body_key": "lore.letter_beneath_a_floorboard.body",
+    "id": "lore_letter_beneath_a_floorboard",
+    "location": "rime_crown",
+    "skill_check": {
+      "difficulty": 5,
+      "skill": "perception"
+    },
+    "title": "Letter Beneath a Floorboard",
+    "title_key": "lore.letter_beneath_a_floorboard.title"
+  },
+  {
+    "body": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding.",
+    "body_key": "lore.the_quiet_ledger_s_charter.body",
+    "id": "lore_the_quiet_ledger_s_charter",
+    "location": "greywake",
+    "skill_check": {
+      "difficulty": 5,
+      "skill": "craft"
+    },
+    "title": "The Quiet Ledger's Charter",
+    "title_key": "lore.the_quiet_ledger_s_charter.title"
+  },
+  {
+    "body": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined.",
+    "body_key": "lore.a_marsh_keeper_s_map.body",
+    "id": "lore_a_marsh_keeper_s_map",
+    "location": "bracken_march",
+    "skill_check": {
+      "difficulty": 5,
+      "skill": "spirit"
+    },
+    "title": "A Marsh Keeper's Map",
+    "title_key": "lore.a_marsh_keeper_s_map.title"
+  },
+  {
+    "body": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain.",
+    "body_key": "lore.bluecap_field_guide.body",
+    "id": "lore_bluecap_field_guide",
+    "location": "underbell",
+    "skill_check": {
+      "difficulty": 6,
+      "skill": "lore"
+    },
+    "title": "Bluecap Field Guide",
+    "title_key": "lore.bluecap_field_guide.title"
+  },
+  {
+    "body": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words.",
+    "body_key": "lore.the_unfinished_hymn.body",
+    "id": "lore_the_unfinished_hymn",
+    "location": "lorn_shelf",
+    "skill_check": {
+      "difficulty": 6,
+      "skill": "perception"
+    },
+    "title": "The Unfinished Hymn",
+    "title_key": "lore.the_unfinished_hymn.title"
+  },
+  {
+    "body": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding.",
+    "body_key": "lore.counterweight_maintenance.body",
+    "id": "lore_counterweight_maintenance",
+    "location": "rime_crown",
+    "skill_check": {
+      "difficulty": 6,
+      "skill": "craft"
+    },
+    "title": "Counterweight Maintenance",
+    "title_key": "lore.counterweight_maintenance.title"
+  },
+  {
+    "body": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined.",
+    "body_key": "lore.an_apology_to_a_ghost.body",
+    "id": "lore_an_apology_to_a_ghost",
+    "location": "greywake",
+    "skill_check": {
+      "difficulty": 6,
+      "skill": "spirit"
+    },
+    "title": "An Apology to a Ghost",
+    "title_key": "lore.an_apology_to_a_ghost.title"
+  },
+  {
+    "body": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain.",
+    "body_key": "lore.rime_crown_table_customs.body",
+    "id": "lore_rime_crown_table_customs",
+    "location": "bracken_march",
+    "skill_check": {
+      "difficulty": 6,
+      "skill": "lore"
+    },
+    "title": "Rime-Crown Table Customs",
+    "title_key": "lore.rime_crown_table_customs.title"
+  },
+  {
+    "body": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words.",
+    "body_key": "lore.a_ferryman_s_receipts.body",
+    "id": "lore_a_ferryman_s_receipts",
+    "location": "underbell",
+    "skill_check": {
+      "difficulty": 6,
+      "skill": "perception"
+    },
+    "title": "A Ferryman's Receipts",
+    "title_key": "lore.a_ferryman_s_receipts.title"
+  },
+  {
+    "body": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding.",
+    "body_key": "lore.the_ninth_answer.body",
+    "id": "lore_the_ninth_answer",
+    "location": "lorn_shelf",
+    "skill_check": {
+      "difficulty": 7,
+      "skill": "craft"
+    },
+    "title": "The Ninth Answer",
+    "title_key": "lore.the_ninth_answer.title"
+  },
+  {
+    "body": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined.",
+    "body_key": "lore.notes_on_memory_moths.body",
+    "id": "lore_notes_on_memory_moths",
+    "location": "rime_crown",
+    "skill_check": {
+      "difficulty": 7,
+      "skill": "spirit"
+    },
+    "title": "Notes on Memory Moths",
+    "title_key": "lore.notes_on_memory_moths.title"
+  },
+  {
+    "body": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain.",
+    "body_key": "lore.siva_s_expedition_log.body",
+    "id": "lore_siva_s_expedition_log",
+    "location": "greywake",
+    "skill_check": {
+      "difficulty": 7,
+      "skill": "lore"
+    },
+    "title": "Siva's Expedition Log",
+    "title_key": "lore.siva_s_expedition_log.title"
+  },
+  {
+    "body": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words.",
+    "body_key": "lore.ada_s_impossible_lock.body",
+    "id": "lore_ada_s_impossible_lock",
+    "location": "bracken_march",
+    "skill_check": {
+      "difficulty": 7,
+      "skill": "perception"
+    },
+    "title": "Ada's Impossible Lock",
+    "title_key": "lore.ada_s_impossible_lock.title"
+  },
+  {
+    "body": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding.",
+    "body_key": "lore.bran_s_joke_book.body",
+    "id": "lore_bran_s_joke_book",
+    "location": "underbell",
+    "skill_check": {
+      "difficulty": 7,
+      "skill": "craft"
+    },
+    "title": "Bran's Joke Book",
+    "title_key": "lore.bran_s_joke_book.title"
+  },
+  {
+    "body": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined.",
+    "body_key": "lore.hearth_reader_s_prices.body",
+    "id": "lore_hearth_reader_s_prices",
+    "location": "lorn_shelf",
+    "skill_check": {
+      "difficulty": 7,
+      "skill": "spirit"
+    },
+    "title": "Hearth-Reader's Prices",
+    "title_key": "lore.hearth_reader_s_prices.title"
+  },
+  {
+    "body": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain.",
+    "body_key": "lore.the_tallyman_s_categories.body",
+    "id": "lore_the_tallyman_s_categories",
+    "location": "rime_crown",
+    "skill_check": {
+      "difficulty": 8,
+      "skill": "lore"
+    },
+    "title": "The Tallyman's Categories",
+    "title_key": "lore.the_tallyman_s_categories.title"
+  },
+  {
+    "body": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words.",
+    "body_key": "lore.a_choir_voice_interview.body",
+    "id": "lore_a_choir_voice_interview",
+    "location": "greywake",
+    "skill_check": {
+      "difficulty": 8,
+      "skill": "perception"
+    },
+    "title": "A Choir Voice Interview",
+    "title_key": "lore.a_choir_voice_interview.title"
+  },
+  {
+    "body": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding.",
+    "body_key": "lore.storm_burial_practice.body",
+    "id": "lore_storm_burial_practice",
+    "location": "bracken_march",
+    "skill_check": {
+      "difficulty": 8,
+      "skill": "craft"
+    },
+    "title": "Storm Burial Practice",
+    "title_key": "lore.storm_burial_practice.title"
+  },
+  {
+    "body": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined.",
+    "body_key": "lore.orrery_calibration.body",
+    "id": "lore_orrery_calibration",
+    "location": "underbell",
+    "skill_check": {
+      "difficulty": 8,
+      "skill": "spirit"
+    },
+    "title": "Orrery Calibration",
+    "title_key": "lore.orrery_calibration.title"
+  },
+  {
+    "body": "The writer treats memory as a duty shared by witnesses, not a possession to be mined. A practical instruction becomes stranger at the final line, where the ink is asked to remember rain.",
+    "body_key": "lore.free_vessel_sketches.body",
+    "id": "lore_free_vessel_sketches",
+    "location": "lorn_shelf",
+    "skill_check": {
+      "difficulty": 8,
+      "skill": "lore"
+    },
+    "title": "Free Vessel Sketches",
+    "title_key": "lore.free_vessel_sketches.title"
+  },
+  {
+    "body": "A practical instruction becomes stranger at the final line, where the ink is asked to remember rain. Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words.",
+    "body_key": "lore.greywake_after_the_ring.body",
+    "id": "lore_greywake_after_the_ring",
+    "location": "rime_crown",
+    "skill_check": {
+      "difficulty": 8,
+      "skill": "perception"
+    },
+    "title": "Greywake After the Ring",
+    "title_key": "lore.greywake_after_the_ring.title"
+  },
+  {
+    "body": "Several names have been carefully cut away. Their absence leaves deeper impressions than the surviving words. The page argues that a machine may obey perfectly and still enact a terrible misunderstanding.",
+    "body_key": "lore.maelin_s_last_unsent_letter.body",
+    "id": "lore_maelin_s_last_unsent_letter",
+    "location": "greywake",
+    "skill_check": {
+      "difficulty": 9,
+      "skill": "craft"
+    },
+    "title": "Maelin's Last Unsent Letter",
+    "title_key": "lore.maelin_s_last_unsent_letter.title"
+  },
+  {
+    "body": "The page argues that a machine may obey perfectly and still enact a terrible misunderstanding. The writer treats memory as a duty shared by witnesses, not a possession to be mined.",
+    "body_key": "lore.postscript_in_little_ash_s_hand.body",
+    "id": "lore_postscript_in_little_ash_s_hand",
+    "location": "bracken_march",
+    "skill_check": {
+      "difficulty": 9,
+      "skill": "spirit"
+    },
+    "title": "Postscript in Little Ash's Hand",
+    "title_key": "lore.postscript_in_little_ash_s_hand.title"
+  }
+]

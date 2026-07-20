@@ -1,0 +1,362 @@
+[
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 3,
+    "id": "affix_hearthlit",
+    "name": "Hearthlit",
+    "stat": "fire_damage"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 3,
+    "id": "affix_rimebound",
+    "name": "Rimebound",
+    "stat": "frost_damage"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 3,
+    "id": "affix_stormdrawn",
+    "name": "Stormdrawn",
+    "stat": "shock_damage"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 2,
+    "id": "affix_stonefast",
+    "name": "Stonefast",
+    "stat": "armor"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 3,
+    "id": "affix_sunmended",
+    "name": "Sunmended",
+    "stat": "healing"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 2,
+    "id": "affix_mothveiled",
+    "name": "Mothveiled",
+    "stat": "stealth"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 3,
+    "id": "affix_echoing",
+    "name": "Echoing",
+    "stat": "spirit_damage"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 2,
+    "id": "affix_fateknotted",
+    "name": "Fateknotted",
+    "stat": "critical"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 3,
+    "id": "affix_keen",
+    "name": "Keen",
+    "stat": "accuracy"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 5,
+    "id": "affix_stalwart",
+    "name": "Stalwart",
+    "stat": "vitality"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 5,
+    "id": "affix_clear",
+    "name": "Clear",
+    "stat": "mana"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 2,
+    "id": "affix_swift",
+    "name": "Swift",
+    "stat": "speed"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 2,
+    "id": "affix_weighted",
+    "name": "Weighted",
+    "stat": "knockback"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 3,
+    "id": "affix_quiet",
+    "name": "Quiet",
+    "stat": "noise_reduction"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 3,
+    "id": "affix_seeking",
+    "name": "Seeking",
+    "stat": "perception"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 2,
+    "id": "affix_warded",
+    "name": "Warded",
+    "stat": "resistance"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 2,
+    "id": "affix_leeching",
+    "name": "Leeching",
+    "stat": "life_steal"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 3,
+    "id": "affix_patient",
+    "name": "Patient",
+    "stat": "block"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 2,
+    "id": "affix_vigilant",
+    "name": "Vigilant",
+    "stat": "reaction"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": -5,
+    "id": "affix_wayfaring",
+    "name": "Wayfaring",
+    "stat": "move_cost"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 8,
+    "id": "affix_of_embers",
+    "name": "Of Embers",
+    "stat": "burn_chance"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 8,
+    "id": "affix_of_still_water",
+    "name": "Of Still Water",
+    "stat": "slow_chance"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 5,
+    "id": "affix_of_high_thunder",
+    "name": "Of High Thunder",
+    "stat": "stun_chance"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 1,
+    "id": "affix_of_deep_roots",
+    "name": "Of Deep Roots",
+    "stat": "immovable"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 5,
+    "id": "affix_of_daybreak",
+    "name": "Of Daybreak",
+    "stat": "cleanse_chance"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 3,
+    "id": "affix_of_soft_wings",
+    "name": "Of Soft Wings",
+    "stat": "evasion"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 3,
+    "id": "affix_of_old_voices",
+    "name": "Of Old Voices",
+    "stat": "summon_power"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 4,
+    "id": "affix_of_the_crossed_thread",
+    "name": "Of The Crossed Thread",
+    "stat": "loot_luck"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 5,
+    "id": "affix_of_honest_iron",
+    "name": "Of Honest Iron",
+    "stat": "curse_resist"
+  },
+  {
+    "allowed": [
+      "weapon",
+      "armor",
+      "accessory",
+      "jewelry"
+    ],
+    "amount": 1,
+    "id": "affix_of_the_last_road",
+    "name": "Of The Last Road",
+    "stat": "death_save"
+  }
+]

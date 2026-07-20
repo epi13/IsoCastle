@@ -1,0 +1,3408 @@
+[
+  {
+    "bark_tags": [
+      "innkeeper",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_edda_varn_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_edda_varn_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_edda_varn",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_edda_varn_00",
+    "speaker": "npc_edda_varn",
+    "text": "Edda Varn: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_edda_varn_00.text"
+  },
+  {
+    "bark_tags": [
+      "innkeeper",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_edda_varn_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_edda_varn_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_edda_varn"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_edda_varn_01",
+    "speaker": "npc_edda_varn",
+    "text": "Edda Varn: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_edda_varn_01.text"
+  },
+  {
+    "bark_tags": [
+      "innkeeper",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_edda_varn_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_edda_varn_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_edda_varn"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_edda_varn_02",
+    "speaker": "npc_edda_varn",
+    "text": "Edda Varn: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_edda_varn_02.text"
+  },
+  {
+    "bark_tags": [
+      "innkeeper",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_edda_varn_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_edda_varn_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_edda_varn"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_edda_varn_03",
+    "speaker": "npc_edda_varn",
+    "text": "Edda Varn: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_edda_varn_03.text"
+  },
+  {
+    "bark_tags": [
+      "innkeeper",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_edda_varn"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_edda_varn_04",
+    "speaker": "npc_edda_varn",
+    "text": "Edda Varn: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_edda_varn_04.text"
+  },
+  {
+    "bark_tags": [
+      "lore keeper",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_senn_marr_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_senn_marr_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_senn_marr",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_senn_marr_00",
+    "speaker": "npc_senn_marr",
+    "text": "Senn Marr: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_senn_marr_00.text"
+  },
+  {
+    "bark_tags": [
+      "lore keeper",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_senn_marr_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_senn_marr_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_senn_marr"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_senn_marr_01",
+    "speaker": "npc_senn_marr",
+    "text": "Senn Marr: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_senn_marr_01.text"
+  },
+  {
+    "bark_tags": [
+      "lore keeper",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_senn_marr_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_senn_marr_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_senn_marr"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_senn_marr_02",
+    "speaker": "npc_senn_marr",
+    "text": "Senn Marr: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_senn_marr_02.text"
+  },
+  {
+    "bark_tags": [
+      "lore keeper",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_senn_marr_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_senn_marr_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_senn_marr"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_senn_marr_03",
+    "speaker": "npc_senn_marr",
+    "text": "Senn Marr: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_senn_marr_03.text"
+  },
+  {
+    "bark_tags": [
+      "lore keeper",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_senn_marr"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_senn_marr_04",
+    "speaker": "npc_senn_marr",
+    "text": "Senn Marr: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_senn_marr_04.text"
+  },
+  {
+    "bark_tags": [
+      "child messenger",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_tovi_reed_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_tovi_reed_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_tovi_reed",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_tovi_reed_00",
+    "speaker": "npc_tovi_reed",
+    "text": "Tovi Reed: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_tovi_reed_00.text"
+  },
+  {
+    "bark_tags": [
+      "child messenger",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_tovi_reed_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_tovi_reed_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_tovi_reed"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_tovi_reed_01",
+    "speaker": "npc_tovi_reed",
+    "text": "Tovi Reed: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_tovi_reed_01.text"
+  },
+  {
+    "bark_tags": [
+      "child messenger",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_tovi_reed_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_tovi_reed_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_tovi_reed"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_tovi_reed_02",
+    "speaker": "npc_tovi_reed",
+    "text": "Tovi Reed: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_tovi_reed_02.text"
+  },
+  {
+    "bark_tags": [
+      "child messenger",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_tovi_reed_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_tovi_reed_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_tovi_reed"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_tovi_reed_03",
+    "speaker": "npc_tovi_reed",
+    "text": "Tovi Reed: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_tovi_reed_03.text"
+  },
+  {
+    "bark_tags": [
+      "child messenger",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_tovi_reed"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_tovi_reed_04",
+    "speaker": "npc_tovi_reed",
+    "text": "Tovi Reed: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_tovi_reed_04.text"
+  },
+  {
+    "bark_tags": [
+      "smith",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_bran_oc_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_bran_oc_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_bran_oc",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_bran_oc_00",
+    "speaker": "npc_bran_oc",
+    "text": "Bran Oc: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_bran_oc_00.text"
+  },
+  {
+    "bark_tags": [
+      "smith",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_bran_oc_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_bran_oc_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_bran_oc"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_bran_oc_01",
+    "speaker": "npc_bran_oc",
+    "text": "Bran Oc: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_bran_oc_01.text"
+  },
+  {
+    "bark_tags": [
+      "smith",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_bran_oc_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_bran_oc_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_bran_oc"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_bran_oc_02",
+    "speaker": "npc_bran_oc",
+    "text": "Bran Oc: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_bran_oc_02.text"
+  },
+  {
+    "bark_tags": [
+      "smith",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_bran_oc_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_bran_oc_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_bran_oc"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_bran_oc_03",
+    "speaker": "npc_bran_oc",
+    "text": "Bran Oc: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_bran_oc_03.text"
+  },
+  {
+    "bark_tags": [
+      "smith",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_bran_oc"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_bran_oc_04",
+    "speaker": "npc_bran_oc",
+    "text": "Bran Oc: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_bran_oc_04.text"
+  },
+  {
+    "bark_tags": [
+      "healer",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_ylsa_fen_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_ylsa_fen_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_ylsa_fen",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_ylsa_fen_00",
+    "speaker": "npc_ylsa_fen",
+    "text": "Ylsa Fen: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_ylsa_fen_00.text"
+  },
+  {
+    "bark_tags": [
+      "healer",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_ylsa_fen_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_ylsa_fen_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_ylsa_fen"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_ylsa_fen_01",
+    "speaker": "npc_ylsa_fen",
+    "text": "Ylsa Fen: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_ylsa_fen_01.text"
+  },
+  {
+    "bark_tags": [
+      "healer",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_ylsa_fen_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_ylsa_fen_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_ylsa_fen"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_ylsa_fen_02",
+    "speaker": "npc_ylsa_fen",
+    "text": "Ylsa Fen: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_ylsa_fen_02.text"
+  },
+  {
+    "bark_tags": [
+      "healer",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_ylsa_fen_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_ylsa_fen_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_ylsa_fen"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_ylsa_fen_03",
+    "speaker": "npc_ylsa_fen",
+    "text": "Ylsa Fen: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_ylsa_fen_03.text"
+  },
+  {
+    "bark_tags": [
+      "healer",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_ylsa_fen"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_ylsa_fen_04",
+    "speaker": "npc_ylsa_fen",
+    "text": "Ylsa Fen: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_ylsa_fen_04.text"
+  },
+  {
+    "bark_tags": [
+      "merchant",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_kerrit_bale_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_kerrit_bale_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_kerrit_bale",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_kerrit_bale_00",
+    "speaker": "npc_kerrit_bale",
+    "text": "Kerrit Bale: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_kerrit_bale_00.text"
+  },
+  {
+    "bark_tags": [
+      "merchant",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_kerrit_bale_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_kerrit_bale_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_kerrit_bale"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_kerrit_bale_01",
+    "speaker": "npc_kerrit_bale",
+    "text": "Kerrit Bale: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_kerrit_bale_01.text"
+  },
+  {
+    "bark_tags": [
+      "merchant",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_kerrit_bale_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_kerrit_bale_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_kerrit_bale"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_kerrit_bale_02",
+    "speaker": "npc_kerrit_bale",
+    "text": "Kerrit Bale: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_kerrit_bale_02.text"
+  },
+  {
+    "bark_tags": [
+      "merchant",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_kerrit_bale_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_kerrit_bale_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_kerrit_bale"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_kerrit_bale_03",
+    "speaker": "npc_kerrit_bale",
+    "text": "Kerrit Bale: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_kerrit_bale_03.text"
+  },
+  {
+    "bark_tags": [
+      "merchant",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_kerrit_bale"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_kerrit_bale_04",
+    "speaker": "npc_kerrit_bale",
+    "text": "Kerrit Bale: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_kerrit_bale_04.text"
+  },
+  {
+    "bark_tags": [
+      "missing artificer",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_maelin_vey_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_maelin_vey_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_maelin_vey",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_maelin_vey_00",
+    "speaker": "npc_maelin_vey",
+    "text": "Maelin Vey: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_maelin_vey_00.text"
+  },
+  {
+    "bark_tags": [
+      "missing artificer",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_maelin_vey_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_maelin_vey_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_maelin_vey"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_maelin_vey_01",
+    "speaker": "npc_maelin_vey",
+    "text": "Maelin Vey: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_maelin_vey_01.text"
+  },
+  {
+    "bark_tags": [
+      "missing artificer",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_maelin_vey_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_maelin_vey_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_maelin_vey"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_maelin_vey_02",
+    "speaker": "npc_maelin_vey",
+    "text": "Maelin Vey: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_maelin_vey_02.text"
+  },
+  {
+    "bark_tags": [
+      "missing artificer",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_maelin_vey_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_maelin_vey_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_maelin_vey"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_maelin_vey_03",
+    "speaker": "npc_maelin_vey",
+    "text": "Maelin Vey: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_maelin_vey_03.text"
+  },
+  {
+    "bark_tags": [
+      "missing artificer",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_maelin_vey"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_maelin_vey_04",
+    "speaker": "npc_maelin_vey",
+    "text": "Maelin Vey: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_maelin_vey_04.text"
+  },
+  {
+    "bark_tags": [
+      "marsh keeper",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_orra_pike_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_orra_pike_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_orra_pike",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_orra_pike_00",
+    "speaker": "npc_orra_pike",
+    "text": "Orra Pike: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_orra_pike_00.text"
+  },
+  {
+    "bark_tags": [
+      "marsh keeper",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_orra_pike_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_orra_pike_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_orra_pike"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_orra_pike_01",
+    "speaker": "npc_orra_pike",
+    "text": "Orra Pike: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_orra_pike_01.text"
+  },
+  {
+    "bark_tags": [
+      "marsh keeper",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_orra_pike_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_orra_pike_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_orra_pike"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_orra_pike_02",
+    "speaker": "npc_orra_pike",
+    "text": "Orra Pike: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_orra_pike_02.text"
+  },
+  {
+    "bark_tags": [
+      "marsh keeper",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_orra_pike_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_orra_pike_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_orra_pike"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_orra_pike_03",
+    "speaker": "npc_orra_pike",
+    "text": "Orra Pike: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_orra_pike_03.text"
+  },
+  {
+    "bark_tags": [
+      "marsh keeper",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_orra_pike"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_orra_pike_04",
+    "speaker": "npc_orra_pike",
+    "text": "Orra Pike: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_orra_pike_04.text"
+  },
+  {
+    "bark_tags": [
+      "harbormaster",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_hollan_grey_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_hollan_grey_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_hollan_grey",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_hollan_grey_00",
+    "speaker": "npc_hollan_grey",
+    "text": "Hollan Grey: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_hollan_grey_00.text"
+  },
+  {
+    "bark_tags": [
+      "harbormaster",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_hollan_grey_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_hollan_grey_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_hollan_grey"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_hollan_grey_01",
+    "speaker": "npc_hollan_grey",
+    "text": "Hollan Grey: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_hollan_grey_01.text"
+  },
+  {
+    "bark_tags": [
+      "harbormaster",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_hollan_grey_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_hollan_grey_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_hollan_grey"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_hollan_grey_02",
+    "speaker": "npc_hollan_grey",
+    "text": "Hollan Grey: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_hollan_grey_02.text"
+  },
+  {
+    "bark_tags": [
+      "harbormaster",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_hollan_grey_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_hollan_grey_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_hollan_grey"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_hollan_grey_03",
+    "speaker": "npc_hollan_grey",
+    "text": "Hollan Grey: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_hollan_grey_03.text"
+  },
+  {
+    "bark_tags": [
+      "harbormaster",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_hollan_grey"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_hollan_grey_04",
+    "speaker": "npc_hollan_grey",
+    "text": "Hollan Grey: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_hollan_grey_04.text"
+  },
+  {
+    "bark_tags": [
+      "spell teacher",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_nim_aster_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_nim_aster_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_nim_aster",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_nim_aster_00",
+    "speaker": "npc_nim_aster",
+    "text": "Nim Aster: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_nim_aster_00.text"
+  },
+  {
+    "bark_tags": [
+      "spell teacher",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_nim_aster_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_nim_aster_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_nim_aster"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_nim_aster_01",
+    "speaker": "npc_nim_aster",
+    "text": "Nim Aster: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_nim_aster_01.text"
+  },
+  {
+    "bark_tags": [
+      "spell teacher",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_nim_aster_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_nim_aster_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_nim_aster"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_nim_aster_02",
+    "speaker": "npc_nim_aster",
+    "text": "Nim Aster: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_nim_aster_02.text"
+  },
+  {
+    "bark_tags": [
+      "spell teacher",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_nim_aster_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_nim_aster_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_nim_aster"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_nim_aster_03",
+    "speaker": "npc_nim_aster",
+    "text": "Nim Aster: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_nim_aster_03.text"
+  },
+  {
+    "bark_tags": [
+      "spell teacher",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_nim_aster"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_nim_aster_04",
+    "speaker": "npc_nim_aster",
+    "text": "Nim Aster: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_nim_aster_04.text"
+  },
+  {
+    "bark_tags": [
+      "hunter",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_jori_tern_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_jori_tern_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_jori_tern",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_jori_tern_00",
+    "speaker": "npc_jori_tern",
+    "text": "Jori Tern: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_jori_tern_00.text"
+  },
+  {
+    "bark_tags": [
+      "hunter",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_jori_tern_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_jori_tern_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_jori_tern"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_jori_tern_01",
+    "speaker": "npc_jori_tern",
+    "text": "Jori Tern: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_jori_tern_01.text"
+  },
+  {
+    "bark_tags": [
+      "hunter",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_jori_tern_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_jori_tern_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_jori_tern"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_jori_tern_02",
+    "speaker": "npc_jori_tern",
+    "text": "Jori Tern: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_jori_tern_02.text"
+  },
+  {
+    "bark_tags": [
+      "hunter",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_jori_tern_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_jori_tern_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_jori_tern"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_jori_tern_03",
+    "speaker": "npc_jori_tern",
+    "text": "Jori Tern: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_jori_tern_03.text"
+  },
+  {
+    "bark_tags": [
+      "hunter",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_jori_tern"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_jori_tern_04",
+    "speaker": "npc_jori_tern",
+    "text": "Jori Tern: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_jori_tern_04.text"
+  },
+  {
+    "bark_tags": [
+      "miner representative",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_pell_under_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_pell_under_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_pell_under",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_pell_under_00",
+    "speaker": "npc_pell_under",
+    "text": "Pell Under: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_pell_under_00.text"
+  },
+  {
+    "bark_tags": [
+      "miner representative",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_pell_under_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_pell_under_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_pell_under"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_pell_under_01",
+    "speaker": "npc_pell_under",
+    "text": "Pell Under: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_pell_under_01.text"
+  },
+  {
+    "bark_tags": [
+      "miner representative",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_pell_under_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_pell_under_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_pell_under"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_pell_under_02",
+    "speaker": "npc_pell_under",
+    "text": "Pell Under: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_pell_under_02.text"
+  },
+  {
+    "bark_tags": [
+      "miner representative",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_pell_under_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_pell_under_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_pell_under"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_pell_under_03",
+    "speaker": "npc_pell_under",
+    "text": "Pell Under: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_pell_under_03.text"
+  },
+  {
+    "bark_tags": [
+      "miner representative",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_pell_under"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_pell_under_04",
+    "speaker": "npc_pell_under",
+    "text": "Pell Under: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_pell_under_04.text"
+  },
+  {
+    "bark_tags": [
+      "lockwright",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_ada_clasp_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_ada_clasp_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_ada_clasp",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_ada_clasp_00",
+    "speaker": "npc_ada_clasp",
+    "text": "Ada Clasp: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_ada_clasp_00.text"
+  },
+  {
+    "bark_tags": [
+      "lockwright",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_ada_clasp_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_ada_clasp_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_ada_clasp"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_ada_clasp_01",
+    "speaker": "npc_ada_clasp",
+    "text": "Ada Clasp: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_ada_clasp_01.text"
+  },
+  {
+    "bark_tags": [
+      "lockwright",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_ada_clasp_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_ada_clasp_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_ada_clasp"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_ada_clasp_02",
+    "speaker": "npc_ada_clasp",
+    "text": "Ada Clasp: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_ada_clasp_02.text"
+  },
+  {
+    "bark_tags": [
+      "lockwright",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_ada_clasp_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_ada_clasp_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_ada_clasp"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_ada_clasp_03",
+    "speaker": "npc_ada_clasp",
+    "text": "Ada Clasp: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_ada_clasp_03.text"
+  },
+  {
+    "bark_tags": [
+      "lockwright",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_ada_clasp"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_ada_clasp_04",
+    "speaker": "npc_ada_clasp",
+    "text": "Ada Clasp: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_ada_clasp_04.text"
+  },
+  {
+    "bark_tags": [
+      "cook",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_venn_soot_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_venn_soot_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_venn_soot",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_venn_soot_00",
+    "speaker": "npc_venn_soot",
+    "text": "Venn Soot: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_venn_soot_00.text"
+  },
+  {
+    "bark_tags": [
+      "cook",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_venn_soot_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_venn_soot_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_venn_soot"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_venn_soot_01",
+    "speaker": "npc_venn_soot",
+    "text": "Venn Soot: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_venn_soot_01.text"
+  },
+  {
+    "bark_tags": [
+      "cook",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_venn_soot_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_venn_soot_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_venn_soot"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_venn_soot_02",
+    "speaker": "npc_venn_soot",
+    "text": "Venn Soot: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_venn_soot_02.text"
+  },
+  {
+    "bark_tags": [
+      "cook",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_venn_soot_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_venn_soot_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_venn_soot"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_venn_soot_03",
+    "speaker": "npc_venn_soot",
+    "text": "Venn Soot: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_venn_soot_03.text"
+  },
+  {
+    "bark_tags": [
+      "cook",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_venn_soot"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_venn_soot_04",
+    "speaker": "npc_venn_soot",
+    "text": "Venn Soot: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_venn_soot_04.text"
+  },
+  {
+    "bark_tags": [
+      "undertaker",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_rusk_candle_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_rusk_candle_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_rusk_candle",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_rusk_candle_00",
+    "speaker": "npc_rusk_candle",
+    "text": "Rusk Candle: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_rusk_candle_00.text"
+  },
+  {
+    "bark_tags": [
+      "undertaker",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_rusk_candle_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_rusk_candle_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_rusk_candle"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_rusk_candle_01",
+    "speaker": "npc_rusk_candle",
+    "text": "Rusk Candle: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_rusk_candle_01.text"
+  },
+  {
+    "bark_tags": [
+      "undertaker",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_rusk_candle_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_rusk_candle_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_rusk_candle"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_rusk_candle_02",
+    "speaker": "npc_rusk_candle",
+    "text": "Rusk Candle: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_rusk_candle_02.text"
+  },
+  {
+    "bark_tags": [
+      "undertaker",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_rusk_candle_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_rusk_candle_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_rusk_candle"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_rusk_candle_03",
+    "speaker": "npc_rusk_candle",
+    "text": "Rusk Candle: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_rusk_candle_03.text"
+  },
+  {
+    "bark_tags": [
+      "undertaker",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_rusk_candle"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_rusk_candle_04",
+    "speaker": "npc_rusk_candle",
+    "text": "Rusk Candle: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_rusk_candle_04.text"
+  },
+  {
+    "bark_tags": [
+      "traveler",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_iven_snow_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_iven_snow_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_iven_snow",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_iven_snow_00",
+    "speaker": "npc_iven_snow",
+    "text": "Iven Snow: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_iven_snow_00.text"
+  },
+  {
+    "bark_tags": [
+      "traveler",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_iven_snow_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_iven_snow_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_iven_snow"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_iven_snow_01",
+    "speaker": "npc_iven_snow",
+    "text": "Iven Snow: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_iven_snow_01.text"
+  },
+  {
+    "bark_tags": [
+      "traveler",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_iven_snow_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_iven_snow_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_iven_snow"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_iven_snow_02",
+    "speaker": "npc_iven_snow",
+    "text": "Iven Snow: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_iven_snow_02.text"
+  },
+  {
+    "bark_tags": [
+      "traveler",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_iven_snow_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_iven_snow_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_iven_snow"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_iven_snow_03",
+    "speaker": "npc_iven_snow",
+    "text": "Iven Snow: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_iven_snow_03.text"
+  },
+  {
+    "bark_tags": [
+      "traveler",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_iven_snow"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_iven_snow_04",
+    "speaker": "npc_iven_snow",
+    "text": "Iven Snow: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_iven_snow_04.text"
+  },
+  {
+    "bark_tags": [
+      "Orrenfast pilgrim",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_sister_calve_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_sister_calve_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_sister_calve",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_sister_calve_00",
+    "speaker": "npc_sister_calve",
+    "text": "Sister Calve: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_sister_calve_00.text"
+  },
+  {
+    "bark_tags": [
+      "Orrenfast pilgrim",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_sister_calve_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_sister_calve_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_sister_calve"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_sister_calve_01",
+    "speaker": "npc_sister_calve",
+    "text": "Sister Calve: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_sister_calve_01.text"
+  },
+  {
+    "bark_tags": [
+      "Orrenfast pilgrim",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_sister_calve_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_sister_calve_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_sister_calve"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_sister_calve_02",
+    "speaker": "npc_sister_calve",
+    "text": "Sister Calve: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_sister_calve_02.text"
+  },
+  {
+    "bark_tags": [
+      "Orrenfast pilgrim",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_sister_calve_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_sister_calve_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_sister_calve"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_sister_calve_03",
+    "speaker": "npc_sister_calve",
+    "text": "Sister Calve: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_sister_calve_03.text"
+  },
+  {
+    "bark_tags": [
+      "Orrenfast pilgrim",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_sister_calve"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_sister_calve_04",
+    "speaker": "npc_sister_calve",
+    "text": "Sister Calve: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_sister_calve_04.text"
+  },
+  {
+    "bark_tags": [
+      "faction envoy",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_daro_flint_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_daro_flint_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_daro_flint",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_daro_flint_00",
+    "speaker": "npc_daro_flint",
+    "text": "Daro Flint: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_daro_flint_00.text"
+  },
+  {
+    "bark_tags": [
+      "faction envoy",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_daro_flint_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_daro_flint_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_daro_flint"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_daro_flint_01",
+    "speaker": "npc_daro_flint",
+    "text": "Daro Flint: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_daro_flint_01.text"
+  },
+  {
+    "bark_tags": [
+      "faction envoy",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_daro_flint_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_daro_flint_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_daro_flint"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_daro_flint_02",
+    "speaker": "npc_daro_flint",
+    "text": "Daro Flint: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_daro_flint_02.text"
+  },
+  {
+    "bark_tags": [
+      "faction envoy",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_daro_flint_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_daro_flint_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_daro_flint"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_daro_flint_03",
+    "speaker": "npc_daro_flint",
+    "text": "Daro Flint: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_daro_flint_03.text"
+  },
+  {
+    "bark_tags": [
+      "faction envoy",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_daro_flint"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_daro_flint_04",
+    "speaker": "npc_daro_flint",
+    "text": "Daro Flint: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_daro_flint_04.text"
+  },
+  {
+    "bark_tags": [
+      "cartographer",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_mara_quill_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_mara_quill_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_mara_quill",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_mara_quill_00",
+    "speaker": "npc_mara_quill",
+    "text": "Mara Quill: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_mara_quill_00.text"
+  },
+  {
+    "bark_tags": [
+      "cartographer",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_mara_quill_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_mara_quill_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_mara_quill"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_mara_quill_01",
+    "speaker": "npc_mara_quill",
+    "text": "Mara Quill: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_mara_quill_01.text"
+  },
+  {
+    "bark_tags": [
+      "cartographer",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_mara_quill_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_mara_quill_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_mara_quill"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_mara_quill_02",
+    "speaker": "npc_mara_quill",
+    "text": "Mara Quill: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_mara_quill_02.text"
+  },
+  {
+    "bark_tags": [
+      "cartographer",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_mara_quill_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_mara_quill_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_mara_quill"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_mara_quill_03",
+    "speaker": "npc_mara_quill",
+    "text": "Mara Quill: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_mara_quill_03.text"
+  },
+  {
+    "bark_tags": [
+      "cartographer",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_mara_quill"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_mara_quill_04",
+    "speaker": "npc_mara_quill",
+    "text": "Mara Quill: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_mara_quill_04.text"
+  },
+  {
+    "bark_tags": [
+      "ferryman",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_old_kest_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_old_kest_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_old_kest",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_old_kest_00",
+    "speaker": "npc_old_kest",
+    "text": "Old Kest: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_old_kest_00.text"
+  },
+  {
+    "bark_tags": [
+      "ferryman",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_old_kest_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_old_kest_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_old_kest"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_old_kest_01",
+    "speaker": "npc_old_kest",
+    "text": "Old Kest: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_old_kest_01.text"
+  },
+  {
+    "bark_tags": [
+      "ferryman",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_old_kest_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_old_kest_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_old_kest"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_old_kest_02",
+    "speaker": "npc_old_kest",
+    "text": "Old Kest: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_old_kest_02.text"
+  },
+  {
+    "bark_tags": [
+      "ferryman",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_old_kest_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_old_kest_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_old_kest"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_old_kest_03",
+    "speaker": "npc_old_kest",
+    "text": "Old Kest: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_old_kest_03.text"
+  },
+  {
+    "bark_tags": [
+      "ferryman",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_old_kest"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_old_kest_04",
+    "speaker": "npc_old_kest",
+    "text": "Old Kest: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_old_kest_04.text"
+  },
+  {
+    "bark_tags": [
+      "coherent choir voice",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_little_ash_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_little_ash_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_little_ash",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_little_ash_00",
+    "speaker": "npc_little_ash",
+    "text": "Little Ash: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_little_ash_00.text"
+  },
+  {
+    "bark_tags": [
+      "coherent choir voice",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_little_ash_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_little_ash_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_little_ash"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_little_ash_01",
+    "speaker": "npc_little_ash",
+    "text": "Little Ash: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_little_ash_01.text"
+  },
+  {
+    "bark_tags": [
+      "coherent choir voice",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_little_ash_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_little_ash_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_little_ash"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_little_ash_02",
+    "speaker": "npc_little_ash",
+    "text": "Little Ash: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_little_ash_02.text"
+  },
+  {
+    "bark_tags": [
+      "coherent choir voice",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_little_ash_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_little_ash_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_little_ash"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_little_ash_03",
+    "speaker": "npc_little_ash",
+    "text": "Little Ash: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_little_ash_03.text"
+  },
+  {
+    "bark_tags": [
+      "coherent choir voice",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_little_ash"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_little_ash_04",
+    "speaker": "npc_little_ash",
+    "text": "Little Ash: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_little_ash_04.text"
+  },
+  {
+    "bark_tags": [
+      "ice guide",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_torren_vale_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_torren_vale_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_torren_vale",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_torren_vale_00",
+    "speaker": "npc_torren_vale",
+    "text": "Torren Vale: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_torren_vale_00.text"
+  },
+  {
+    "bark_tags": [
+      "ice guide",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_torren_vale_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_torren_vale_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_torren_vale"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_torren_vale_01",
+    "speaker": "npc_torren_vale",
+    "text": "Torren Vale: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_torren_vale_01.text"
+  },
+  {
+    "bark_tags": [
+      "ice guide",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_torren_vale_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_torren_vale_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_torren_vale"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_torren_vale_02",
+    "speaker": "npc_torren_vale",
+    "text": "Torren Vale: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_torren_vale_02.text"
+  },
+  {
+    "bark_tags": [
+      "ice guide",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_torren_vale_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_torren_vale_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_torren_vale"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_torren_vale_03",
+    "speaker": "npc_torren_vale",
+    "text": "Torren Vale: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_torren_vale_03.text"
+  },
+  {
+    "bark_tags": [
+      "ice guide",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_torren_vale"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_torren_vale_04",
+    "speaker": "npc_torren_vale",
+    "text": "Torren Vale: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_torren_vale_04.text"
+  },
+  {
+    "bark_tags": [
+      "rival delver",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_siva_rime_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_siva_rime_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_siva_rime",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_siva_rime_00",
+    "speaker": "npc_siva_rime",
+    "text": "Siva Rime: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_siva_rime_00.text"
+  },
+  {
+    "bark_tags": [
+      "rival delver",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_siva_rime_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_siva_rime_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_siva_rime"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_siva_rime_01",
+    "speaker": "npc_siva_rime",
+    "text": "Siva Rime: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_siva_rime_01.text"
+  },
+  {
+    "bark_tags": [
+      "rival delver",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_siva_rime_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_siva_rime_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_siva_rime"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_siva_rime_02",
+    "speaker": "npc_siva_rime",
+    "text": "Siva Rime: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_siva_rime_02.text"
+  },
+  {
+    "bark_tags": [
+      "rival delver",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_siva_rime_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_siva_rime_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_siva_rime"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_siva_rime_03",
+    "speaker": "npc_siva_rime",
+    "text": "Siva Rime: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_siva_rime_03.text"
+  },
+  {
+    "bark_tags": [
+      "rival delver",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_siva_rime"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_siva_rime_04",
+    "speaker": "npc_siva_rime",
+    "text": "Siva Rime: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_siva_rime_04.text"
+  },
+  {
+    "bark_tags": [
+      "bell historian",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_brother_olt_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_brother_olt_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_brother_olt",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_brother_olt_00",
+    "speaker": "npc_brother_olt",
+    "text": "Brother Olt: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_brother_olt_00.text"
+  },
+  {
+    "bark_tags": [
+      "bell historian",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_brother_olt_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_brother_olt_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_brother_olt"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_brother_olt_01",
+    "speaker": "npc_brother_olt",
+    "text": "Brother Olt: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_brother_olt_01.text"
+  },
+  {
+    "bark_tags": [
+      "bell historian",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_brother_olt_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_brother_olt_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_brother_olt"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_brother_olt_02",
+    "speaker": "npc_brother_olt",
+    "text": "Brother Olt: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_brother_olt_02.text"
+  },
+  {
+    "bark_tags": [
+      "bell historian",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_brother_olt_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_brother_olt_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_brother_olt"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_brother_olt_03",
+    "speaker": "npc_brother_olt",
+    "text": "Brother Olt: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_brother_olt_03.text"
+  },
+  {
+    "bark_tags": [
+      "bell historian",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_brother_olt"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_brother_olt_04",
+    "speaker": "npc_brother_olt",
+    "text": "Brother Olt: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_brother_olt_04.text"
+  },
+  {
+    "bark_tags": [
+      "citadel exile",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_cera_wind_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_cera_wind_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_cera_wind",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_cera_wind_00",
+    "speaker": "npc_cera_wind",
+    "text": "Cera Wind: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_cera_wind_00.text"
+  },
+  {
+    "bark_tags": [
+      "citadel exile",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_cera_wind_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_cera_wind_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_cera_wind"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_cera_wind_01",
+    "speaker": "npc_cera_wind",
+    "text": "Cera Wind: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_cera_wind_01.text"
+  },
+  {
+    "bark_tags": [
+      "citadel exile",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_cera_wind_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_cera_wind_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_cera_wind"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_cera_wind_02",
+    "speaker": "npc_cera_wind",
+    "text": "Cera Wind: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_cera_wind_02.text"
+  },
+  {
+    "bark_tags": [
+      "citadel exile",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_cera_wind_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_cera_wind_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_cera_wind"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_cera_wind_03",
+    "speaker": "npc_cera_wind",
+    "text": "Cera Wind: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_cera_wind_03.text"
+  },
+  {
+    "bark_tags": [
+      "citadel exile",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_cera_wind"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_cera_wind_04",
+    "speaker": "npc_cera_wind",
+    "text": "Cera Wind: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_cera_wind_04.text"
+  },
+  {
+    "bark_tags": [
+      "memory custodian",
+      "weather"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_the_tallyman_01",
+        "text": "Ask what changed after the aurora."
+      },
+      {
+        "next": "dialogue_npc_the_tallyman_01",
+        "text": "Offer practical help."
+      }
+    ],
+    "conditions": [],
+    "effects": [
+      {
+        "set_flag": "met_npc_the_tallyman",
+        "value": true
+      }
+    ],
+    "id": "dialogue_npc_the_tallyman_00",
+    "speaker": "npc_the_tallyman",
+    "text": "The Tallyman: You came back on the one night the iron learned to sing. Efficient.",
+    "text_key": "dialogue.dialogue_npc_the_tallyman_00.text"
+  },
+  {
+    "bark_tags": [
+      "memory custodian",
+      "danger"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_the_tallyman_02",
+        "text": "Offer practical help."
+      },
+      {
+        "next": "dialogue_npc_the_tallyman_02",
+        "text": "Question the old account."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_the_tallyman"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_the_tallyman_01",
+    "speaker": "npc_the_tallyman",
+    "text": "The Tallyman: I know that look. It means a sensible plan has just lost an argument.",
+    "text_key": "dialogue.dialogue_npc_the_tallyman_01.text"
+  },
+  {
+    "bark_tags": [
+      "memory custodian",
+      "quest"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_the_tallyman_03",
+        "text": "Question the old account."
+      },
+      {
+        "next": "dialogue_npc_the_tallyman_03",
+        "text": "Mention Maelin's compass."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_the_tallyman"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_the_tallyman_02",
+    "speaker": "npc_the_tallyman",
+    "text": "The Tallyman: The road is open, if by open you mean cold and disapproving.",
+    "text_key": "dialogue.dialogue_npc_the_tallyman_02.text"
+  },
+  {
+    "bark_tags": [
+      "memory custodian",
+      "reputation"
+    ],
+    "choices": [
+      {
+        "next": "dialogue_npc_the_tallyman_04",
+        "text": "Mention Maelin's compass."
+      },
+      {
+        "next": "dialogue_npc_the_tallyman_04",
+        "text": "Leave with a promise to return."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_the_tallyman"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_the_tallyman_03",
+    "speaker": "npc_the_tallyman",
+    "text": "The Tallyman: Keep your questions short. The dark has excellent hearing.",
+    "text_key": "dialogue.dialogue_npc_the_tallyman_03.text"
+  },
+  {
+    "bark_tags": [
+      "memory custodian",
+      "time"
+    ],
+    "choices": [
+      {
+        "next": "",
+        "text": "Until next time."
+      }
+    ],
+    "conditions": [
+      {
+        "equals": true,
+        "flag": "met_npc_the_tallyman"
+      }
+    ],
+    "effects": [],
+    "id": "dialogue_npc_the_tallyman_04",
+    "speaker": "npc_the_tallyman",
+    "text": "The Tallyman: Nobody here agrees about the Bell. That is our strongest qualification.",
+    "text_key": "dialogue.dialogue_npc_the_tallyman_04.text"
+  }
+]

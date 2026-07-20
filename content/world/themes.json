@@ -1,0 +1,254 @@
+[
+  {
+    "ambient_track": "res://assets/music/theme_00.wav",
+    "biome": "burial",
+    "depth_range": [
+      0,
+      5
+    ],
+    "dominant_damage": "spirit",
+    "floor_tile": "res://assets/tiles/mosswake_barrows_floor.png",
+    "hazard": "moss",
+    "id": "theme_mosswake_barrows",
+    "name": "Mosswake Barrows",
+    "palette_index": 0,
+    "room_weights": {
+      "corridor": 3,
+      "large": 2,
+      "set_piece": 1,
+      "small": 4
+    },
+    "wall_tile": "res://assets/tiles/mosswake_barrows_wall.png"
+  },
+  {
+    "ambient_track": "res://assets/music/theme_01.wav",
+    "biome": "mine",
+    "depth_range": [
+      2,
+      7
+    ],
+    "dominant_damage": "crush",
+    "floor_tile": "res://assets/tiles/sundered_delvings_floor.png",
+    "hazard": "rubble",
+    "id": "theme_sundered_delvings",
+    "name": "Sundered Delvings",
+    "palette_index": 1,
+    "room_weights": {
+      "corridor": 3,
+      "large": 2,
+      "set_piece": 1,
+      "small": 4
+    },
+    "wall_tile": "res://assets/tiles/sundered_delvings_wall.png"
+  },
+  {
+    "ambient_track": "res://assets/music/theme_02.wav",
+    "biome": "flooded",
+    "depth_range": [
+      4,
+      9
+    ],
+    "dominant_damage": "frost",
+    "floor_tile": "res://assets/tiles/drowned_footings_floor.png",
+    "hazard": "water",
+    "id": "theme_drowned_footings",
+    "name": "Drowned Footings",
+    "palette_index": 2,
+    "room_weights": {
+      "corridor": 3,
+      "large": 2,
+      "set_piece": 1,
+      "small": 4
+    },
+    "wall_tile": "res://assets/tiles/drowned_footings_wall.png"
+  },
+  {
+    "ambient_track": "res://assets/music/theme_03.wav",
+    "biome": "frozen",
+    "depth_range": [
+      6,
+      11
+    ],
+    "dominant_damage": "frost",
+    "floor_tile": "res://assets/tiles/lorn_ice_vaults_floor.png",
+    "hazard": "ice",
+    "id": "theme_lorn_ice_vaults",
+    "name": "Lorn Ice Vaults",
+    "palette_index": 3,
+    "room_weights": {
+      "corridor": 3,
+      "large": 2,
+      "set_piece": 1,
+      "small": 4
+    },
+    "wall_tile": "res://assets/tiles/lorn_ice_vaults_wall.png"
+  },
+  {
+    "ambient_track": "res://assets/music/theme_04.wav",
+    "biome": "roots",
+    "depth_range": [
+      8,
+      13
+    ],
+    "dominant_damage": "poison",
+    "floor_tile": "res://assets/tiles/root_caught_cloister_floor.png",
+    "hazard": "vines",
+    "id": "theme_root_caught_cloister",
+    "name": "Root-Caught Cloister",
+    "palette_index": 4,
+    "room_weights": {
+      "corridor": 3,
+      "large": 2,
+      "set_piece": 1,
+      "small": 4
+    },
+    "wall_tile": "res://assets/tiles/root_caught_cloister_wall.png"
+  },
+  {
+    "ambient_track": "res://assets/music/theme_05.wav",
+    "biome": "workshop",
+    "depth_range": [
+      10,
+      15
+    ],
+    "dominant_damage": "shock",
+    "floor_tile": "res://assets/tiles/quiet_workshops_floor.png",
+    "hazard": "machinery",
+    "id": "theme_quiet_workshops",
+    "name": "Quiet Workshops",
+    "palette_index": 5,
+    "room_weights": {
+      "corridor": 3,
+      "large": 2,
+      "set_piece": 1,
+      "small": 4
+    },
+    "wall_tile": "res://assets/tiles/quiet_workshops_wall.png"
+  },
+  {
+    "ambient_track": "res://assets/music/theme_06.wav",
+    "biome": "haunted",
+    "depth_range": [
+      12,
+      17
+    ],
+    "dominant_damage": "spirit",
+    "floor_tile": "res://assets/tiles/halls_of_lent_voices_floor.png",
+    "hazard": "echo",
+    "id": "theme_halls_of_lent_voices",
+    "name": "Halls of Lent Voices",
+    "palette_index": 6,
+    "room_weights": {
+      "corridor": 3,
+      "large": 2,
+      "set_piece": 1,
+      "small": 4
+    },
+    "wall_tile": "res://assets/tiles/halls_of_lent_voices_wall.png"
+  },
+  {
+    "ambient_track": "res://assets/music/theme_07.wav",
+    "biome": "fungal",
+    "depth_range": [
+      14,
+      19
+    ],
+    "dominant_damage": "poison",
+    "floor_tile": "res://assets/tiles/bluecap_hollows_floor.png",
+    "hazard": "spores",
+    "id": "theme_bluecap_hollows",
+    "name": "Bluecap Hollows",
+    "palette_index": 7,
+    "room_weights": {
+      "corridor": 3,
+      "large": 2,
+      "set_piece": 1,
+      "small": 4
+    },
+    "wall_tile": "res://assets/tiles/bluecap_hollows_wall.png"
+  },
+  {
+    "ambient_track": "res://assets/music/theme_08.wav",
+    "biome": "volcanic",
+    "depth_range": [
+      16,
+      21
+    ],
+    "dominant_damage": "fire",
+    "floor_tile": "res://assets/tiles/ember_underdeep_floor.png",
+    "hazard": "lava",
+    "id": "theme_ember_underdeep",
+    "name": "Ember Underdeep",
+    "palette_index": 8,
+    "room_weights": {
+      "corridor": 3,
+      "large": 2,
+      "set_piece": 1,
+      "small": 4
+    },
+    "wall_tile": "res://assets/tiles/ember_underdeep_wall.png"
+  },
+  {
+    "ambient_track": "res://assets/music/theme_09.wav",
+    "biome": "observatory",
+    "depth_range": [
+      18,
+      23
+    ],
+    "dominant_damage": "fate",
+    "floor_tile": "res://assets/tiles/star_wheel_rooms_floor.png",
+    "hazard": "crystal",
+    "id": "theme_star_wheel_rooms",
+    "name": "Star-Wheel Rooms",
+    "palette_index": 9,
+    "room_weights": {
+      "corridor": 3,
+      "large": 2,
+      "set_piece": 1,
+      "small": 4
+    },
+    "wall_tile": "res://assets/tiles/star_wheel_rooms_wall.png"
+  },
+  {
+    "ambient_track": "res://assets/music/theme_10.wav",
+    "biome": "citadel",
+    "depth_range": [
+      20,
+      25
+    ],
+    "dominant_damage": "shock",
+    "floor_tile": "res://assets/tiles/wind_carved_crown_floor.png",
+    "hazard": "wind",
+    "id": "theme_wind_carved_crown",
+    "name": "Wind-Carved Crown",
+    "palette_index": 10,
+    "room_weights": {
+      "corridor": 3,
+      "large": 2,
+      "set_piece": 1,
+      "small": 4
+    },
+    "wall_tile": "res://assets/tiles/wind_carved_crown_wall.png"
+  },
+  {
+    "ambient_track": "res://assets/music/theme_11.wav",
+    "biome": "supernatural",
+    "depth_range": [
+      22,
+      27
+    ],
+    "dominant_damage": "shadow",
+    "floor_tile": "res://assets/tiles/the_unhoused_choir_floor.png",
+    "hazard": "memory",
+    "id": "theme_the_unhoused_choir",
+    "name": "The Unhoused Choir",
+    "palette_index": 11,
+    "room_weights": {
+      "corridor": 3,
+      "large": 2,
+      "set_piece": 1,
+      "small": 4
+    },
+    "wall_tile": "res://assets/tiles/the_unhoused_choir_wall.png"
+  }
+]
