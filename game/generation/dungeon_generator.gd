@@ -65,6 +65,8 @@ func _generate_attempt(seed_value: int, theme_id: String, depth: int, attempt: i
 	if floor_positions.size() > 10:
 		objects.append({"type": "key", "id": "floor_key", "position": floor_positions[8], "taken": false})
 		objects.append({"type": "locked_door", "key": "floor_key", "position": floor_positions[9], "locked": true})
+	if floor_positions.size() > 14:
+		objects.append({"type": "secret_door", "position": floor_positions[14], "hidden": true, "opened": false})
 	if depth % 3 == 1 and floor_positions.size() > 12:
 		var hazard_position := floor_positions[12]
 		tiles[hazard_position.y][hazard_position.x] = ["water", "ice", "bridge"][depth % 3]

@@ -12,3 +12,4 @@ All notable changes are documented here. Versions follow semantic versioning whi
 - Generated 364 original visual assets and 310 original audio assets through reproducible local pipelines.
 - Added 573 deterministic assertions, interactive smoke automation, campaign playthrough automation, and content/art/audio manifest validation.
 - Prepared and verified Linux and Windows desktop exports; smoke-tested the Linux export.
+- Completed the release usability pass for ranged combat, quick items, spell preparation/unlocks, difficulty rules, locks, keys, and secret doors.

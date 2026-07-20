@@ -2,11 +2,10 @@
 
 Current branch: codex/full-isometric-game
 
-1. Run the final usability/static review and full suite.
-2. Re-export Linux and Windows after any final fixes.
-3. Push the final feature branch commit.
-4. Safely merge to main, push main, and create annotated v0.9.0.
-5. Perform an external native Windows runtime check before promoting beyond pre-release.
+1. Re-export Linux and Windows from the final commit.
+2. Push the final feature branch commit.
+3. Safely merge to main, push main, and create annotated v0.9.0.
+4. Perform an external native Windows runtime check before promoting beyond pre-release.
 
 Exact resume command:
 

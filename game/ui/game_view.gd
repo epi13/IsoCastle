@@ -77,7 +77,7 @@ func _build_hud() -> void:
 	add_child(place)
 
 	var help := Label.new()
-	help.text = "QWE/ASD/ZXC move  •  F interact  •  V search  •  1 cast  •  I/B/J/M  •  F5 save  •  F6 load  •  Esc"
+	help.text = "QWE/ASD/ZXC move  •  F interact  •  V search  •  1 cast  •  2 ranged  •  3 quick item  •  I/B/J/M  •  Esc"
 	help.position = Vector2(480, 12)
 	help.size = Vector2(775, 24)
 	help.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
@@ -176,7 +176,8 @@ func _enter_depth(new_depth: int) -> void:
 	player.position = level.start
 	enemies.clear()
 	var rooms: Array = level.rooms
-	for i in range(1, mini(rooms.size() - 1, 7)):
+	var enemy_limit := 5 if GameSession.state.difficulty == "story" else (8 if GameSession.state.difficulty == "grim" else 7)
+	for i in range(1, mini(rooms.size() - 1, enemy_limit)):
 		var definition: Dictionary = enemy_catalog[(depth * 4 + i) % enemy_catalog.size()]
 		var stats: Dictionary = definition.stats
 		var max_health := int(stats.health)
@@ -209,6 +210,10 @@ func _enter_depth(new_depth: int) -> void:
 	_recalculate_visibility()
 	_log("[color=#e0bd76]Entered %s[/color] — depth %d — seed %d" % [theme.name, depth + 1, int(level.seed)])
 	_advance_campaign_for_depth()
+	_unlock_practice_spell()
+	if GameSession.state.difficulty == "story" and depth > 0:
+		player.health = mini(int(player.max_health), int(player.health) + int(player.max_health) / 3)
+		player.mana = mini(int(player.max_mana), int(player.mana) + int(player.max_mana) / 3)
 	_update_hud()
 	queue_redraw()
 
@@ -264,6 +269,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if event is InputEventKey and event.physical_keycode == KEY_1:
 		_cast_first_spell()
+		return
+	if event is InputEventKey and event.physical_keycode == KEY_2:
+		_ranged_attack()
+		return
+	if event is InputEventKey and event.physical_keycode == KEY_3:
+		_use_first_consumable()
 		return
 	var direction := Vector2i.ZERO
 	if event.is_action_pressed("move_north"): direction = Vector2i(0, -1)
@@ -359,6 +370,36 @@ func _cast_first_spell() -> void:
 	_finish_player_action(5)
 
 
+func _ranged_attack() -> void:
+	var weapon: Dictionary = item_catalog.get(_equipped_weapon_id(), {})
+	if int(weapon.get("range", 1)) <= 1:
+		_log("Equip a ranged weapon before making a ranged attack.")
+		return
+	var target_index := _nearest_visible_enemy(int(weapon.range))
+	if target_index < 0:
+		_log("No hostile is within the weapon's range.")
+		return
+	var result := CombatRules.attack(player, enemies[target_index], weapon, _next_seed())
+	AudioDirector.play_sfx("res://assets/sounds/weapons/bow_hit.wav" if result.hit else "res://assets/sounds/weapons/bow_swing.wav")
+	if result.hit:
+		enemies[target_index] = CombatRules.apply_damage(enemies[target_index], result)
+		_log("Your shot hits %s for %d %s." % [enemies[target_index].name, int(result.damage), result.damage_type])
+		if not bool(enemies[target_index].alive):
+			_gain_xp(8 + depth * 3)
+	else:
+		_log("Your shot misses %s." % enemies[target_index].name)
+	_finish_player_action(4)
+
+
+func _use_first_consumable() -> void:
+	for index in range(GameSession.state.inventory.size()):
+		var definition: Dictionary = item_catalog.get(GameSession.state.inventory[index].id, {})
+		if definition.get("category") == "consumable":
+			_use_item(index)
+			return
+	_log("No consumable is ready.")
+
+
 func _finish_player_action(noise: int) -> void:
 	GameSession.state.world.turn = int(GameSession.state.world.turn) + 1
 	_run_enemy_turns(noise)
@@ -388,8 +429,13 @@ func _run_enemy_turns(noise: int) -> void:
 				var result := CombatRules.attack(enemies[index], player, claw, _next_seed())
 				if result.hit:
 					AudioDirector.play_sfx("res://assets/sounds/armor/impact_leather.wav", 0.92 + index * 0.015)
-					player = CombatRules.apply_damage(player, result)
-					_log("[color=#e88768]%s hits you for %d.[/color]" % [enemies[index].name, int(result.damage)])
+					var adjusted := result.duplicate(true)
+					if GameSession.state.difficulty == "story":
+						adjusted.damage = maxi(1, int(result.damage * 0.72))
+					elif GameSession.state.difficulty == "grim":
+						adjusted.damage = maxi(1, int(ceil(result.damage * 1.18)))
+					player = CombatRules.apply_damage(player, adjusted)
+					_log("[color=#e88768]%s hits you for %d.[/color]" % [enemies[index].name, int(adjusted.damage)])
 				else:
 					_log("%s's attack passes wide." % enemies[index].name)
 			"ability":
@@ -437,6 +483,20 @@ func _interact() -> void:
 			object.taken = true
 			GameSession.state.flags["has_floor_key_%d" % depth] = true
 			_log("You take the floor's iron key.")
+			_finish_player_action(1)
+			return
+		if object.type == "locked_door" and bool(object.locked):
+			if bool(GameSession.state.flags.get("has_floor_key_%d" % depth, false)):
+				object.locked = false
+				_log("[color=#a8d49d]The floor key turns. The old lock yields.[/color]")
+				AudioDirector.play_sfx("res://assets/sounds/environment/door_open.wav")
+			else:
+				_log("The door is locked. Its key must be somewhere on this floor.")
+			_finish_player_action(1)
+			return
+		if object.type == "secret_door" and not bool(object.hidden) and not bool(object.opened):
+			object.opened = true
+			_log("[color=#a8d49d]A hidden seam opens into a narrow treasure recess.[/color]")
 			_finish_player_action(1)
 			return
 	_log("Nothing nearby answers your hand.")
@@ -578,6 +638,21 @@ func _show_spellbook() -> void:
 		if not spell.is_empty():
 			lines.append("[color=#9ed8e3]%s[/color] — %s\nFocus %d • range %d • %s • power %d" % [spell.name, spell.discipline.capitalize(), int(spell.mana_cost), int(spell.range), spell.shape, int(spell.power)])
 	_show_modal("The Eight Practices", "\n\n".join(lines) + "\n\nPress 1 in the world to cast the first prepared working.")
+	for spell_id: String in GameSession.state.known_spells:
+		var spell: Dictionary = spell_catalog.get(spell_id, {})
+		if not spell.is_empty():
+			_add_modal_action("Prepare %s" % spell.name, func() -> void: _prepare_spell(spell_id))
+
+
+func _prepare_spell(spell_id: String) -> void:
+	var known: Array = GameSession.state.known_spells
+	var index := known.find(spell_id)
+	if index >= 0:
+		known.remove_at(index)
+		known.push_front(spell_id)
+		AudioDirector.play_sfx("res://assets/sounds/ui/confirm.wav")
+		_log("Prepared %s." % spell_catalog[spell_id].name)
+	modal.visible = false
 
 
 func _show_journal() -> void:
@@ -729,6 +804,17 @@ func _advance_campaign_for_depth() -> void:
 		_show_modal("ACT II — WINTER OWES A DEBT", "Beyond the Underbell, falling snow stops in midair. Maelin's trail crosses the Lorn Shelf, and something there has learned to preserve a moment by killing everything that might change it.")
 	elif depth == 8:
 		_show_modal("ACT III — THE COUNTERWEIGHT ROAD", "The three tuning names open a road that climbs as often as it descends. Above the clouds, Rime-Crown holds the Bell's counterweight—and Maelin's unfinished answer.")
+
+
+func _unlock_practice_spell() -> void:
+	var practice: String = player.get("practice", "cinderweave")
+	var practice_spells: Array = ContentDB.all("spells").filter(func(spell: Dictionary) -> bool: return spell.discipline == practice)
+	practice_spells.sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return int(a.rank) < int(b.rank))
+	var unlocked_rank := mini(6, 1 + depth / 2)
+	for spell: Dictionary in practice_spells:
+		if int(spell.rank) <= unlocked_rank and not GameSession.state.known_spells.has(spell.id):
+			GameSession.state.known_spells.append(spell.id)
+			_log("[color=#9ed8e3]You understand a new working: %s.[/color]" % spell.name)
 
 
 func _scheduled_activity(definition: Dictionary) -> String:

@@ -51,3 +51,9 @@ Reported ALL ISOCASTLE TESTS PASSED.
 
 - 2eb9acd Initial commit (pre-existing main)
 - f5c2fd1 Establish Godot foundation and validated content catalogs
+- eb6ebb3 Build playable campaign and reproducible media pipelines
+
+### Final usability pass
+
+- Added ranged combat, quick consumables, prepared-spell selection, six-rank Practice unlock progression, difficulty-sensitive enemy counts/damage/recovery, floor keys and locks, and searchable secret doors.
+- Re-ran the complete suite successfully after the pass.
