@@ -16,6 +16,37 @@ func _initialize() -> void:
 		push_error("Title screen did not create required controls")
 		quit(1)
 		return
+	scene._on_settings()
+	await process_frame
+	if scene.find_child("OpenInputRemapping", true, false) == null:
+		push_error("Settings did not expose input remapping")
+		quit(1)
+		return
+	scene._show_input_settings()
+	await process_frame
+	var action_rows := scene.find_children("ActionRow_*", "HBoxContainer", true, false)
+	if action_rows.size() != InputDefaults.ACTION_ORDER.size():
+		push_error("Input editor did not render every remappable action")
+		quit(1)
+		return
+	var binding_snapshot: Dictionary = root.get_node("SettingsService").input_bindings.serialized()
+	scene._begin_capture("search", 0)
+	var cancel_capture := InputEventKey.new()
+	cancel_capture.physical_keycode = KEY_ESCAPE
+	cancel_capture.pressed = true
+	scene._unhandled_input(cancel_capture)
+	if not scene.capture_action.is_empty() or root.get_node("SettingsService").input_bindings.serialized() != binding_snapshot:
+		push_error("Input capture cancellation changed bindings")
+		quit(1)
+		return
+	var remap_key := InputEventKey.new()
+	remap_key.physical_keycode = KEY_G
+	var remap_result: Dictionary = root.get_node("SettingsService").assign_binding("search", remap_key, 0)
+	if not remap_result.ok or not InputMap.event_is_action(remap_key, "search"):
+		push_error("Temporary keyboard remap did not reach InputMap")
+		quit(1)
+		return
+	root.get_node("SettingsService").reset_action("search")
 	scene._show_character_creation()
 	await process_frame
 	scene.name_input.text = "Smoke Wanderer"
@@ -154,7 +185,7 @@ func _initialize() -> void:
 		push_error("Quest smoke did not complete")
 		quit(1)
 		return
-	print("SMOKE PASS: menu, character, world, move, inventory UI drag/equip/cancel, pickup, combat, spell, save/load, level, quest")
+	print("SMOKE PASS: menu, input editor/capture/remap, character, world, move, inventory UI drag/equip/cancel, pickup, combat, spell, save/load, level, quest")
 	root.get_node("AudioDirector").stop_all()
 	await create_timer(0.15).timeout
 	game.texture_cache.clear()

@@ -94,7 +94,13 @@ func _build_hud() -> void:
 	add_child(place)
 
 	help_label = Label.new()
-	help_label.text = "QWE/ASD/ZXC move  •  F interact  •  V search  •  1 cast  •  2 ranged  •  3 quick item  •  I/B/J/M  •  Esc"
+	help_label.text = "Move %s/%s/%s/%s  •  %s interact  •  %s cast  •  %s ranged  •  %s inventory  •  %s pause" % [
+		SettingsService.primary_binding_text("move_north"), SettingsService.primary_binding_text("move_west"),
+		SettingsService.primary_binding_text("move_south"), SettingsService.primary_binding_text("move_east"),
+		SettingsService.primary_binding_text("interact"), SettingsService.primary_binding_text("cast_prepared"),
+		SettingsService.primary_binding_text("ranged_attack"), SettingsService.primary_binding_text("inventory"),
+		SettingsService.primary_binding_text("ui_cancel"),
+	]
 	help_label.position = Vector2(480, 12)
 	help_label.size = Vector2(775, 24)
 	help_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
@@ -339,7 +345,7 @@ func _try_move(direction: Vector2i) -> void:
 			_log("[color=#e88768]A hidden trap deals %d damage![/color]" % trap_damage)
 			noise = 3
 	if target == level.exit:
-		_log("Stairs lead onward. Press F to descend.")
+		_log("Stairs lead onward. Press %s to descend." % SettingsService.primary_binding_text("interact"))
 	_finish_player_action(noise)
 
 
@@ -700,7 +706,7 @@ func _show_inventory() -> void:
 		var slot_control := _create_inventory_slot("EquipmentSlot_%s" % equipment_slot, source, destination, equipped_stack, equipped_item)
 		equipment_grid.add_child(slot_control)
 	var keyboard_help := Label.new()
-	keyboard_help.text = "Keyboard/controller: focus a slot and press Accept to equip, use, or unequip. Escape closes without changing items."
+	keyboard_help.text = "Keyboard/controller: focus a slot and press Accept to equip, use, or unequip. %s closes without changing items." % SettingsService.primary_binding_text("ui_cancel")
 	keyboard_help.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	keyboard_help.add_theme_font_size_override("font_size", 13)
 	modal_actions.add_child(keyboard_help)
@@ -825,7 +831,7 @@ func _show_spellbook() -> void:
 		var spell: Dictionary = spell_catalog.get(spell_id, {})
 		if not spell.is_empty():
 			lines.append("[color=#9ed8e3]%s[/color] — %s\nFocus %d • range %d • %s • power %d" % [spell.name, spell.discipline.capitalize(), int(spell.mana_cost), int(spell.range), spell.shape, int(spell.power)])
-	_show_modal("The Eight Practices", "\n\n".join(lines) + "\n\nPress 1 in the world to cast the first prepared working.")
+	_show_modal("The Eight Practices", "\n\n".join(lines) + "\n\nPress %s in the world to cast the first prepared working." % SettingsService.primary_binding_text("cast_prepared"))
 	for spell_id: String in GameSession.state.known_spells:
 		var spell: Dictionary = spell_catalog.get(spell_id, {})
 		if not spell.is_empty():
@@ -1024,7 +1030,7 @@ func _scheduled_activity(definition: Dictionary) -> String:
 
 
 func _show_game_over() -> void:
-	_show_modal("The Road Ends Here", "The Bell continues beneath the snow. Load your last atomic save with F6 after closing this panel, or return to the title with Escape.")
+	_show_modal("The Road Ends Here", "The Bell continues beneath the snow. Load your last atomic save with %s after closing this panel, or pause with %s." % [SettingsService.primary_binding_text("quick_load"), SettingsService.primary_binding_text("ui_cancel")])
 
 
 func _show_ending() -> void:

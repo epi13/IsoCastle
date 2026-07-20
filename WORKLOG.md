@@ -24,6 +24,17 @@
 - Ran `PATH=/home/epi13/.local/bin:$PATH godot --headless --path . --import`, the unit runner, and the smoke runner successfully during implementation.
 - Ran `PATH=/home/epi13/.local/bin:$PATH ./tools/test_all.sh`; all content/art/audio validation, Godot import, 599 assertions, inventory interaction smoke, and campaign playthrough passed with `ALL ISOCASTLE TESTS PASSED`.
 
+### Versioned input-remapping milestone
+
+- Added an explicit immutable default-binding catalog for 23 player-facing actions: eight-direction movement, wait, interact, search, inventory, spellbook, journal, map, ranged attack, prepared spell, quick item, quick save/load, pause/cancel, overlay, and screenshot mode.
+- Added stable binding serialization for physical keyboard keys, mouse buttons, controller buttons, and signed controller axes; no runtime object dumps are persisted.
+- Added format-2 migration for renamed actions, safe handling for removed/unknown actions, default inheritance for new actions, controller-axis deadzones/noise rejection, browser-reserved shortcut rejection, conflict detection, explicit conflict movement, and protection for the final pause/cancel binding.
+- Extended `SettingsService` with atomic settings replacement, separate input persistence, runtime `InputMap` restoration during startup, clear/reset-one/reset-all operations, and human-readable current binding labels.
+- Added the full settings editor with capture overlay, cancellation, conflict confirmation, mouse navigation, focusable keyboard/controller controls, per-binding clear/replace, add-binding, per-action reset, and reset-all confirmation.
+- Replaced remaining remappable gameplay physical-key checks and updated in-game help, stairs, spellbook, inventory, and game-over prompts to read active bindings.
+- Extended the headless suite to 624 assertions, including defaults, every supported event type, conflicts, conflict resolution, capture no-op, clear/reset, persistence, migration, renamed/unknown actions, protected cancel, new-action defaults, and browser-safe behavior.
+- Ran `PATH=/home/epi13/.local/bin:$PATH ./tools/test_all.sh`; all validation, Godot import, 624 assertions, input-editor/inventory interaction smoke, and campaign playthrough passed with `ALL ISOCASTLE TESTS PASSED`.
+
 ### Completed
 
 - Confirmed Fedora 44 host and exact workspace path.

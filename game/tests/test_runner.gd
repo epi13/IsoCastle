@@ -12,6 +12,7 @@ func _initialize() -> void:
 	_test_combat_and_statuses()
 	_test_turn_engine()
 	_test_inventory_and_equipment()
+	_test_input_bindings()
 	_test_ai_transitions()
 	_test_quest_state()
 	_test_save_round_trip()
@@ -297,3 +298,89 @@ func _equipment_units(equipment: Dictionary) -> int:
 	for slot: String in equipment:
 		total += int(equipment[slot].get("count", 0))
 	return total
+
+
+func _test_input_bindings() -> void:
+	var defaults := InputBindings.new()
+	expect(defaults.current.size() == InputDefaults.ACTION_ORDER.size(), "Explicit input defaults cover every remappable action")
+	expect(not defaults.current.ui_cancel.is_empty(), "Default bindings preserve a cancel path")
+	expect(not defaults.current.quick_item.is_empty(), "New actions receive explicit defaults")
+
+	var keyboard := InputEventKey.new()
+	keyboard.physical_keycode = KEY_G
+	var assigned_key := defaults.assign_event("search", keyboard, 0)
+	expect(assigned_key.ok and defaults.current.search[0].physical_keycode == KEY_G, "Physical keyboard binding assignment works")
+	var mouse := InputEventMouseButton.new()
+	mouse.button_index = MOUSE_BUTTON_LEFT
+	var assigned_mouse := defaults.assign_event("ranged_attack", mouse)
+	expect(assigned_mouse.ok and defaults.current.ranged_attack.back().type == "mouse_button", "Mouse button binding assignment works")
+	var controller := InputEventJoypadButton.new()
+	controller.button_index = JOY_BUTTON_START
+	var assigned_controller := defaults.assign_event("map", controller)
+	expect(assigned_controller.ok and defaults.current.map.back().type == "joypad_button", "Controller button binding assignment works")
+	var quiet_axis := InputEventJoypadMotion.new()
+	quiet_axis.axis = JOY_AXIS_RIGHT_X
+	quiet_axis.axis_value = 0.2
+	expect(not defaults.assign_event("map", quiet_axis).ok, "Controller-axis noise is ignored")
+	quiet_axis.axis_value = -0.9
+	var assigned_axis := defaults.assign_event("map", quiet_axis)
+	expect(assigned_axis.ok and defaults.current.map.back().axis_value == -1.0, "Controller axis capture uses a stable direction and deadzone")
+
+	var conflict_key := InputEventKey.new()
+	conflict_key.physical_keycode = KEY_I
+	var conflict := defaults.assign_event("journal", conflict_key, 0)
+	expect(not conflict.ok and conflict.conflict_action == "inventory", "Input conflicts are detected before mutation")
+	var resolved := defaults.assign_event("journal", conflict_key, 0, true)
+	expect(resolved.ok and defaults.current.inventory.filter(func(data: Dictionary) -> bool: return int(data.get("physical_keycode", 0)) == KEY_I).is_empty(), "Explicit conflict resolution moves the binding")
+	var cancel_snapshot := defaults.serialized()
+	expect(cancel_snapshot == defaults.serialized(), "Capture cancellation leaves serialized bindings unchanged")
+	var cleared := defaults.clear_binding("ranged_attack", defaults.current.ranged_attack.size() - 1)
+	expect(cleared.ok, "Optional bindings can be cleared")
+	defaults.reset_action("search")
+	expect(defaults.current.search == InputDefaults.bindings().search, "One action can reset to defaults")
+	defaults.reset_all()
+	expect(defaults.current == InputDefaults.bindings(), "All actions can reset to defaults")
+
+	var protected := InputBindings.new()
+	protected.clear_binding("ui_cancel", 1)
+	var escape := InputEventKey.new()
+	escape.physical_keycode = KEY_ESCAPE
+	var steal_cancel := protected.assign_event("map", escape, 0, true)
+	expect(not steal_cancel.ok and steal_cancel.get("protected_cancel", false), "The last usable cancel binding cannot be reassigned")
+	expect(not protected.clear_binding("ui_cancel", 0).ok, "The last usable cancel binding cannot be cleared")
+	var browser_key := InputEventKey.new()
+	browser_key.physical_keycode = KEY_F5
+	expect(defaults.assign_event("quick_save", browser_key, 0, false, true).get("browser_reserved", false), "Browser-reserved shortcuts are rejected in web-safe mode")
+
+	var migrated := InputBindings.migrate({
+		"cast_spell": [{"type": "key", "physical_keycode": int(KEY_G), "shift": false, "ctrl": false, "alt": false, "meta": false}],
+		"unknown_removed_action": [{"type": "key", "physical_keycode": int(KEY_H)}],
+	}, 1)
+	expect(int(migrated.cast_prepared[0].physical_keycode) == KEY_G, "Renamed input actions migrate to their stable replacement")
+	expect(not migrated.has("unknown_removed_action"), "Unknown saved actions are ignored safely")
+	expect(not migrated.quick_item.is_empty(), "Migration preserves defaults for actions added later")
+
+	var settings := root.get_node_or_null("SettingsService")
+	expect(settings != null, "SettingsService exists for input persistence")
+	if settings == null:
+		return
+	var backup_values: Dictionary = settings.values.duplicate(true)
+	var backup_bindings: Dictionary = settings.input_bindings.serialized()
+	var test_path := "user://settings_input_test.cfg"
+	for suffix in ["", ".tmp", ".bak"]:
+		DirAccess.remove_absolute(ProjectSettings.globalize_path(test_path + suffix))
+	settings.input_bindings = InputBindings.new()
+	settings.input_bindings.assign_event("search", keyboard, 0)
+	settings.values.music_volume = 0.33
+	expect(settings.save_settings(test_path) == OK, "Versioned input settings persist atomically")
+	settings.input_bindings.reset_all()
+	settings.values.music_volume = 0.9
+	expect(settings.load_settings(test_path) == OK, "Versioned input settings reload")
+	expect(int(settings.input_bindings.current.search[0].physical_keycode) == KEY_G, "Custom input mapping persists across a settings restart")
+	expect(is_equal_approx(float(settings.values.music_volume), 0.33), "Input mappings remain separate from ordinary settings values")
+	settings.values = backup_values
+	settings.input_bindings = InputBindings.new(backup_bindings)
+	settings.apply()
+	settings.input_bindings.apply_to_input_map()
+	for suffix in ["", ".tmp", ".bak"]:
+		DirAccess.remove_absolute(ProjectSettings.globalize_path(test_path + suffix))

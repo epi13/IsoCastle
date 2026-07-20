@@ -6,6 +6,7 @@ All notable changes are documented here. Versions follow semantic versioning whi
 
 - Added transactional, metadata-preserving inventory ownership and literal mouse drag-and-drop for reorder, swap, stack merge/split, equip, replacement, unequip, destination feedback, cancellation, and keyboard/controller alternatives.
 - Advanced saves to schema 4 so legacy equipment references migrate to single item ownership without duplication.
+- Added a complete versioned input-remapping editor for keyboard, mouse, and controller events with explicit conflict handling, protected cancel access, per-action/all-default resets, and startup persistence.
 - Established original setting, campaign structure, design pillars, and technical architecture.
 - Selected Godot 4.7.1 with typed GDScript and deterministic Python content/art/audio pipelines.
 - Began full implementation on codex/full-isometric-game.
