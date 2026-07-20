@@ -23,15 +23,13 @@
 
 ### Current work
 
-- Final usability, release documentation, CI/export verification, merge, and pre-release tag.
+- v0.9.0 pre-release published; native Windows execution and post-release polish remain.
 
 ### Tests and failures
 
 - git ls-remote and clone succeeded.
-- GitHub HTTPS dry-run push failed: no valid username/token.
-- gh auth status failed: no authenticated GitHub host.
-- SSH authentication also failed because no GitHub public key is available.
-- Resolution: continue coherent local work and make milestone commits. Remote publication remains pending user-provided GitHub authentication.
+- Initial GitHub HTTPS dry-run and SSH authentication checks failed, and `gh auth status` remains unauthenticated.
+- Resolution: the configured Git HTTPS credential path proved functional; all milestone branch pushes succeeded. GitHub merged PR #1 remotely as a non-conflicting merge commit, which was preserved and fast-forwarded locally.
 - Content validation passed with all catalog targets.
 - Godot import and main-menu startup passed without parser or resource errors.
 - Headless unit test runner passed 464 checks.
@@ -52,8 +50,17 @@ Reported ALL ISOCASTLE TESTS PASSED.
 - 2eb9acd Initial commit (pre-existing main)
 - f5c2fd1 Establish Godot foundation and validated content catalogs
 - eb6ebb3 Build playable campaign and reproducible media pipelines
+- fcb207d Complete release gameplay usability pass
+- a8f7462 Merge pull request #1 from epi13/codex/full-isometric-game
 
 ### Final usability pass
 
 - Added ranged combat, quick consumables, prepared-spell selection, six-rank Practice unlock progression, difficulty-sensitive enemy counts/damage/recovery, floor keys and locks, and searchable secret doors.
 - Re-ran the complete suite successfully after the pass.
+
+### Release state
+
+- `codex/full-isometric-game` was pushed through `fcb207d`.
+- GitHub merged the development branch to `main` in PR #1 as `a8f7462`; local `main` was safely fast-forwarded to preserve that remote work.
+- Final exports were produced from gameplay commit `fcb207d`; this release-record-only commit does not alter runtime content.
+- The annotated `v0.9.0` pre-release tag is published from the finalized release record.
