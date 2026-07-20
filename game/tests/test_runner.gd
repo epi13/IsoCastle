@@ -272,6 +272,14 @@ func _test_save_round_trip() -> void:
 	expect(int(loaded.get("seed", 0)) == 7719, "Seed round trips")
 	expect(loaded.get("player", {}).get("name") == "Test Wanderer", "Nested player state round trips")
 	expect(loaded.equipment.main_hand.state == "etched" and loaded.inventory[0].affixes == ["clear"], "Inventory and equipment metadata survive save/load")
+	var replacement := fixture.duplicate(true)
+	replacement.seed = 7720
+	expect(save.save_slot(4, replacement) == OK, "A replacement save preserves the prior valid slot as backup")
+	var interrupted_file := FileAccess.open(save.slot_path(4), FileAccess.WRITE)
+	interrupted_file.store_string("{interrupted")
+	interrupted_file.close()
+	var recovered: Dictionary = save.load_slot(4)
+	expect(int(recovered.get("seed", 0)) == 7719 and bool(recovered.get("recovered_from_backup", false)), "A corrupt replacement recovers the previous valid save")
 	save.delete_slot(4)
 	var legacy_file := FileAccess.open(old_path, FileAccess.WRITE)
 	legacy_file.store_string(JSON.stringify({

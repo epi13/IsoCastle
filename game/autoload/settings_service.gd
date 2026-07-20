@@ -82,6 +82,15 @@ func save_settings(path: String = SETTINGS_PATH) -> Error:
 			return error
 	error = DirAccess.rename_absolute(absolute_temp, absolute_path)
 	last_persistence_error = "" if error == OK else "Could not replace settings: %s" % error_string(error)
+	if error == OK and OS.has_feature("web"):
+		var bridge := get_node_or_null("/root/WebBridge")
+		if bridge != null:
+			bridge.set_value("storage_persistent", OS.is_userfs_persistent())
+		JavaScriptBridge.force_fs_sync()
+	if is_inside_tree():
+		var bridge := get_node_or_null("/root/WebBridge")
+		if bridge != null:
+			bridge.set_value("settings_save_ok", error == OK)
 	return error
 
 
@@ -89,6 +98,12 @@ func set_value(key: String, value: Variant) -> void:
 	if DEFAULTS.has(key):
 		values[key] = value
 		apply()
+		if key == "fullscreen" and OS.has_feature("web"):
+			_apply_fullscreen(bool(value))
+		if is_inside_tree():
+			var bridge := get_node_or_null("/root/WebBridge")
+			if bridge != null:
+				bridge.set_value("setting_%s" % key, value)
 
 
 func get_value(key: String) -> Variant:
@@ -152,3 +167,9 @@ func apply() -> void:
 	if is_inside_tree():
 		var scale: float = float(values.ui_scale)
 		get_tree().root.content_scale_factor = scale
+	if not OS.has_feature("web"):
+		_apply_fullscreen(bool(values.fullscreen))
+
+
+func _apply_fullscreen(enabled: bool) -> void:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if enabled else DisplayServer.WINDOW_MODE_WINDOWED)

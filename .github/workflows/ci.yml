@@ -10,7 +10,7 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: chickensoft-games/setup-godot@v2
@@ -23,6 +23,28 @@ jobs:
           python-version: "3.12"
       - name: Install generator dependencies
         run: python -m pip install Pillow==12.3.0
-      - name: Validate content and run headless tests
-        run: ./tools/test_all.sh
-
+      - name: Validate project and create Web export
+        run: ./tools/build/export_web.sh
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install browser test dependencies
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Run Chromium Web smoke test
+        run: npx playwright test --project=chromium
+      - name: Upload deployable Web archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: IsoCastle-web
+          path: builds/web/IsoCastle-web.zip
+          if-no-files-found: error
+      - name: Upload browser diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: IsoCastle-browser-diagnostics
+          path: artifacts/browser/
+          if-no-files-found: ignore

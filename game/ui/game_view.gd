@@ -51,6 +51,9 @@ func _ready() -> void:
 	_build_hud()
 	_restore_or_start()
 	_enter_depth(int(GameSession.state.get("world", {}).get("floor", 0)))
+	WebBridge.set_screen("gameplay")
+	WebBridge.set_value("turn", int(GameSession.state.world.turn))
+	WebBridge.publish_inventory(GameSession.state.inventory, GameSession.state.equipment)
 
 
 func _process(_delta: float) -> void:
@@ -254,7 +257,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if modal.visible:
 		if event.is_action_pressed("ui_cancel"):
-			modal.visible = false
+			_close_modal()
 		return
 	if event.is_action_pressed("ui_cancel"):
 		_show_pause()
@@ -429,6 +432,7 @@ func _use_first_consumable() -> void:
 
 func _finish_player_action(noise: int) -> void:
 	GameSession.state.world.turn = int(GameSession.state.world.turn) + 1
+	WebBridge.set_value("turn", int(GameSession.state.world.turn))
 	_run_enemy_turns(noise)
 	_recalculate_visibility()
 	_update_hud()
@@ -534,6 +538,7 @@ func _save() -> void:
 	var error := SaveService.save_slot(0, GameSession.serialize())
 	AudioDirector.play_sfx("res://assets/sounds/ui/save.wav")
 	_log("[color=#a8d49d]Journey saved atomically.[/color]" if error == OK else "[color=#e88768]Save failed: %s[/color]" % error_string(error))
+	WebBridge.set_value("save_ok", error == OK)
 	_update_hud()
 
 
@@ -657,6 +662,8 @@ func _update_hud() -> void:
 
 
 func _show_inventory() -> void:
+	WebBridge.set_screen("inventory")
+	WebBridge.publish_inventory(GameSession.state.inventory, GameSession.state.equipment)
 	var weight := InventoryRules.total_carried_weight(GameSession.state.inventory, GameSession.state.equipment, item_catalog)
 	_show_modal("Inventory & Equipment", "Carried weight: %.2f / %d  •  Drag items to move, merge, swap, equip, or unequip. Right-click a stack to split it." % [weight, 22 + int(player.might) * 4])
 	modal_body.custom_minimum_size = Vector2(700, 52)
@@ -749,6 +756,7 @@ func _on_inventory_drop(source: Dictionary, destination: Dictionary) -> void:
 		_apply_equipment_stats()
 		AudioDirector.play_sfx("res://assets/sounds/ui/equip.wav" if String(result.operation).contains("equip") else "res://assets/sounds/ui/drop.wav")
 		_log("[color=#a8d49d]%s.[/color]" % String(result.operation).replace("_", " ").capitalize())
+		WebBridge.publish_inventory(GameSession.state.inventory, GameSession.state.equipment)
 	else:
 		_log("[color=#e88768]%s[/color]" % result.reason)
 	inventory_drag_active = false
@@ -876,6 +884,7 @@ func _close_modal() -> void:
 	inventory_slot_controls.clear()
 	inventory_focus_source.clear()
 	modal.visible = false
+	WebBridge.set_screen("gameplay")
 
 
 func _add_modal_action(text_value: String, callback: Callable) -> void:

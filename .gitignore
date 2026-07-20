@@ -1,5 +1,6 @@
 .godot/
-builds/
+builds/*
+!builds/.gdignore
 dist/
 reports/
 tmp/
@@ -8,6 +9,10 @@ tmp/
 *.bak
 __pycache__/
 .pytest_cache/
+node_modules/
+test-results/
+playwright-report/
+artifacts/*
+!artifacts/.gdignore
 .DS_Store
 Thumbs.db
-

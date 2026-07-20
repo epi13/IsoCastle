@@ -55,6 +55,8 @@ func clear_screen() -> void:
 
 func show_title() -> void:
 	clear_screen()
+	WebBridge.set_screen("title")
+	WebBridge.set_value("has_save", SaveService.has_slot(0))
 	status_label.visible = true
 	var panel := VBoxContainer.new()
 	panel.position = Vector2(100, 112)
@@ -135,6 +137,7 @@ func _show_message(title_text: String, body: String) -> void:
 
 
 func _on_new_game() -> void:
+	WebBridge.set_value("user_interaction", true)
 	_show_intro()
 
 
@@ -183,6 +186,7 @@ func _on_load() -> void:
 
 func _on_settings() -> void:
 	clear_screen()
+	WebBridge.set_screen("settings")
 	var scroll := ScrollContainer.new()
 	scroll.position = Vector2(220, 70)
 	scroll.size = Vector2(840, 590)
@@ -217,6 +221,7 @@ func _on_settings() -> void:
 		row.add_child(slider)
 		box.add_child(row)
 	for entry in [
+		["Fullscreen (user initiated on Web)", "fullscreen"],
 		["High-contrast interface", "high_contrast"], ["Reduced motion", "reduced_motion"],
 		["Reduced flashing", "reduced_flashing"], ["Highlight interactables", "highlight_interactables"],
 		["Floating combat feedback", "floating_feedback"], ["Hold to confirm", "hold_to_confirm"],
@@ -242,6 +247,8 @@ func _on_settings() -> void:
 func _show_input_settings(message: String = "") -> void:
 	_cancel_capture(false)
 	clear_screen()
+	WebBridge.set_screen("input_remapping")
+	WebBridge.set_value("bindings", SettingsService.input_bindings.serialized())
 	var page := VBoxContainer.new()
 	page.position = Vector2(80, 34)
 	page.size = Vector2(1120, 650)
@@ -470,6 +477,7 @@ func _on_quit() -> void:
 
 func _show_intro() -> void:
 	clear_screen()
+	WebBridge.set_screen("intro")
 	var box := VBoxContainer.new()
 	box.position = Vector2(210, 90)
 	box.size = Vector2(860, 540)
@@ -498,6 +506,7 @@ func _show_intro() -> void:
 
 func _show_character_creation() -> void:
 	clear_screen()
+	WebBridge.set_screen("character_creation")
 	var scroll := ScrollContainer.new()
 	scroll.position = Vector2(170, 48)
 	scroll.size = Vector2(940, 630)
@@ -631,7 +640,7 @@ func _create_character_and_start() -> void:
 		var starting_stack: Dictionary = GameSession.state.inventory[item_index]
 		var definition: Dictionary = item_catalog.get(starting_stack.get("id", ""), {})
 		var equipment_slot := String(definition.get("slot", ""))
-		if equipment_slot.is_empty() or GameSession.state.equipment.has(equipment_slot):
+		if equipment_slot.is_empty() or definition.get("category") != "weapon" or GameSession.state.equipment.has(equipment_slot):
 			continue
 		var equip_result := InventoryRules.equip(GameSession.state.inventory, GameSession.state.equipment, item_index, equipment_slot, character, item_catalog)
 		if equip_result.ok:

@@ -19,6 +19,7 @@ SettingsService="*res://game/autoload/settings_service.gd"
 SaveService="*res://game/autoload/save_service.gd"
 GameSession="*res://game/autoload/game_session.gd"
 AudioDirector="*res://game/autoload/audio_director.gd"
+WebBridge="*res://game/autoload/web_bridge.gd"
 
 [display]
 

@@ -37,7 +37,10 @@ func save_slot(slot: int, state: Dictionary) -> Error:
 		var backup_error := DirAccess.rename_absolute(absolute_path, absolute_backup)
 		if backup_error != OK:
 			return backup_error
-	return DirAccess.rename_absolute(absolute_temp, absolute_path)
+	var replace_error := DirAccess.rename_absolute(absolute_temp, absolute_path)
+	if replace_error == OK:
+		_sync_web_filesystem()
+	return replace_error
 
 
 func load_slot(slot: int) -> Dictionary:
@@ -59,6 +62,14 @@ func has_slot(slot: int) -> bool:
 func delete_slot(slot: int) -> void:
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(slot_path(slot)))
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(slot_path(slot) + ".bak"))
+	_sync_web_filesystem()
+
+
+func _sync_web_filesystem() -> void:
+	if not OS.has_feature("web"):
+		return
+	WebBridge.set_value("storage_persistent", OS.is_userfs_persistent())
+	JavaScriptBridge.force_fs_sync()
 
 
 func _read_and_migrate(path: String) -> Dictionary:
@@ -67,7 +78,10 @@ func _read_and_migrate(path: String) -> Dictionary:
 	var file := FileAccess.open(path, FileAccess.READ)
 	if file == null:
 		return {"ok": false, "error": "open"}
-	var parsed: Variant = JSON.parse_string(file.get_as_text())
+	var parser := JSON.new()
+	if parser.parse(file.get_as_text()) != OK:
+		return {"ok": false, "error": "parse"}
+	var parsed: Variant = parser.data
 	if not parsed is Dictionary:
 		return {"ok": false, "error": "parse"}
 	var data: Dictionary = parsed

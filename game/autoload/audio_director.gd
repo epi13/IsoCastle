@@ -35,6 +35,9 @@ func play_music(resource_path: String, fade_seconds: float = 1.2) -> void:
 	new_player.stream = load(resource_path)
 	new_player.volume_db = -60.0
 	new_player.play()
+	var bridge := get_node_or_null("/root/WebBridge")
+	if bridge != null:
+		bridge.set_value("audio_requested", true)
 	music_tween = create_tween().set_parallel(true)
 	music_tween.tween_property(old_player, "volume_db", -60.0, fade_seconds)
 	music_tween.tween_property(new_player, "volume_db", 0.0, fade_seconds)
