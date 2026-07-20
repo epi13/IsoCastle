@@ -1,0 +1,1346 @@
+[
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "projectile",
+      "danger"
+    ],
+    "damage_type": "fire",
+    "description": "A cinderweave working shaped as projectile.",
+    "discipline": "cinderweave",
+    "hostile": true,
+    "id": "spell_coal_spark",
+    "learning": "spellbook",
+    "mana_cost": 5,
+    "name": "Coal Spark",
+    "name_key": "spell.spell_coal_spark.name",
+    "power": 8,
+    "radius": 0,
+    "range": 3,
+    "rank": 1,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_coal_spark.wav",
+    "shape": "projectile",
+    "status": "fire_touched",
+    "vfx": "res://assets/effects/spell_coal_spark.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "aura",
+      "support"
+    ],
+    "damage_type": "fire",
+    "description": "A cinderweave working shaped as aura.",
+    "discipline": "cinderweave",
+    "hostile": false,
+    "id": "spell_hearth_ring",
+    "learning": "shrine",
+    "mana_cost": 7,
+    "name": "Hearth Ring",
+    "name_key": "spell.spell_hearth_ring.name",
+    "power": 12,
+    "radius": 1,
+    "range": 4,
+    "rank": 2,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_hearth_ring.wav",
+    "shape": "aura",
+    "status": "",
+    "vfx": "res://assets/effects/spell_hearth_ring.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "buff",
+      "support"
+    ],
+    "damage_type": "fire",
+    "description": "A cinderweave working shaped as buff.",
+    "discipline": "cinderweave",
+    "hostile": false,
+    "id": "spell_ashen_shape",
+    "learning": "quest_reward",
+    "mana_cost": 9,
+    "name": "Ashen Shape",
+    "name_key": "spell.spell_ashen_shape.name",
+    "power": 16,
+    "radius": 0,
+    "range": 5,
+    "rank": 3,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_ashen_shape.wav",
+    "shape": "buff",
+    "status": "fire_touched",
+    "vfx": "res://assets/effects/spell_ashen_shape.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "line",
+      "danger"
+    ],
+    "damage_type": "fire",
+    "description": "A cinderweave working shaped as line.",
+    "discipline": "cinderweave",
+    "hostile": true,
+    "id": "spell_cinder_road",
+    "learning": "teacher",
+    "mana_cost": 11,
+    "name": "Cinder Road",
+    "name_key": "spell.spell_cinder_road.name",
+    "power": 20,
+    "radius": 2,
+    "range": 6,
+    "rank": 4,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_cinder_road.wav",
+    "shape": "line",
+    "status": "",
+    "vfx": "res://assets/effects/spell_cinder_road.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "weapon_buff",
+      "support"
+    ],
+    "damage_type": "fire",
+    "description": "A cinderweave working shaped as weapon buff.",
+    "discipline": "cinderweave",
+    "hostile": false,
+    "id": "spell_kindle_iron",
+    "learning": "spellbook",
+    "mana_cost": 13,
+    "name": "Kindle Iron",
+    "name_key": "spell.spell_kindle_iron.name",
+    "power": 24,
+    "radius": 2,
+    "range": 7,
+    "rank": 5,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_kindle_iron.wav",
+    "shape": "weapon_buff",
+    "status": "fire_touched",
+    "vfx": "res://assets/effects/spell_kindle_iron.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "revive",
+      "support"
+    ],
+    "damage_type": "fire",
+    "description": "A cinderweave working shaped as revive.",
+    "discipline": "cinderweave",
+    "hostile": false,
+    "id": "spell_phoenix_debt",
+    "learning": "shrine",
+    "mana_cost": 15,
+    "name": "Phoenix Debt",
+    "name_key": "spell.spell_phoenix_debt.name",
+    "power": 28,
+    "radius": 2,
+    "range": 8,
+    "rank": 6,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_phoenix_debt.wav",
+    "shape": "revive",
+    "status": "",
+    "vfx": "res://assets/effects/spell_phoenix_debt.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "projectile",
+      "danger"
+    ],
+    "damage_type": "frost",
+    "description": "A rimekeeping working shaped as projectile.",
+    "discipline": "rimekeeping",
+    "hostile": true,
+    "id": "spell_rime_needle",
+    "learning": "spellbook",
+    "mana_cost": 5,
+    "name": "Rime Needle",
+    "name_key": "spell.spell_rime_needle.name",
+    "power": 8,
+    "radius": 0,
+    "range": 3,
+    "rank": 1,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_rime_needle.wav",
+    "shape": "projectile",
+    "status": "frost_touched",
+    "vfx": "res://assets/effects/spell_rime_needle.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "ground",
+      "danger"
+    ],
+    "damage_type": "frost",
+    "description": "A rimekeeping working shaped as ground.",
+    "discipline": "rimekeeping",
+    "hostile": true,
+    "id": "spell_stillwater",
+    "learning": "shrine",
+    "mana_cost": 7,
+    "name": "Stillwater",
+    "name_key": "spell.spell_stillwater.name",
+    "power": 12,
+    "radius": 1,
+    "range": 4,
+    "rank": 2,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_stillwater.wav",
+    "shape": "ground",
+    "status": "",
+    "vfx": "res://assets/effects/spell_stillwater.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "wall",
+      "danger"
+    ],
+    "damage_type": "frost",
+    "description": "A rimekeeping working shaped as wall.",
+    "discipline": "rimekeeping",
+    "hostile": true,
+    "id": "spell_white_wall",
+    "learning": "quest_reward",
+    "mana_cost": 9,
+    "name": "White Wall",
+    "name_key": "spell.spell_white_wall.name",
+    "power": 16,
+    "radius": 1,
+    "range": 5,
+    "rank": 3,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_white_wall.wav",
+    "shape": "wall",
+    "status": "frost_touched",
+    "vfx": "res://assets/effects/spell_white_wall.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "cone",
+      "danger"
+    ],
+    "damage_type": "frost",
+    "description": "A rimekeeping working shaped as cone.",
+    "discipline": "rimekeeping",
+    "hostile": true,
+    "id": "spell_winter_s_hand",
+    "learning": "teacher",
+    "mana_cost": 11,
+    "name": "Winter's Hand",
+    "name_key": "spell.spell_winter_s_hand.name",
+    "power": 20,
+    "radius": 2,
+    "range": 6,
+    "rank": 4,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_winter_s_hand.wav",
+    "shape": "cone",
+    "status": "",
+    "vfx": "res://assets/effects/spell_winter_s_hand.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "buff",
+      "support"
+    ],
+    "damage_type": "frost",
+    "description": "A rimekeeping working shaped as buff.",
+    "discipline": "rimekeeping",
+    "hostile": false,
+    "id": "spell_preserve_breath",
+    "learning": "spellbook",
+    "mana_cost": 13,
+    "name": "Preserve Breath",
+    "name_key": "spell.spell_preserve_breath.name",
+    "power": 24,
+    "radius": 0,
+    "range": 7,
+    "rank": 5,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_preserve_breath.wav",
+    "shape": "buff",
+    "status": "frost_touched",
+    "vfx": "res://assets/effects/spell_preserve_breath.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "burst",
+      "danger"
+    ],
+    "damage_type": "frost",
+    "description": "A rimekeeping working shaped as burst.",
+    "discipline": "rimekeeping",
+    "hostile": true,
+    "id": "spell_lake_without_ripples",
+    "learning": "shrine",
+    "mana_cost": 15,
+    "name": "Lake Without Ripples",
+    "name_key": "spell.spell_lake_without_ripples.name",
+    "power": 28,
+    "radius": 2,
+    "range": 8,
+    "rank": 6,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_lake_without_ripples.wav",
+    "shape": "burst",
+    "status": "",
+    "vfx": "res://assets/effects/spell_lake_without_ripples.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "line",
+      "danger"
+    ],
+    "damage_type": "shock",
+    "description": "A galebinding working shaped as line.",
+    "discipline": "galebinding",
+    "hostile": true,
+    "id": "spell_crosswind",
+    "learning": "spellbook",
+    "mana_cost": 5,
+    "name": "Crosswind",
+    "name_key": "spell.spell_crosswind.name",
+    "power": 8,
+    "radius": 1,
+    "range": 3,
+    "rank": 1,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_crosswind.wav",
+    "shape": "line",
+    "status": "shock_touched",
+    "vfx": "res://assets/effects/spell_crosswind.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "chain",
+      "danger"
+    ],
+    "damage_type": "shock",
+    "description": "A galebinding working shaped as chain.",
+    "discipline": "galebinding",
+    "hostile": true,
+    "id": "spell_thunder_knot",
+    "learning": "shrine",
+    "mana_cost": 7,
+    "name": "Thunder Knot",
+    "name_key": "spell.spell_thunder_knot.name",
+    "power": 12,
+    "radius": 1,
+    "range": 4,
+    "rank": 2,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_thunder_knot.wav",
+    "shape": "chain",
+    "status": "",
+    "vfx": "res://assets/effects/spell_thunder_knot.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "travel",
+      "support"
+    ],
+    "damage_type": "air",
+    "description": "A galebinding working shaped as travel.",
+    "discipline": "galebinding",
+    "hostile": false,
+    "id": "spell_borrowed_step",
+    "learning": "quest_reward",
+    "mana_cost": 9,
+    "name": "Borrowed Step",
+    "name_key": "spell.spell_borrowed_step.name",
+    "power": 16,
+    "radius": 1,
+    "range": 5,
+    "rank": 3,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_borrowed_step.wav",
+    "shape": "travel",
+    "status": "air_touched",
+    "vfx": "res://assets/effects/spell_borrowed_step.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "aura",
+      "support"
+    ],
+    "damage_type": "air",
+    "description": "A galebinding working shaped as aura.",
+    "discipline": "galebinding",
+    "hostile": false,
+    "id": "spell_gale_mantle",
+    "learning": "teacher",
+    "mana_cost": 11,
+    "name": "Gale Mantle",
+    "name_key": "spell.spell_gale_mantle.name",
+    "power": 20,
+    "radius": 2,
+    "range": 6,
+    "rank": 4,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_gale_mantle.wav",
+    "shape": "aura",
+    "status": "",
+    "vfx": "res://assets/effects/spell_gale_mantle.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "pull",
+      "danger"
+    ],
+    "damage_type": "air",
+    "description": "A galebinding working shaped as pull.",
+    "discipline": "galebinding",
+    "hostile": true,
+    "id": "spell_skyhook",
+    "learning": "spellbook",
+    "mana_cost": 13,
+    "name": "Skyhook",
+    "name_key": "spell.spell_skyhook.name",
+    "power": 24,
+    "radius": 2,
+    "range": 7,
+    "rank": 5,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_skyhook.wav",
+    "shape": "pull",
+    "status": "air_touched",
+    "vfx": "res://assets/effects/spell_skyhook.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "burst",
+      "danger"
+    ],
+    "damage_type": "shock",
+    "description": "A galebinding working shaped as burst.",
+    "discipline": "galebinding",
+    "hostile": true,
+    "id": "spell_tempest_answer",
+    "learning": "shrine",
+    "mana_cost": 15,
+    "name": "Tempest Answer",
+    "name_key": "spell.spell_tempest_answer.name",
+    "power": 28,
+    "radius": 2,
+    "range": 8,
+    "rank": 6,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_tempest_answer.wav",
+    "shape": "burst",
+    "status": "",
+    "vfx": "res://assets/effects/spell_tempest_answer.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "projectile",
+      "danger"
+    ],
+    "damage_type": "crush",
+    "description": "A deepstone working shaped as projectile.",
+    "discipline": "deepstone",
+    "hostile": true,
+    "id": "spell_pebble_oath",
+    "learning": "spellbook",
+    "mana_cost": 5,
+    "name": "Pebble Oath",
+    "name_key": "spell.spell_pebble_oath.name",
+    "power": 8,
+    "radius": 0,
+    "range": 3,
+    "rank": 1,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_pebble_oath.wav",
+    "shape": "projectile",
+    "status": "crush_touched",
+    "vfx": "res://assets/effects/spell_pebble_oath.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "buff",
+      "support"
+    ],
+    "damage_type": "earth",
+    "description": "A deepstone working shaped as buff.",
+    "discipline": "deepstone",
+    "hostile": false,
+    "id": "spell_rooted_stance",
+    "learning": "shrine",
+    "mana_cost": 7,
+    "name": "Rooted Stance",
+    "name_key": "spell.spell_rooted_stance.name",
+    "power": 12,
+    "radius": 0,
+    "range": 4,
+    "rank": 2,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_rooted_stance.wav",
+    "shape": "buff",
+    "status": "",
+    "vfx": "res://assets/effects/spell_rooted_stance.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "wall",
+      "danger"
+    ],
+    "damage_type": "earth",
+    "description": "A deepstone working shaped as wall.",
+    "discipline": "deepstone",
+    "hostile": true,
+    "id": "spell_stone_door",
+    "learning": "quest_reward",
+    "mana_cost": 9,
+    "name": "Stone Door",
+    "name_key": "spell.spell_stone_door.name",
+    "power": 16,
+    "radius": 1,
+    "range": 5,
+    "rank": 3,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_stone_door.wav",
+    "shape": "wall",
+    "status": "earth_touched",
+    "vfx": "res://assets/effects/spell_stone_door.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "line",
+      "danger"
+    ],
+    "damage_type": "crush",
+    "description": "A deepstone working shaped as line.",
+    "discipline": "deepstone",
+    "hostile": true,
+    "id": "spell_fault_line",
+    "learning": "teacher",
+    "mana_cost": 11,
+    "name": "Fault Line",
+    "name_key": "spell.spell_fault_line.name",
+    "power": 20,
+    "radius": 2,
+    "range": 6,
+    "rank": 4,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_fault_line.wav",
+    "shape": "line",
+    "status": "",
+    "vfx": "res://assets/effects/spell_fault_line.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "debuff",
+      "danger"
+    ],
+    "damage_type": "earth",
+    "description": "A deepstone working shaped as debuff.",
+    "discipline": "deepstone",
+    "hostile": true,
+    "id": "spell_burden_of_hills",
+    "learning": "spellbook",
+    "mana_cost": 13,
+    "name": "Burden of Hills",
+    "name_key": "spell.spell_burden_of_hills.name",
+    "power": 24,
+    "radius": 2,
+    "range": 7,
+    "rank": 5,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_burden_of_hills.wav",
+    "shape": "debuff",
+    "status": "earth_touched",
+    "vfx": "res://assets/effects/spell_burden_of_hills.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "summon",
+      "danger"
+    ],
+    "damage_type": "earth",
+    "description": "A deepstone working shaped as summon.",
+    "discipline": "deepstone",
+    "hostile": true,
+    "id": "spell_walking_cairn",
+    "learning": "shrine",
+    "mana_cost": 15,
+    "name": "Walking Cairn",
+    "name_key": "spell.spell_walking_cairn.name",
+    "power": 28,
+    "radius": 2,
+    "range": 8,
+    "rank": 6,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_walking_cairn.wav",
+    "shape": "summon",
+    "status": "",
+    "vfx": "res://assets/effects/spell_walking_cairn.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "heal",
+      "support"
+    ],
+    "damage_type": "radiant",
+    "description": "A dawnmending working shaped as heal.",
+    "discipline": "dawnmending",
+    "hostile": false,
+    "id": "spell_warm_palm",
+    "learning": "spellbook",
+    "mana_cost": 5,
+    "name": "Warm Palm",
+    "name_key": "spell.spell_warm_palm.name",
+    "power": 8,
+    "radius": 0,
+    "range": 3,
+    "rank": 1,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_warm_palm.wav",
+    "shape": "heal",
+    "status": "radiant_touched",
+    "vfx": "res://assets/effects/spell_warm_palm.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "line",
+      "danger"
+    ],
+    "damage_type": "radiant",
+    "description": "A dawnmending working shaped as line.",
+    "discipline": "dawnmending",
+    "hostile": true,
+    "id": "spell_lantern_ray",
+    "learning": "shrine",
+    "mana_cost": 7,
+    "name": "Lantern Ray",
+    "name_key": "spell.spell_lantern_ray.name",
+    "power": 12,
+    "radius": 1,
+    "range": 4,
+    "rank": 2,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_lantern_ray.wav",
+    "shape": "line",
+    "status": "",
+    "vfx": "res://assets/effects/spell_lantern_ray.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "cleanse",
+      "support"
+    ],
+    "damage_type": "radiant",
+    "description": "A dawnmending working shaped as cleanse.",
+    "discipline": "dawnmending",
+    "hostile": false,
+    "id": "spell_second_morning",
+    "learning": "quest_reward",
+    "mana_cost": 9,
+    "name": "Second Morning",
+    "name_key": "spell.spell_second_morning.name",
+    "power": 16,
+    "radius": 1,
+    "range": 5,
+    "rank": 3,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_second_morning.wav",
+    "shape": "cleanse",
+    "status": "radiant_touched",
+    "vfx": "res://assets/effects/spell_second_morning.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "aura",
+      "support"
+    ],
+    "damage_type": "radiant",
+    "description": "A dawnmending working shaped as aura.",
+    "discipline": "dawnmending",
+    "hostile": false,
+    "id": "spell_dawn_ward",
+    "learning": "teacher",
+    "mana_cost": 11,
+    "name": "Dawn Ward",
+    "name_key": "spell.spell_dawn_ward.name",
+    "power": 20,
+    "radius": 2,
+    "range": 6,
+    "rank": 4,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_dawn_ward.wav",
+    "shape": "aura",
+    "status": "",
+    "vfx": "res://assets/effects/spell_dawn_ward.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "chain_heal",
+      "support"
+    ],
+    "damage_type": "radiant",
+    "description": "A dawnmending working shaped as chain heal.",
+    "discipline": "dawnmending",
+    "hostile": false,
+    "id": "spell_shared_breath",
+    "learning": "spellbook",
+    "mana_cost": 13,
+    "name": "Shared Breath",
+    "name_key": "spell.spell_shared_breath.name",
+    "power": 24,
+    "radius": 2,
+    "range": 7,
+    "rank": 5,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_shared_breath.wav",
+    "shape": "chain_heal",
+    "status": "radiant_touched",
+    "vfx": "res://assets/effects/spell_shared_breath.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "burst",
+      "danger"
+    ],
+    "damage_type": "radiant",
+    "description": "A dawnmending working shaped as burst.",
+    "discipline": "dawnmending",
+    "hostile": true,
+    "id": "spell_noon_without_shadow",
+    "learning": "shrine",
+    "mana_cost": 15,
+    "name": "Noon Without Shadow",
+    "name_key": "spell.spell_noon_without_shadow.name",
+    "power": 28,
+    "radius": 2,
+    "range": 8,
+    "rank": 6,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_noon_without_shadow.wav",
+    "shape": "burst",
+    "status": "",
+    "vfx": "res://assets/effects/spell_noon_without_shadow.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "travel",
+      "support"
+    ],
+    "damage_type": "shadow",
+    "description": "A veilcraft working shaped as travel.",
+    "discipline": "veilcraft",
+    "hostile": false,
+    "id": "spell_moth_step",
+    "learning": "spellbook",
+    "mana_cost": 5,
+    "name": "Moth Step",
+    "name_key": "spell.spell_moth_step.name",
+    "power": 8,
+    "radius": 1,
+    "range": 3,
+    "rank": 1,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_moth_step.wav",
+    "shape": "travel",
+    "status": "shadow_touched",
+    "vfx": "res://assets/effects/spell_moth_step.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "stealth",
+      "support"
+    ],
+    "damage_type": "shadow",
+    "description": "A veilcraft working shaped as stealth.",
+    "discipline": "veilcraft",
+    "hostile": false,
+    "id": "spell_dim_the_name",
+    "learning": "shrine",
+    "mana_cost": 7,
+    "name": "Dim the Name",
+    "name_key": "spell.spell_dim_the_name.name",
+    "power": 12,
+    "radius": 1,
+    "range": 4,
+    "rank": 2,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_dim_the_name.wav",
+    "shape": "stealth",
+    "status": "",
+    "vfx": "res://assets/effects/spell_dim_the_name.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "projectile",
+      "danger"
+    ],
+    "damage_type": "shadow",
+    "description": "A veilcraft working shaped as projectile.",
+    "discipline": "veilcraft",
+    "hostile": true,
+    "id": "spell_night_thread",
+    "learning": "quest_reward",
+    "mana_cost": 9,
+    "name": "Night Thread",
+    "name_key": "spell.spell_night_thread.name",
+    "power": 16,
+    "radius": 0,
+    "range": 5,
+    "rank": 3,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_night_thread.wav",
+    "shape": "projectile",
+    "status": "shadow_touched",
+    "vfx": "res://assets/effects/spell_night_thread.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "charm",
+      "danger"
+    ],
+    "damage_type": "shadow",
+    "description": "A veilcraft working shaped as charm.",
+    "discipline": "veilcraft",
+    "hostile": true,
+    "id": "spell_borrowed_face",
+    "learning": "teacher",
+    "mana_cost": 11,
+    "name": "Borrowed Face",
+    "name_key": "spell.spell_borrowed_face.name",
+    "power": 20,
+    "radius": 2,
+    "range": 6,
+    "rank": 4,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_borrowed_face.wav",
+    "shape": "charm",
+    "status": "",
+    "vfx": "res://assets/effects/spell_borrowed_face.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "utility",
+      "support"
+    ],
+    "damage_type": "shadow",
+    "description": "A veilcraft working shaped as utility.",
+    "discipline": "veilcraft",
+    "hostile": false,
+    "id": "spell_unseen_door",
+    "learning": "spellbook",
+    "mana_cost": 13,
+    "name": "Unseen Door",
+    "name_key": "spell.spell_unseen_door.name",
+    "power": 24,
+    "radius": 2,
+    "range": 7,
+    "rank": 5,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_unseen_door.wav",
+    "shape": "utility",
+    "status": "shadow_touched",
+    "vfx": "res://assets/effects/spell_unseen_door.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "ground",
+      "danger"
+    ],
+    "damage_type": "shadow",
+    "description": "A veilcraft working shaped as ground.",
+    "discipline": "veilcraft",
+    "hostile": true,
+    "id": "spell_moonless_room",
+    "learning": "shrine",
+    "mana_cost": 15,
+    "name": "Moonless Room",
+    "name_key": "spell.spell_moonless_room.name",
+    "power": 28,
+    "radius": 2,
+    "range": 8,
+    "rank": 6,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_moonless_room.wav",
+    "shape": "ground",
+    "status": "",
+    "vfx": "res://assets/effects/spell_moonless_room.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "projectile",
+      "danger"
+    ],
+    "damage_type": "spirit",
+    "description": "A echocalling working shaped as projectile.",
+    "discipline": "echocalling",
+    "hostile": true,
+    "id": "spell_ancestor_s_tap",
+    "learning": "spellbook",
+    "mana_cost": 5,
+    "name": "Ancestor's Tap",
+    "name_key": "spell.spell_ancestor_s_tap.name",
+    "power": 8,
+    "radius": 0,
+    "range": 3,
+    "rank": 1,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_ancestor_s_tap.wav",
+    "shape": "projectile",
+    "status": "spirit_touched",
+    "vfx": "res://assets/effects/spell_ancestor_s_tap.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "summon",
+      "danger"
+    ],
+    "damage_type": "spirit",
+    "description": "A echocalling working shaped as summon.",
+    "discipline": "echocalling",
+    "hostile": true,
+    "id": "spell_call_reed_wisp",
+    "learning": "shrine",
+    "mana_cost": 7,
+    "name": "Call Reed-Wisp",
+    "name_key": "spell.spell_call_reed_wisp.name",
+    "power": 12,
+    "radius": 1,
+    "range": 4,
+    "rank": 2,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_call_reed_wisp.wav",
+    "shape": "summon",
+    "status": "",
+    "vfx": "res://assets/effects/spell_call_reed_wisp.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "utility",
+      "support"
+    ],
+    "damage_type": "spirit",
+    "description": "A echocalling working shaped as utility.",
+    "discipline": "echocalling",
+    "hostile": false,
+    "id": "spell_speak_with_ash",
+    "learning": "quest_reward",
+    "mana_cost": 9,
+    "name": "Speak With Ash",
+    "name_key": "spell.spell_speak_with_ash.name",
+    "power": 16,
+    "radius": 1,
+    "range": 5,
+    "rank": 3,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_speak_with_ash.wav",
+    "shape": "utility",
+    "status": "spirit_touched",
+    "vfx": "res://assets/effects/spell_speak_with_ash.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "summon",
+      "danger"
+    ],
+    "damage_type": "spirit",
+    "description": "A echocalling working shaped as summon.",
+    "discipline": "echocalling",
+    "hostile": true,
+    "id": "spell_choir_guard",
+    "learning": "teacher",
+    "mana_cost": 11,
+    "name": "Choir Guard",
+    "name_key": "spell.spell_choir_guard.name",
+    "power": 20,
+    "radius": 2,
+    "range": 6,
+    "rank": 4,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_choir_guard.wav",
+    "shape": "summon",
+    "status": "",
+    "vfx": "res://assets/effects/spell_choir_guard.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "reflect",
+      "danger"
+    ],
+    "damage_type": "spirit",
+    "description": "A echocalling working shaped as reflect.",
+    "discipline": "echocalling",
+    "hostile": true,
+    "id": "spell_return_the_cry",
+    "learning": "spellbook",
+    "mana_cost": 13,
+    "name": "Return the Cry",
+    "name_key": "spell.spell_return_the_cry.name",
+    "power": 24,
+    "radius": 2,
+    "range": 7,
+    "rank": 5,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_return_the_cry.wav",
+    "shape": "reflect",
+    "status": "spirit_touched",
+    "vfx": "res://assets/effects/spell_return_the_cry.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "summon",
+      "danger"
+    ],
+    "damage_type": "spirit",
+    "description": "A echocalling working shaped as summon.",
+    "discipline": "echocalling",
+    "hostile": true,
+    "id": "spell_many_voiced_guest",
+    "learning": "shrine",
+    "mana_cost": 15,
+    "name": "Many-Voiced Guest",
+    "name_key": "spell.spell_many_voiced_guest.name",
+    "power": 28,
+    "radius": 2,
+    "range": 8,
+    "rank": 6,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_many_voiced_guest.wav",
+    "shape": "summon",
+    "status": "",
+    "vfx": "res://assets/effects/spell_many_voiced_guest.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "detect",
+      "support"
+    ],
+    "damage_type": "fate",
+    "description": "A threadseeing working shaped as detect.",
+    "discipline": "threadseeing",
+    "hostile": false,
+    "id": "spell_find_the_seam",
+    "learning": "spellbook",
+    "mana_cost": 5,
+    "name": "Find the Seam",
+    "name_key": "spell.spell_find_the_seam.name",
+    "power": 8,
+    "radius": 1,
+    "range": 3,
+    "rank": 1,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_find_the_seam.wav",
+    "shape": "detect",
+    "status": "fate_touched",
+    "vfx": "res://assets/effects/spell_find_the_seam.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "buff",
+      "support"
+    ],
+    "damage_type": "fate",
+    "description": "A threadseeing working shaped as buff.",
+    "discipline": "threadseeing",
+    "hostile": false,
+    "id": "spell_foretold_miss",
+    "learning": "shrine",
+    "mana_cost": 7,
+    "name": "Foretold Miss",
+    "name_key": "spell.spell_foretold_miss.name",
+    "power": 12,
+    "radius": 0,
+    "range": 4,
+    "rank": 2,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_foretold_miss.wav",
+    "shape": "buff",
+    "status": "",
+    "vfx": "res://assets/effects/spell_foretold_miss.png"
+  },
+  {
+    "action_cost": 100,
+    "ai_tags": [
+      "debuff",
+      "danger"
+    ],
+    "damage_type": "fate",
+    "description": "A threadseeing working shaped as debuff.",
+    "discipline": "threadseeing",
+    "hostile": true,
+    "id": "spell_crossed_chances",
+    "learning": "quest_reward",
+    "mana_cost": 9,
+    "name": "Crossed Chances",
+    "name_key": "spell.spell_crossed_chances.name",
+    "power": 16,
+    "radius": 1,
+    "range": 5,
+    "rank": 3,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_crossed_chances.wav",
+    "shape": "debuff",
+    "status": "fate_touched",
+    "vfx": "res://assets/effects/spell_crossed_chances.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "travel",
+      "support"
+    ],
+    "damage_type": "fate",
+    "description": "A threadseeing working shaped as travel.",
+    "discipline": "threadseeing",
+    "hostile": false,
+    "id": "spell_walk_the_near_road",
+    "learning": "teacher",
+    "mana_cost": 11,
+    "name": "Walk the Near Road",
+    "name_key": "spell.spell_walk_the_near_road.name",
+    "power": 20,
+    "radius": 2,
+    "range": 6,
+    "rank": 4,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_walk_the_near_road.wav",
+    "shape": "travel",
+    "status": "",
+    "vfx": "res://assets/effects/spell_walk_the_near_road.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "heal",
+      "support"
+    ],
+    "damage_type": "fate",
+    "description": "A threadseeing working shaped as heal.",
+    "discipline": "threadseeing",
+    "hostile": false,
+    "id": "spell_unmake_accident",
+    "learning": "spellbook",
+    "mana_cost": 13,
+    "name": "Unmake Accident",
+    "name_key": "spell.spell_unmake_accident.name",
+    "power": 24,
+    "radius": 0,
+    "range": 7,
+    "rank": 5,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_unmake_accident.wav",
+    "shape": "heal",
+    "status": "fate_touched",
+    "vfx": "res://assets/effects/spell_unmake_accident.png"
+  },
+  {
+    "action_cost": 125,
+    "ai_tags": [
+      "burst",
+      "danger"
+    ],
+    "damage_type": "fate",
+    "description": "A threadseeing working shaped as burst.",
+    "discipline": "threadseeing",
+    "hostile": true,
+    "id": "spell_ninth_answer",
+    "learning": "shrine",
+    "mana_cost": 15,
+    "name": "Ninth Answer",
+    "name_key": "spell.spell_ninth_answer.name",
+    "power": 28,
+    "radius": 2,
+    "range": 8,
+    "rank": 6,
+    "scaling": {
+      "discipline": 0.8,
+      "resolve": 0.6
+    },
+    "sfx": "res://assets/sounds/spells/spell_ninth_answer.wav",
+    "shape": "burst",
+    "status": "",
+    "vfx": "res://assets/effects/spell_ninth_answer.png"
+  }
+]

@@ -1,0 +1,3322 @@
+[
+  {
+    "category": "weapon",
+    "damage": [
+      1,
+      6
+    ],
+    "damage_type": "crush",
+    "description": "A club made in the northern reaches; balanced for deliberate close work.",
+    "family": "club",
+    "icon": "res://assets/ui/items/weapon_club.png",
+    "id": "weapon_club",
+    "name": "Ashwood Cudgel",
+    "name_key": "item.weapon_club.name",
+    "range": 1,
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "club"
+    ],
+    "value": 15,
+    "weight": 1.42
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      2,
+      7
+    ],
+    "damage_type": "pierce",
+    "description": "A dagger made in the northern reaches; balanced for deliberate close work.",
+    "family": "dagger",
+    "icon": "res://assets/ui/items/weapon_dagger.png",
+    "id": "weapon_dagger",
+    "name": "Fisher's Dirk",
+    "name_key": "item.weapon_dagger.name",
+    "range": 1,
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "dagger"
+    ],
+    "value": 23,
+    "weight": 1.6
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      2,
+      7
+    ],
+    "damage_type": "slash",
+    "description": "A knife made in the northern reaches; balanced for deliberate close work.",
+    "family": "knife",
+    "icon": "res://assets/ui/items/weapon_knife.png",
+    "id": "weapon_knife",
+    "name": "Peat Knife",
+    "name_key": "item.weapon_knife.name",
+    "range": 1,
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "knife"
+    ],
+    "value": 31,
+    "weight": 1.6
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      4,
+      9
+    ],
+    "damage_type": "slash",
+    "description": "A seax made in the northern reaches; balanced for deliberate close work.",
+    "family": "seax",
+    "icon": "res://assets/ui/items/weapon_seax.png",
+    "id": "weapon_seax",
+    "name": "Greywake Seax",
+    "name_key": "item.weapon_seax.name",
+    "range": 1,
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "seax"
+    ],
+    "value": 39,
+    "weight": 1.96
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      5,
+      10
+    ],
+    "damage_type": "pierce",
+    "description": "A spear made in the northern reaches; balanced for deliberate close work.",
+    "family": "spear",
+    "icon": "res://assets/ui/items/weapon_spear.png",
+    "id": "weapon_spear",
+    "name": "Bracken Spear",
+    "name_key": "item.weapon_spear.name",
+    "range": 2,
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "spear"
+    ],
+    "value": 47,
+    "weight": 2.14
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      6,
+      11
+    ],
+    "damage_type": "slash",
+    "description": "A axe made in the northern reaches; balanced for deliberate close work.",
+    "family": "axe",
+    "icon": "res://assets/ui/items/weapon_axe.png",
+    "id": "weapon_axe",
+    "name": "Ironleaf Axe",
+    "name_key": "item.weapon_axe.name",
+    "range": 1,
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "axe"
+    ],
+    "value": 55,
+    "weight": 2.32
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      6,
+      11
+    ],
+    "damage_type": "crush",
+    "description": "A hammer made in the northern reaches; balanced for deliberate close work.",
+    "family": "hammer",
+    "icon": "res://assets/ui/items/weapon_hammer.png",
+    "id": "weapon_hammer",
+    "name": "Hearth Hammer",
+    "name_key": "item.weapon_hammer.name",
+    "range": 1,
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "hammer"
+    ],
+    "value": 63,
+    "weight": 2.32
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      7,
+      12
+    ],
+    "damage_type": "crush",
+    "description": "A mace made in the northern reaches; balanced for deliberate close work.",
+    "family": "mace",
+    "icon": "res://assets/ui/items/weapon_mace.png",
+    "id": "weapon_mace",
+    "name": "Oath Mace",
+    "name_key": "item.weapon_mace.name",
+    "range": 1,
+    "rarity": "common",
+    "requirements": {
+      "might": 1
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "mace"
+    ],
+    "value": 71,
+    "weight": 2.5
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      8,
+      13
+    ],
+    "damage_type": "slash",
+    "description": "A glaive made in the northern reaches; balanced for deliberate close work.",
+    "family": "glaive",
+    "icon": "res://assets/ui/items/weapon_glaive.png",
+    "id": "weapon_glaive",
+    "name": "Reed Glaive",
+    "name_key": "item.weapon_glaive.name",
+    "range": 2,
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 1
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "glaive"
+    ],
+    "value": 79,
+    "weight": 2.68
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      8,
+      13
+    ],
+    "damage_type": "slash",
+    "description": "A sword made in the northern reaches; balanced for deliberate close work.",
+    "family": "sword",
+    "icon": "res://assets/ui/items/weapon_sword.png",
+    "id": "weapon_sword",
+    "name": "Longshore Sword",
+    "name_key": "item.weapon_sword.name",
+    "range": 1,
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 1
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "sword"
+    ],
+    "value": 87,
+    "weight": 2.68
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      9,
+      14
+    ],
+    "damage_type": "slash",
+    "description": "A falchion made in the northern reaches; balanced for deliberate close work.",
+    "family": "falchion",
+    "icon": "res://assets/ui/items/weapon_falchion.png",
+    "id": "weapon_falchion",
+    "name": "Tarn Falchion",
+    "name_key": "item.weapon_falchion.name",
+    "range": 1,
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 2
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "falchion"
+    ],
+    "value": 95,
+    "weight": 2.86
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      9,
+      14
+    ],
+    "damage_type": "pierce",
+    "description": "A war pick made in the northern reaches; balanced for deliberate close work.",
+    "family": "war_pick",
+    "icon": "res://assets/ui/items/weapon_war_pick.png",
+    "id": "weapon_war_pick",
+    "name": "Ledger Pick",
+    "name_key": "item.weapon_war_pick.name",
+    "range": 1,
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 2
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "war_pick"
+    ],
+    "value": 103,
+    "weight": 2.86
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      10,
+      15
+    ],
+    "damage_type": "crush",
+    "description": "A flail made in the northern reaches; balanced for deliberate close work.",
+    "family": "flail",
+    "icon": "res://assets/ui/items/weapon_flail.png",
+    "id": "weapon_flail",
+    "name": "Mourning Flail",
+    "name_key": "item.weapon_flail.name",
+    "range": 1,
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 2
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "flail"
+    ],
+    "value": 111,
+    "weight": 3.04
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      11,
+      16
+    ],
+    "damage_type": "slash",
+    "description": "A halberd made in the northern reaches; balanced for deliberate close work.",
+    "family": "halberd",
+    "icon": "res://assets/ui/items/weapon_halberd.png",
+    "id": "weapon_halberd",
+    "name": "Gate Halberd",
+    "name_key": "item.weapon_halberd.name",
+    "range": 2,
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 3
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "halberd"
+    ],
+    "value": 119,
+    "weight": 3.22
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      12,
+      17
+    ],
+    "damage_type": "crush",
+    "description": "A maul made in the northern reaches; balanced for deliberate close work.",
+    "family": "maul",
+    "icon": "res://assets/ui/items/weapon_maul.png",
+    "id": "weapon_maul",
+    "name": "Rime Maul",
+    "name_key": "item.weapon_maul.name",
+    "range": 1,
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 3
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "maul"
+    ],
+    "value": 127,
+    "weight": 3.4
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      13,
+      18
+    ],
+    "damage_type": "slash",
+    "description": "A greatsword made in the northern reaches; balanced for deliberate close work.",
+    "family": "greatsword",
+    "icon": "res://assets/ui/items/weapon_greatsword.png",
+    "id": "weapon_greatsword",
+    "name": "Bellsteel Brand",
+    "name_key": "item.weapon_greatsword.name",
+    "range": 1,
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 4
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "greatsword"
+    ],
+    "value": 135,
+    "weight": 3.58
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      11,
+      16
+    ],
+    "damage_type": "slash",
+    "description": "A scythe made in the northern reaches; balanced for deliberate close work.",
+    "family": "scythe",
+    "icon": "res://assets/ui/items/weapon_scythe.png",
+    "id": "weapon_scythe",
+    "name": "Root Scythe",
+    "name_key": "item.weapon_scythe.name",
+    "range": 1,
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 3
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "scythe"
+    ],
+    "value": 143,
+    "weight": 3.22
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      5,
+      10
+    ],
+    "damage_type": "spirit",
+    "description": "A staff made in the northern reaches; balanced for deliberate close work.",
+    "family": "staff",
+    "icon": "res://assets/ui/items/weapon_staff.png",
+    "id": "weapon_staff",
+    "name": "Quiet Staff",
+    "name_key": "item.weapon_staff.name",
+    "range": 1,
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "staff"
+    ],
+    "value": 151,
+    "weight": 2.14
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      10,
+      15
+    ],
+    "damage_type": "pierce",
+    "description": "A polearm made in the northern reaches; balanced for deliberate close work.",
+    "family": "polearm",
+    "icon": "res://assets/ui/items/weapon_polearm.png",
+    "id": "weapon_polearm",
+    "name": "Windhook",
+    "name_key": "item.weapon_polearm.name",
+    "range": 2,
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 2
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "polearm"
+    ],
+    "value": 159,
+    "weight": 3.04
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      14,
+      19
+    ],
+    "damage_type": "crush",
+    "description": "A warhammer made in the northern reaches; balanced for deliberate close work.",
+    "family": "warhammer",
+    "icon": "res://assets/ui/items/weapon_warhammer.png",
+    "id": "weapon_warhammer",
+    "name": "Crownbreaker",
+    "name_key": "item.weapon_warhammer.name",
+    "range": 1,
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 4
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "melee",
+      "warhammer"
+    ],
+    "value": 167,
+    "weight": 3.76
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      3,
+      9
+    ],
+    "damage_type": "pierce",
+    "description": "A practical shortbow adapted to harsh crosswinds.",
+    "family": "shortbow",
+    "icon": "res://assets/ui/items/weapon_shortbow.png",
+    "id": "weapon_shortbow",
+    "name": "Yew Shortbow",
+    "name_key": "item.weapon_shortbow.name",
+    "range": 7,
+    "rarity": "common",
+    "requirements": {
+      "finesse": 0
+    },
+    "slot": "ranged",
+    "stack_limit": 1,
+    "tags": [
+      "ranged",
+      "shortbow"
+    ],
+    "value": 25,
+    "weight": 1.1
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      6,
+      12
+    ],
+    "damage_type": "pierce",
+    "description": "A practical longbow adapted to harsh crosswinds.",
+    "family": "longbow",
+    "icon": "res://assets/ui/items/weapon_longbow.png",
+    "id": "weapon_longbow",
+    "name": "March Longbow",
+    "name_key": "item.weapon_longbow.name",
+    "range": 9,
+    "rarity": "common",
+    "requirements": {
+      "finesse": 0
+    },
+    "slot": "ranged",
+    "stack_limit": 1,
+    "tags": [
+      "ranged",
+      "longbow"
+    ],
+    "value": 42,
+    "weight": 1.35
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      5,
+      11
+    ],
+    "damage_type": "pierce",
+    "description": "A practical hornbow adapted to harsh crosswinds.",
+    "family": "hornbow",
+    "icon": "res://assets/ui/items/weapon_hornbow.png",
+    "id": "weapon_hornbow",
+    "name": "Goat-Horn Bow",
+    "name_key": "item.weapon_hornbow.name",
+    "range": 8,
+    "rarity": "common",
+    "requirements": {
+      "finesse": 0
+    },
+    "slot": "ranged",
+    "stack_limit": 1,
+    "tags": [
+      "ranged",
+      "hornbow"
+    ],
+    "value": 59,
+    "weight": 1.6
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      9,
+      15
+    ],
+    "damage_type": "pierce",
+    "description": "A practical crossbow adapted to harsh crosswinds.",
+    "family": "crossbow",
+    "icon": "res://assets/ui/items/weapon_crossbow.png",
+    "id": "weapon_crossbow",
+    "name": "Windlass Crossbow",
+    "name_key": "item.weapon_crossbow.name",
+    "range": 8,
+    "rarity": "common",
+    "requirements": {
+      "finesse": 1
+    },
+    "slot": "ranged",
+    "stack_limit": 1,
+    "tags": [
+      "ranged",
+      "crossbow"
+    ],
+    "value": 76,
+    "weight": 1.85
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      13,
+      19
+    ],
+    "damage_type": "pierce",
+    "description": "A practical arbalest adapted to harsh crosswinds.",
+    "family": "arbalest",
+    "icon": "res://assets/ui/items/weapon_arbalest.png",
+    "id": "weapon_arbalest",
+    "name": "Cranequin Arbalest",
+    "name_key": "item.weapon_arbalest.name",
+    "range": 9,
+    "rarity": "uncommon",
+    "requirements": {
+      "finesse": 1
+    },
+    "slot": "ranged",
+    "stack_limit": 1,
+    "tags": [
+      "ranged",
+      "arbalest"
+    ],
+    "value": 93,
+    "weight": 2.1
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      2,
+      8
+    ],
+    "damage_type": "pierce",
+    "description": "A practical sling adapted to harsh crosswinds.",
+    "family": "sling",
+    "icon": "res://assets/ui/items/weapon_sling.png",
+    "id": "weapon_sling",
+    "name": "Slingstaff",
+    "name_key": "item.weapon_sling.name",
+    "range": 6,
+    "rarity": "uncommon",
+    "requirements": {
+      "finesse": 1
+    },
+    "slot": "ranged",
+    "stack_limit": 1,
+    "tags": [
+      "ranged",
+      "sling"
+    ],
+    "value": 110,
+    "weight": 2.35
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      4,
+      10
+    ],
+    "damage_type": "pierce",
+    "description": "A practical dart adapted to harsh crosswinds.",
+    "family": "dart",
+    "icon": "res://assets/ui/items/weapon_dart.png",
+    "id": "weapon_dart",
+    "name": "Iron Dart Fan",
+    "name_key": "item.weapon_dart.name",
+    "range": 5,
+    "rarity": "uncommon",
+    "requirements": {
+      "finesse": 2
+    },
+    "slot": "ranged",
+    "stack_limit": 1,
+    "tags": [
+      "ranged",
+      "dart"
+    ],
+    "value": 127,
+    "weight": 2.6
+  },
+  {
+    "category": "weapon",
+    "damage": [
+      10,
+      16
+    ],
+    "damage_type": "pierce",
+    "description": "A practical harpoon adapted to harsh crosswinds.",
+    "family": "harpoon",
+    "icon": "res://assets/ui/items/weapon_harpoon.png",
+    "id": "weapon_harpoon",
+    "name": "Whaler's Harpoon",
+    "name_key": "item.weapon_harpoon.name",
+    "range": 6,
+    "rarity": "uncommon",
+    "requirements": {
+      "finesse": 2
+    },
+    "slot": "ranged",
+    "stack_limit": 1,
+    "tags": [
+      "ranged",
+      "harpoon"
+    ],
+    "value": 144,
+    "weight": 2.85
+  },
+  {
+    "armor": 1,
+    "category": "armor",
+    "description": "Cloth protection shaped for cold rain and narrow vaults.",
+    "evasion": 1,
+    "icon": "res://assets/ui/items/armor_wool_undertunic.png",
+    "id": "armor_wool_undertunic",
+    "material": "cloth",
+    "name": "Wool Undertunic",
+    "name_key": "item.armor_wool_undertunic.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "cloth"
+    ],
+    "value": 12,
+    "weight": 1.85
+  },
+  {
+    "armor": 1,
+    "category": "armor",
+    "description": "Cloth protection shaped for cold rain and narrow vaults.",
+    "evasion": 1,
+    "icon": "res://assets/ui/items/armor_tarred_workcoat.png",
+    "id": "armor_tarred_workcoat",
+    "material": "cloth",
+    "name": "Tarred Workcoat",
+    "name_key": "item.armor_tarred_workcoat.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "cloth"
+    ],
+    "value": 25,
+    "weight": 1.85
+  },
+  {
+    "armor": 1,
+    "category": "armor",
+    "description": "Cloth protection shaped for cold rain and narrow vaults.",
+    "evasion": 1,
+    "icon": "res://assets/ui/items/armor_reedweave_jerkin.png",
+    "id": "armor_reedweave_jerkin",
+    "material": "cloth",
+    "name": "Reedweave Jerkin",
+    "name_key": "item.armor_reedweave_jerkin.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "cloth"
+    ],
+    "value": 38,
+    "weight": 1.85
+  },
+  {
+    "armor": 1,
+    "category": "armor",
+    "description": "Cloth protection shaped for cold rain and narrow vaults.",
+    "evasion": 1,
+    "icon": "res://assets/ui/items/armor_pilgrim_robe.png",
+    "id": "armor_pilgrim_robe",
+    "material": "cloth",
+    "name": "Pilgrim Robe",
+    "name_key": "item.armor_pilgrim_robe.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "cloth"
+    ],
+    "value": 51,
+    "weight": 1.85
+  },
+  {
+    "armor": 1,
+    "category": "armor",
+    "description": "Cloth protection shaped for cold rain and narrow vaults.",
+    "evasion": 1,
+    "icon": "res://assets/ui/items/armor_ember_scribe_vestment.png",
+    "id": "armor_ember_scribe_vestment",
+    "material": "cloth",
+    "name": "Ember-Scribe Vestment",
+    "name_key": "item.armor_ember_scribe_vestment.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "cloth"
+    ],
+    "value": 64,
+    "weight": 1.85
+  },
+  {
+    "armor": 1,
+    "category": "armor",
+    "description": "Cloth protection shaped for cold rain and narrow vaults.",
+    "evasion": 1,
+    "icon": "res://assets/ui/items/armor_rimekeeper_mantle.png",
+    "id": "armor_rimekeeper_mantle",
+    "material": "cloth",
+    "name": "Rimekeeper Mantle",
+    "name_key": "item.armor_rimekeeper_mantle.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "cloth"
+    ],
+    "value": 77,
+    "weight": 1.85
+  },
+  {
+    "armor": 2,
+    "category": "armor",
+    "description": "Leather protection shaped for cold rain and narrow vaults.",
+    "evasion": 0,
+    "icon": "res://assets/ui/items/armor_weathered_hide.png",
+    "id": "armor_weathered_hide",
+    "material": "leather",
+    "name": "Weathered Hide",
+    "name_key": "item.armor_weathered_hide.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "leather"
+    ],
+    "value": 90,
+    "weight": 2.9
+  },
+  {
+    "armor": 2,
+    "category": "armor",
+    "description": "Leather protection shaped for cold rain and narrow vaults.",
+    "evasion": 0,
+    "icon": "res://assets/ui/items/armor_boiled_leather_jack.png",
+    "id": "armor_boiled_leather_jack",
+    "material": "leather",
+    "name": "Boiled Leather Jack",
+    "name_key": "item.armor_boiled_leather_jack.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "leather"
+    ],
+    "value": 103,
+    "weight": 2.9
+  },
+  {
+    "armor": 2,
+    "category": "armor",
+    "description": "Leather protection shaped for cold rain and narrow vaults.",
+    "evasion": 0,
+    "icon": "res://assets/ui/items/armor_moss_stitched_coat.png",
+    "id": "armor_moss_stitched_coat",
+    "material": "leather",
+    "name": "Moss-Stitched Coat",
+    "name_key": "item.armor_moss_stitched_coat.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "leather"
+    ],
+    "value": 116,
+    "weight": 2.9
+  },
+  {
+    "armor": 2,
+    "category": "armor",
+    "description": "Leather protection shaped for cold rain and narrow vaults.",
+    "evasion": 0,
+    "icon": "res://assets/ui/items/armor_marshwarden_cuirass.png",
+    "id": "armor_marshwarden_cuirass",
+    "material": "leather",
+    "name": "Marshwarden Cuirass",
+    "name_key": "item.armor_marshwarden_cuirass.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "leather"
+    ],
+    "value": 129,
+    "weight": 2.9
+  },
+  {
+    "armor": 3,
+    "category": "armor",
+    "description": "Leather protection shaped for cold rain and narrow vaults.",
+    "evasion": -1,
+    "icon": "res://assets/ui/items/armor_foxfur_brigandine.png",
+    "id": "armor_foxfur_brigandine",
+    "material": "leather",
+    "name": "Foxfur Brigandine",
+    "name_key": "item.armor_foxfur_brigandine.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "leather"
+    ],
+    "value": 142,
+    "weight": 3.95
+  },
+  {
+    "armor": 3,
+    "category": "armor",
+    "description": "Leather protection shaped for cold rain and narrow vaults.",
+    "evasion": -1,
+    "icon": "res://assets/ui/items/armor_nightglass_leathers.png",
+    "id": "armor_nightglass_leathers",
+    "material": "leather",
+    "name": "Nightglass Leathers",
+    "name_key": "item.armor_nightglass_leathers.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 0
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "leather"
+    ],
+    "value": 155,
+    "weight": 3.95
+  },
+  {
+    "armor": 5,
+    "category": "armor",
+    "description": "Mail protection shaped for cold rain and narrow vaults.",
+    "evasion": -3,
+    "icon": "res://assets/ui/items/armor_iron_ring_hauberk.png",
+    "id": "armor_iron_ring_hauberk",
+    "material": "mail",
+    "name": "Iron-Ring Hauberk",
+    "name_key": "item.armor_iron_ring_hauberk.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 2
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "mail"
+    ],
+    "value": 168,
+    "weight": 6.05
+  },
+  {
+    "armor": 5,
+    "category": "armor",
+    "description": "Mail protection shaped for cold rain and narrow vaults.",
+    "evasion": -3,
+    "icon": "res://assets/ui/items/armor_short_mail_byrnie.png",
+    "id": "armor_short_mail_byrnie",
+    "material": "mail",
+    "name": "Short Mail Byrnie",
+    "name_key": "item.armor_short_mail_byrnie.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 2
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "mail"
+    ],
+    "value": 181,
+    "weight": 6.05
+  },
+  {
+    "armor": 5,
+    "category": "armor",
+    "description": "Mail protection shaped for cold rain and narrow vaults.",
+    "evasion": -3,
+    "icon": "res://assets/ui/items/armor_saltblack_hauberk.png",
+    "id": "armor_saltblack_hauberk",
+    "material": "mail",
+    "name": "Saltblack Hauberk",
+    "name_key": "item.armor_saltblack_hauberk.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 2
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "mail"
+    ],
+    "value": 194,
+    "weight": 6.05
+  },
+  {
+    "armor": 5,
+    "category": "armor",
+    "description": "Mail protection shaped for cold rain and narrow vaults.",
+    "evasion": -3,
+    "icon": "res://assets/ui/items/armor_ledger_chain.png",
+    "id": "armor_ledger_chain",
+    "material": "mail",
+    "name": "Ledger Chain",
+    "name_key": "item.armor_ledger_chain.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 2
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "mail"
+    ],
+    "value": 207,
+    "weight": 6.05
+  },
+  {
+    "armor": 5,
+    "category": "armor",
+    "description": "Mail protection shaped for cold rain and narrow vaults.",
+    "evasion": -3,
+    "icon": "res://assets/ui/items/armor_frost_riveted_mail.png",
+    "id": "armor_frost_riveted_mail",
+    "material": "mail",
+    "name": "Frost-Riveted Mail",
+    "name_key": "item.armor_frost_riveted_mail.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 2
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "mail"
+    ],
+    "value": 220,
+    "weight": 6.05
+  },
+  {
+    "armor": 5,
+    "category": "armor",
+    "description": "Mail protection shaped for cold rain and narrow vaults.",
+    "evasion": -3,
+    "icon": "res://assets/ui/items/armor_gale_link_hauberk.png",
+    "id": "armor_gale_link_hauberk",
+    "material": "mail",
+    "name": "Gale-Link Hauberk",
+    "name_key": "item.armor_gale_link_hauberk.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 2
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "mail"
+    ],
+    "value": 233,
+    "weight": 6.05
+  },
+  {
+    "armor": 6,
+    "category": "armor",
+    "description": "Scale protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_bronze_scale_vest.png",
+    "id": "armor_bronze_scale_vest",
+    "material": "scale",
+    "name": "Bronze Scale Vest",
+    "name_key": "item.armor_bronze_scale_vest.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 3
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "scale"
+    ],
+    "value": 246,
+    "weight": 7.1
+  },
+  {
+    "armor": 6,
+    "category": "armor",
+    "description": "Scale protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_bog_iron_lamellar.png",
+    "id": "armor_bog_iron_lamellar",
+    "material": "scale",
+    "name": "Bog-Iron Lamellar",
+    "name_key": "item.armor_bog_iron_lamellar.name",
+    "rarity": "common",
+    "requirements": {
+      "might": 3
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "scale"
+    ],
+    "value": 259,
+    "weight": 7.1
+  },
+  {
+    "armor": 7,
+    "category": "armor",
+    "description": "Scale protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_stoneward_scale.png",
+    "id": "armor_stoneward_scale",
+    "material": "scale",
+    "name": "Stoneward Scale",
+    "name_key": "item.armor_stoneward_scale.name",
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 4
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "scale"
+    ],
+    "value": 272,
+    "weight": 8.15
+  },
+  {
+    "armor": 7,
+    "category": "armor",
+    "description": "Scale protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_blue_ice_lamellar.png",
+    "id": "armor_blue_ice_lamellar",
+    "material": "scale",
+    "name": "Blue-Ice Lamellar",
+    "name_key": "item.armor_blue_ice_lamellar.name",
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 4
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "scale"
+    ],
+    "value": 285,
+    "weight": 8.15
+  },
+  {
+    "armor": 7,
+    "category": "armor",
+    "description": "Scale protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_choirscale_harness.png",
+    "id": "armor_choirscale_harness",
+    "material": "scale",
+    "name": "Choirscale Harness",
+    "name_key": "item.armor_choirscale_harness.name",
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 4
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "scale"
+    ],
+    "value": 298,
+    "weight": 8.15
+  },
+  {
+    "armor": 7,
+    "category": "armor",
+    "description": "Scale protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_crown_scale.png",
+    "id": "armor_crown_scale",
+    "material": "scale",
+    "name": "Crown Scale",
+    "name_key": "item.armor_crown_scale.name",
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 4
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "scale"
+    ],
+    "value": 311,
+    "weight": 8.15
+  },
+  {
+    "armor": 9,
+    "category": "armor",
+    "description": "Plate protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_grey_plate_cuirass.png",
+    "id": "armor_grey_plate_cuirass",
+    "material": "plate",
+    "name": "Grey Plate Cuirass",
+    "name_key": "item.armor_grey_plate_cuirass.name",
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 6
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "plate"
+    ],
+    "value": 324,
+    "weight": 10.25
+  },
+  {
+    "armor": 9,
+    "category": "armor",
+    "description": "Plate protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_bellfounder_s_plate.png",
+    "id": "armor_bellfounder_s_plate",
+    "material": "plate",
+    "name": "Bellfounder's Plate",
+    "name_key": "item.armor_bellfounder_s_plate.name",
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 6
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "plate"
+    ],
+    "value": 337,
+    "weight": 10.25
+  },
+  {
+    "armor": 9,
+    "category": "armor",
+    "description": "Plate protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_rime_plate.png",
+    "id": "armor_rime_plate",
+    "material": "plate",
+    "name": "Rime Plate",
+    "name_key": "item.armor_rime_plate.name",
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 6
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "plate"
+    ],
+    "value": 350,
+    "weight": 10.25
+  },
+  {
+    "armor": 9,
+    "category": "armor",
+    "description": "Plate protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_citadel_half_plate.png",
+    "id": "armor_citadel_half_plate",
+    "material": "plate",
+    "name": "Citadel Half-Plate",
+    "name_key": "item.armor_citadel_half_plate.name",
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 6
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "plate"
+    ],
+    "value": 363,
+    "weight": 10.25
+  },
+  {
+    "armor": 9,
+    "category": "armor",
+    "description": "Plate protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_orrenfast_plate.png",
+    "id": "armor_orrenfast_plate",
+    "material": "plate",
+    "name": "Orrenfast Plate",
+    "name_key": "item.armor_orrenfast_plate.name",
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 6
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "plate"
+    ],
+    "value": 376,
+    "weight": 10.25
+  },
+  {
+    "armor": 9,
+    "category": "armor",
+    "description": "Plate protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_last_gate_harness.png",
+    "id": "armor_last_gate_harness",
+    "material": "plate",
+    "name": "Last Gate Harness",
+    "name_key": "item.armor_last_gate_harness.name",
+    "rarity": "uncommon",
+    "requirements": {
+      "might": 6
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "plate"
+    ],
+    "value": 389,
+    "weight": 10.25
+  },
+  {
+    "armor": 7,
+    "category": "armor",
+    "description": "Hybrid protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_dawnwarden_surcoat.png",
+    "id": "armor_dawnwarden_surcoat",
+    "material": "hybrid",
+    "name": "Dawnwarden Surcoat",
+    "name_key": "item.armor_dawnwarden_surcoat.name",
+    "rarity": "rare",
+    "requirements": {
+      "might": 4
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "hybrid"
+    ],
+    "value": 402,
+    "weight": 8.15
+  },
+  {
+    "armor": 7,
+    "category": "armor",
+    "description": "Hybrid protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_quiet_sentinel_coat.png",
+    "id": "armor_quiet_sentinel_coat",
+    "material": "hybrid",
+    "name": "Quiet Sentinel Coat",
+    "name_key": "item.armor_quiet_sentinel_coat.name",
+    "rarity": "rare",
+    "requirements": {
+      "might": 4
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "hybrid"
+    ],
+    "value": 415,
+    "weight": 8.15
+  },
+  {
+    "armor": 7,
+    "category": "armor",
+    "description": "Hybrid protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_rootbound_harness.png",
+    "id": "armor_rootbound_harness",
+    "material": "hybrid",
+    "name": "Rootbound Harness",
+    "name_key": "item.armor_rootbound_harness.name",
+    "rarity": "rare",
+    "requirements": {
+      "might": 4
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "hybrid"
+    ],
+    "value": 428,
+    "weight": 8.15
+  },
+  {
+    "armor": 7,
+    "category": "armor",
+    "description": "Hybrid protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_storm_pilgrim_shell.png",
+    "id": "armor_storm_pilgrim_shell",
+    "material": "hybrid",
+    "name": "Storm Pilgrim Shell",
+    "name_key": "item.armor_storm_pilgrim_shell.name",
+    "rarity": "rare",
+    "requirements": {
+      "might": 4
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "hybrid"
+    ],
+    "value": 441,
+    "weight": 8.15
+  },
+  {
+    "armor": 7,
+    "category": "armor",
+    "description": "Hybrid protection shaped for cold rain and narrow vaults.",
+    "evasion": -4,
+    "icon": "res://assets/ui/items/armor_maelin_s_field_coat.png",
+    "id": "armor_maelin_s_field_coat",
+    "material": "hybrid",
+    "name": "Maelin's Field Coat",
+    "name_key": "item.armor_maelin_s_field_coat.name",
+    "rarity": "rare",
+    "requirements": {
+      "might": 4
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "armor",
+      "hybrid"
+    ],
+    "value": 454,
+    "weight": 8.15
+  },
+  {
+    "armor": 1,
+    "category": "armor",
+    "description": "Purpose-made off hand gear from the north.",
+    "icon": "res://assets/ui/items/gear_driftwood_buckler.png",
+    "id": "gear_driftwood_buckler",
+    "name": "Driftwood Buckler",
+    "name_key": "item.gear_driftwood_buckler.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "off_hand",
+    "stack_limit": 1,
+    "tags": [
+      "off_hand"
+    ],
+    "value": 18,
+    "weight": 0.25
+  },
+  {
+    "armor": 1,
+    "category": "armor",
+    "description": "Purpose-made off hand gear from the north.",
+    "icon": "res://assets/ui/items/gear_hide_roundshield.png",
+    "id": "gear_hide_roundshield",
+    "name": "Hide Roundshield",
+    "name_key": "item.gear_hide_roundshield.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "off_hand",
+    "stack_limit": 1,
+    "tags": [
+      "off_hand"
+    ],
+    "value": 29,
+    "weight": 0.6
+  },
+  {
+    "armor": 1,
+    "category": "armor",
+    "description": "Purpose-made off hand gear from the north.",
+    "icon": "res://assets/ui/items/gear_iron_kite_shield.png",
+    "id": "gear_iron_kite_shield",
+    "name": "Iron Kite Shield",
+    "name_key": "item.gear_iron_kite_shield.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "off_hand",
+    "stack_limit": 1,
+    "tags": [
+      "off_hand"
+    ],
+    "value": 40,
+    "weight": 0.95
+  },
+  {
+    "armor": 1,
+    "category": "armor",
+    "description": "Purpose-made off hand gear from the north.",
+    "icon": "res://assets/ui/items/gear_bellmetal_pavise.png",
+    "id": "gear_bellmetal_pavise",
+    "name": "Bellmetal Pavise",
+    "name_key": "item.gear_bellmetal_pavise.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "off_hand",
+    "stack_limit": 1,
+    "tags": [
+      "off_hand"
+    ],
+    "value": 51,
+    "weight": 1.3
+  },
+  {
+    "armor": 1,
+    "category": "armor",
+    "description": "Purpose-made head gear from the north.",
+    "icon": "res://assets/ui/items/gear_reedwalker_hood.png",
+    "id": "gear_reedwalker_hood",
+    "name": "Reedwalker Hood",
+    "name_key": "item.gear_reedwalker_hood.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "head",
+    "stack_limit": 1,
+    "tags": [
+      "head"
+    ],
+    "value": 62,
+    "weight": 1.65
+  },
+  {
+    "armor": 1,
+    "category": "armor",
+    "description": "Purpose-made head gear from the north.",
+    "icon": "res://assets/ui/items/gear_iron_rim_helm.png",
+    "id": "gear_iron_rim_helm",
+    "name": "Iron-Rim Helm",
+    "name_key": "item.gear_iron_rim_helm.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "head",
+    "stack_limit": 1,
+    "tags": [
+      "head"
+    ],
+    "value": 73,
+    "weight": 0.25
+  },
+  {
+    "armor": 1,
+    "category": "armor",
+    "description": "Purpose-made head gear from the north.",
+    "icon": "res://assets/ui/items/gear_antlered_warcap.png",
+    "id": "gear_antlered_warcap",
+    "name": "Antlered Warcap",
+    "name_key": "item.gear_antlered_warcap.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "head",
+    "stack_limit": 1,
+    "tags": [
+      "head"
+    ],
+    "value": 84,
+    "weight": 0.6
+  },
+  {
+    "armor": 2,
+    "category": "armor",
+    "description": "Purpose-made head gear from the north.",
+    "icon": "res://assets/ui/items/gear_rimeglass_visor.png",
+    "id": "gear_rimeglass_visor",
+    "name": "Rimeglass Visor",
+    "name_key": "item.gear_rimeglass_visor.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "head",
+    "stack_limit": 1,
+    "tags": [
+      "head"
+    ],
+    "value": 95,
+    "weight": 0.95
+  },
+  {
+    "armor": 2,
+    "category": "accessory",
+    "description": "Purpose-made hands gear from the north.",
+    "icon": "res://assets/ui/items/gear_dockhand_gloves.png",
+    "id": "gear_dockhand_gloves",
+    "name": "Dockhand Gloves",
+    "name_key": "item.gear_dockhand_gloves.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "hands",
+    "stack_limit": 1,
+    "tags": [
+      "hands"
+    ],
+    "value": 106,
+    "weight": 1.3
+  },
+  {
+    "armor": 2,
+    "category": "accessory",
+    "description": "Purpose-made hands gear from the north.",
+    "icon": "res://assets/ui/items/gear_lockwright_gloves.png",
+    "id": "gear_lockwright_gloves",
+    "name": "Lockwright Gloves",
+    "name_key": "item.gear_lockwright_gloves.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "hands",
+    "stack_limit": 1,
+    "tags": [
+      "hands"
+    ],
+    "value": 117,
+    "weight": 1.65
+  },
+  {
+    "armor": 2,
+    "category": "accessory",
+    "description": "Purpose-made hands gear from the north.",
+    "icon": "res://assets/ui/items/gear_stonegrip_gauntlets.png",
+    "id": "gear_stonegrip_gauntlets",
+    "name": "Stonegrip Gauntlets",
+    "name_key": "item.gear_stonegrip_gauntlets.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "hands",
+    "stack_limit": 1,
+    "tags": [
+      "hands"
+    ],
+    "value": 128,
+    "weight": 0.25
+  },
+  {
+    "armor": 2,
+    "category": "accessory",
+    "description": "Purpose-made hands gear from the north.",
+    "icon": "res://assets/ui/items/gear_embermitts.png",
+    "id": "gear_embermitts",
+    "name": "Embermitts",
+    "name_key": "item.gear_embermitts.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "hands",
+    "stack_limit": 1,
+    "tags": [
+      "hands"
+    ],
+    "value": 139,
+    "weight": 0.6
+  },
+  {
+    "armor": 2,
+    "category": "accessory",
+    "description": "Purpose-made feet gear from the north.",
+    "icon": "res://assets/ui/items/gear_mudfast_boots.png",
+    "id": "gear_mudfast_boots",
+    "name": "Mudfast Boots",
+    "name_key": "item.gear_mudfast_boots.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "feet",
+    "stack_limit": 1,
+    "tags": [
+      "feet"
+    ],
+    "value": 150,
+    "weight": 0.95
+  },
+  {
+    "armor": 2,
+    "category": "accessory",
+    "description": "Purpose-made feet gear from the north.",
+    "icon": "res://assets/ui/items/gear_snowshoe_boots.png",
+    "id": "gear_snowshoe_boots",
+    "name": "Snowshoe Boots",
+    "name_key": "item.gear_snowshoe_boots.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "feet",
+    "stack_limit": 1,
+    "tags": [
+      "feet"
+    ],
+    "value": 161,
+    "weight": 1.3
+  },
+  {
+    "armor": 3,
+    "category": "accessory",
+    "description": "Purpose-made feet gear from the north.",
+    "icon": "res://assets/ui/items/gear_gale_step_boots.png",
+    "id": "gear_gale_step_boots",
+    "name": "Gale-Step Boots",
+    "name_key": "item.gear_gale_step_boots.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "feet",
+    "stack_limit": 1,
+    "tags": [
+      "feet"
+    ],
+    "value": 172,
+    "weight": 1.65
+  },
+  {
+    "armor": 3,
+    "category": "accessory",
+    "description": "Purpose-made feet gear from the north.",
+    "icon": "res://assets/ui/items/gear_quiet_slippers.png",
+    "id": "gear_quiet_slippers",
+    "name": "Quiet Slippers",
+    "name_key": "item.gear_quiet_slippers.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "feet",
+    "stack_limit": 1,
+    "tags": [
+      "feet"
+    ],
+    "value": 183,
+    "weight": 0.25
+  },
+  {
+    "armor": 3,
+    "category": "accessory",
+    "description": "Purpose-made waist gear from the north.",
+    "icon": "res://assets/ui/items/gear_ropework_belt.png",
+    "id": "gear_ropework_belt",
+    "name": "Ropework Belt",
+    "name_key": "item.gear_ropework_belt.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "waist",
+    "stack_limit": 1,
+    "tags": [
+      "waist"
+    ],
+    "value": 194,
+    "weight": 0.6
+  },
+  {
+    "armor": 3,
+    "category": "accessory",
+    "description": "Purpose-made waist gear from the north.",
+    "icon": "res://assets/ui/items/gear_potioner_s_belt.png",
+    "id": "gear_potioner_s_belt",
+    "name": "Potioner's Belt",
+    "name_key": "item.gear_potioner_s_belt.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "waist",
+    "stack_limit": 1,
+    "tags": [
+      "waist"
+    ],
+    "value": 205,
+    "weight": 0.95
+  },
+  {
+    "armor": 3,
+    "category": "accessory",
+    "description": "Purpose-made back gear from the north.",
+    "icon": "res://assets/ui/items/gear_mourner_s_cloak.png",
+    "id": "gear_mourner_s_cloak",
+    "name": "Mourner's Cloak",
+    "name_key": "item.gear_mourner_s_cloak.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "back",
+    "stack_limit": 1,
+    "tags": [
+      "back"
+    ],
+    "value": 216,
+    "weight": 1.3
+  },
+  {
+    "armor": 3,
+    "category": "accessory",
+    "description": "Purpose-made back gear from the north.",
+    "icon": "res://assets/ui/items/gear_aurora_cloak.png",
+    "id": "gear_aurora_cloak",
+    "name": "Aurora Cloak",
+    "name_key": "item.gear_aurora_cloak.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "back",
+    "stack_limit": 1,
+    "tags": [
+      "back"
+    ],
+    "value": 227,
+    "weight": 1.65
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens fire resist.",
+    "effect": {
+      "amount": 2,
+      "stat": "fire_resist"
+    },
+    "icon": "res://assets/ui/items/jewel_ring_of_banked_coals.png",
+    "id": "jewel_ring_of_banked_coals",
+    "name": "Ring of Banked Coals",
+    "name_key": "item.jewel_ring_of_banked_coals.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "ring",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 75,
+    "weight": 0.08
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens frost resist.",
+    "effect": {
+      "amount": 2,
+      "stat": "frost_resist"
+    },
+    "icon": "res://assets/ui/items/jewel_rime_marked_band.png",
+    "id": "jewel_rime_marked_band",
+    "name": "Rime-Marked Band",
+    "name_key": "item.jewel_rime_marked_band.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "ring",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 99,
+    "weight": 0.08
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens speed.",
+    "effect": {
+      "amount": 2,
+      "stat": "speed"
+    },
+    "icon": "res://assets/ui/items/jewel_stormcoil_ring.png",
+    "id": "jewel_stormcoil_ring",
+    "name": "Stormcoil Ring",
+    "name_key": "item.jewel_stormcoil_ring.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "ring",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 123,
+    "weight": 0.08
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens armor.",
+    "effect": {
+      "amount": 2,
+      "stat": "armor"
+    },
+    "icon": "res://assets/ui/items/jewel_deepstone_signet.png",
+    "id": "jewel_deepstone_signet",
+    "name": "Deepstone Signet",
+    "name_key": "item.jewel_deepstone_signet.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "neck",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 147,
+    "weight": 0.08
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens healing.",
+    "effect": {
+      "amount": 2,
+      "stat": "healing"
+    },
+    "icon": "res://assets/ui/items/jewel_dawnthread_loop.png",
+    "id": "jewel_dawnthread_loop",
+    "name": "Dawnthread Loop",
+    "name_key": "item.jewel_dawnthread_loop.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "ring",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 171,
+    "weight": 0.08
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens stealth.",
+    "effect": {
+      "amount": 3,
+      "stat": "stealth"
+    },
+    "icon": "res://assets/ui/items/jewel_veiled_copper_ring.png",
+    "id": "jewel_veiled_copper_ring",
+    "name": "Veiled Copper Ring",
+    "name_key": "item.jewel_veiled_copper_ring.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "ring",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 195,
+    "weight": 0.08
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens summoning.",
+    "effect": {
+      "amount": 3,
+      "stat": "summoning"
+    },
+    "icon": "res://assets/ui/items/jewel_echo_speaker_band.png",
+    "id": "jewel_echo_speaker_band",
+    "name": "Echo-Speaker Band",
+    "name_key": "item.jewel_echo_speaker_band.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "ring",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 219,
+    "weight": 0.08
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens critical.",
+    "effect": {
+      "amount": 3,
+      "stat": "critical"
+    },
+    "icon": "res://assets/ui/items/jewel_knot_of_fortunate_rain.png",
+    "id": "jewel_knot_of_fortunate_rain",
+    "name": "Knot of Fortunate Rain",
+    "name_key": "item.jewel_knot_of_fortunate_rain.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "neck",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 243,
+    "weight": 0.08
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens spirit resist.",
+    "effect": {
+      "amount": 3,
+      "stat": "spirit_resist"
+    },
+    "icon": "res://assets/ui/items/jewel_saltglass_amulet.png",
+    "id": "jewel_saltglass_amulet",
+    "name": "Saltglass Amulet",
+    "name_key": "item.jewel_saltglass_amulet.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "neck",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 267,
+    "weight": 0.08
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens perception.",
+    "effect": {
+      "amount": 3,
+      "stat": "perception"
+    },
+    "icon": "res://assets/ui/items/jewel_moth_eye_pendant.png",
+    "id": "jewel_moth_eye_pendant",
+    "name": "Moth-Eye Pendant",
+    "name_key": "item.jewel_moth_eye_pendant.name",
+    "rarity": "uncommon",
+    "requirements": {},
+    "slot": "neck",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 291,
+    "weight": 0.08
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens vitality.",
+    "effect": {
+      "amount": 4,
+      "stat": "vitality"
+    },
+    "icon": "res://assets/ui/items/jewel_hearth_locket.png",
+    "id": "jewel_hearth_locket",
+    "name": "Hearth-Locket",
+    "name_key": "item.jewel_hearth_locket.name",
+    "rarity": "rare",
+    "requirements": {},
+    "slot": "neck",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 315,
+    "weight": 0.08
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens mana.",
+    "effect": {
+      "amount": 4,
+      "stat": "mana"
+    },
+    "icon": "res://assets/ui/items/jewel_whisperbone_torc.png",
+    "id": "jewel_whisperbone_torc",
+    "name": "Whisperbone Torc",
+    "name_key": "item.jewel_whisperbone_torc.name",
+    "rarity": "rare",
+    "requirements": {},
+    "slot": "neck",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 339,
+    "weight": 0.08
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens accuracy.",
+    "effect": {
+      "amount": 4,
+      "stat": "accuracy"
+    },
+    "icon": "res://assets/ui/items/jewel_compass_rose_amulet.png",
+    "id": "jewel_compass_rose_amulet",
+    "name": "Compass Rose Amulet",
+    "name_key": "item.jewel_compass_rose_amulet.name",
+    "rarity": "rare",
+    "requirements": {},
+    "slot": "neck",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 363,
+    "weight": 0.08
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens fate.",
+    "effect": {
+      "amount": 4,
+      "stat": "fate"
+    },
+    "icon": "res://assets/ui/items/jewel_little_ash_s_token.png",
+    "id": "jewel_little_ash_s_token",
+    "name": "Little Ash's Token",
+    "name_key": "item.jewel_little_ash_s_token.name",
+    "rarity": "rare",
+    "requirements": {},
+    "slot": "neck",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 387,
+    "weight": 0.08
+  },
+  {
+    "category": "jewelry",
+    "description": "A small northern charm that strengthens silence resist.",
+    "effect": {
+      "amount": 4,
+      "stat": "silence_resist"
+    },
+    "icon": "res://assets/ui/items/jewel_unstruck_bell.png",
+    "id": "jewel_unstruck_bell",
+    "name": "Unstruck Bell",
+    "name_key": "item.jewel_unstruck_bell.name",
+    "rarity": "rare",
+    "requirements": {},
+    "slot": "neck",
+    "stack_limit": 1,
+    "tags": [
+      "jewelry"
+    ],
+    "value": 411,
+    "weight": 0.08
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing heal.",
+    "effect": {
+      "amount": 18,
+      "type": "heal"
+    },
+    "icon": "res://assets/ui/items/consumable_redroot_draught.png",
+    "id": "consumable_redroot_draught",
+    "name": "Redroot Draught",
+    "name_key": "item.consumable_redroot_draught.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "heal"
+    ],
+    "value": 6,
+    "weight": 0.2
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing mana.",
+    "effect": {
+      "amount": 14,
+      "type": "mana"
+    },
+    "icon": "res://assets/ui/items/consumable_bluecap_tonic.png",
+    "id": "consumable_bluecap_tonic",
+    "name": "Bluecap Tonic",
+    "name_key": "item.consumable_bluecap_tonic.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "mana"
+    ],
+    "value": 9,
+    "weight": 0.30000000000000004
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing fire resist.",
+    "effect": {
+      "amount": 4,
+      "type": "fire_resist"
+    },
+    "icon": "res://assets/ui/items/consumable_warming_cordial.png",
+    "id": "consumable_warming_cordial",
+    "name": "Warming Cordial",
+    "name_key": "item.consumable_warming_cordial.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "fire_resist"
+    ],
+    "value": 12,
+    "weight": 0.4
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing frost resist.",
+    "effect": {
+      "amount": 4,
+      "type": "frost_resist"
+    },
+    "icon": "res://assets/ui/items/consumable_stillwater_flask.png",
+    "id": "consumable_stillwater_flask",
+    "name": "Stillwater Flask",
+    "name_key": "item.consumable_stillwater_flask.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "frost_resist"
+    ],
+    "value": 15,
+    "weight": 0.2
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing speed.",
+    "effect": {
+      "amount": 3,
+      "type": "speed"
+    },
+    "icon": "res://assets/ui/items/consumable_stormmint_tea.png",
+    "id": "consumable_stormmint_tea",
+    "name": "Stormmint Tea",
+    "name_key": "item.consumable_stormmint_tea.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "speed"
+    ],
+    "value": 18,
+    "weight": 0.30000000000000004
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing armor.",
+    "effect": {
+      "amount": 3,
+      "type": "armor"
+    },
+    "icon": "res://assets/ui/items/consumable_stonebroth.png",
+    "id": "consumable_stonebroth",
+    "name": "Stonebroth",
+    "name_key": "item.consumable_stonebroth.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "armor"
+    ],
+    "value": 21,
+    "weight": 0.4
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing cleanse.",
+    "effect": {
+      "amount": 1,
+      "type": "cleanse"
+    },
+    "icon": "res://assets/ui/items/consumable_sunleaf_infusion.png",
+    "id": "consumable_sunleaf_infusion",
+    "name": "Sunleaf Infusion",
+    "name_key": "item.consumable_sunleaf_infusion.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "cleanse"
+    ],
+    "value": 24,
+    "weight": 0.2
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing invisibility.",
+    "effect": {
+      "amount": 3,
+      "type": "invisibility"
+    },
+    "icon": "res://assets/ui/items/consumable_mothmilk.png",
+    "id": "consumable_mothmilk",
+    "name": "Mothmilk",
+    "name_key": "item.consumable_mothmilk.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "invisibility"
+    ],
+    "value": 27,
+    "weight": 0.30000000000000004
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing spirit damage.",
+    "effect": {
+      "amount": 12,
+      "type": "spirit_damage"
+    },
+    "icon": "res://assets/ui/items/consumable_ghostsalt_phial.png",
+    "id": "consumable_ghostsalt_phial",
+    "name": "Ghostsalt Phial",
+    "name_key": "item.consumable_ghostsalt_phial.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "spirit_damage"
+    ],
+    "value": 30,
+    "weight": 0.4
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing critical.",
+    "effect": {
+      "amount": 3,
+      "type": "critical"
+    },
+    "icon": "res://assets/ui/items/consumable_fateberry_preserve.png",
+    "id": "consumable_fateberry_preserve",
+    "name": "Fateberry Preserve",
+    "name_key": "item.consumable_fateberry_preserve.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "critical"
+    ],
+    "value": 33,
+    "weight": 0.2
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing satiety.",
+    "effect": {
+      "amount": 12,
+      "type": "satiety"
+    },
+    "icon": "res://assets/ui/items/consumable_black_bread.png",
+    "id": "consumable_black_bread",
+    "name": "Black Bread",
+    "name_key": "item.consumable_black_bread.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "satiety"
+    ],
+    "value": 36,
+    "weight": 0.30000000000000004
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing satiety.",
+    "effect": {
+      "amount": 16,
+      "type": "satiety"
+    },
+    "icon": "res://assets/ui/items/consumable_smoked_char.png",
+    "id": "consumable_smoked_char",
+    "name": "Smoked Char",
+    "name_key": "item.consumable_smoked_char.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "satiety"
+    ],
+    "value": 39,
+    "weight": 0.4
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing morale.",
+    "effect": {
+      "amount": 5,
+      "type": "morale"
+    },
+    "icon": "res://assets/ui/items/consumable_cloudberry_cake.png",
+    "id": "consumable_cloudberry_cake",
+    "name": "Cloudberry Cake",
+    "name_key": "item.consumable_cloudberry_cake.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "morale"
+    ],
+    "value": 42,
+    "weight": 0.2
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing satiety.",
+    "effect": {
+      "amount": 14,
+      "type": "satiety"
+    },
+    "icon": "res://assets/ui/items/consumable_goat_cheese.png",
+    "id": "consumable_goat_cheese",
+    "name": "Goat Cheese",
+    "name_key": "item.consumable_goat_cheese.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "satiety"
+    ],
+    "value": 45,
+    "weight": 0.30000000000000004
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing heal.",
+    "effect": {
+      "amount": 10,
+      "type": "heal"
+    },
+    "icon": "res://assets/ui/items/consumable_juniper_stew.png",
+    "id": "consumable_juniper_stew",
+    "name": "Juniper Stew",
+    "name_key": "item.consumable_juniper_stew.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "heal"
+    ],
+    "value": 48,
+    "weight": 0.4
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing poison cleanse.",
+    "effect": {
+      "amount": 1,
+      "type": "poison_cleanse"
+    },
+    "icon": "res://assets/ui/items/consumable_antidote_mash.png",
+    "id": "consumable_antidote_mash",
+    "name": "Antidote Mash",
+    "name_key": "item.consumable_antidote_mash.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "poison_cleanse"
+    ],
+    "value": 51,
+    "weight": 0.2
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing perception.",
+    "effect": {
+      "amount": 5,
+      "type": "perception"
+    },
+    "icon": "res://assets/ui/items/consumable_bright_eye_drops.png",
+    "id": "consumable_bright_eye_drops",
+    "name": "Bright-Eye Drops",
+    "name_key": "item.consumable_bright_eye_drops.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "perception"
+    ],
+    "value": 54,
+    "weight": 0.30000000000000004
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing lockpick.",
+    "effect": {
+      "amount": 4,
+      "type": "lockpick"
+    },
+    "icon": "res://assets/ui/items/consumable_lockoil.png",
+    "id": "consumable_lockoil",
+    "name": "Lockoil",
+    "name_key": "item.consumable_lockoil.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "lockpick"
+    ],
+    "value": 57,
+    "weight": 0.4
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing fire bomb.",
+    "effect": {
+      "amount": 14,
+      "type": "fire_bomb"
+    },
+    "icon": "res://assets/ui/items/consumable_ember_vial.png",
+    "id": "consumable_ember_vial",
+    "name": "Ember Vial",
+    "name_key": "item.consumable_ember_vial.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "fire_bomb"
+    ],
+    "value": 60,
+    "weight": 0.2
+  },
+  {
+    "category": "consumable",
+    "description": "A prepared consumable providing frost bomb.",
+    "effect": {
+      "amount": 14,
+      "type": "frost_bomb"
+    },
+    "icon": "res://assets/ui/items/consumable_rime_jar.png",
+    "id": "consumable_rime_jar",
+    "name": "Rime Jar",
+    "name_key": "item.consumable_rime_jar.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 10,
+    "tags": [
+      "consumable",
+      "frost_bomb"
+    ],
+    "value": 63,
+    "weight": 0.30000000000000004
+  },
+  {
+    "category": "utility",
+    "description": "A map with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_orrenfast_map.png",
+    "id": "utility_orrenfast_map",
+    "name": "Orrenfast Map",
+    "name_key": "item.utility_orrenfast_map.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 1,
+    "tags": [
+      "utility",
+      "map"
+    ],
+    "utility_type": "map",
+    "value": 12,
+    "weight": 0.15
+  },
+  {
+    "category": "utility",
+    "description": "A tool with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_brass_lockpicks.png",
+    "id": "utility_brass_lockpicks",
+    "name": "Brass Lockpicks",
+    "name_key": "item.utility_brass_lockpicks.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 5,
+    "tags": [
+      "utility",
+      "tool"
+    ],
+    "utility_type": "tool",
+    "value": 16,
+    "weight": 0.35
+  },
+  {
+    "category": "utility",
+    "description": "A tool with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_trap_chalk.png",
+    "id": "utility_trap_chalk",
+    "name": "Trap Chalk",
+    "name_key": "item.utility_trap_chalk.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 5,
+    "tags": [
+      "utility",
+      "tool"
+    ],
+    "utility_type": "tool",
+    "value": 20,
+    "weight": 0.55
+  },
+  {
+    "category": "utility",
+    "description": "A light with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_hooded_lantern.png",
+    "id": "utility_hooded_lantern",
+    "name": "Hooded Lantern",
+    "name_key": "item.utility_hooded_lantern.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 1,
+    "tags": [
+      "utility",
+      "light"
+    ],
+    "utility_type": "light",
+    "value": 24,
+    "weight": 0.7500000000000001
+  },
+  {
+    "category": "utility",
+    "description": "A tool with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_climbing_line.png",
+    "id": "utility_climbing_line",
+    "name": "Climbing Line",
+    "name_key": "item.utility_climbing_line.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 5,
+    "tags": [
+      "utility",
+      "tool"
+    ],
+    "utility_type": "tool",
+    "value": 28,
+    "weight": 0.15
+  },
+  {
+    "category": "utility",
+    "description": "A tool with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_surveyor_s_compass.png",
+    "id": "utility_surveyor_s_compass",
+    "name": "Surveyor's Compass",
+    "name_key": "item.utility_surveyor_s_compass.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 5,
+    "tags": [
+      "utility",
+      "tool"
+    ],
+    "utility_type": "tool",
+    "value": 32,
+    "weight": 0.35
+  },
+  {
+    "category": "utility",
+    "description": "A readable with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_maelin_s_sealed_letter.png",
+    "id": "utility_maelin_s_sealed_letter",
+    "name": "Maelin's Sealed Letter",
+    "name_key": "item.utility_maelin_s_sealed_letter.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 1,
+    "tags": [
+      "utility",
+      "readable"
+    ],
+    "utility_type": "readable",
+    "value": 36,
+    "weight": 0.55
+  },
+  {
+    "category": "utility",
+    "description": "A readable with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_ledger_of_names.png",
+    "id": "utility_ledger_of_names",
+    "name": "Ledger of Names",
+    "name_key": "item.utility_ledger_of_names.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 1,
+    "tags": [
+      "utility",
+      "readable"
+    ],
+    "utility_type": "readable",
+    "value": 40,
+    "weight": 0.7500000000000001
+  },
+  {
+    "category": "utility",
+    "description": "A readable with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_winter_road_journal.png",
+    "id": "utility_winter_road_journal",
+    "name": "Winter Road Journal",
+    "name_key": "item.utility_winter_road_journal.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 1,
+    "tags": [
+      "utility",
+      "readable"
+    ],
+    "utility_type": "readable",
+    "value": 44,
+    "weight": 0.15
+  },
+  {
+    "category": "utility",
+    "description": "A readable with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_bone_flute_manual.png",
+    "id": "utility_bone_flute_manual",
+    "name": "Bone-Flute Manual",
+    "name_key": "item.utility_bone_flute_manual.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 1,
+    "tags": [
+      "utility",
+      "readable"
+    ],
+    "utility_type": "readable",
+    "value": 48,
+    "weight": 0.35
+  },
+  {
+    "category": "quest",
+    "description": "A key with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_greywake_warding_key.png",
+    "id": "utility_greywake_warding_key",
+    "name": "Greywake Warding Key",
+    "name_key": "item.utility_greywake_warding_key.name",
+    "rarity": "quest",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 1,
+    "tags": [
+      "utility",
+      "key"
+    ],
+    "utility_type": "key",
+    "value": 0,
+    "weight": 0.55
+  },
+  {
+    "category": "quest",
+    "description": "A key with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_floodgate_key.png",
+    "id": "utility_floodgate_key",
+    "name": "Floodgate Key",
+    "name_key": "item.utility_floodgate_key.name",
+    "rarity": "quest",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 1,
+    "tags": [
+      "utility",
+      "key"
+    ],
+    "utility_type": "key",
+    "value": 0,
+    "weight": 0.7500000000000001
+  },
+  {
+    "category": "quest",
+    "description": "A key with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_rime_crown_sigil.png",
+    "id": "utility_rime_crown_sigil",
+    "name": "Rime-Crown Sigil",
+    "name_key": "item.utility_rime_crown_sigil.name",
+    "rarity": "quest",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 1,
+    "tags": [
+      "utility",
+      "key"
+    ],
+    "utility_type": "key",
+    "value": 0,
+    "weight": 0.15
+  },
+  {
+    "category": "utility",
+    "description": "A scroll with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_blank_spellleaf.png",
+    "id": "utility_blank_spellleaf",
+    "name": "Blank Spellleaf",
+    "name_key": "item.utility_blank_spellleaf.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 5,
+    "tags": [
+      "utility",
+      "scroll"
+    ],
+    "utility_type": "scroll",
+    "value": 64,
+    "weight": 0.35
+  },
+  {
+    "category": "utility",
+    "description": "A tool with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_camp_kit.png",
+    "id": "utility_camp_kit",
+    "name": "Camp Kit",
+    "name_key": "item.utility_camp_kit.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 5,
+    "tags": [
+      "utility",
+      "tool"
+    ],
+    "utility_type": "tool",
+    "value": 68,
+    "weight": 0.55
+  },
+  {
+    "category": "utility",
+    "description": "A tool with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_repair_tongs.png",
+    "id": "utility_repair_tongs",
+    "name": "Repair Tongs",
+    "name_key": "item.utility_repair_tongs.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 5,
+    "tags": [
+      "utility",
+      "tool"
+    ],
+    "utility_type": "tool",
+    "value": 72,
+    "weight": 0.7500000000000001
+  },
+  {
+    "category": "utility",
+    "description": "A tool with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_appraiser_s_lens.png",
+    "id": "utility_appraiser_s_lens",
+    "name": "Appraiser's Lens",
+    "name_key": "item.utility_appraiser_s_lens.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 5,
+    "tags": [
+      "utility",
+      "tool"
+    ],
+    "utility_type": "tool",
+    "value": 76,
+    "weight": 0.15
+  },
+  {
+    "category": "utility",
+    "description": "A scroll with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_quiet_bell_scroll.png",
+    "id": "utility_quiet_bell_scroll",
+    "name": "Quiet Bell Scroll",
+    "name_key": "item.utility_quiet_bell_scroll.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 5,
+    "tags": [
+      "utility",
+      "scroll"
+    ],
+    "utility_type": "scroll",
+    "value": 80,
+    "weight": 0.35
+  },
+  {
+    "category": "utility",
+    "description": "A travel with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_waystone_shard.png",
+    "id": "utility_waystone_shard",
+    "name": "Waystone Shard",
+    "name_key": "item.utility_waystone_shard.name",
+    "rarity": "common",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 1,
+    "tags": [
+      "utility",
+      "travel"
+    ],
+    "utility_type": "travel",
+    "value": 84,
+    "weight": 0.55
+  },
+  {
+    "category": "quest",
+    "description": "A quest with a practical or story-bound use.",
+    "icon": "res://assets/ui/items/utility_choir_tuning_fork.png",
+    "id": "utility_choir_tuning_fork",
+    "name": "Choir Tuning Fork",
+    "name_key": "item.utility_choir_tuning_fork.name",
+    "rarity": "quest",
+    "requirements": {},
+    "slot": "",
+    "stack_limit": 1,
+    "tags": [
+      "utility",
+      "quest"
+    ],
+    "utility_type": "quest",
+    "value": 0,
+    "weight": 0.7500000000000001
+  },
+  {
+    "artifact_power": "flame_wave",
+    "category": "weapon",
+    "description": "A unique relic whose history and power change how the Bell Below can be answered.",
+    "icon": "res://assets/ui/items/artifact_brand_of_the_first_hearth.png",
+    "id": "artifact_brand_of_the_first_hearth",
+    "name": "Brand of the First Hearth",
+    "name_key": "item.artifact_brand_of_the_first_hearth.name",
+    "rarity": "artifact",
+    "requirements": {
+      "resolve": 3
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "artifact",
+      "flame_wave"
+    ],
+    "unique": true,
+    "value": 450,
+    "weight": 0.4
+  },
+  {
+    "artifact_power": "root_bind",
+    "category": "weapon",
+    "description": "A unique relic whose history and power change how the Bell Below can be answered.",
+    "icon": "res://assets/ui/items/artifact_axe_that_remembers_trees.png",
+    "id": "artifact_axe_that_remembers_trees",
+    "name": "Axe That Remembers Trees",
+    "name_key": "item.artifact_axe_that_remembers_trees.name",
+    "rarity": "artifact",
+    "requirements": {
+      "resolve": 3
+    },
+    "slot": "main_hand",
+    "stack_limit": 1,
+    "tags": [
+      "artifact",
+      "root_bind"
+    ],
+    "unique": true,
+    "value": 530,
+    "weight": 1.0
+  },
+  {
+    "artifact_power": "split_shot",
+    "category": "weapon",
+    "description": "A unique relic whose history and power change how the Bell Below can be answered.",
+    "icon": "res://assets/ui/items/artifact_mirrorbow_of_lorn.png",
+    "id": "artifact_mirrorbow_of_lorn",
+    "name": "Mirrorbow of Lorn",
+    "name_key": "item.artifact_mirrorbow_of_lorn.name",
+    "rarity": "artifact",
+    "requirements": {
+      "resolve": 3
+    },
+    "slot": "ranged",
+    "stack_limit": 1,
+    "tags": [
+      "artifact",
+      "split_shot"
+    ],
+    "unique": true,
+    "value": 610,
+    "weight": 1.6
+  },
+  {
+    "artifact_power": "guard_aura",
+    "category": "armor",
+    "description": "A unique relic whose history and power change how the Bell Below can be answered.",
+    "icon": "res://assets/ui/items/artifact_the_patient_shield.png",
+    "id": "artifact_the_patient_shield",
+    "name": "The Patient Shield",
+    "name_key": "item.artifact_the_patient_shield.name",
+    "rarity": "artifact",
+    "requirements": {
+      "resolve": 3
+    },
+    "slot": "off_hand",
+    "stack_limit": 1,
+    "tags": [
+      "artifact",
+      "guard_aura"
+    ],
+    "unique": true,
+    "value": 690,
+    "weight": 2.1999999999999997
+  },
+  {
+    "artifact_power": "afterimage",
+    "category": "armor",
+    "description": "A unique relic whose history and power change how the Bell Below can be answered.",
+    "icon": "res://assets/ui/items/artifact_coat_of_borrowed_footsteps.png",
+    "id": "artifact_coat_of_borrowed_footsteps",
+    "name": "Coat of Borrowed Footsteps",
+    "name_key": "item.artifact_coat_of_borrowed_footsteps.name",
+    "rarity": "artifact",
+    "requirements": {
+      "resolve": 4
+    },
+    "slot": "body",
+    "stack_limit": 1,
+    "tags": [
+      "artifact",
+      "afterimage"
+    ],
+    "unique": true,
+    "value": 770,
+    "weight": 0.4
+  },
+  {
+    "artifact_power": "fear_immunity",
+    "category": "armor",
+    "description": "A unique relic whose history and power change how the Bell Below can be answered.",
+    "icon": "res://assets/ui/items/artifact_crownless_helm.png",
+    "id": "artifact_crownless_helm",
+    "name": "Crownless Helm",
+    "name_key": "item.artifact_crownless_helm.name",
+    "rarity": "artifact",
+    "requirements": {
+      "resolve": 4
+    },
+    "slot": "head",
+    "stack_limit": 1,
+    "tags": [
+      "artifact",
+      "fear_immunity"
+    ],
+    "unique": true,
+    "value": 850,
+    "weight": 1.0
+  },
+  {
+    "artifact_power": "secret_sense",
+    "category": "accessory",
+    "description": "A unique relic whose history and power change how the Bell Below can be answered.",
+    "icon": "res://assets/ui/items/artifact_maelin_s_northless_compass.png",
+    "id": "artifact_maelin_s_northless_compass",
+    "name": "Maelin's Northless Compass",
+    "name_key": "item.artifact_maelin_s_northless_compass.name",
+    "rarity": "artifact",
+    "requirements": {
+      "resolve": 4
+    },
+    "slot": "neck",
+    "stack_limit": 1,
+    "tags": [
+      "artifact",
+      "secret_sense"
+    ],
+    "unique": true,
+    "value": 930,
+    "weight": 1.6
+  },
+  {
+    "artifact_power": "reroll",
+    "category": "jewelry",
+    "description": "A unique relic whose history and power change how the Bell Below can be answered.",
+    "icon": "res://assets/ui/items/artifact_ring_of_the_ninth_answer.png",
+    "id": "artifact_ring_of_the_ninth_answer",
+    "name": "Ring of the Ninth Answer",
+    "name_key": "item.artifact_ring_of_the_ninth_answer.name",
+    "rarity": "artifact",
+    "requirements": {
+      "resolve": 4
+    },
+    "slot": "ring",
+    "stack_limit": 1,
+    "tags": [
+      "artifact",
+      "reroll"
+    ],
+    "unique": true,
+    "value": 1010,
+    "weight": 2.1999999999999997
+  },
+  {
+    "artifact_power": "group_heal",
+    "category": "device",
+    "description": "A unique relic whose history and power change how the Bell Below can be answered.",
+    "icon": "res://assets/ui/items/artifact_cup_of_returning_rain.png",
+    "id": "artifact_cup_of_returning_rain",
+    "name": "Cup of Returning Rain",
+    "name_key": "item.artifact_cup_of_returning_rain.name",
+    "rarity": "artifact",
+    "requirements": {
+      "resolve": 5
+    },
+    "slot": "",
+    "stack_limit": 1,
+    "tags": [
+      "artifact",
+      "group_heal"
+    ],
+    "unique": true,
+    "value": 1090,
+    "weight": 0.4
+  },
+  {
+    "artifact_power": "silence_field",
+    "category": "device",
+    "description": "A unique relic whose history and power change how the Bell Below can be answered.",
+    "icon": "res://assets/ui/items/artifact_the_hush_lantern.png",
+    "id": "artifact_the_hush_lantern",
+    "name": "The Hush Lantern",
+    "name_key": "item.artifact_the_hush_lantern.name",
+    "rarity": "artifact",
+    "requirements": {
+      "resolve": 5
+    },
+    "slot": "off_hand",
+    "stack_limit": 1,
+    "tags": [
+      "artifact",
+      "silence_field"
+    ],
+    "unique": true,
+    "value": 1170,
+    "weight": 1.0
+  },
+  {
+    "artifact_power": "echo_summon",
+    "category": "device",
+    "description": "A unique relic whose history and power change how the Bell Below can be answered.",
+    "icon": "res://assets/ui/items/artifact_little_ash_s_bellbone.png",
+    "id": "artifact_little_ash_s_bellbone",
+    "name": "Little Ash's Bellbone",
+    "name_key": "item.artifact_little_ash_s_bellbone.name",
+    "rarity": "artifact",
+    "requirements": {
+      "resolve": 5
+    },
+    "slot": "",
+    "stack_limit": 1,
+    "tags": [
+      "artifact",
+      "echo_summon"
+    ],
+    "unique": true,
+    "value": 1250,
+    "weight": 1.6
+  },
+  {
+    "artifact_power": "ending_choice",
+    "category": "quest",
+    "description": "A unique relic whose history and power change how the Bell Below can be answered.",
+    "icon": "res://assets/ui/items/artifact_rime_crown_counterweight.png",
+    "id": "artifact_rime_crown_counterweight",
+    "name": "Rime-Crown Counterweight",
+    "name_key": "item.artifact_rime_crown_counterweight.name",
+    "rarity": "artifact",
+    "requirements": {
+      "resolve": 5
+    },
+    "slot": "",
+    "stack_limit": 1,
+    "tags": [
+      "artifact",
+      "ending_choice"
+    ],
+    "unique": true,
+    "value": 1330,
+    "weight": 2.1999999999999997
+  }
+]
