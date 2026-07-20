@@ -61,6 +61,8 @@
 - `PATH=/home/epi13/.local/bin:$PATH ./tools/build/export_windows.sh` passed validation and produced `builds/windows/IsoCastle.exe`, 124,301,768 bytes, identified as PE32+ x86-64. It was not executed because no genuine Windows environment is available.
 - `./tools/build/validate_web_export.sh`, `zipinfo -1 builds/web/IsoCastle-web.zip`, `python3 -m py_compile tools/build/web_server.py`, `node --check tests/browser/web_smoke.spec.mjs`, `npm ls --depth=0`, and `git diff --check` all passed.
 - Repeated `PATH=/home/epi13/.local/bin:$PATH ./tools/build/export_web.sh` without source changes. Both ZIPs had SHA-256 `8081f3568d12af9c9b29aaa6b69cd7519f9f869827a69b3545ab4aaefccf6b11`, confirming byte-for-byte reproducibility in the verified environment.
+- Pushed only `codex/post-v0.9-inventory-input-wasm` and opened draft PR #2, `Add inventory remapping and WebAssembly support`: https://github.com/epi13/IsoCastle/pull/2. No merge was performed.
+- GitHub Actions push run `29713329307` and PR run `29713344526` both passed. The PR run completed the full exporter and Chromium smoke job in 2m22s and uploaded the `IsoCastle-web` workflow artifact (GitHub wrapper size 21,184,950 bytes). The runner emitted one nonfatal platform annotation that older action majors targeting Node 20 were forced onto Node 24; no build or test step failed.
 
 ### Completed
 
