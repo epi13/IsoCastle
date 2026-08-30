@@ -1,7 +1,7 @@
 extends Node
 
 const SETTINGS_PATH := "user://settings.cfg"
-const SETTINGS_VERSION := 2
+const SETTINGS_VERSION := 3
 const DEFAULTS: Dictionary = {
 	"master_volume": 0.85,
 	"music_volume": 0.72,
@@ -10,6 +10,7 @@ const DEFAULTS: Dictionary = {
 	"voice_volume": 0.9,
 	"fullscreen": false,
 	"ui_scale": 1.0,
+	"world_zoom": 1.0,
 	"text_scale": 1.0,
 	"text_speed": 1.0,
 	"animation_speed": 1.0,
@@ -17,6 +18,10 @@ const DEFAULTS: Dictionary = {
 	"reduced_motion": false,
 	"reduced_flashing": false,
 	"screen_shake": 0.65,
+	"reduced_particles": false,
+	"lighting_quality": 2,
+	"shadow_quality": 2,
+	"visual_quality": 2,
 	"highlight_interactables": true,
 	"floating_feedback": true,
 	"hold_to_confirm": false,

@@ -1,0 +1,146 @@
+[
+  {
+    "resolution": "1280x720",
+    "inner": [
+      1280,
+      720
+    ],
+    "dpr": 1,
+    "canvasCss": [
+      0,
+      0,
+      1280,
+      720
+    ],
+    "canvasBacking": [
+      1280,
+      720
+    ],
+    "scroll": [
+      1280,
+      720
+    ],
+    "screen": "gameplay",
+    "consoleErrors": []
+  },
+  {
+    "resolution": "1366x768",
+    "inner": [
+      1366,
+      768
+    ],
+    "dpr": 1,
+    "canvasCss": [
+      0,
+      0,
+      1366,
+      768
+    ],
+    "canvasBacking": [
+      1366,
+      768
+    ],
+    "scroll": [
+      1366,
+      768
+    ],
+    "screen": "gameplay",
+    "consoleErrors": []
+  },
+  {
+    "resolution": "1600x900",
+    "inner": [
+      1600,
+      900
+    ],
+    "dpr": 1,
+    "canvasCss": [
+      0,
+      0,
+      1600,
+      900
+    ],
+    "canvasBacking": [
+      1600,
+      900
+    ],
+    "scroll": [
+      1600,
+      900
+    ],
+    "screen": "gameplay",
+    "consoleErrors": []
+  },
+  {
+    "resolution": "1920x1080",
+    "inner": [
+      1920,
+      1080
+    ],
+    "dpr": 1,
+    "canvasCss": [
+      0,
+      0,
+      1920,
+      1080
+    ],
+    "canvasBacking": [
+      1920,
+      1080
+    ],
+    "scroll": [
+      1920,
+      1080
+    ],
+    "screen": "gameplay",
+    "consoleErrors": []
+  },
+  {
+    "resolution": "2560x1440",
+    "inner": [
+      2560,
+      1440
+    ],
+    "dpr": 1,
+    "canvasCss": [
+      0,
+      0,
+      2560,
+      1440
+    ],
+    "canvasBacking": [
+      2560,
+      1440
+    ],
+    "scroll": [
+      2560,
+      1440
+    ],
+    "screen": "gameplay",
+    "consoleErrors": []
+  },
+  {
+    "resolution": "3440x1440",
+    "inner": [
+      3440,
+      1440
+    ],
+    "dpr": 1,
+    "canvasCss": [
+      0,
+      0,
+      3440,
+      1440
+    ],
+    "canvasBacking": [
+      3440,
+      1440
+    ],
+    "scroll": [
+      3440,
+      1440
+    ],
+    "screen": "gameplay",
+    "consoleErrors": []
+  }
+]

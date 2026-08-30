@@ -65,6 +65,20 @@ func _test_projection() -> void:
 	var grid := Vector2i(3, 2)
 	var screen := Vector2((grid.x - grid.y) * tile.x * 0.5, (grid.x + grid.y) * tile.y * 0.5)
 	expect(screen == Vector2(48, 120), "Isometric projection remains stable")
+	expect(IsometricCamera.project_grid(grid) == screen, "Runtime camera uses the canonical 96x48 projection")
+	var camera := IsometricCamera.new()
+	camera.configure(Rect2(0, 0, 1000, 700), Vector2i(4, 3))
+	camera.focus_grid(Vector2i(0, 0), true)
+	expect(camera.current_position.is_equal_approx(camera.map_bounds.get_center()), "A map smaller than the viewport is centered instead of edge-clamped")
+	var centered_screen := camera.grid_to_screen(Vector2i(1, 1))
+	expect(camera.screen_to_grid(centered_screen) == Vector2i(1, 1), "Camera projection round-trips through viewport coordinates")
+	camera.configure(Rect2(20, 50, 900, 560), Vector2i(29, 23))
+	camera.focus_grid(Vector2i(14, 11), true)
+	expect(camera.viewport_rect.has_point(camera.grid_to_screen(Vector2i(14, 11))), "A focused player remains inside the usable world viewport")
+	camera.set_zoom(99.0)
+	expect(is_equal_approx(camera.zoom, IsometricCamera.MAX_ZOOM), "World zoom clamps to its readable maximum")
+	camera.set_zoom(0.01)
+	expect(is_equal_approx(camera.zoom, IsometricCamera.MIN_ZOOM), "World zoom clamps to its tactical minimum")
 
 
 func _test_pathfinding_and_generation() -> void:

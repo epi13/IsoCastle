@@ -6,6 +6,7 @@ const ACTION_ORDER: Array[String] = [
 	"move_northwest", "move_northeast", "move_southwest", "move_southeast",
 	"wait_turn", "interact", "search", "inventory", "spellbook", "journal", "map",
 	"ranged_attack", "cast_prepared", "quick_item", "quick_save", "quick_load",
+	"camera_zoom_in", "camera_zoom_out", "camera_reset", "toggle_sidebar",
 	"ui_cancel", "toggle_overlay", "screenshot_mode",
 ]
 
@@ -18,6 +19,8 @@ const LABELS: Dictionary = {
 	"inventory": "Inventory", "spellbook": "Spellbook", "journal": "Journal",
 	"map": "Map", "ranged_attack": "Ranged attack", "cast_prepared": "Cast prepared spell",
 	"quick_item": "Quick item", "quick_save": "Quick save", "quick_load": "Quick load",
+	"camera_zoom_in": "Zoom world in", "camera_zoom_out": "Zoom world out",
+	"camera_reset": "Reset camera", "toggle_sidebar": "Collapse sidebar",
 	"ui_cancel": "Pause / cancel", "toggle_overlay": "Developer overlay",
 	"screenshot_mode": "Screenshot mode",
 }
@@ -51,6 +54,10 @@ static func bindings() -> Dictionary:
 		"quick_item": [_key(KEY_3), _joy_button(JOY_BUTTON_RIGHT_SHOULDER)],
 		"quick_save": [_key(KEY_F8)],
 		"quick_load": [_key(KEY_F9)],
+		"camera_zoom_in": [_key(KEY_EQUAL), _joy_button(JOY_BUTTON_LEFT_STICK)],
+		"camera_zoom_out": [_key(KEY_MINUS), _joy_button(JOY_BUTTON_RIGHT_STICK)],
+		"camera_reset": [_key(KEY_0)],
+		"toggle_sidebar": [_key(KEY_TAB), _joy_button(JOY_BUTTON_BACK)],
 		"ui_cancel": [_key(KEY_ESCAPE), _joy_button(JOY_BUTTON_B)],
 		"toggle_overlay": [_key(KEY_F2)],
 		"screenshot_mode": [_key(KEY_F3)],

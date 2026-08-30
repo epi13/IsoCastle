@@ -2,6 +2,31 @@
 
 ## 2026-07-19
 
+### Visual-overhaul audit and untouched baseline
+
+- Created `codex/visual-overhaul` from the clean published post-v0.9 tip `ee3375321566b4d7cc5a8512b525c1d7c55e03bd`; this preserves the newer transactional inventory, remapping, and supported Web work that has not yet landed on `main`.
+- Confirmed the project is Godot 4.7.1 Compatibility/WebGL 2 with deterministic Python/Pillow art and audio generators, native Linux/Windows export scripts, an official single-threaded Web export, Playwright 1.61.1 browser coverage, and GitHub Actions build/browser validation.
+- Rebuilt the untouched Linux export with `PATH=/home/epi13/.local/bin:$PATH ./tools/build/export_linux.sh`, launched `builds/linux/IsoCastle.x86_64` on the graphical desktop, and captured a native title baseline. The complete validation wrapper passed: 626 unit checks, interaction smoke, campaign smoke, 364-art validation, and 310-audio validation.
+- Rebuilt the untouched Web export with `PATH=/home/epi13/.local/bin:$PATH ./tools/build/export_web.sh`. Baseline payload: 55,078,099 bytes uncompressed and 21,227,295 bytes zipped.
+- Ran the untouched Web build in Playwright-managed Chromium 149 and Firefox 151 using `npm run test:web`; both passed with no fatal console errors, page errors, failed asset requests, or persistence/input/inventory regressions.
+- Captured the deterministic browser baseline at 1280x720, 1366x768, 1600x900, 1920x1080, 2560x1440, and 3440x1440. Representative retained screenshots are `docs/visual-overhaul/before/1600x900.png` and `docs/visual-overhaul/before/3440x1440.png`; exact canvas metrics are in the adjacent `metrics.json`.
+
+### Root cause of the small-world Web defect
+
+- The browser shell is not the primary defect at 16:9 sizes: canvas CSS dimensions and backing-store dimensions exactly match every tested browser viewport, and document scroll dimensions match the viewport with no horizontal or vertical overflow.
+- Gameplay uses a fixed `VIEW_ORIGIN = Vector2(665, 74)` inside one full-screen `Control`, so map placement is unrelated to the actual world pane, player position, map bounds, or resized viewport.
+- Gameplay uses `TILE_WIDTH = 40` and `TILE_HEIGHT = 20` while the deterministic art pipeline authors 96x48 floor tiles and 96x96 walls. It redraws those textures at 40x20 and 40x40, only 41.7% of authored linear size.
+- Actor sheets are authored as 64x80 frames but gameplay redraws them at 32x40, then reads only the first animation row and first direction. The result is half-scale, pawn-like actors even though animation metadata exists.
+- The HUD/sidebar/top bar/modal use absolute positions and sizes for a 1280x720 screen. They do not react to root resize, sidebar state, available height, or UI scale; the Current Thread text is visibly clipped by the event divider in baseline screenshots.
+- At 3440x1440, the project preserves a centered 16:9 logical content region inside the full-size HTML canvas instead of expanding the logical viewport for ultrawide layouts, adding substantial pillarboxed black space on top of the fixed gameplay layout defect.
+- There is no runtime camera model: no player-follow target, zoom, pan, map-bound calculation, small-map centering, or clamp behavior exists. `grid_to_screen()` is only a fixed origin plus isometric projection.
+
+### Visual scale decision
+
+- The overhaul will use canonical 96x48 isometric tiles with 48-pixel elevation, matching the existing source-art contract.
+- Humanoid and major-creature atlas frames will be raised to 96x128 with foot pivots at `(48, 112)`. This keeps the authored texture within practical WebGL atlas limits while providing an approximately 104-pixel standing figure at default zoom. Larger boss silhouettes may occupy the full 128-pixel frame height.
+- The default camera zoom target is 1.0 with a user range of 0.72 to 1.55. World zoom and UI scale remain independent.
+
 ### Post-v0.9 recovery and baseline
 
 - Recovered the clean checkout on `codex/full-isometric-game` at `52bfc323949a762703a7057ef38cc044fbf38e1b`; no modified, staged, or untracked files and no interrupted Git operation were present.
