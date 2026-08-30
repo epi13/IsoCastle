@@ -19,6 +19,7 @@ SettingsService="*res://game/autoload/settings_service.gd"
 SaveService="*res://game/autoload/save_service.gd"
 GameSession="*res://game/autoload/game_session.gd"
 AudioDirector="*res://game/autoload/audio_director.gd"
+WebBridge="*res://game/autoload/web_bridge.gd"
 
 [display]
 
@@ -27,6 +28,7 @@ window/size/viewport_height=720
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/handheld/orientation=1
 
 [rendering]
@@ -57,8 +59,11 @@ inventory={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":73)
 spellbook={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":66)]}
 journal={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":74)]}
 map={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":77)]}
-quick_save={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":4194336)]}
-quick_load={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":4194337)]}
+cast_prepared={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":49),Object(InputEventJoypadButton,"button_index":2)]}
+ranged_attack={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":50),Object(InputEventMouseButton,"button_index":2)]}
+quick_item={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":51),Object(InputEventJoypadButton,"button_index":5)]}
+quick_save={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":4194339)]}
+quick_load={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":4194340)]}
 toggle_overlay={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":4194331)]}
 screenshot_mode={"deadzone":0.35,"events":[Object(InputEventKey,"physical_keycode":4194332)]}
 ui_cancel={"deadzone":0.5,"events":[Object(InputEventKey,"physical_keycode":4194305),Object(InputEventJoypadButton,"button_index":1)]}

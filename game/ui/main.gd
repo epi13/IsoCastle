@@ -10,9 +10,14 @@ var practice_input: OptionButton
 var kit_input: OptionButton
 var difficulty_input: OptionButton
 var seed_input: LineEdit
+var capture_action := ""
+var capture_index := -1
+var capture_panel: PanelContainer
+var pending_binding: Dictionary = {}
 
 
 func _ready() -> void:
+	set_process_unhandled_input(true)
 	_build_shell()
 	AudioDirector.play_music("res://assets/music/theme_00.wav", 0.1)
 	show_title()
@@ -50,6 +55,8 @@ func clear_screen() -> void:
 
 func show_title() -> void:
 	clear_screen()
+	WebBridge.set_screen("title")
+	WebBridge.set_value("has_save", SaveService.has_slot(0))
 	status_label.visible = true
 	var panel := VBoxContainer.new()
 	panel.position = Vector2(100, 112)
@@ -130,6 +137,7 @@ func _show_message(title_text: String, body: String) -> void:
 
 
 func _on_new_game() -> void:
+	WebBridge.set_value("user_interaction", true)
 	_show_intro()
 
 
@@ -178,6 +186,7 @@ func _on_load() -> void:
 
 func _on_settings() -> void:
 	clear_screen()
+	WebBridge.set_screen("settings")
 	var scroll := ScrollContainer.new()
 	scroll.position = Vector2(220, 70)
 	scroll.size = Vector2(840, 590)
@@ -212,6 +221,7 @@ func _on_settings() -> void:
 		row.add_child(slider)
 		box.add_child(row)
 	for entry in [
+		["Fullscreen (user initiated on Web)", "fullscreen"],
 		["High-contrast interface", "high_contrast"], ["Reduced motion", "reduced_motion"],
 		["Reduced flashing", "reduced_flashing"], ["Highlight interactables", "highlight_interactables"],
 		["Floating combat feedback", "floating_feedback"], ["Hold to confirm", "hold_to_confirm"],
@@ -222,11 +232,239 @@ func _on_settings() -> void:
 		toggle.button_pressed = bool(SettingsService.get_value(entry[1]))
 		toggle.toggled.connect(func(value: bool) -> void: SettingsService.set_value(entry[1], value))
 		box.add_child(toggle)
+	var input_button := _add_menu_button(box, "Input Remapping", _show_input_settings)
+	input_button.name = "OpenInputRemapping"
 	var back := _add_menu_button(box, "Save Settings & Back", func() -> void:
-		SettingsService.save_settings()
-		show_title()
+		var save_error: Error = SettingsService.save_settings()
+		if save_error == OK:
+			show_title()
+		else:
+			_show_message("Settings Not Saved", SettingsService.last_persistence_error)
 	)
 	back.custom_minimum_size.x = 500
+
+
+func _show_input_settings(message: String = "") -> void:
+	_cancel_capture(false)
+	clear_screen()
+	WebBridge.set_screen("input_remapping")
+	WebBridge.set_value("bindings", SettingsService.input_bindings.serialized())
+	var page := VBoxContainer.new()
+	page.position = Vector2(80, 34)
+	page.size = Vector2(1120, 650)
+	page.add_theme_constant_override("separation", 8)
+	screen_root.add_child(page)
+	var title := Label.new()
+	title.text = "INPUT REMAPPING"
+	title.add_theme_font_size_override("font_size", 34)
+	title.add_theme_color_override("font_color", Color("#f1e3c4"))
+	page.add_child(title)
+	var guidance := Label.new()
+	guidance.text = message if not message.is_empty() else "Select a binding to replace it, or add another. Conflicts require confirmation. Menu navigation remains on protected UI controls."
+	guidance.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	guidance.custom_minimum_size.y = 42
+	guidance.add_theme_color_override("font_color", Color("#a9c8d1"))
+	page.add_child(guidance)
+	var scroll := ScrollContainer.new()
+	scroll.custom_minimum_size = Vector2(1100, 505)
+	page.add_child(scroll)
+	var actions := VBoxContainer.new()
+	actions.custom_minimum_size.x = 1070
+	actions.add_theme_constant_override("separation", 5)
+	scroll.add_child(actions)
+	for action: String in SettingsService.action_ids():
+		var row := HBoxContainer.new()
+		row.name = "ActionRow_%s" % action
+		row.add_theme_constant_override("separation", 5)
+		actions.add_child(row)
+		var label := Label.new()
+		label.text = SettingsService.action_label(action)
+		label.custom_minimum_size = Vector2(190, 38)
+		label.tooltip_text = action
+		row.add_child(label)
+		var bindings: Array = SettingsService.bindings_for(action)
+		for binding_index in range(bindings.size()):
+			var binding: Dictionary = bindings[binding_index]
+			var binding_button := Button.new()
+			binding_button.name = "Binding_%s_%d" % [action, binding_index]
+			binding_button.text = InputBindings.display_name(binding)
+			binding_button.custom_minimum_size = Vector2(126, 38)
+			binding_button.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+			binding_button.tooltip_text = "Replace %s" % InputBindings.display_name(binding)
+			binding_button.pressed.connect(func() -> void: _begin_capture(action, binding_index))
+			row.add_child(binding_button)
+			var clear_button := Button.new()
+			clear_button.name = "Clear_%s_%d" % [action, binding_index]
+			clear_button.text = "×"
+			clear_button.tooltip_text = "Clear this optional binding"
+			clear_button.custom_minimum_size = Vector2(34, 38)
+			clear_button.pressed.connect(func() -> void: _clear_input_binding(action, binding_index))
+			row.add_child(clear_button)
+		var add_button := Button.new()
+		add_button.name = "AddBinding_%s" % action
+		add_button.text = "+ Add"
+		add_button.custom_minimum_size = Vector2(70, 38)
+		add_button.pressed.connect(func() -> void: _begin_capture(action, -1))
+		row.add_child(add_button)
+		var reset_button := Button.new()
+		reset_button.name = "ResetBinding_%s" % action
+		reset_button.text = "Reset"
+		reset_button.custom_minimum_size = Vector2(68, 38)
+		reset_button.pressed.connect(func() -> void:
+			SettingsService.reset_action(action)
+			_show_input_settings("Reset %s to defaults." % SettingsService.action_label(action))
+		)
+		row.add_child(reset_button)
+	var footer := HBoxContainer.new()
+	footer.add_theme_constant_override("separation", 12)
+	page.add_child(footer)
+	var reset_all := _add_menu_button(footer, "Reset All Defaults", _confirm_reset_all_bindings)
+	reset_all.name = "ResetAllBindings"
+	reset_all.custom_minimum_size = Vector2(260, 42)
+	var back := _add_menu_button(footer, "Save & Return to Settings", func() -> void:
+		var save_error: Error = SettingsService.save_settings()
+		if save_error == OK:
+			_on_settings()
+		else:
+			_show_input_settings(SettingsService.last_persistence_error)
+	)
+	back.name = "SaveInputBindings"
+	back.custom_minimum_size = Vector2(330, 42)
+
+
+func _begin_capture(action: String, binding_index: int) -> void:
+	_cancel_capture(false)
+	capture_action = action
+	capture_index = binding_index
+	capture_panel = PanelContainer.new()
+	capture_panel.name = "InputCaptureOverlay"
+	capture_panel.position = Vector2(250, 210)
+	capture_panel.size = Vector2(780, 280)
+	capture_panel.z_index = 200
+	screen_root.add_child(capture_panel)
+	var box := VBoxContainer.new()
+	box.alignment = BoxContainer.ALIGNMENT_CENTER
+	box.add_theme_constant_override("separation", 18)
+	capture_panel.add_child(box)
+	var title := Label.new()
+	title.text = "LISTENING FOR %s" % SettingsService.action_label(action).to_upper()
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	title.add_theme_font_size_override("font_size", 28)
+	title.add_theme_color_override("font_color", Color("#e0bd76"))
+	box.add_child(title)
+	var note := Label.new()
+	note.text = "Press a physical key, mouse button, controller button, or move an axis firmly. Mouse motion and small axis noise are ignored. Escape cancels capture."
+	note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	note.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	note.custom_minimum_size = Vector2(700, 80)
+	box.add_child(note)
+	var cancel := Button.new()
+	cancel.name = "CancelInputCapture"
+	cancel.text = "Cancel Capture"
+	cancel.focus_mode = Control.FOCUS_NONE
+	cancel.custom_minimum_size = Vector2(260, 44)
+	cancel.pressed.connect(_cancel_capture)
+	box.add_child(cancel)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if capture_action.is_empty():
+		return
+	if event is InputEventMouseMotion:
+		return
+	if event is InputEventJoypadMotion and absf(event.axis_value) < InputBindings.AXIS_CAPTURE_THRESHOLD:
+		return
+	if event is InputEventKey:
+		if not event.pressed or event.is_echo():
+			return
+		if event.physical_keycode == KEY_ESCAPE:
+			get_viewport().set_input_as_handled()
+			_cancel_capture()
+			return
+	elif event is InputEventMouseButton:
+		if not event.pressed:
+			return
+	elif event is InputEventJoypadButton:
+		if not event.pressed:
+			return
+	elif not event is InputEventJoypadMotion:
+		return
+	get_viewport().set_input_as_handled()
+	_complete_capture(event)
+
+
+func _complete_capture(event: InputEvent) -> void:
+	var action := capture_action
+	var binding_index := capture_index
+	var data := InputBindings.event_to_data(event)
+	_cancel_capture(false)
+	if data.is_empty():
+		_show_input_settings("That input could not be captured.")
+		return
+	var result := SettingsService.assign_binding_data(action, data, binding_index, false)
+	if result.ok:
+		_show_input_settings("Assigned %s to %s." % [InputBindings.display_name(data), SettingsService.action_label(action)])
+		return
+	if result.has("conflict_action"):
+		pending_binding = {"action": action, "index": binding_index, "data": data}
+		var dialog := ConfirmationDialog.new()
+		dialog.name = "InputConflictDialog"
+		dialog.title = "Binding Conflict"
+		dialog.dialog_text = "%s is assigned to %s. Move it to %s?" % [
+			InputBindings.display_name(data), SettingsService.action_label(result.conflict_action), SettingsService.action_label(action),
+		]
+		dialog.ok_button_text = "Move Binding"
+		dialog.cancel_button_text = "Keep Existing"
+		dialog.confirmed.connect(_resolve_input_conflict)
+		dialog.canceled.connect(func() -> void:
+			pending_binding.clear()
+			_show_input_settings("Conflict cancelled; bindings were unchanged.")
+			dialog.queue_free()
+		)
+		add_child(dialog)
+		dialog.popup_centered(Vector2i(600, 240))
+		return
+	_show_input_settings(result.reason)
+
+
+func _resolve_input_conflict() -> void:
+	if pending_binding.is_empty():
+		return
+	var result: Dictionary = SettingsService.assign_binding_data(pending_binding.action, pending_binding.data, int(pending_binding.index), true)
+	var message: String = "Moved binding to %s." % SettingsService.action_label(pending_binding.action) if result.ok else String(result.reason)
+	pending_binding.clear()
+	_show_input_settings(message)
+
+
+func _clear_input_binding(action: String, binding_index: int) -> void:
+	var result := SettingsService.clear_binding(action, binding_index)
+	_show_input_settings("Cleared binding." if result.ok else result.reason)
+
+
+func _confirm_reset_all_bindings() -> void:
+	var dialog := ConfirmationDialog.new()
+	dialog.name = "ResetAllBindingsDialog"
+	dialog.title = "Reset Every Binding?"
+	dialog.dialog_text = "This replaces all custom keyboard, mouse, and controller bindings with the explicit IsoCastle defaults."
+	dialog.ok_button_text = "Reset All"
+	dialog.confirmed.connect(func() -> void:
+		SettingsService.reset_all_bindings()
+		_show_input_settings("All bindings reset to defaults.")
+		dialog.queue_free()
+	)
+	dialog.canceled.connect(func() -> void: dialog.queue_free())
+	add_child(dialog)
+	dialog.popup_centered(Vector2i(560, 220))
+
+
+func _cancel_capture(rebuild: bool = true) -> void:
+	capture_action = ""
+	capture_index = -1
+	if capture_panel != null and is_instance_valid(capture_panel):
+		capture_panel.queue_free()
+	capture_panel = null
+	if rebuild and is_inside_tree():
+		_show_input_settings("Capture cancelled; bindings were unchanged.")
 
 
 func _on_credits() -> void:
@@ -239,6 +477,7 @@ func _on_quit() -> void:
 
 func _show_intro() -> void:
 	clear_screen()
+	WebBridge.set_screen("intro")
 	var box := VBoxContainer.new()
 	box.position = Vector2(210, 90)
 	box.size = Vector2(860, 540)
@@ -267,6 +506,7 @@ func _show_intro() -> void:
 
 func _show_character_creation() -> void:
 	clear_screen()
+	WebBridge.set_screen("character_creation")
 	var scroll := ScrollContainer.new()
 	scroll.position = Vector2(170, 48)
 	scroll.size = Vector2(940, 630)
@@ -393,7 +633,19 @@ func _create_character_and_start() -> void:
 		seed_value = 130713
 	var difficulty := difficulty_input.get_item_text(difficulty_input.selected).to_lower()
 	GameSession.new_game(character, seed_value, difficulty)
-	GameSession.state.equipment.main_hand = kit_items[kit][0]
+	var item_catalog: Dictionary = {}
+	for item: Dictionary in ContentDB.all("items"):
+		item_catalog[item.id] = item
+	for item_index in range(GameSession.state.inventory.size() - 1, -1, -1):
+		var starting_stack: Dictionary = GameSession.state.inventory[item_index]
+		var definition: Dictionary = item_catalog.get(starting_stack.get("id", ""), {})
+		var equipment_slot := String(definition.get("slot", ""))
+		if equipment_slot.is_empty() or definition.get("category") != "weapon" or GameSession.state.equipment.has(equipment_slot):
+			continue
+		var equip_result := InventoryRules.equip(GameSession.state.inventory, GameSession.state.equipment, item_index, equipment_slot, character, item_catalog)
+		if equip_result.ok:
+			GameSession.state.inventory = equip_result.inventory
+			GameSession.state.equipment = equip_result.equipment
 	_launch_game()
 
 

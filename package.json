@@ -1,0 +1,12 @@
+{
+  "name": "isocastle-browser-tests",
+  "private": true,
+  "scripts": {
+    "test:web": "playwright test",
+    "test:web:chromium": "playwright test --project=chromium",
+    "test:web:firefox": "playwright test --project=firefox"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1"
+  }
+}

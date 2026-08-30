@@ -3,10 +3,11 @@ extends Control
 
 signal return_to_menu
 
-const TILE_WIDTH := 40.0
-const TILE_HEIGHT := 20.0
-const VIEW_ORIGIN := Vector2(665, 74)
-const PLAYER_ANIMATIONS := ["idle", "walk", "run", "melee_attack", "ranged_attack", "cast", "hit", "block", "use_item", "interact", "death", "victory"]
+const TILE_WIDTH := IsometricCamera.TILE_WIDTH
+const TILE_HEIGHT := IsometricCamera.TILE_HEIGHT
+const PLAYER_ANIMATIONS := ["idle", "walk", "run", "melee_attack", "ranged_attack", "cast", "hit", "block", "evade", "use_item", "interact", "open_container", "death", "victory", "level_up"]
+const ENEMY_ANIMATIONS := ["idle", "move", "attack", "hit", "special", "death"]
+const NPC_ANIMATIONS := ["idle", "walk", "interact", "sleep"]
 
 var level: Dictionary = {}
 var depth := 0
@@ -20,6 +21,7 @@ var spell_catalog: Dictionary = {}
 var enemy_catalog: Array = []
 var hud_label: RichTextLabel
 var log_label: RichTextLabel
+var help_label: Label
 var modal: PanelContainer
 var modal_title: Label
 var modal_body: RichTextLabel
@@ -33,6 +35,24 @@ var wall_texture: Texture2D
 var effect_state: Dictionary = {}
 var npc: Dictionary = {}
 var debug_enabled := false
+var inventory_drag_active := false
+var inventory_slot_controls: Array[InventorySlot] = []
+var inventory_focus_source: Dictionary = {}
+var camera_model := IsometricCamera.new()
+var world_view_rect := Rect2(Vector2(12, 62), Vector2(930, 580))
+var sidebar_expanded := true
+var camera_dragging := false
+var player_direction := "s"
+var player_animation := "idle"
+var player_animation_started := 0
+var last_visual_frame := -1
+var top_bar: ColorRect
+var place_label: Label
+var side_panel: ColorRect
+var side_divider: HSeparator
+var bottom_bar: ColorRect
+var sidebar_toggle: Button
+var quick_actions: HBoxContainer
 
 
 func _ready() -> void:
@@ -45,77 +65,123 @@ func _ready() -> void:
 		spell_catalog[spell.id] = spell
 	enemy_catalog = ContentDB.all("enemies")
 	_build_hud()
+	resized.connect(_layout_interface)
 	_restore_or_start()
 	_enter_depth(int(GameSession.state.get("world", {}).get("floor", 0)))
+	_layout_interface()
+	WebBridge.set_screen("gameplay")
+	WebBridge.set_value("turn", int(GameSession.state.world.turn))
+	WebBridge.publish_inventory(GameSession.state.inventory, GameSession.state.equipment)
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	var redraw := camera_model.update(delta)
+	var visual_frame := int(Time.get_ticks_msec() / 140)
+	if visual_frame != last_visual_frame:
+		last_visual_frame = visual_frame
+		redraw = true
+	if player_animation != "idle" and Time.get_ticks_msec() - player_animation_started > 460:
+		player_animation = "idle"
+		redraw = true
 	if not effect_state.is_empty():
 		var elapsed := (Time.get_ticks_msec() - int(effect_state.started)) / 1000.0
 		if elapsed >= 0.48:
 			effect_state.clear()
-			queue_redraw()
+			redraw = true
 		else:
 			effect_state.frame = mini(3, int(elapsed / 0.12))
-			queue_redraw()
+			redraw = true
+	if redraw:
+		queue_redraw()
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_RESIZED and is_node_ready():
+		_layout_interface()
+	if what == NOTIFICATION_DRAG_END and inventory_drag_active:
+		inventory_drag_active = false
+		for slot_control: InventorySlot in inventory_slot_controls:
+			if is_instance_valid(slot_control):
+				slot_control.self_modulate = Color.WHITE
+		if not inventory_focus_source.is_empty():
+			for slot_control: InventorySlot in inventory_slot_controls:
+				if slot_control.source == inventory_focus_source:
+					slot_control.grab_focus.call_deferred()
+					break
 
 
 func _build_hud() -> void:
-	var top_bar := ColorRect.new()
-	top_bar.color = Color("#101925e8")
-	top_bar.position = Vector2(0, 0)
-	top_bar.size = Vector2(1280, 46)
+	top_bar = ColorRect.new()
+	top_bar.color = Color("#101925f4")
 	add_child(top_bar)
 
-	var place := Label.new()
-	place.name = "PlaceLabel"
-	place.text = "GREYWAKE • THE BELL BELOW"
-	place.position = Vector2(20, 10)
-	place.size = Vector2(600, 30)
-	place.add_theme_font_size_override("font_size", 18)
-	place.add_theme_color_override("font_color", Color("#e0bd76"))
-	add_child(place)
+	place_label = Label.new()
+	place_label.name = "PlaceLabel"
+	place_label.text = "MOSSWAKE BARROWS  •  THE BELL BELOW"
+	place_label.add_theme_font_size_override("font_size", 18)
+	place_label.add_theme_color_override("font_color", Color("#e8c77f"))
+	add_child(place_label)
 
-	var help := Label.new()
-	help.text = "QWE/ASD/ZXC move  •  F interact  •  V search  •  1 cast  •  2 ranged  •  3 quick item  •  I/B/J/M  •  Esc"
-	help.position = Vector2(480, 12)
-	help.size = Vector2(775, 24)
-	help.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	help.add_theme_font_size_override("font_size", 13)
-	help.add_theme_color_override("font_color", Color("#9bb0b7"))
-	add_child(help)
+	help_label = Label.new()
+	help_label.text = "Move %s/%s/%s/%s  •  %s interact  •  %s cast  •  %s ranged  •  %s inventory  •  %s pause" % [
+		SettingsService.primary_binding_text("move_north"), SettingsService.primary_binding_text("move_west"),
+		SettingsService.primary_binding_text("move_south"), SettingsService.primary_binding_text("move_east"),
+		SettingsService.primary_binding_text("interact"), SettingsService.primary_binding_text("cast_prepared"),
+		SettingsService.primary_binding_text("ranged_attack"), SettingsService.primary_binding_text("inventory"),
+		SettingsService.primary_binding_text("ui_cancel"),
+	]
+	help_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	help_label.add_theme_font_size_override("font_size", 13)
+	help_label.add_theme_color_override("font_color", Color("#9bb0b7"))
+	add_child(help_label)
 
-	var side := ColorRect.new()
-	side.color = Color("#0c141eea")
-	side.position = Vector2(965, 46)
-	side.size = Vector2(315, 674)
-	add_child(side)
+	side_panel = ColorRect.new()
+	side_panel.color = Color("#101822f5")
+	add_child(side_panel)
+
+	sidebar_toggle = Button.new()
+	sidebar_toggle.name = "SidebarToggle"
+	sidebar_toggle.text = "Hide panel"
+	sidebar_toggle.tooltip_text = "Collapse the character, objective, and event panel"
+	sidebar_toggle.pressed.connect(_toggle_sidebar)
+	sidebar_toggle.add_theme_font_size_override("font_size", 13)
+	add_child(sidebar_toggle)
 
 	hud_label = RichTextLabel.new()
 	hud_label.bbcode_enabled = true
 	hud_label.fit_content = false
-	hud_label.scroll_active = false
-	hud_label.position = Vector2(984, 66)
-	hud_label.size = Vector2(276, 320)
+	hud_label.scroll_active = true
 	hud_label.add_theme_font_size_override("normal_font_size", 16)
+	hud_label.add_theme_color_override("default_color", Color("#e8e0d1"))
 	add_child(hud_label)
 
-	var divider := HSeparator.new()
-	divider.position = Vector2(984, 388)
-	divider.size = Vector2(276, 10)
-	add_child(divider)
+	side_divider = HSeparator.new()
+	add_child(side_divider)
 
 	log_label = RichTextLabel.new()
 	log_label.bbcode_enabled = true
-	log_label.position = Vector2(984, 405)
-	log_label.size = Vector2(276, 286)
+	log_label.scroll_active = true
+	log_label.scroll_following = true
 	log_label.add_theme_font_size_override("normal_font_size", 14)
+	log_label.add_theme_color_override("default_color", Color("#d4d9d7"))
 	add_child(log_label)
+
+	bottom_bar = ColorRect.new()
+	bottom_bar.color = Color("#111923f2")
+	add_child(bottom_bar)
+	quick_actions = HBoxContainer.new()
+	quick_actions.name = "QuickActions"
+	quick_actions.add_theme_constant_override("separation", 7)
+	add_child(quick_actions)
+	_add_quick_button("Inventory", _show_inventory, "inventory")
+	_add_quick_button("Spellbook", _show_spellbook, "spellbook")
+	_add_quick_button("Character", _show_character_sheet)
+	_add_quick_button("Journal", _show_journal, "journal")
+	_add_quick_button("Map", _show_map_help, "map")
+	_add_quick_button("Pause", _show_pause, "ui_cancel")
 
 	modal = PanelContainer.new()
 	modal.visible = false
-	modal.position = Vector2(160, 92)
-	modal.size = Vector2(760, 560)
 	modal.z_index = 100
 	add_child(modal)
 	var modal_box := VBoxContainer.new()
@@ -127,7 +193,7 @@ func _build_hud() -> void:
 	modal_box.add_child(modal_title)
 	modal_body = RichTextLabel.new()
 	modal_body.bbcode_enabled = true
-	modal_body.custom_minimum_size = Vector2(700, 430)
+	modal_body.custom_minimum_size = Vector2(700, 390)
 	modal_body.add_theme_font_size_override("normal_font_size", 17)
 	modal_box.add_child(modal_body)
 	modal_actions = VBoxContainer.new()
@@ -135,8 +201,73 @@ func _build_hud() -> void:
 	modal_box.add_child(modal_actions)
 	var close := Button.new()
 	close.text = "Close"
-	close.pressed.connect(func() -> void: modal.visible = false)
+	close.pressed.connect(_close_modal)
 	modal_box.add_child(close)
+	_layout_interface()
+
+
+func _add_quick_button(text_value: String, callback: Callable, action: String = "") -> void:
+	var button := Button.new()
+	button.text = text_value if action.is_empty() else "%s  [%s]" % [text_value, SettingsService.primary_binding_text(action)]
+	button.custom_minimum_size = Vector2(104, 42)
+	button.pressed.connect(callback)
+	quick_actions.add_child(button)
+
+
+func _layout_interface() -> void:
+	if top_bar == null or size.x <= 0.0 or size.y <= 0.0:
+		return
+	var top_height := 54.0
+	var bottom_height := 66.0
+	var expanded_width := clampf(size.x * 0.19, 300.0, 560.0)
+	var sidebar_width := expanded_width if sidebar_expanded else 58.0
+	var sidebar_x := size.x - sidebar_width
+	top_bar.position = Vector2.ZERO
+	top_bar.size = Vector2(size.x, top_height)
+	place_label.position = Vector2(22, 12)
+	place_label.size = Vector2(minf(480.0, size.x * 0.38), 30)
+	help_label.visible = size.x >= 1120.0
+	help_label.position = Vector2(maxf(430.0, sidebar_x - 720.0), 14)
+	help_label.size = Vector2(maxf(180.0, sidebar_x - help_label.position.x - 18.0), 24)
+	side_panel.position = Vector2(sidebar_x, top_height)
+	side_panel.size = Vector2(sidebar_width, size.y - top_height)
+	sidebar_toggle.position = Vector2(sidebar_x + 8, top_height + 8)
+	sidebar_toggle.size = Vector2(sidebar_width - 16, 34)
+	sidebar_toggle.text = "Hide panel" if sidebar_expanded else "»"
+	var side_padding := 20.0
+	var side_content_x := sidebar_x + side_padding
+	var side_content_width := maxf(10.0, sidebar_width - side_padding * 2.0)
+	var available_side_height := maxf(240.0, size.y - top_height - 58.0)
+	var summary_height := clampf(available_side_height * 0.51, 280.0, 460.0)
+	hud_label.position = Vector2(side_content_x, top_height + 54)
+	hud_label.size = Vector2(side_content_width, summary_height - 12.0)
+	side_divider.position = Vector2(side_content_x, top_height + 54 + summary_height)
+	side_divider.size = Vector2(side_content_width, 8)
+	log_label.position = Vector2(side_content_x, side_divider.position.y + 14)
+	log_label.size = Vector2(side_content_width, maxf(100.0, size.y - log_label.position.y - 18.0))
+	hud_label.visible = sidebar_expanded
+	side_divider.visible = sidebar_expanded
+	log_label.visible = sidebar_expanded
+	bottom_bar.position = Vector2(0, size.y - bottom_height)
+	bottom_bar.size = Vector2(sidebar_x, bottom_height)
+	quick_actions.position = Vector2(16, size.y - bottom_height + 10)
+	quick_actions.size = Vector2(maxf(300.0, sidebar_x - 32.0), bottom_height - 18.0)
+	world_view_rect = Rect2(Vector2(12, top_height + 10), Vector2(maxf(320.0, sidebar_x - 24.0), maxf(240.0, size.y - top_height - bottom_height - 20.0)))
+	var level_size := Vector2i(int(level.get("width", 1)), int(level.get("height", 1)))
+	camera_model.configure(world_view_rect, level_size)
+	if not player.is_empty():
+		camera_model.focus_grid(player.get("position", Vector2i.ZERO))
+	var modal_size := Vector2(minf(900.0, size.x - 80.0), minf(650.0, size.y - 80.0))
+	modal.size = modal_size
+	modal.position = (size - modal_size) * 0.5
+	modal_body.custom_minimum_size = Vector2(maxf(420.0, modal_size.x - 60.0), maxf(180.0, modal_size.y - 185.0))
+	queue_redraw()
+
+
+func _toggle_sidebar() -> void:
+	sidebar_expanded = not sidebar_expanded
+	_layout_interface()
+	WebBridge.set_value("sidebar_expanded", sidebar_expanded)
 
 
 func _restore_or_start() -> void:
@@ -150,6 +281,7 @@ func _restore_or_start() -> void:
 			"silver": 40, "statuses": [], "alive": true,
 		}
 	player = stored.duplicate(true)
+	player["base_armor"] = int(player.get("base_armor", player.get("armor", 1)))
 	player["position"] = Vector2i.ZERO
 	player["alive"] = int(player.get("health", 1)) > 0
 	if GameSession.state.inventory.is_empty():
@@ -159,6 +291,7 @@ func _restore_or_start() -> void:
 		]
 	if GameSession.state.known_spells.is_empty():
 		GameSession.state.known_spells = ["spell_coal_spark"]
+	_apply_equipment_stats()
 
 
 func _enter_depth(new_depth: int) -> void:
@@ -190,6 +323,7 @@ func _enter_depth(new_depth: int) -> void:
 			"vision": int(definition.perception.vision), "hearing": int(definition.perception.hearing),
 			"archetype": definition.ai_archetype, "reach": 1, "range": 6,
 			"state": "idle", "last_known": Vector2i.ZERO, "memory_turns": 0, "alive": true,
+			"direction": "s", "animation": "idle", "animation_started": 0,
 		})
 	var npc_definitions := ContentDB.all("npcs")
 	var npc_definition: Dictionary = npc_definitions[(depth * 3 + 5) % npc_definitions.size()]
@@ -207,6 +341,7 @@ func _enter_depth(new_depth: int) -> void:
 	}
 	GameSession.state.world.floor = depth
 	GameSession.state.world.location = theme.id
+	place_label.text = "%s  •  DEPTH %d" % [String(theme.name).to_upper(), depth + 1]
 	_recalculate_visibility()
 	_log("[color=#e0bd76]Entered %s[/color] — depth %d — seed %d" % [theme.name, depth + 1, int(level.seed)])
 	_advance_campaign_for_depth()
@@ -215,19 +350,36 @@ func _enter_depth(new_depth: int) -> void:
 		player.health = mini(int(player.max_health), int(player.health) + int(player.max_health) / 3)
 		player.mana = mini(int(player.max_mana), int(player.mana) + int(player.max_mana) / 3)
 	_update_hud()
+	camera_model.set_zoom(float(SettingsService.get_value("world_zoom")))
+	_layout_interface()
+	camera_model.reset_pan(player.position, true)
 	queue_redraw()
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if inventory_drag_active:
+		return
 	if event is InputEventMouseMotion:
-		hover_tile = screen_to_grid(event.position)
+		if camera_dragging:
+			camera_model.pan_screen(event.relative)
+		else:
+			hover_tile = screen_to_grid(event.position) if world_view_rect.has_point(event.position) else Vector2i(-1, -1)
 		queue_redraw()
 		return
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			camera_dragging = event.pressed and world_view_rect.has_point(event.position)
+			get_viewport().set_input_as_handled()
+			return
+		if event.pressed and world_view_rect.has_point(event.position) and event.button_index in [MOUSE_BUTTON_WHEEL_UP, MOUSE_BUTTON_WHEEL_DOWN]:
+			_adjust_world_zoom(0.10 if event.button_index == MOUSE_BUTTON_WHEEL_UP else -0.10)
+			get_viewport().set_input_as_handled()
+			return
 	if not event.is_pressed() or event.is_echo():
 		return
 	if modal.visible:
 		if event.is_action_pressed("ui_cancel"):
-			modal.visible = false
+			_close_modal()
 		return
 	if event.is_action_pressed("ui_cancel"):
 		_show_pause()
@@ -256,6 +408,18 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("quick_load"):
 		_load()
 		return
+	if event.is_action_pressed("camera_zoom_in"):
+		_adjust_world_zoom(0.10)
+		return
+	if event.is_action_pressed("camera_zoom_out"):
+		_adjust_world_zoom(-0.10)
+		return
+	if event.is_action_pressed("camera_reset"):
+		camera_model.reset_pan(player.position)
+		return
+	if event.is_action_pressed("toggle_sidebar"):
+		_toggle_sidebar()
+		return
 	if event.is_action_pressed("screenshot_mode"):
 		screenshot_mode = not screenshot_mode
 		for child in get_children():
@@ -267,13 +431,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		debug_enabled = not debug_enabled
 		_update_hud()
 		return
-	if event is InputEventKey and event.physical_keycode == KEY_1:
+	if event.is_action_pressed("cast_prepared"):
 		_cast_first_spell()
 		return
-	if event is InputEventKey and event.physical_keycode == KEY_2:
+	if event.is_action_pressed("ranged_attack"):
 		_ranged_attack()
 		return
-	if event is InputEventKey and event.physical_keycode == KEY_3:
+	if event.is_action_pressed("quick_item"):
 		_use_first_consumable()
 		return
 	var direction := Vector2i.ZERO
@@ -292,6 +456,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		_try_move(direction)
 
 
+func _adjust_world_zoom(delta: float) -> void:
+	camera_model.set_zoom(camera_model.zoom + delta)
+	SettingsService.set_value("world_zoom", camera_model.zoom)
+	camera_model.focus_grid(player.position)
+	_update_hud()
+	queue_redraw()
+
+
 func _try_move(direction: Vector2i) -> void:
 	if not bool(player.alive):
 		return
@@ -307,7 +479,10 @@ func _try_move(direction: Vector2i) -> void:
 	if not GridPathfinder.is_walkable(level.tiles, target):
 		_log("Stone and old mortar bar the way.")
 		return
+	player_direction = _direction_name(direction)
+	_start_player_animation("walk")
 	player.position = target
+	camera_model.focus_grid(player.position)
 	var noise := 1
 	for object: Dictionary in level.objects:
 		if object.position == target and object.type == "trap" and bool(object.hidden) and not bool(object.disarmed):
@@ -318,11 +493,13 @@ func _try_move(direction: Vector2i) -> void:
 			_log("[color=#e88768]A hidden trap deals %d damage![/color]" % trap_damage)
 			noise = 3
 	if target == level.exit:
-		_log("Stairs lead onward. Press F to descend.")
+		_log("Stairs lead onward. Press %s to descend." % SettingsService.primary_binding_text("interact"))
 	_finish_player_action(noise)
 
 
 func _melee_attack(enemy_index: int) -> void:
+	player_direction = _direction_name(enemies[enemy_index].position - player.position)
+	_start_player_animation("melee_attack")
 	var weapon: Dictionary = item_catalog.get(_equipped_weapon_id(), item_catalog.get("weapon_club", {"damage": [1, 4], "damage_type": "crush"}))
 	var result := CombatRules.attack(player, enemies[enemy_index], weapon, _next_seed())
 	AudioDirector.play_sfx("res://assets/sounds/weapons/blade_hit.wav" if result.hit else "res://assets/sounds/weapons/blade_swing.wav")
@@ -355,6 +532,8 @@ func _cast_first_spell() -> void:
 	if target_index < 0:
 		_log("No hostile lies within %s's reach." % spell.name)
 		return
+	player_direction = _direction_name(enemies[target_index].position - player.position)
+	_start_player_animation("cast")
 	player.mana = int(player.mana) - int(spell.mana_cost)
 	var result := CombatRules.spell_damage(player, enemies[target_index], spell, _next_seed())
 	AudioDirector.play_sfx(spell.sfx)
@@ -371,7 +550,7 @@ func _cast_first_spell() -> void:
 
 
 func _ranged_attack() -> void:
-	var weapon: Dictionary = item_catalog.get(_equipped_weapon_id(), {})
+	var weapon: Dictionary = item_catalog.get(_equipped_item_id("ranged"), {})
 	if int(weapon.get("range", 1)) <= 1:
 		_log("Equip a ranged weapon before making a ranged attack.")
 		return
@@ -379,6 +558,8 @@ func _ranged_attack() -> void:
 	if target_index < 0:
 		_log("No hostile is within the weapon's range.")
 		return
+	player_direction = _direction_name(enemies[target_index].position - player.position)
+	_start_player_animation("ranged_attack")
 	var result := CombatRules.attack(player, enemies[target_index], weapon, _next_seed())
 	AudioDirector.play_sfx("res://assets/sounds/weapons/bow_hit.wav" if result.hit else "res://assets/sounds/weapons/bow_swing.wav")
 	if result.hit:
@@ -400,8 +581,22 @@ func _use_first_consumable() -> void:
 	_log("No consumable is ready.")
 
 
+func _start_player_animation(animation: String) -> void:
+	player_animation = animation
+	player_animation_started = Time.get_ticks_msec()
+
+
+func _direction_name(direction: Vector2i) -> String:
+	var normalized := Vector2i(signi(direction.x), signi(direction.y))
+	return {
+		Vector2i(0, 1): "s", Vector2i(-1, 1): "sw", Vector2i(-1, 0): "w", Vector2i(-1, -1): "nw",
+		Vector2i(0, -1): "n", Vector2i(1, -1): "ne", Vector2i(1, 0): "e", Vector2i(1, 1): "se",
+	}.get(normalized, player_direction)
+
+
 func _finish_player_action(noise: int) -> void:
 	GameSession.state.world.turn = int(GameSession.state.world.turn) + 1
+	WebBridge.set_value("turn", int(GameSession.state.world.turn))
 	_run_enemy_turns(noise)
 	_recalculate_visibility()
 	_update_hud()
@@ -423,8 +618,14 @@ func _run_enemy_turns(noise: int) -> void:
 		match action.type:
 			"move", "retreat":
 				if not occupied.has(action.target) and action.target != player.position:
+					enemies[index]["direction"] = _direction_name(action.target - enemies[index].position)
+					enemies[index]["animation"] = "move"
+					enemies[index]["animation_started"] = Time.get_ticks_msec()
 					enemies[index].position = action.target
 			"attack":
+				enemies[index]["direction"] = _direction_name(player.position - enemies[index].position)
+				enemies[index]["animation"] = "attack"
+				enemies[index]["animation_started"] = Time.get_ticks_msec()
 				var claw := {"damage": [2 + depth / 3, 5 + depth / 2], "damage_type": "crush"}
 				var result := CombatRules.attack(enemies[index], player, claw, _next_seed())
 				if result.hit:
@@ -439,6 +640,9 @@ func _run_enemy_turns(noise: int) -> void:
 				else:
 					_log("%s's attack passes wide." % enemies[index].name)
 			"ability":
+				enemies[index]["direction"] = _direction_name(player.position - enemies[index].position)
+				enemies[index]["animation"] = "special"
+				enemies[index]["animation_started"] = Time.get_ticks_msec()
 				var damage := 2 + depth / 2
 				player.health = maxi(0, int(player.health) - damage)
 				player.alive = int(player.health) > 0
@@ -507,6 +711,7 @@ func _save() -> void:
 	var error := SaveService.save_slot(0, GameSession.serialize())
 	AudioDirector.play_sfx("res://assets/sounds/ui/save.wav")
 	_log("[color=#a8d49d]Journey saved atomically.[/color]" if error == OK else "[color=#e88768]Save failed: %s[/color]" % error_string(error))
+	WebBridge.set_value("save_ok", error == OK)
 	_update_hud()
 
 
@@ -529,7 +734,23 @@ func _serializable_player() -> Dictionary:
 
 
 func _equipped_weapon_id() -> String:
-	return String(GameSession.state.equipment.get("main_hand", "weapon_club"))
+	return _equipped_item_id("main_hand", "weapon_club")
+
+
+func _equipped_item_id(slot: String, fallback: String = "") -> String:
+	var equipped: Variant = GameSession.state.equipment.get(slot, {})
+	if equipped is Dictionary:
+		return String(equipped.get("id", fallback))
+	return String(equipped) if not String(equipped).is_empty() else fallback
+
+
+func _apply_equipment_stats() -> void:
+	var armor := int(player.get("base_armor", 1))
+	for slot: String in GameSession.state.equipment:
+		var equipped: Variant = GameSession.state.equipment[slot]
+		var item_id := String(equipped.get("id", "")) if equipped is Dictionary else String(equipped)
+		armor += int(item_catalog.get(item_id, {}).get("armor", 0))
+	player["armor"] = maxi(0, armor)
 
 
 func _gain_xp(amount: int) -> void:
@@ -594,41 +815,216 @@ func _update_hud() -> void:
 		return
 	var quest_state: Dictionary = GameSession.state.quests.get("quest_homecoming_in_iron", GameSession.state.quests.get("homecoming", {"state": "active"}))
 	hud_label.text = (
-		"[font_size=24][color=#f1e3c4]%s[/color][/font_size]\n%s • level %d\n\n" +
-		"[color=#d96f62]HEALTH[/color]  %d / %d\n[color=#78b8d8]FOCUS[/color]   %d / %d\n" +
+		"[font_size=25][color=#f1e3c4]%s[/color][/font_size]\n[color=#aebcc0]%s • level %d[/color]\n\n" +
+		"[color=#e7796b][b]HEALTH[/b][/color]  %d / %d\n[color=#79c8e3][b]FOCUS[/b][/color]   %d / %d\n" +
 		"Armor %d  •  Evasion %d\nMight %d  •  Finesse %d  •  Resolve %d\n\n" +
-		"Depth %d / 12\nTurn %d  •  Seed %d\nSilver %d\n\n[b]Current thread[/b]\nHomecoming in Iron — %s"
+		"[color=#e0bd76][b]CURRENT OBJECTIVE[/b][/color]\nHomecoming in Iron\n[color=#bdc8c8]%s — seek Maelin's trail in the barrows.[/color]\n\n" +
+		"Depth %d / 12  •  Turn %d\nSilver %d  •  Seed %d\nWorld zoom %d%%"
 	) % [
 		player.get("name", "Wayfarer"), player.get("background", "Returned Apprentice"), int(player.get("level", 1)),
 		int(player.health), int(player.max_health), int(player.mana), int(player.max_mana),
 		int(player.armor), int(player.evasion), int(player.might), int(player.finesse), int(player.resolve),
-		depth + 1, int(GameSession.state.world.turn), int(GameSession.state.seed), int(player.get("silver", 0)),
 		String(quest_state.get("state", "active")).capitalize(),
+		depth + 1, int(GameSession.state.world.turn), int(player.get("silver", 0)), int(GameSession.state.seed), roundi(camera_model.zoom * 100.0),
 	]
 	if debug_enabled:
-		hud_label.text += "\n\n[color=#9ed8e3][b]DEVELOPER OVERLAY[/b][/color]\nFPS %d • actors %d\nVisible %d • discovered %d\nMap attempt %d • objects %d\nDraw calls %d" % [
+		hud_label.text += "\n\n[color=#9ed8e3][b]DEVELOPER OVERLAY[/b][/color]\nFPS %d • actors %d\nVisible %d • discovered %d\nMap attempt %d • objects %d\nDraw calls %d\nTile (%d, %d) • iso (%.0f, %.0f)\nCamera (%.0f, %.0f) • zoom %.2f" % [
 			Engine.get_frames_per_second(), enemies.size() + 2, visible_tiles.size(), discovered.size(),
 			int(level.get("attempt", 0)), level.get("objects", []).size(),
-			RenderingServer.get_rendering_info(RenderingServer.RENDERING_INFO_TOTAL_DRAW_CALLS_IN_FRAME)
+			RenderingServer.get_rendering_info(RenderingServer.RENDERING_INFO_TOTAL_DRAW_CALLS_IN_FRAME),
+			int(player.position.x), int(player.position.y), IsometricCamera.project_grid(player.position).x, IsometricCamera.project_grid(player.position).y,
+			camera_model.current_position.x, camera_model.current_position.y, camera_model.zoom,
 		]
 
 
 func _show_inventory() -> void:
-	var lines := PackedStringArray()
-	var index := 1
-	for stack: Dictionary in GameSession.state.inventory:
-		var item: Dictionary = item_catalog.get(stack.id, {"name": stack.id, "weight": 0.0, "description": ""})
-		lines.append("[img=48x48]%s[/img] %d. [color=#e0bd76]%s[/color] ×%d  (%.2f weight)\n   %s" % [item.icon, index, item.name, int(stack.count), float(item.weight) * int(stack.count), item.description])
-		index += 1
-	var weight := InventoryRules.total_weight(GameSession.state.inventory, item_catalog)
-	_show_modal("Inventory & Equipment", "Carried weight: %.2f / %d\nMain hand: %s\n\n%s" % [weight, 22 + int(player.might) * 4, item_catalog.get(_equipped_weapon_id(), {"name": "Hands"}).name, "\n\n".join(lines)])
-	for stack_index in range(GameSession.state.inventory.size()):
-		var stack: Dictionary = GameSession.state.inventory[stack_index]
-		var definition: Dictionary = item_catalog.get(stack.id, {})
-		if definition.get("slot", "") != "":
-			_add_modal_action("Equip %s" % definition.name, func() -> void: _equip_item(stack_index))
-		elif definition.get("category") == "consumable":
-			_add_modal_action("Use %s" % definition.name, func() -> void: _use_item(stack_index))
+	WebBridge.set_screen("inventory")
+	WebBridge.publish_inventory(GameSession.state.inventory, GameSession.state.equipment)
+	var weight := InventoryRules.total_carried_weight(GameSession.state.inventory, GameSession.state.equipment, item_catalog)
+	_show_modal("Inventory & Equipment", "Carried weight: %.2f / %d  •  Drag items to move, merge, swap, equip, or unequip. Right-click a stack to split it." % [weight, 22 + int(player.might) * 4])
+	modal_body.custom_minimum_size = Vector2(700, 52)
+	modal_body.fit_content = true
+	inventory_slot_controls.clear()
+	inventory_focus_source.clear()
+	var columns := HBoxContainer.new()
+	columns.name = "InventoryDragSurface"
+	columns.add_theme_constant_override("separation", 14)
+	modal_actions.add_child(columns)
+	var carried_box := VBoxContainer.new()
+	carried_box.custom_minimum_size.x = 445
+	columns.add_child(carried_box)
+	var carried_title := Label.new()
+	carried_title.text = "CARRIED — %d/%d SLOTS" % [GameSession.state.inventory.size(), InventoryRules.MAX_SLOTS]
+	carried_title.add_theme_color_override("font_color", Color("#e0bd76"))
+	carried_box.add_child(carried_title)
+	var grid := GridContainer.new()
+	grid.columns = 6
+	grid.add_theme_constant_override("h_separation", 4)
+	grid.add_theme_constant_override("v_separation", 4)
+	carried_box.add_child(grid)
+	for slot_index in range(InventoryRules.MAX_SLOTS):
+		var stack: Dictionary = GameSession.state.inventory[slot_index] if slot_index < GameSession.state.inventory.size() else {}
+		var item: Dictionary = item_catalog.get(stack.get("id", ""), {})
+		var source := {"kind": "inventory", "index": slot_index} if not stack.is_empty() else {}
+		var destination := {"kind": "inventory", "index": slot_index, "label": "Empty %d" % (slot_index + 1)}
+		var slot_control := _create_inventory_slot("InventorySlot_%02d" % slot_index, source, destination, stack, item)
+		grid.add_child(slot_control)
+	var equipment_box := VBoxContainer.new()
+	equipment_box.custom_minimum_size.x = 232
+	columns.add_child(equipment_box)
+	var equipment_title := Label.new()
+	equipment_title.text = "EQUIPPED"
+	equipment_title.add_theme_color_override("font_color", Color("#e0bd76"))
+	equipment_box.add_child(equipment_title)
+	var equipment_grid := GridContainer.new()
+	equipment_grid.columns = 2
+	equipment_grid.add_theme_constant_override("h_separation", 4)
+	equipment_grid.add_theme_constant_override("v_separation", 4)
+	equipment_box.add_child(equipment_grid)
+	for equipment_slot: String in InventoryRules.EQUIPMENT_SLOTS:
+		var equipped_stack: Dictionary = GameSession.state.equipment.get(equipment_slot, {})
+		var equipped_item: Dictionary = item_catalog.get(equipped_stack.get("id", ""), {})
+		var source := {"kind": "equipment", "slot": equipment_slot} if not equipped_stack.is_empty() else {}
+		var destination := {"kind": "equipment", "slot": equipment_slot, "label": equipment_slot.replace("_", " ").capitalize()}
+		var slot_control := _create_inventory_slot("EquipmentSlot_%s" % equipment_slot, source, destination, equipped_stack, equipped_item)
+		equipment_grid.add_child(slot_control)
+	var keyboard_help := Label.new()
+	keyboard_help.text = "Keyboard/controller: focus a slot and press Accept to equip, use, or unequip. %s closes without changing items." % SettingsService.primary_binding_text("ui_cancel")
+	keyboard_help.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	keyboard_help.add_theme_font_size_override("font_size", 13)
+	modal_actions.add_child(keyboard_help)
+	if not inventory_slot_controls.is_empty():
+		inventory_slot_controls[0].grab_focus()
+
+
+func _create_inventory_slot(node_name: String, source: Dictionary, destination: Dictionary, stack: Dictionary, item: Dictionary) -> InventorySlot:
+	var slot_control := InventorySlot.new()
+	slot_control.name = node_name
+	slot_control.configure(source, destination, stack, item, _validate_inventory_destination)
+	slot_control.drop_requested.connect(_on_inventory_drop)
+	slot_control.split_requested.connect(_show_split_selector)
+	slot_control.activated.connect(_on_inventory_slot_activated)
+	slot_control.drag_started.connect(_on_inventory_drag_started)
+	slot_control.focus_entered.connect(func() -> void: inventory_focus_source = source.duplicate(true))
+	inventory_slot_controls.append(slot_control)
+	return slot_control
+
+
+func _validate_inventory_destination(source: Dictionary, destination: Dictionary) -> Dictionary:
+	return InventoryRules.validate_destination(
+		GameSession.state.inventory, GameSession.state.equipment, source, destination,
+		player, item_catalog, InventoryRules.MAX_SLOTS
+	)
+
+
+func _on_inventory_drag_started(source: Dictionary) -> void:
+	inventory_drag_active = true
+	for slot_control: InventorySlot in inventory_slot_controls:
+		var validation := _validate_inventory_destination(source, slot_control.destination)
+		slot_control.self_modulate = Color(0.62, 1.0, 0.68, 0.9) if bool(validation.ok) else Color(1.0, 0.48, 0.48, 0.75)
+
+
+func _on_inventory_drop(source: Dictionary, destination: Dictionary) -> void:
+	var result := _perform_inventory_operation(source, destination)
+	if result.ok:
+		GameSession.state.inventory = result.inventory
+		GameSession.state.equipment = result.equipment
+		_apply_equipment_stats()
+		AudioDirector.play_sfx("res://assets/sounds/ui/equip.wav" if String(result.operation).contains("equip") else "res://assets/sounds/ui/drop.wav")
+		_log("[color=#a8d49d]%s.[/color]" % String(result.operation).replace("_", " ").capitalize())
+		WebBridge.publish_inventory(GameSession.state.inventory, GameSession.state.equipment)
+	else:
+		_log("[color=#e88768]%s[/color]" % result.reason)
+	inventory_drag_active = false
+	call_deferred("_show_inventory")
+
+
+func _perform_inventory_operation(source: Dictionary, destination: Dictionary) -> Dictionary:
+	var source_kind: String = source.get("kind", "")
+	var destination_kind: String = destination.get("kind", "")
+	if source_kind == "inventory" and destination_kind == "inventory":
+		var moved := InventoryRules.move(GameSession.state.inventory, int(source.get("index", -1)), int(destination.get("index", -1)), item_catalog)
+		return {"ok": moved.ok, "inventory": moved.inventory, "equipment": GameSession.state.equipment.duplicate(true), "reason": moved.reason, "operation": moved.operation}
+	if source_kind == "inventory" and destination_kind == "equipment":
+		return InventoryRules.equip(GameSession.state.inventory, GameSession.state.equipment, int(source.get("index", -1)), String(destination.get("slot", "")), player, item_catalog)
+	if source_kind == "equipment" and destination_kind == "inventory":
+		return InventoryRules.unequip(GameSession.state.inventory, GameSession.state.equipment, String(source.get("slot", "")), int(destination.get("index", -1)), player, item_catalog)
+	if source_kind == "equipment" and destination_kind == "equipment":
+		var equipped := InventoryRules.move_equipped(GameSession.state.equipment, String(source.get("slot", "")), String(destination.get("slot", "")), player, item_catalog)
+		return {"ok": equipped.ok, "inventory": GameSession.state.inventory.duplicate(true), "equipment": equipped.equipment, "reason": equipped.reason, "operation": equipped.operation}
+	return {"ok": false, "inventory": GameSession.state.inventory.duplicate(true), "equipment": GameSession.state.equipment.duplicate(true), "reason": "Unsupported destination.", "operation": ""}
+
+
+func _on_inventory_slot_activated(source: Dictionary) -> void:
+	if source.get("kind") == "equipment":
+		var result := InventoryRules.unequip(GameSession.state.inventory, GameSession.state.equipment, String(source.get("slot", "")), -1, player, item_catalog)
+		if result.ok:
+			GameSession.state.inventory = result.inventory
+			GameSession.state.equipment = result.equipment
+			_apply_equipment_stats()
+			_show_inventory()
+		else:
+			_log(result.reason)
+		return
+	var index := int(source.get("index", -1))
+	if index < 0 or index >= GameSession.state.inventory.size():
+		return
+	var definition: Dictionary = item_catalog.get(GameSession.state.inventory[index].get("id", ""), {})
+	if not String(definition.get("slot", "")).is_empty():
+		_equip_item(index)
+	elif definition.get("category") == "consumable":
+		_use_item(index)
+
+
+func _show_split_selector(stack_index: int) -> void:
+	if stack_index < 0 or stack_index >= GameSession.state.inventory.size():
+		return
+	var stack: Dictionary = GameSession.state.inventory[stack_index]
+	var definition: Dictionary = item_catalog.get(stack.get("id", ""), {})
+	if int(definition.get("stack_limit", 1)) <= 1 or int(stack.get("count", 1)) <= 1:
+		_log("That item cannot be split.")
+		return
+	var dialog := ConfirmationDialog.new()
+	dialog.title = "Split %s" % definition.get("name", stack.get("id", "Stack"))
+	dialog.dialog_text = "Choose how many items to move into a new stack."
+	var amount := SpinBox.new()
+	amount.name = "SplitAmount"
+	amount.min_value = 1
+	amount.max_value = int(stack.get("count", 1)) - 1
+	amount.step = 1
+	amount.value = maxi(1, int(stack.get("count", 1)) / 2)
+	dialog.add_child(amount)
+	dialog.confirmed.connect(func() -> void:
+		var result := InventoryRules.split(GameSession.state.inventory, stack_index, int(amount.value), item_catalog)
+		if result.ok:
+			GameSession.state.inventory = result.inventory
+			_log("Split %s into a stack of %d." % [definition.get("name", "stack"), int(amount.value)])
+		else:
+			_log(result.reason)
+		_show_inventory()
+		dialog.queue_free()
+	)
+	dialog.canceled.connect(func() -> void: dialog.queue_free())
+	add_child(dialog)
+	dialog.popup_centered(Vector2i(430, 210))
+
+
+func _show_character_sheet() -> void:
+	var equipped_names := PackedStringArray()
+	for slot: String in GameSession.state.equipment:
+		var item_id := _equipped_item_id(slot)
+		var definition: Dictionary = item_catalog.get(item_id, {})
+		if not definition.is_empty():
+			equipped_names.append("%s: %s" % [slot.replace("_", " ").capitalize(), definition.name])
+	_show_modal("%s — Returned Adventurer" % player.get("name", "Wayfarer"), (
+		"[color=#d96f62]Health[/color] %d / %d    [color=#78b8d8]Focus[/color] %d / %d\n" +
+		"Level %d    Armor %d    Evasion %d\nMight %d    Finesse %d    Resolve %d\n\n" +
+		"[color=#e0bd76]Equipment[/color]\n%s"
+	) % [
+		int(player.health), int(player.max_health), int(player.mana), int(player.max_mana),
+		int(player.level), int(player.armor), int(player.evasion), int(player.might), int(player.finesse), int(player.resolve),
+		"\n".join(equipped_names) if not equipped_names.is_empty() else "Nothing equipped",
+	])
 
 
 func _show_spellbook() -> void:
@@ -637,7 +1033,7 @@ func _show_spellbook() -> void:
 		var spell: Dictionary = spell_catalog.get(spell_id, {})
 		if not spell.is_empty():
 			lines.append("[color=#9ed8e3]%s[/color] — %s\nFocus %d • range %d • %s • power %d" % [spell.name, spell.discipline.capitalize(), int(spell.mana_cost), int(spell.range), spell.shape, int(spell.power)])
-	_show_modal("The Eight Practices", "\n\n".join(lines) + "\n\nPress 1 in the world to cast the first prepared working.")
+	_show_modal("The Eight Practices", "\n\n".join(lines) + "\n\nPress %s in the world to cast the first prepared working." % SettingsService.primary_binding_text("cast_prepared"))
 	for spell_id: String in GameSession.state.known_spells:
 		var spell: Dictionary = spell_catalog.get(spell_id, {})
 		if not spell.is_empty():
@@ -672,7 +1068,17 @@ func _show_modal(title_text: String, body_text: String) -> void:
 		child.queue_free()
 	modal_title.text = title_text
 	modal_body.text = body_text
+	modal_body.custom_minimum_size = Vector2(700, 430)
+	modal_body.fit_content = false
 	modal.visible = true
+
+
+func _close_modal() -> void:
+	inventory_drag_active = false
+	inventory_slot_controls.clear()
+	inventory_focus_source.clear()
+	modal.visible = false
+	WebBridge.set_screen("gameplay")
 
 
 func _add_modal_action(text_value: String, callback: Callable) -> void:
@@ -688,13 +1094,13 @@ func _equip_item(stack_index: int) -> void:
 		return
 	var stack: Dictionary = GameSession.state.inventory[stack_index]
 	var definition: Dictionary = item_catalog.get(stack.id, {})
-	var check := InventoryRules.can_equip(player, definition)
-	if not check.ok:
-		_log(check.reason)
+	var result := InventoryRules.equip(GameSession.state.inventory, GameSession.state.equipment, stack_index, String(definition.get("slot", "")), player, item_catalog)
+	if not result.ok:
+		_log(result.reason)
 		return
-	GameSession.state.equipment[definition.slot] = definition.id
-	if definition.has("armor"):
-		player.armor = maxi(0, int(definition.armor))
+	GameSession.state.inventory = result.inventory
+	GameSession.state.equipment = result.equipment
+	_apply_equipment_stats()
 	AudioDirector.play_sfx("res://assets/sounds/ui/equip.wav")
 	_log("[color=#a8d49d]Equipped %s.[/color]" % definition.name)
 	_show_inventory()
@@ -827,7 +1233,7 @@ func _scheduled_activity(definition: Dictionary) -> String:
 
 
 func _show_game_over() -> void:
-	_show_modal("The Road Ends Here", "The Bell continues beneath the snow. Load your last atomic save with F6 after closing this panel, or return to the title with Escape.")
+	_show_modal("The Road Ends Here", "The Bell continues beneath the snow. Load your last atomic save with %s after closing this panel, or pause with %s." % [SettingsService.primary_binding_text("quick_load"), SettingsService.primary_binding_text("ui_cancel")])
 
 
 func _show_ending() -> void:
@@ -853,18 +1259,17 @@ func _finish_ending(ending_id: String) -> void:
 
 
 func grid_to_screen(grid: Vector2i) -> Vector2:
-	return VIEW_ORIGIN + Vector2((grid.x - grid.y) * TILE_WIDTH * 0.5, (grid.x + grid.y) * TILE_HEIGHT * 0.5)
+	return camera_model.grid_to_screen(grid)
 
 
 func screen_to_grid(screen: Vector2) -> Vector2i:
-	var local := screen - VIEW_ORIGIN
-	var x := local.x / TILE_WIDTH + local.y / TILE_HEIGHT
-	var y := local.y / TILE_HEIGHT - local.x / TILE_WIDTH
-	return Vector2i(roundi(x), roundi(y))
+	return camera_model.screen_to_grid(screen)
 
 
 func _draw() -> void:
-	draw_rect(Rect2(Vector2.ZERO, size), Color("#07101a"))
+	draw_rect(Rect2(Vector2.ZERO, size), Color("#050a10"))
+	draw_rect(world_view_rect, Color("#09131b"))
+	draw_rect(world_view_rect, Color("#42505a"), false, 1.0)
 	if level.is_empty():
 		return
 	var theme_index := depth % 12
@@ -874,6 +1279,7 @@ func _draw() -> void:
 		Color("#704537"), Color("#4d506e"), Color("#4d6377"), Color("#493f58")
 	]
 	var floor_color: Color = floor_palette[theme_index]
+	var renderables: Array[Dictionary] = []
 	for y in range(int(level.height)):
 		for x in range(int(level.width)):
 			var position := Vector2i(x, y)
@@ -883,58 +1289,154 @@ func _draw() -> void:
 			if tile == "wall" and not _wall_visible(position):
 				continue
 			var center := grid_to_screen(position)
-			var light := 1.0 if visible_tiles.has(position) else 0.38
-			var color := floor_color * light
+			if not world_view_rect.grow(180.0).has_point(center):
+				continue
+			var light := _tile_light(position)
+			var variation := 0.91 + float(posmod(x * 37 + y * 61 + int(level.seed), 13)) / 100.0
+			var color := floor_color * light * variation
 			var diamond := PackedVector2Array([
-				center + Vector2(0, -TILE_HEIGHT * 0.5), center + Vector2(TILE_WIDTH * 0.5, 0),
-				center + Vector2(0, TILE_HEIGHT * 0.5), center + Vector2(-TILE_WIDTH * 0.5, 0)
+				center + Vector2(0, -TILE_HEIGHT * 0.5) * camera_model.zoom, center + Vector2(TILE_WIDTH * 0.5, 0) * camera_model.zoom,
+				center + Vector2(0, TILE_HEIGHT * 0.5) * camera_model.zoom, center + Vector2(-TILE_WIDTH * 0.5, 0) * camera_model.zoom
 			])
 			if tile == "wall":
-				if wall_texture:
-					draw_texture_rect(wall_texture, Rect2(center - Vector2(20, 39), Vector2(40, 40)), false, Color(light, light, light, 1))
+				renderables.append({"kind": "wall", "position": position, "sort": _sort_key(position, 0)})
 			else:
 				if tile == "stairs": color = Color("#a78043") * light
 				elif tile == "water": color = Color("#2f6475") * light
 				elif tile == "ice": color = Color("#91bec7") * light
 				if floor_texture:
-					draw_texture_rect(floor_texture, Rect2(center - Vector2(20, 10), Vector2(40, 20)), false, Color(light, light, light, 1))
+					var tile_size := Vector2(TILE_WIDTH, TILE_HEIGHT) * camera_model.zoom
+					draw_texture_rect(floor_texture, Rect2(center - tile_size * 0.5, tile_size), false, Color(color.r, color.g, color.b, 1.0))
 				else:
 					draw_colored_polygon(diamond, color)
-				draw_polyline(diamond + PackedVector2Array([diamond[0]]), Color("#1d2830") * light, 1.0)
+				draw_polyline(diamond + PackedVector2Array([diamond[0]]), Color("#17242a") * light, maxf(1.0, camera_model.zoom))
+				if tile == "stairs":
+					_draw_stairs(center, light)
 			if position == hover_tile and visible_tiles.has(position):
-				draw_polyline(diamond + PackedVector2Array([diamond[0]]), Color("#f1d58e"), 2.0)
+				draw_polyline(diamond + PackedVector2Array([diamond[0]]), Color("#f1d58e"), 2.5)
 	for object: Dictionary in level.objects:
 		if not visible_tiles.has(object.position) or bool(object.get("hidden", false)) or bool(object.get("taken", false)):
 			continue
-		var center := grid_to_screen(object.position)
-		if object.type == "chest" and not bool(object.opened):
-			var chest_texture := _texture("res://assets/sprites/objects/chest.png")
-			draw_texture_rect_region(chest_texture, Rect2(center - Vector2(16, 40), Vector2(32, 40)), Rect2(0, 0, 64, 80))
-		elif object.type == "trap":
-			draw_circle(center - Vector2(0, 2), 5, Color("#a85d8b"))
-		elif object.type == "key":
-			draw_circle(center - Vector2(0, 5), 4, Color("#e0bd76"), false, 2)
+		renderables.append({"kind": "object", "value": object, "position": object.position, "sort": _sort_key(object.position, 1)})
 	if visible_tiles.has(player.position):
-		_draw_actor_sprite(grid_to_screen(player.position), "res://assets/sprites/player/player_%s.png" % player.get("portrait", "aurora"), true, bool(player.alive))
+		renderables.append({"kind": "player", "position": player.position, "sort": _sort_key(player.position, 2)})
 	for enemy: Dictionary in enemies:
 		if bool(enemy.alive) and visible_tiles.has(enemy.position):
-			var definition: Dictionary = ContentDB.get_entry("enemies", enemy.definition_id)
-			_draw_actor_sprite(grid_to_screen(enemy.position), definition.get("sprite", ""), false, true)
+			renderables.append({"kind": "enemy", "value": enemy, "position": enemy.position, "sort": _sort_key(enemy.position, 2)})
 	if not npc.is_empty() and visible_tiles.has(npc.position):
-		_draw_actor_sprite(grid_to_screen(npc.position), npc.sprite, false, true)
+		renderables.append({"kind": "npc", "value": npc, "position": npc.position, "sort": _sort_key(npc.position, 2)})
+	renderables.sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return float(a.sort) < float(b.sort))
+	for renderable: Dictionary in renderables:
+		match renderable.kind:
+			"wall":
+				_draw_wall(renderable.position)
+			"object":
+				_draw_world_object(renderable.value)
+			"player":
+				_draw_actor_sprite(grid_to_screen(player.position), "res://assets/sprites/player/player_%s.png" % player.get("portrait", "aurora"), PLAYER_ANIMATIONS, player_animation, player_direction, bool(player.alive), true)
+			"enemy":
+				var enemy: Dictionary = renderable.value
+				var definition: Dictionary = ContentDB.get_entry("enemies", enemy.definition_id)
+				var animation := String(enemy.get("animation", "idle"))
+				if Time.get_ticks_msec() - int(enemy.get("animation_started", 0)) > 460:
+					animation = "idle"
+				_draw_actor_sprite(grid_to_screen(enemy.position), definition.get("sprite", ""), ENEMY_ANIMATIONS, animation, enemy.get("direction", "s"), true, false)
+			"npc":
+				var npc_value: Dictionary = renderable.value
+				_draw_actor_sprite(grid_to_screen(npc_value.position), npc_value.sprite, NPC_ANIMATIONS, "idle", "s", true, false)
 	if not effect_state.is_empty():
 		var effect_texture: Texture2D = effect_state.texture
-		var effect_center := grid_to_screen(effect_state.position) - Vector2(0, 18)
-		draw_texture_rect_region(effect_texture, Rect2(effect_center - Vector2(24, 24), Vector2(48, 48)), Rect2(int(effect_state.frame) * 64, 0, 64, 64))
+		var effect_center := grid_to_screen(effect_state.position) - Vector2(0, 42) * camera_model.zoom
+		var effect_size := Vector2(96, 96) * camera_model.zoom
+		draw_circle(effect_center, 42.0 * camera_model.zoom, Color(0.28, 0.72, 0.88, 0.08))
+		draw_texture_rect_region(effect_texture, Rect2(effect_center - effect_size * 0.5, effect_size), Rect2(int(effect_state.frame) * 64, 0, 64, 64))
+	if debug_enabled:
+		_draw_developer_overlay(renderables)
 
 
-func _draw_actor_sprite(foot: Vector2, path: String, is_player: bool, alive: bool) -> void:
+func _sort_key(position: Vector2i, layer: int) -> float:
+	return float(position.x + position.y) * 1000.0 + float(position.x) * 2.0 + float(layer)
+
+
+func _tile_light(position: Vector2i) -> float:
+	if not visible_tiles.has(position):
+		return 0.24
+	var distance := sqrt(float(player.position.distance_squared_to(position)))
+	return clampf(1.02 - distance * 0.045, 0.63, 1.0)
+
+
+func _draw_wall(position: Vector2i) -> void:
+	if wall_texture == null:
+		return
+	var foot := grid_to_screen(position)
+	var wall_size := Vector2(96, 96) * camera_model.zoom
+	var light := _tile_light(position)
+	var alpha := 1.0
+	if position.distance_squared_to(player.position) <= 16 and position.x + position.y > player.position.x + player.position.y:
+		alpha = 0.30
+	draw_texture_rect(wall_texture, Rect2(foot - Vector2(48, 92) * camera_model.zoom, wall_size), false, Color(light, light, light, alpha))
+
+
+func _draw_stairs(center: Vector2, light: float) -> void:
+	for step in range(5):
+		var offset := Vector2(0, float(step - 2) * 5.0) * camera_model.zoom
+		var half_width := (30.0 - absf(float(step - 2)) * 3.0) * camera_model.zoom
+		draw_line(center + offset - Vector2(half_width, 0), center + offset + Vector2(half_width, 0), Color("#d4b574") * light, maxf(1.0, camera_model.zoom * 2.0))
+
+
+func _draw_world_object(object: Dictionary) -> void:
+	var foot := grid_to_screen(object.position)
+	if object.type == "key":
+		draw_circle(foot - Vector2(0, 20) * camera_model.zoom, 8.0 * camera_model.zoom, Color("#e8c66f"), false, maxf(2.0, camera_model.zoom * 3.0))
+		draw_line(foot + Vector2(5, -15) * camera_model.zoom, foot + Vector2(16, -4) * camera_model.zoom, Color("#e8c66f"), maxf(2.0, camera_model.zoom * 3.0))
+		return
+	var sprite_id := String(object.type)
+	if sprite_id in ["locked_door", "secret_door"]:
+		sprite_id = "door"
+	if sprite_id == "chest" and bool(object.get("opened", false)):
+		return
+	var path := "res://assets/sprites/objects/%s.png" % sprite_id
+	if not ResourceLoader.exists(path):
+		return
+	var texture := _texture(path)
+	var frame := int(Time.get_ticks_msec() / 170) % 4 if sprite_id in ["trap", "fire", "portal", "magic"] else 0
+	var object_size := Vector2(64, 80) * camera_model.zoom
+	draw_texture_rect_region(texture, Rect2(foot - Vector2(32, 68) * camera_model.zoom, object_size), Rect2(frame * 64, 0, 64, 80))
+
+
+func _draw_actor_sprite(foot: Vector2, path: String, animation_names: Array, animation: String, direction: String, alive: bool, is_player: bool) -> void:
 	if not alive or path.is_empty() or not ResourceLoader.exists(path):
 		_draw_actor(foot, Color("#a7d5dc") if is_player else Color("#c8685c"), is_player, alive)
 		return
 	var texture := _texture(path)
-	var idle_frame := int(Time.get_ticks_msec() / 260) % 4
-	draw_texture_rect_region(texture, Rect2(foot - Vector2(16, 40), Vector2(32, 40)), Rect2(idle_frame * 64, 0, 64, 80))
+	var frame_width := 96
+	var frame_height := 128
+	var direction_count := maxi(1, texture.get_width() / (frame_width * 4))
+	var directions: Array = ["s", "sw", "w", "nw", "n", "ne", "e", "se"] if direction_count == 8 else ["s", "w", "n", "e"]
+	var resolved_direction := direction
+	if direction_count == 4:
+		resolved_direction = {"sw": "s", "se": "s", "nw": "n", "ne": "n"}.get(direction, direction)
+	var direction_index := maxi(0, directions.find(resolved_direction))
+	var animation_index := maxi(0, animation_names.find(animation))
+	var frame_delay := 250 if animation == "idle" else 115
+	var frame := int(Time.get_ticks_msec() / frame_delay) % 4
+	var source := Rect2((direction_index * 4 + frame) * frame_width, animation_index * frame_height, frame_width, frame_height)
+	var destination_size := Vector2(frame_width, frame_height) * camera_model.zoom
+	draw_texture_rect_region(texture, Rect2(foot - Vector2(48, 112) * camera_model.zoom, destination_size), source)
+	if is_player:
+		draw_circle(foot - Vector2(0, 3) * camera_model.zoom, 18.0 * camera_model.zoom, Color(0.68, 0.92, 0.98, 0.16), false, maxf(1.0, 2.0 * camera_model.zoom))
+
+
+func _draw_developer_overlay(renderables: Array[Dictionary]) -> void:
+	draw_rect(world_view_rect, Color("#60d6dd"), false, 2.0)
+	draw_rect(camera_model.projected_map_screen_rect(), Color(0.91, 0.35, 0.35, 0.78), false, 2.0)
+	for renderable: Dictionary in renderables:
+		if renderable.kind in ["player", "enemy", "npc", "object"]:
+			var pivot := grid_to_screen(renderable.position)
+			draw_circle(pivot, 4.0, Color("#f2dc87"))
+	var font := ThemeDB.fallback_font
+	var label_position := world_view_rect.position + Vector2(12, 22)
+	draw_string(font, label_position, "VIEWPORT %.0fx%.0f  CAMERA %.0f,%.0f  ZOOM %.2f" % [world_view_rect.size.x, world_view_rect.size.y, camera_model.current_position.x, camera_model.current_position.y, camera_model.zoom], HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Color("#8ee7eb"))
 
 
 func _texture(path: String) -> Texture2D:

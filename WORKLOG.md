@@ -2,6 +2,93 @@
 
 ## 2026-07-19
 
+### Visual-overhaul audit and untouched baseline
+
+- Created `codex/visual-overhaul` from the clean published post-v0.9 tip `ee3375321566b4d7cc5a8512b525c1d7c55e03bd`; this preserves the newer transactional inventory, remapping, and supported Web work that has not yet landed on `main`.
+- Confirmed the project is Godot 4.7.1 Compatibility/WebGL 2 with deterministic Python/Pillow art and audio generators, native Linux/Windows export scripts, an official single-threaded Web export, Playwright 1.61.1 browser coverage, and GitHub Actions build/browser validation.
+- Rebuilt the untouched Linux export with `PATH=/home/epi13/.local/bin:$PATH ./tools/build/export_linux.sh`, launched `builds/linux/IsoCastle.x86_64` on the graphical desktop, and captured a native title baseline. The complete validation wrapper passed: 626 unit checks, interaction smoke, campaign smoke, 364-art validation, and 310-audio validation.
+- Rebuilt the untouched Web export with `PATH=/home/epi13/.local/bin:$PATH ./tools/build/export_web.sh`. Baseline payload: 55,078,099 bytes uncompressed and 21,227,295 bytes zipped.
+- Ran the untouched Web build in Playwright-managed Chromium 149 and Firefox 151 using `npm run test:web`; both passed with no fatal console errors, page errors, failed asset requests, or persistence/input/inventory regressions.
+- Captured the deterministic browser baseline at 1280x720, 1366x768, 1600x900, 1920x1080, 2560x1440, and 3440x1440. Representative retained screenshots are `docs/visual-overhaul/before/1600x900.png` and `docs/visual-overhaul/before/3440x1440.png`; exact canvas metrics are in the adjacent `metrics.json`.
+
+### Root cause of the small-world Web defect
+
+- The browser shell is not the primary defect at 16:9 sizes: canvas CSS dimensions and backing-store dimensions exactly match every tested browser viewport, and document scroll dimensions match the viewport with no horizontal or vertical overflow.
+- Gameplay uses a fixed `VIEW_ORIGIN = Vector2(665, 74)` inside one full-screen `Control`, so map placement is unrelated to the actual world pane, player position, map bounds, or resized viewport.
+- Gameplay uses `TILE_WIDTH = 40` and `TILE_HEIGHT = 20` while the deterministic art pipeline authors 96x48 floor tiles and 96x96 walls. It redraws those textures at 40x20 and 40x40, only 41.7% of authored linear size.
+- Actor sheets are authored as 64x80 frames but gameplay redraws them at 32x40, then reads only the first animation row and first direction. The result is half-scale, pawn-like actors even though animation metadata exists.
+- The HUD/sidebar/top bar/modal use absolute positions and sizes for a 1280x720 screen. They do not react to root resize, sidebar state, available height, or UI scale; the Current Thread text is visibly clipped by the event divider in baseline screenshots.
+- At 3440x1440, the project preserves a centered 16:9 logical content region inside the full-size HTML canvas instead of expanding the logical viewport for ultrawide layouts, adding substantial pillarboxed black space on top of the fixed gameplay layout defect.
+- There is no runtime camera model: no player-follow target, zoom, pan, map-bound calculation, small-map centering, or clamp behavior exists. `grid_to_screen()` is only a fixed origin plus isometric projection.
+
+### Visual scale decision
+
+- The overhaul will use canonical 96x48 isometric tiles with 48-pixel elevation, matching the existing source-art contract.
+- Humanoid and major-creature atlas frames will be raised to 96x128 with foot pivots at `(48, 112)`. This keeps the authored texture within practical WebGL atlas limits while providing an approximately 104-pixel standing figure at default zoom. Larger boss silhouettes may occupy the full 128-pixel frame height.
+- The default camera zoom target is 1.0 with a user range of 0.72 to 1.55. World zoom and UI scale remain independent.
+
+### Post-v0.9 recovery and baseline
+
+- Recovered the clean checkout on `codex/full-isometric-game` at `52bfc323949a762703a7057ef38cc044fbf38e1b`; no modified, staged, or untracked files and no interrupted Git operation were present.
+- Verified local `main`, `origin/main`, `origin/codex/full-isometric-game`, and annotated `v0.9.0` all resolve to the release-record commit after `git fetch origin --prune --tags`; the tag was not changed.
+- Verified GitHub access with `gh auth status`, `gh repo view epi13/IsoCastle`, `git ls-remote origin`, and the authenticated fetch.
+- Confirmed Godot `4.7.1.stable.official.a13da4feb`, Python `3.14.6`, Git `2.55.0`, and GitHub CLI `2.94.0` on Fedora 44.
+- Ran the untouched baseline with `PATH=/home/epi13/.local/bin:$PATH ./tools/test_all.sh`: content generation/schema validation, 364-art validation, 310-audio validation, Godot import, 573 assertions, interaction smoke, and campaign playthrough all passed and reported `ALL ISOCASTLE TESTS PASSED`.
+- Ran the additional startup check `PATH=/home/epi13/.local/bin:$PATH godot --headless --path . --quit-after 3`; it exited successfully without script or engine errors.
+- Inspected native-Windows options. No Windows host, VM, configured Windows runner, or owner-approved remote execution path is available; native execution remains externally blocked and Wine is not being represented as native testing.
+- Found the installed Godot 4.7.1 export templates contain Linux and Windows templates but no Web templates. Matching official Web templates are required for this milestone.
+- Created `codex/post-v0.9-inventory-input-wasm` directly from verified `origin/main` for the inventory, input-remapping, and browser-support work.
+
+### Transactional inventory drag-and-drop milestone
+
+- Added transactional domain operations for bounded add, move, reorder, swap, compatible merge, metadata-safe split, equip, equipment replacement, unequip, equipment-slot movement, destination validation, and cancellation. Failed operations return explicit reasons without partially mutating state.
+- Changed equipment ownership from duplicate item-ID references to metadata-preserving stack records and advanced save schema 3 to 4 with migration that extracts previously equipped items from legacy inventory exactly once.
+- Added a literal Godot drag-and-drop inventory surface using `_get_drag_data`, `_can_drop_data`, `_drop_data`, and `set_drag_preview`, with valid/invalid destination tinting, a drag ghost, tooltip details, right-click split amount selection, keyboard/controller activation, and focus restoration.
+- Added player-facing InputMap actions for prepared casting, ranged attack, and quick item use, replacing their direct physical-key checks.
+- Extended tests from 573 to 599 assertions for inventory operations, requirement and slot rejection, capacity, cancellation, metadata, weight, save/load, schema migration, duplication, and loss. Extended the interaction smoke path to invoke UI drag, equipment replacement, and cancellation through the slot controls.
+- Ran `PATH=/home/epi13/.local/bin:$PATH godot --headless --path . --import`, the unit runner, and the smoke runner successfully during implementation.
+- Ran `PATH=/home/epi13/.local/bin:$PATH ./tools/test_all.sh`; all content/art/audio validation, Godot import, 599 assertions, inventory interaction smoke, and campaign playthrough passed with `ALL ISOCASTLE TESTS PASSED`.
+
+### Versioned input-remapping milestone
+
+- Added an explicit immutable default-binding catalog for 23 player-facing actions: eight-direction movement, wait, interact, search, inventory, spellbook, journal, map, ranged attack, prepared spell, quick item, quick save/load, pause/cancel, overlay, and screenshot mode.
+- Added stable binding serialization for physical keyboard keys, mouse buttons, controller buttons, and signed controller axes; no runtime object dumps are persisted.
+- Added format-2 migration for renamed actions, safe handling for removed/unknown actions, default inheritance for new actions, controller-axis deadzones/noise rejection, browser-reserved shortcut rejection, conflict detection, explicit conflict movement, and protection for the final pause/cancel binding.
+- Extended `SettingsService` with atomic settings replacement, separate input persistence, runtime `InputMap` restoration during startup, clear/reset-one/reset-all operations, and human-readable current binding labels.
+- Added the full settings editor with capture overlay, cancellation, conflict confirmation, mouse navigation, focusable keyboard/controller controls, per-binding clear/replace, add-binding, per-action reset, and reset-all confirmation.
+- Replaced remaining remappable gameplay physical-key checks and updated in-game help, stairs, spellbook, inventory, and game-over prompts to read active bindings.
+- Extended the headless suite to 624 assertions, including defaults, every supported event type, conflicts, conflict resolution, capture no-op, clear/reset, persistence, migration, renamed/unknown actions, protected cancel, new-action defaults, and browser-safe behavior.
+- Ran `PATH=/home/epi13/.local/bin:$PATH ./tools/test_all.sh`; all validation, Godot import, 624 assertions, input-editor/inventory interaction smoke, and campaign playthrough passed with `ALL ISOCASTLE TESTS PASSED`.
+
+### Supported WebAssembly/browser milestone
+
+- Installed the official matching Godot 4.7.1 `web_nothreads_debug.zip` and `web_nothreads_release.zip` templates. SHA-256: `eb6ca0ca168c405e73b20a4439d6dc048d74ae65eb31cc7675b6bc3cf7ad1815` (debug) and `b7b7d7da29fc6cc2f4934fdd26cc571a40e7af57f716ea3eb7e18da720dae28a` (release).
+- The official complete 1.19 GiB template archive download stalled twice at 188,006,400 bytes in this environment. Resolution: fetched the two exact non-threaded Web ZIP entries by HTTP range from the official Godot archive and verified both nested ZIPs with `unzip -t`; no engine compilation or unofficial template was used.
+- Added the `Web` preset using Compatibility/WebGL 2 and the official single-threaded template. Hardened export filters against builds, browser dependencies/artifacts, tools, tests, source generators, documentation, and desktop-only development files.
+- Added `tools/build/export_web.sh`, `validate_web_export.sh`, `serve_web.sh`, and a local-only MIME-aware Python server. The exporter validates first, exports to an external temporary directory, replaces only `builds/web`, verifies non-empty HTML/JavaScript/Wasm/PCK files, normalizes archive timestamps, and validates a root-layout ZIP.
+- The first ZIP attempt failed because `mktemp` left an empty file that `zip` treated as a corrupt existing archive; the script now removes that exact temporary file before archive creation. A direct in-project repeat export also grew `index.pck` from about 15.2 MB to 40.8 MB by ingesting `node_modules` and earlier outputs; exporting outside the project and explicit exclusions restored the expected payload. Parent `.gdignore` files keep generated browser screenshots and Web icons out of Godot's import scan.
+- Verified the server with HTTP requests: `index.html` returned `200 text/html`, `.wasm` returned `200 application/wasm`, and `.pck` returned `200 application/octet-stream`.
+- Added a feature-gated Web diagnostics bridge for deterministic automation state without putting gameplay logic in JavaScript. Added user-initiated Web fullscreen behavior and explicit browser-storage status/synchronization after verified save/settings replacement.
+- The first immediate Chromium save reload found that a successful `user://` write had not yet reached IndexedDB. Resolution: call `JavaScriptBridge.force_fs_sync()` after successful replacement and allow the asynchronous Web filesystem interval before reload. Settings, remapping, save-slot metadata, save load, and equipped-item state subsequently persisted across reloads. Added headless corruption recovery coverage showing an interrupted/corrupt primary load falls back to the prior valid backup.
+- Installed project-local Playwright 1.61.1 with a locked dependency graph. Fedora is not an officially identified Playwright host, so it reported its Ubuntu 24.04 fallback browser build; browser binaries remain untracked.
+- Ran `npx playwright test --project=chromium`: passed the full browser flow in Chrome for Testing/Chromium `149.0.7827.55`. Ran `npx playwright test --project=firefox`: passed the identical flow in Firefox `151.0`. Both verified successful Wasm/PCK responses, title and new game, intentional audio activation, mouse settings controls, volume/remap persistence, remapped keyboard gameplay input, reset defaults, save/load, focus/page behavior, real mouse inventory drag with visible drag ghost, unchanged total item count, equipment persistence, and no fatal console/page/network failures.
+- Final nonfatal browser diagnostics contained Chromium GPU-stall warnings from WebGL `readPixels` and Firefox warnings that the official template's legacy Wasm exception-handling `try` instruction is deprecated. An earlier exploratory Chromium launch also reported a transient `CONTEXT_LOST_WEBGL`; it recovered. Final runs had zero console errors, page exceptions, or failed requests in both browsers.
+- Extended GitHub Actions to install matching templates, run the entire validation suite through the Web exporter, install Node 22/locked Playwright, run Chromium, upload `IsoCastle-web.zip`, and preserve browser artifacts on failure. No Pages publication was added.
+- Current measured Web release output: `index.html` 5,443 bytes; JavaScript bootstrap/worklets 290,086 bytes total; `index.wasm` 39,513,091 bytes; `index.pck` 15,230,392 bytes; icons/images 39,087 bytes; 55,078,099 bytes total uncompressed. `builds/web/IsoCastle-web.zip` is 21,227,295 bytes and contains `index.html` at its root.
+- Native Windows availability was rechecked and remains externally blocked: no Windows host, VM, configured Windows runner, or approved remote test mechanism is present. The `v0.9.0` tag remains unchanged and the project remains pre-release.
+
+### Final integrated verification for the post-v0.9 branch
+
+- `PATH=/home/epi13/.local/bin:$PATH ./tools/test_all.sh` passed content generation/schema checks, 364-art validation, 310-audio validation, Godot import, 626 assertions, interaction smoke, and the 12-depth scripted campaign; final line: `ALL ISOCASTLE TESTS PASSED`.
+- `PATH=/home/epi13/.local/bin:$PATH ./tools/build/export_web.sh` passed the same validation, created and validated every required Web file, and validated the deployable ZIP layout.
+- `npm run test:web` ran both projects serially and reported `2 passed (1.2m)`. Final browser diagnostics record Chromium `149.0.7827.55` and Firefox `151.0`.
+- `PATH=/home/epi13/.local/bin:$PATH ./tools/build/export_linux.sh` passed validation and produced `builds/linux/IsoCastle.x86_64`, 88,700,664 bytes, identified as ELF x86-64. `timeout 20s builds/linux/IsoCastle.x86_64 --headless --quit-after 3` exited successfully after Godot 4.7.1 startup.
+- `PATH=/home/epi13/.local/bin:$PATH ./tools/build/export_windows.sh` passed validation and produced `builds/windows/IsoCastle.exe`, 124,301,768 bytes, identified as PE32+ x86-64. It was not executed because no genuine Windows environment is available.
+- `./tools/build/validate_web_export.sh`, `zipinfo -1 builds/web/IsoCastle-web.zip`, `python3 -m py_compile tools/build/web_server.py`, `node --check tests/browser/web_smoke.spec.mjs`, `npm ls --depth=0`, and `git diff --check` all passed.
+- Repeated `PATH=/home/epi13/.local/bin:$PATH ./tools/build/export_web.sh` without source changes. Both ZIPs had SHA-256 `8081f3568d12af9c9b29aaa6b69cd7519f9f869827a69b3545ab4aaefccf6b11`, confirming byte-for-byte reproducibility in the verified environment.
+- Pushed only `codex/post-v0.9-inventory-input-wasm` and opened draft PR #2, `Add inventory remapping and WebAssembly support`: https://github.com/epi13/IsoCastle/pull/2. No merge was performed.
+- GitHub Actions push run `29713329307` and PR run `29713344526` both passed. The PR run completed the full exporter and Chromium smoke job in 2m22s and uploaded the `IsoCastle-web` workflow artifact (GitHub wrapper size 21,184,950 bytes). The runner emitted one nonfatal platform annotation that older action majors targeting Node 20 were forced onto Node 24; no build or test step failed.
+
 ### Completed
 
 - Confirmed Fedora 44 host and exact workspace path.
